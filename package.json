@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn build-storybook",
-    "build-storybook": "build-storybook -c .storybook -o dist/components",
+    "build-storybook": "build-storybook -c .storybook -o dist/components --quiet",
     "storybook": "start-storybook"
   },
   "dependencies": {
