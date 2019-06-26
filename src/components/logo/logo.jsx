@@ -4,7 +4,6 @@ import React from 'react';
 
 import styles from './logo.css';
 import wdrLogo from 'svg-inline-loader!./logo_wdr.svg';
-console.log(wdrLogo);
 
 const Logo = ({
     className,
@@ -17,7 +16,7 @@ const Logo = ({
         className={classNames(
             styles.logo,
             {
-                [styles.white]: color==='white',
+                [styles.white]: color === 'white',
             },
             className,
         )}
