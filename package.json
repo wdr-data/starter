@@ -6,6 +6,8 @@
   "author": "Christine <christine.gotth@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "yarn build-storybook",
+    "build-storybook": "build-storybook -c .storybook -o dist/components",
     "storybook": "start-storybook"
   },
   "dependencies": {
