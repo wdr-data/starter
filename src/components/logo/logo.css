@@ -1,0 +1,11 @@
+
+.logo {
+    width: 4rem;
+    height: auto;
+    padding: 2rem;
+    color: var(--brand-primary);
+}
+
+.white {
+    color: white;
+}
