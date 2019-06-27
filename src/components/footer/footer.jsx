@@ -6,14 +6,14 @@ const Footer = () => {
 
     return <div className={styles.footer}>
             <div className={styles.links}>
-                <a href={'https://knowbody.github.io/react-router-docs/api/Link.html'} target="_blank">Hilfe</a>
-                <a>Impressum</a>
-                <a>Datenschutz</a>
-                <a>Kontakt</a>
+                <a href={'https://www1.wdr.de/hilfe/index.html'} target='_blank'>Hilfe</a>
+                <a href={'https://www1.wdr.de/impressum/index.html'} target='_blank'>Impressum</a>
+                <a href={'https://www1.wdr.de/hilfe/datenschutz102.html'} target='_blank'>Datenschutz</a>
+                <a href={'https://www1.wdr.de/kontakt/index.html'} target='_blank'>Kontakt</a>
                 <a>Bildrechte</a>
             </div>
             <div className={styles.copyright}>
-                <a href={'https://www1.wdr.de/copyright/index.html'} className={styles.copyrightLink}>© WDR {(new Date().getFullYear())}</a>
+                <a href={'https://www1.wdr.de/copyright/index.html'} target='_blank' className={styles.copyrightLink}>© WDR {(new Date().getFullYear())}</a>
             </div>
         </div>
 };
