@@ -1,0 +1,15 @@
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import styles from '../../css/typography.css';
+
+storiesOf('Typography', module)
+    .add('default', () => (
+        <React.Fragment>
+            <h1>h1: Merriweather, 26px, font-weight 400</h1>
+            <h2>h2: Open Sans, 20px, font-weight 300</h2>
+            <h3>h3: Open Sans, 17.5px, font-weight 600</h3>
+            <p>p: Open Sans, 17.5px, font-weight 300</p>
+            <a>a: Color brand-link, text-decoration underline</a>
+            <div className={styles.quote}>class quote: Merriweather, 20px, font-weight 400</div>
+        </React.Fragment>
+    ));

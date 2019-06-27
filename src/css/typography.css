@@ -13,6 +13,8 @@ body {
 h1 {
     font-family: 'Merriweather', serif;
     font-size: var(--font-large);
+    line-height: 2.2rem;
+    letter-spacing: .05rem;
 }
 
 h2 {
