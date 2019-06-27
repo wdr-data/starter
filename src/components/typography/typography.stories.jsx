@@ -10,6 +10,6 @@ storiesOf('Typography', module)
             <h3>h3: Open Sans, 17.5px, font-weight 600</h3>
             <p>p: Open Sans, 17.5px, font-weight 300</p>
             <a>a: Color brand-link, text-decoration underline</a>
-            <div className={styles.quote}>class quote: Merriweather, 20px, font-weight 400</div>
+            <blockquote>class quote: Merriweather, 20px, font-weight 400</blockquote>
         </React.Fragment>
     ));

@@ -40,7 +40,8 @@ a {
     text-decoration: underline;
 }
 
-.quote {
+blockquote {
     font-family: 'Merriweather', serif;
     font-size: var(--font-medium);
+    margin: 0;
 }
