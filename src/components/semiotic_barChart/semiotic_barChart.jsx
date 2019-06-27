@@ -2,11 +2,12 @@ import React from 'react';
 
 import OrdinalFrame from "semiotic/lib/OrdinalFrame"
 
-const frameProps = {   data: [{ user: "Jason", tweets: 10, retweets: 5, favorites: 15 },
-    { user: "Susie", tweets: 5, retweets: 100, favorites: 100 },
-    { user: "Matt", tweets: 20, retweets: 25, favorites: 50 },
-    { user: "Betty", tweets: 30, retweets: 20, favorites: 10 }],
-  size: [200,200],
+const frameProps = {
+  data: [{ user: "Jason", tweets: 10, retweets: 5, favorites: 15 },
+  { user: "Susie", tweets: 5, retweets: 100, favorites: 100 },
+  { user: "Matt", tweets: 20, retweets: 25, favorites: 50 },
+  { user: "Betty", tweets: 30, retweets: 20, favorites: 10 }],
+  size: [200, 200],
   type: "bar",
   oAccessor: "user",
   rAccessor: "tweets",
@@ -14,16 +15,6 @@ const frameProps = {   data: [{ user: "Jason", tweets: 10, retweets: 5, favorite
   title: "Tweets",
   oLabel: true
 }
-
-frameProps = {
-    data: PropTypes.array,
-    size: PropTypes.array,
-    type: PropTypes.string,
-    oAccessor: PropTypes.string,
-    rAccessor: PropTypes.string,
-    title: PropTypes.string,
-    oLabel: PropTypes.boolian,
-};
 
 export default () => {
   return <OrdinalFrame {...frameProps} />
