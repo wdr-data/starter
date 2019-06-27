@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 
 import styles from './date.css';
 
-const DateComponent = ({ date }) => {
-
-    return <span className={styles.date}>{date}</span>
+const DateFormat = ({ date }) => {
+    return <span className={styles.date}>{date.toLocaleDateString('de-DE', {year: 'numeric', month: 'long', day: 'numeric' })}</span>
 };
 
-DateComponent.propTypes = {
-    date: PropTypes.string,
+DateFormat.propTypes = {
+    date: PropTypes.instanceOf(Date),
 };
 
-export default DateComponent;
+export default DateFormat;
