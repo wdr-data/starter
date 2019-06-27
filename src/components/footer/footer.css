@@ -16,14 +16,13 @@
     font-size: var(--font-detail);
 }
 
-.links a, .copyright a {
+.copyright-link {
+    font-size: .7rem;
+}
+
+.links a, .copyright-link {
     padding: .5rem;
 
     text-decoration: none;
     color: white;
-}
-
-.copyright {
-    padding: 1rem 0;
-    font-size: .7rem;
 }

@@ -4,18 +4,16 @@ import styles from './footer.css';
 
 const Footer = () => {
 
-    return <div className={styles.footer}>
-            <div className={styles.links}>
-                <a href={'https://www1.wdr.de/hilfe/index.html'} target='_blank'>Hilfe</a>
-                <a href={'https://www1.wdr.de/impressum/index.html'} target='_blank'>Impressum</a>
-                <a href={'https://www1.wdr.de/hilfe/datenschutz102.html'} target='_blank'>Datenschutz</a>
-                <a href={'https://www1.wdr.de/kontakt/index.html'} target='_blank'>Kontakt</a>
+    return <footer className={styles.footer}>
+            <nav className={styles.links}>
+                <a href='https://www1.wdr.de/hilfe/index.html' target='_blank'>Hilfe</a>
+                <a href='https://www1.wdr.de/impressum/index.html' target='_blank'>Impressum</a>
+                <a href='https://www1.wdr.de/hilfe/datenschutz102.html' target='_blank'>Datenschutz</a>
+                <a href='https://www1.wdr.de/kontakt/index.html' target='_blank'>Kontakt</a>
                 <a>Bildrechte</a>
-            </div>
-            <div className={styles.copyright}>
-                <a href={'https://www1.wdr.de/copyright/index.html'} target='_blank' className={styles.copyrightLink}>© WDR {(new Date().getFullYear())}</a>
-            </div>
-        </div>
+            </nav>
+            <a href='https://www1.wdr.de/copyright/index.html' target='_blank' className={styles.copyrightLink}>© WDR {(new Date().getFullYear())}</a>
+        </footer>
 };
 
 export default Footer;
