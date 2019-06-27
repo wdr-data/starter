@@ -17,6 +17,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-inlinesvg": "^0.8.4",
+    "semiotic": "^1.19.11",
     "svg-inline-loader": "^0.8.0"
   }
 }
