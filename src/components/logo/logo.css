@@ -1,11 +1,10 @@
 
 .logo {
-    width: 4rem;
+    width: 3rem;
     height: auto;
-    padding: 2rem;
-    color: var(--brand-primary);
-}
-
-.white {
+    padding: .5rem;
     color: white;
+    background-color: var(--brand-primary);
+    display: flex;
+    flex-direction: column;
 }

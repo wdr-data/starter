@@ -8,7 +8,4 @@ storiesOf('Logo', module)
     .addDecorator(NoMargin)
     .add('default', () => (
         <Logo/>
-    ))
-    .add('white', () => (
-        <Logo color='white'/>
     ));
