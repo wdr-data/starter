@@ -1,6 +1,7 @@
 import { configure, addDecorator } from '@storybook/react';
 import '../src/css/colors.css';
 import '../src/css/defaults.css';
+import '../src/css/typography.css';
 import { AtomDecorator } from './helpers.jsx';
 
 const req = require.context('../src/components', true, /\.stories\.jsx?$/);
