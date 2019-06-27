@@ -2,10 +2,19 @@ import React from "react"
 import { graphql } from "gatsby"
 import MDXRenderer from "gatsby-mdx/mdx-renderer"
 
+import Header from '../components/header/header.jsx';
+
+import '../css/defaults.css';
+import '../css/colors.css';
+import '../css/typography.css';
+
 const DefaultTemplate = ({ data: { mdx } }) => {
-    return (
-        <MDXRenderer>{mdx.code.body}</MDXRenderer>
-    )
+  return (
+    <>
+      <Header />
+      <MDXRenderer>{mdx.code.body}</MDXRenderer>
+    </>
+  )
 }
 
 export const pageQuery = graphql`
