@@ -1,0 +1,12 @@
+.background-decorator {
+    background-color: var(--storybook-background);
+    height: 100vh;
+}
+
+.atom-decorator {
+    padding: 2rem;
+}
+
+.no-margin {
+    margin: -2rem;
+}
