@@ -3,6 +3,6 @@
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    --font-default: 1.1rem;
-    --font-detail: .8rem;
+    --font-default: 17.5px;
+    --font-detail: 12px;
 }
