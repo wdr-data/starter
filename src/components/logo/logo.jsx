@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -8,18 +7,11 @@ import wdrLogo from 'svg-inline-loader!./logo_wdr.svg';
 const Logo = ({
     className,
     onClick,
-    color,
     ...props
 }) => {
 
     return <div
-        className={classNames(
-            styles.logo,
-            {
-                [styles.white]: color === 'white',
-            },
-            className,
-        )}
+        className={styles.logo}
         onClick={onClick}
         {...props}
         dangerouslySetInnerHTML={{__html: wdrLogo}}/>;
@@ -28,7 +20,6 @@ const Logo = ({
 Logo.propTypes = {
     className: PropTypes.string,
     onClick: PropTypes.func,
-    color: PropTypes.string,
 };
 
 export default Logo;
