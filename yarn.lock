@@ -12202,6 +12202,13 @@ react-color@^2.17.0:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
+react-datawrapper-chart@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-datawrapper-chart/-/react-datawrapper-chart-1.0.2.tgz#355268c99dcfdbd411944bad74787e7745cda5c1"
+  integrity sha512-H0aGEn0UedyIOUsqn4iKrdBkja2EQ/1c6qJWXQHM4tTcubRSYgLxMBER/xp4NGadtbKKrzf4S1bAqgWt6N+HLg==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-dev-utils@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-4.2.3.tgz#5b42d9ea58d5e9e017a2f57a40a8af408a3a46fb"
