@@ -9,6 +9,7 @@ import '../css/defaults.css';
 import '../css/colors.css';
 import '../css/typography.css';
 import Footer from "../components/footer/footer.jsx";
+import Breadcrumbs from "../components/breadcrumbs/breadcrumbs.jsx";
 
 const DefaultTemplate = ({ data: { mdx } }) => {
   return (
@@ -21,7 +22,12 @@ const DefaultTemplate = ({ data: { mdx } }) => {
       <article className={styles.main}>
         <MDXRenderer>{mdx.code.body}</MDXRenderer>
       </article>
-      <Footer/>
+      <Breadcrumbs>
+        <a href="https://www1.wdr.de">WDR</a>
+        <a href="/">Datajourno</a>
+        <a href="#">{mdx.frontmatter.title}</a>
+      </Breadcrumbs>
+      <Footer />
     </>
   )
 }
