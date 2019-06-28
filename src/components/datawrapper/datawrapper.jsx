@@ -2,15 +2,13 @@ import React from 'react';
 
 import DWChart from 'react-datawrapper-chart'
 
-const frameProps = ({
+  export default ({
     id,
     title,
     caption,
     aria,
     src
     ...props
-})
-
-  export default () => {
-    return <DWChart {...frameProps} />
+}) => {
+    return <DWChart />
   }
