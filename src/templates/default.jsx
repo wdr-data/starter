@@ -10,6 +10,7 @@ import '../css/colors.css';
 import '../css/typography.css';
 import Footer from "../components/footer/footer.jsx";
 import Breadcrumbs from "../components/breadcrumbs/breadcrumbs.jsx";
+import DateFormat from "../components/date/date.jsx";
 
 const DefaultTemplate = ({ data: { mdx } }) => {
   return (
@@ -20,6 +21,7 @@ const DefaultTemplate = ({ data: { mdx } }) => {
         heroCredit={mdx.frontmatter.heroCredit}
       />
       <article className={styles.main}>
+        <DateFormat date={new Date(mdx.frontmatter.pub_date)} />
         <MDXRenderer>{mdx.code.body}</MDXRenderer>
       </article>
       <Breadcrumbs>
@@ -43,6 +45,7 @@ export const pageQuery = graphql`
         }
         heroAlt
         heroCredit
+        pub_date
       }
       code {
         body

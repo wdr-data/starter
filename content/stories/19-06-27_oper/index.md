@@ -2,7 +2,7 @@
 title: Wie divers ist die Oper in NRW
 description: WDR 3 Datenanalyse der Opern-Spielzeit 2018/2019
 author: Patricia Ennenbach, Niklas Rudolph
-pub_date: 15.07.2019
+pub_date: 2019-07-15
 slug: oper-in-nrw
 heroImage: ./netrebko106__v-gseapremiumxl.jpg
 heroAlt: "Anna Netrebko verkörpert die Oper"
