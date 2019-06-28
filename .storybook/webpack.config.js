@@ -15,6 +15,10 @@ module.exports = {
             },
           ],
         },
+        {
+          test: /\.(jpg|png|gif)$/,
+          loader: require.resolve('file-loader'),
+        },
       ],
     },
   }

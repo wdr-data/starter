@@ -1,0 +1,22 @@
+.header {
+    position: relative;
+}
+
+.has-hero .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.credit {
+    padding: .2rem .5rem;
+    display: block;
+    text-align: right;
+    font-size: var(--font-detail);
+}
