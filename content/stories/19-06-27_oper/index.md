@@ -10,6 +10,8 @@ heroCredit: "Bildrechte WDR"
 
 ---
 
+import DataWrapper from '../../../src/components/datawrapper/datawrapper.jsx'
+
 # Wie divers ist die Oper in NRW?
 
 *Wir haben die Spielpläne aller 13 kommunalen Bühnen in NRW mit Opern im Programm abgefragt und analysiert. Das Ergebnis wird Sie überraschen.*
@@ -18,12 +20,11 @@ heroCredit: "Bildrechte WDR"
 Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
 
 <DataWrapper
-    id="rAI3d"
     title="Wo die Zauberflöte zu sehen war"
     caption="Die Zauberflöte wurde an 7 von 13 Opernhäusern in NRW gespielt."
-    aria="Aufführungen der Zauberflöte gab es in Köln, Düsseldorf/Duisburg, Bielefeld, Bonn, Essen, Krefeld/Mönchengladbach".
-    src = "//datawrapper.dwcdn.net/rjRUb/7/"
-    />
+    aria="Aufführungen der Zauberflöte gab es in Köln, Düsseldorf/Duisburg, Bielefeld, Bonn, Essen, Krefeld Mönchengladbach"
+    src="//datawrapper.dwcdn.net/rjRUb/7/"
+/>
 
 ![Super Operngrafik](tanken.png)
 Leverage agile frameworks to provide a robust synopsis for high level overviews.
