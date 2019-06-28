@@ -8,6 +8,7 @@ import styles from './default.module.css';
 import '../css/defaults.css';
 import '../css/colors.css';
 import '../css/typography.css';
+import Footer from "../components/footer/footer.jsx";
 
 const DefaultTemplate = ({ data: { mdx } }) => {
   return (
@@ -20,6 +21,7 @@ const DefaultTemplate = ({ data: { mdx } }) => {
       <article className={styles.main}>
         <MDXRenderer>{mdx.code.body}</MDXRenderer>
       </article>
+      <Footer/>
     </>
   )
 }

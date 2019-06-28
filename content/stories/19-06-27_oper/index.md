@@ -10,12 +10,12 @@ heroCredit: "Bildrechte WDR"
 
 ---
 
-# Wie divers ist die Oper in NRW
+# Wie divers ist die Oper in NRW?
 
-*Wir haben die Spielpläne aller 13 kommunalen Bühnen in NRW mit Opern im Programm abgefragt und analysiert. Dabei haben wir 116 Stücke dem Genre Oper zugeordnet.*
+*Wir haben die Spielpläne aller 13 kommunalen Bühnen in NRW mit Opern im Programm abgefragt und analysiert. Das Ergebnis wird Sie überraschen.*
 
 ## Zauberflöte uneinholbar vorn
-Vergleicht man, an wie vielen Häusern eine Oper aufgeführt wurde, so liegt die Zauberflöte vor Hänsel und Gretel. Die Zauberflöte hatten von 13 Häusern 2018/19 7 Opernhäuser im Programm.
+Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
 
 <!--
 <DataWrapper
@@ -26,6 +26,10 @@ Vergleicht man, an wie vielen Häusern eine Oper aufgeführt wurde, so liegt die
     />
 -->
 
-![Anna Netrebko verkörpert die Oper](netrebko106__v-gseapremiumxl.jpg)
+![Super Operngrafik](tanken.png)
+Leverage agile frameworks to provide a robust synopsis for high level overviews.
 
+## Benzinpreise bestimmen Opern-Programm
+Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
 
+Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
