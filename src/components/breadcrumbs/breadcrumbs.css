@@ -1,0 +1,14 @@
+.breadcrumbs > a {
+    color: var(--brand-font);
+    text-decoration: none;
+}
+
+.breadcrumbs > a:not(:last-child):after {
+    content: '>';
+    color: var(--brand-secondary);
+    margin: 0 .5rem;
+}
+
+.breadcrumbs > a:last-child {
+    font-weight: 600;
+}
