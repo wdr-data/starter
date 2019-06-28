@@ -4,14 +4,15 @@ description: WDR 3 Datenanalyse der Opern-Spielzeit 2018/2019
 author: Patricia Ennenbach, Niklas Rudolph
 pub_date: 15.07.2019
 slug: oper-in-nrw
+heroImage: ./netrebko106__v-gseapremiumxl.jpg
+heroAlt: "Anna Netrebko verkörpert die Oper"
+heroCredit: "Bildrechte WDR"
 
 ---
 
 # Wie divers ist die Oper in NRW
 
-![Anna Netrebko verkörpert die Oper](netrebko106__v-gseapremiumxl.jpg)
-
-*Wir haben die Spielpläne aller 13 kommunalen Bühnen in NRW mit Opern im Programm abgefragt und analysiert. Dabei haben wir 116 Stücke dem Genre Oper zugeordnet, die in der Spielzeit 2018/2019 insgesamt 1024 mal aufgeführt wurden.*
+*Wir haben die Spielpläne aller 13 kommunalen Bühnen in NRW mit Opern im Programm abgefragt und analysiert. Dabei haben wir 116 Stücke dem Genre Oper zugeordnet.*
 
 ## Zauberflöte uneinholbar vorn
 Vergleicht man, an wie vielen Häusern eine Oper aufgeführt wurde, so liegt die Zauberflöte vor Hänsel und Gretel. Die Zauberflöte hatten von 13 Häusern 2018/19 7 Opernhäuser im Programm.
@@ -24,5 +25,7 @@ Vergleicht man, an wie vielen Häusern eine Oper aufgeführt wurde, so liegt die
     aria="Aufführungen der Zauberflöte gab es in Köln, Düsseldorf/Duisburg, Bielefeld, Bonn, Essen, Krefeld/Mönchengladbach".
     />
 -->
+
+![Anna Netrebko verkörpert die Oper](netrebko106__v-gseapremiumxl.jpg)
 
 

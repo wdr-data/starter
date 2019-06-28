@@ -11,7 +11,11 @@ import '../css/typography.css';
 const DefaultTemplate = ({ data: { mdx } }) => {
   return (
     <>
-      <Header />
+      <Header
+        heroImage={mdx.frontmatter.heroImage.publicURL}
+        heroAlt={mdx.frontmatter.heroAlt}
+        heroCredit={mdx.frontmatter.heroCredit}
+      />
       <MDXRenderer>{mdx.code.body}</MDXRenderer>
     </>
   )
@@ -19,10 +23,15 @@ const DefaultTemplate = ({ data: { mdx } }) => {
 
 export const pageQuery = graphql`
   query DefaultQuery($id: String) {
-    mdx(id: { eq: $id }) {
+    mdx(id: {eq: $id}) {
       id
       frontmatter {
         title
+        heroImage {
+          publicURL
+        }
+        heroAlt
+        heroCredit
       }
       code {
         body
