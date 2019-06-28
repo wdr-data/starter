@@ -4,6 +4,7 @@ import MDXRenderer from "gatsby-mdx/mdx-renderer"
 
 import Header from '../components/header/header.jsx';
 
+import styles from './default.module.css';
 import '../css/defaults.css';
 import '../css/colors.css';
 import '../css/typography.css';
@@ -16,7 +17,9 @@ const DefaultTemplate = ({ data: { mdx } }) => {
         heroAlt={mdx.frontmatter.heroAlt}
         heroCredit={mdx.frontmatter.heroCredit}
       />
-      <MDXRenderer>{mdx.code.body}</MDXRenderer>
+      <article className={styles.main}>
+        <MDXRenderer>{mdx.code.body}</MDXRenderer>
+      </article>
     </>
   )
 }
