@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import styles from '../../css/typography.css';
 
-storiesOf('Typography', module)
+storiesOf('Styleguide / Typography', module)
     .add('default', () => (
         <React.Fragment>
             <h1>h1: Merriweather, 26px, font-weight 400</h1>
