@@ -4,8 +4,13 @@
 }
 
 .breadcrumbs > a:not(:last-child):after {
-    content: '>';
-    color: var(--brand-secondary);
+    content: '';
+    background-image: url('./arrow.dataurl.svg');
+    background-size: cover;
+
+    display: inline-block;
+    width: .8em;
+    height: .8em;
     margin: 0 .5rem;
 }
 
