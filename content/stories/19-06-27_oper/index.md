@@ -14,7 +14,7 @@ import DataWrapper from '../../../src/components/datawrapper/datawrapper.jsx'
 
 # Wie divers ist die Oper in NRW?
 
-*Wir haben die Spielpläne aller 13 kommunalen Bühnen in NRW mit Opern im Programm abgefragt und analysiert. Das Ergebnis wird Sie überraschen.*
+Wir haben die Spielpläne aller 13 kommunalen Bühnen in NRW mit Opern im Programm abgefragt und analysiert. Das Ergebnis wird Sie überraschen.
 
 ## Zauberflöte uneinholbar vorn
 Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
