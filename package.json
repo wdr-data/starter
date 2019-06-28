@@ -6,7 +6,7 @@
   "author": "Christine <christine.gotth@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "yarn build-storybook ",
+    "build": "run-p -n --aggregate-output build-gatsby build-storybook",
     "build-storybook": "build-storybook -c .storybook -o public/components --quiet",
     "build-gatsby": "gatsby build",
     "storybook": "start-storybook",
