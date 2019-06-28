@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './breadcrumbs.css';
+import styles from './breadcrumbs.module.css';
 
 const Breadcrumbs = ({ children }) => {
 
