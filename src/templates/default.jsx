@@ -26,7 +26,7 @@ const DefaultTemplate = ({ data: { mdx } }) => {
       </article>
       <Breadcrumbs>
         <a href="https://www1.wdr.de">WDR</a>
-        <a href="/">Datajourno</a>
+        <a href="/">Data</a>
         <a href="#">{mdx.frontmatter.title}</a>
       </Breadcrumbs>
       <Footer />
