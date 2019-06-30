@@ -28,10 +28,18 @@ Iterative approaches to corporate strategy foster collaborative thinking to furt
 
 Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
 
-![Super Operngrafik](tanken.png)
-Leverage agile frameworks to provide a robust synopsis for high level overviews.
+### Ältere KomponistInnen werden öfter aufgeführt
+<DataWrapper
+    title="Ältere KomponistInnen werden öfter aufgeführt"
+    caption="Für noch lebende KomponistInnen gibt es häufig für ein Stück nur eine Aufführung. Spitzenreiter dagegen ist Guiseppe Verdi, der heute 206 Jahre alt wäre, mit 13 Opern und 143 Aufführungen."
+    aria=""
+    src="//datawrapper.dwcdn.net/48hJE/5/"
+/>
 
 ## Benzinpreise bestimmen Opern-Programm
 Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
 
 Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+
+![Super Operngrafik](tanken.png)
+Leverage agile frameworks to provide a robust synopsis for high level overviews.
