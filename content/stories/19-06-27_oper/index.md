@@ -21,7 +21,7 @@ Wenn man sich anguckt, welche Stücke an den meisten Häusern aufgeführt wurden
 
 ### Die Zauberflöte wurde an 7 von 13 Häusern aufgeführt
 
-#### Die gelben Punkte zeigen, wo die Zauberflöte zu sehen war. Klicken Sie einen Punkt an, um den Namen des Hauses und die Anzahl der Aufführungen zu sehen.
+<p className="caption">Die gelben Punkte zeigen, wo die Zauberflöte zu sehen war. Klicken Sie einen Punkt an, um den Namen des Hauses und die Anzahl der Aufführungen zu sehen.</p>
 
 <DataWrapper
     aria-label="Aufführungen der Zauberflöte gab es in Köln (21 Aufführungen), Düsseldorf/Duisburg(15 Aufführungen), Bielefeld, Bonn, Essen, Krefeld Mönchengladbach"
