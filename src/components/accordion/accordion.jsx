@@ -13,45 +13,29 @@ import styles from './accordion.module.css';
 
 const Accordion = ({ authors, sources, credits }) => {
     return (
-        <AccordionWrapper allowZeroExpanded='true' className={styles.accordionWrapper}>
-            {authors && <AccordionItem className={styles.accordionItem}>
-                <AccordionItemHeading className={styles.accordionHeading}>
-                    <AccordionItemButton className={styles.accordionButton}>
-                        <h3>Author*innen</h3>
-                    </AccordionItemButton>
-                </AccordionItemHeading>
-                <AccordionItemPanel className={styles.accordionPanel}>
-                    {authors}
-                </AccordionItemPanel>
-            </AccordionItem>}
-            {sources && <AccordionItem className={styles.accordionItem}>
-                <AccordionItemHeading className={styles.accordionHeading}>
-                    <AccordionItemButton className={styles.accordionButton}>
-                        <h3>Quellen</h3>
-                    </AccordionItemButton>
-                </AccordionItemHeading>
-                <AccordionItemPanel className={styles.accordionPanel}>
-                    {sources}
-                </AccordionItemPanel>
-            </AccordionItem>}
-            {credits && <AccordionItem className={styles.accordionItem}>
-                <AccordionItemHeading className={styles.accordionHeading}>
-                    <AccordionItemButton className={styles.accordionButton}>
-                        <h3>Credits</h3>
-                    </AccordionItemButton>
-                </AccordionItemHeading>
-                <AccordionItemPanel className={styles.accordionPanel}>
-                    {credits}
-                </AccordionItemPanel>
-            </AccordionItem>}
+        <AccordionWrapper allowZeroExpanded>
+            {[["Autor*innen", authors], ["Quellen", sources], ["Credits", credits]].map(([title, content]) => content && (
+                <AccordionItem className={styles.item}>
+                    <AccordionItemHeading className={styles.heading}>
+                        <AccordionItemButton className={styles.button}>
+                            <h3>{title}</h3>
+                        </AccordionItemButton>
+                    </AccordionItemHeading>
+                    <AccordionItemPanel className={styles.panel}>
+                        {content}
+                    </AccordionItemPanel>
+                </AccordionItem>
+            ))}
         </AccordionWrapper>
     );
 }
 
+const nodePropType = PropTypes.oneOfType(PropTypes.node, PropTypes.arrayOf(PropTypes.node));
+
 Accordion.propTypes = {
-    authors: PropTypes.oneOfType(PropTypes.node, PropTypes.arrayOf(PropTypes.node)),
-    sources: PropTypes.oneOfType(PropTypes.node, PropTypes.arrayOf(PropTypes.node)),
-    credits: PropTypes.oneOfType(PropTypes.node, PropTypes.arrayOf(PropTypes.node)),
+    authors: nodePropType,
+    sources: nodePropType,
+    credits: nodePropType,
 };
 
 export default Accordion;
