@@ -29,7 +29,7 @@ h3 {
     font-size: var(--font-default);
 }
 
-h4 {
+.caption {
     font-size: var(--font-detail);
     font-weight: 300;
 }
