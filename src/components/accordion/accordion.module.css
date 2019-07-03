@@ -1,0 +1,58 @@
+.heading {
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.item:last-child > .heading {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.item:first-child > .panel, .item:nth-child(2) > .panel  {
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.button {
+    color: #444;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.button > h3:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.button[aria-expanded='true'] > h3:before,
+.button[aria-selected='true'] > h3:before {
+    transform: rotate(45deg);
+}
+
+.panel {
+    padding: 2rem 0;
+    animation: fadein 0.35s ease-in;
+}
+
+.panel > p, .panel > a {
+    margin: 0;
+}
+
+/* -------------------------------------------------- */
+/* ---------------- Animation part ------------------ */
+/* -------------------------------------------------- */
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
