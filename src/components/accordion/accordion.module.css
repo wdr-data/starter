@@ -1,3 +1,7 @@
+.wrapper {
+    margin-top: 1rem;
+}
+
 .heading {
     border-top: 2px solid rgba(0, 0, 0, 0.1);
 }
