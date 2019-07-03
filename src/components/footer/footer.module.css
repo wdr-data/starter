@@ -13,11 +13,11 @@
     flex-direction: column;
     align-items: center;
     padding: .5rem;
-    font-size: var(--font-detail);
+    font-size: var(--font-medium);
 }
 
 .copyright-link {
-    font-size: 10px;
+    font-size: var(--font-detail);
 }
 
 .links a, .copyright-link {
