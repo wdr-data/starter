@@ -1,0 +1,14 @@
+.quote-wrapper {
+    padding: 4rem 2rem;
+    background-color: var(--brand-primary);
+    color: white;
+}
+
+.quote {
+    margin-bottom: 1.5rem;
+}
+
+.quote-author {
+    font-size: var(--font-detail);
+    margin: 0;
+}
