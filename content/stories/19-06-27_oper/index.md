@@ -11,6 +11,7 @@ heroCredit: "Dummy-Bild, keine Bildrechte WDR"
 ---
 
 import DataWrapper from '../../../src/components/datawrapper/datawrapper.jsx'
+import Accordion from '../../../src/components/accordion/accordion.jsx'
 
 # Opernspielpläne in NRW: tot und männlich
 
@@ -85,3 +86,7 @@ Die Opern begründen ihre konservativen Spielpläne mit dem politischen Druck, d
 Platzhalter-Zitat: Intendant Oper Wuppertal
 
 Komponistin Nunez Herero fordert daher eine Quote für Frauen auf den Spielplänen.
+
+<Accordion
+    authors={[<a href="https://twitter.com/pen1710" target="_blank" rel="noopener">Patricia Ennenbach</a>]}
+/>
