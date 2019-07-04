@@ -10,7 +10,7 @@ const Logo = ({
         ...props,
     }) => {
     return <a href={'https://www1.wdr.de/index.html'} target='_blank' rel='noopener' title='zur WDR Startseite' aria-label='zur WDR Startseite'>
-        <div
+        <span
             className={classNames(styles.logo, className)}
             dangerouslySetInnerHTML={{__html: wdrLogo}}
             {...props}
