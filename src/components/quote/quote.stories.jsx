@@ -7,5 +7,5 @@ import Quote from './quote.jsx';
 storiesOf('Quote', module)
     .addDecorator(NoMargin)
     .add('default', () => (
-    <Quote quote='"To quote or not to quote. That is the question."' quoteAuthor='- Anonymus'/>
+    <Quote children='"To quote or not to quote. That is the question."' author='- Anonymus'/>
 ));

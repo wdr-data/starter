@@ -4,23 +4,21 @@ import PropTypes from 'prop-types';
 import styles from './quote.module.css';
 
 const Quote = ({
-    quote,
-    quoteAuthor,
+    children,
+    author,
   }) => {
     return (
-        <div className={styles.quoteWrapper}>
-            <blockquote className={styles.quote}>
-                {quote}
-            </blockquote>
-            <p className={styles.quoteAuthor}>
-                {quoteAuthor}
+        <blockquote className={styles.quote}>
+            {children}
+            <p className={styles.author}>
+                {author}
             </p>
-        </div>
+        </blockquote>
     )
 };
 
 Quote.propTypes = {
-    quote: PropTypes.string,
+    children: PropTypes.string,
     quoteAuthor: PropTypes.string,
 };
 
