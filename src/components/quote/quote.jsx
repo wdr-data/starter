@@ -19,7 +19,7 @@ const Quote = ({
 
 Quote.propTypes = {
     children: PropTypes.string,
-    quoteAuthor: PropTypes.string,
+    author: PropTypes.string,
 };
 
 export default Quote;
