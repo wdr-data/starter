@@ -1,0 +1,25 @@
+.wrapper {
+    padding: 4rem 2rem;
+    background-color: var(--brand-primary);
+    color: white;
+}
+
+.quote {
+    font-family: 'Merriweather';
+    font-size: var(--font-medium);
+}
+
+.quote::before, .quote::after {
+    content: '"';
+}
+
+.author {
+    font-family: 'Open Sans';
+    font-size: var(--font-detail);
+    font-style: normal;
+    margin: 1.5rem 0 0 0;
+}
+
+.author::before {
+    content: '- ';
+}
