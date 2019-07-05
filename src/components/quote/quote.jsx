@@ -9,10 +9,10 @@ const Quote = ({
   }) => {
     return (
         <blockquote className={styles.wrapper}>
-            <span className={styles.quote}>{children}</span>
-            <p className={styles.author}>
+            <p className={styles.quote}>{children}</p>
+            <cite className={styles.author}>
                 {author}
-            </p>
+            </cite>
         </blockquote>
     )
 };
