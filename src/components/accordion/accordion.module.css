@@ -22,7 +22,7 @@
     border: none;
 }
 
-.button > h3:before {
+.button > h4:before {
     display: inline-block;
     content: '';
     height: 10px;
@@ -33,8 +33,8 @@
     transform: rotate(-45deg);
 }
 
-.button[aria-expanded='true'] > h3:before,
-.button[aria-selected='true'] > h3:before {
+.button[aria-expanded='true'] > h4:before,
+.button[aria-selected='true'] > h4:before {
     transform: rotate(45deg);
 }
 
@@ -47,7 +47,7 @@
     margin: 0;
 }
 
-.panel > h3:first-of-type {
+.panel > h4:first-of-type {
     margin-top: 0;
 }
 

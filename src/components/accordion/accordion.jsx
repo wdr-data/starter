@@ -18,7 +18,7 @@ const Accordion = ({ authors, sources, credits }) => {
                 <AccordionItem className={styles.item}>
                     <AccordionItemHeading className={styles.heading}>
                         <AccordionItemButton className={styles.button}>
-                            <h3>{title}</h3>
+                            <h4>{title}</h4>
                         </AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel className={styles.panel}>
