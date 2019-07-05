@@ -4,12 +4,13 @@ import Accordion from './accordion.jsx';
 
 storiesOf('Accordion', module)
     .add('default', () => (
-        <Accordion authors={
-            <p>Penny<br/>Chrissi<br/>Marcus<br/>Christine</p>
+        <Accordion authors={[<a href="https://twitter.com/pen1710" target="_blank" rel="noopener">Patricia Ennenbach</a>]
         } sources={
             <React.Fragment>
-                <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a><br/>
-                <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a><br/>
+                <h3>Extern</h3>
+                <p>Berechnung der Daten: <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a></p>
+                <p>Analyse: <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a></p>
+                <h3>Intern</h3>
                 <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a><br/>
                 <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a>
             </React.Fragment>
