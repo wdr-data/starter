@@ -6,7 +6,7 @@
 
 .quote {
     font-family: 'Merriweather';
-    font-size: var(--font-medium);
+    font-size: var(--font-large);
 }
 
 .quote::before, .quote::after {
