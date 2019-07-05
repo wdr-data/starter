@@ -7,19 +7,28 @@ import wdrLogo from '!svg-inline-loader!./logo_wdr.svg';
 
 const Logo = ({
         className,
+        href,
+        title,
         ...props,
     }) => {
-    return <a href={'https://www1.wdr.de/index.html'} target='_blank' rel='noopener' title='zur WDR Startseite' aria-label='zur WDR Startseite'>
+    return <a
+            href={href || 'https://www1.wdr.de/index.html'}
+            title={title || 'zur WDR Startseite'}
+            target='_blank'
+            rel='noopener'
+            {...props}
+        >
         <span
             className={classNames(styles.logo, className)}
             dangerouslySetInnerHTML={{__html: wdrLogo}}
-            {...props}
         />
     </a>;
 };
 
 Logo.propTypes = {
     className: PropTypes.string,
+    href: PropTypes.string,
+    title: PropTypes.string,
 };
 
 export default Logo;
