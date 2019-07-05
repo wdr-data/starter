@@ -8,8 +8,8 @@ const Quote = ({
     author,
   }) => {
     return (
-        <blockquote className={styles.quote}>
-            {children}
+        <blockquote className={styles.wrapper}>
+            <span className={styles.quote}>{children}</span>
             <p className={styles.author}>
                 {author}
             </p>
