@@ -20,6 +20,10 @@
     margin: 1.5rem 0 0 0;
 }
 
+.author a {
+    color: white;
+}
+
 .author::before {
     content: '- ';
 }
