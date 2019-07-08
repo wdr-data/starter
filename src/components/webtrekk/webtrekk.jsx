@@ -31,7 +31,10 @@ const Webtrekk = ({ cg1, cg2, cg3, cg4, cg5, publishedAt }) => {
 
     const URL = `https://wdr01.wt-eu02.net/${id}/wt?${searchParams.toString()}`
 
-    return <img style={{ display: "none" }} src={URL} />
+    return <React.Fragment>
+        <img style={{ display: "none" }} src={URL} />
+        <img style={{ display: "none" }} src="https://de.ioam.de/tx.io?st=wdr&cp=Seite%2FStationaer&pt=CP&ps=lin&er=N22&rf=&r2=&ur=www1.wdr.de&xy=1920x1200x24&lo=DE%2FNordrhein-Westfalen&cb=0011&i2=0011dc7531cf30e8b5b8fbf30&ep=1566132994&vr=409&id=fbydv&lt=1536150091699&ev=&cs=dfnhd1&mo=1" />
+    </React.Fragment>
 }
 
 export default Webtrekk;
