@@ -4,7 +4,7 @@ description: WDR 3 Datenanalyse der Opern-Spielzeit 2018/2019
 author: Niklas Rudolph, Patricia Ennenbach
 pub_date: 2019,7,15
 slug: oper-in-nrw
-heroImage: ./Salzburger-Festspiele-Zauberfloete-Fotoprobe-2.jpg
+heroImage: ./netrebko106__v-gseapremiumxl.jpg
 heroAlt: "Dummy-Bild"
 heroCredit: "Dummy-Bild, keine Bildrechte WDR"
 
