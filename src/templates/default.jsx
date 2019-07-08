@@ -1,13 +1,13 @@
-import React from "react"
-import { graphql } from "gatsby"
-import MDXRenderer from "gatsby-mdx/mdx-renderer"
+import React from "react";
+import { graphql } from "gatsby";
+import MDXRenderer from "gatsby-mdx/mdx-renderer";
 
-import Header from '../components/header/header.jsx';
+import Header from "../components/header/header.jsx";
 
-import styles from './default.module.css';
-import '../css/defaults.css';
-import '../css/colors.css';
-import '../css/typography.css';
+import styles from "./default.module.css";
+import "../css/defaults.css";
+import "../css/colors.css";
+import "../css/typography.css";
 import Footer from "../components/footer/footer.jsx";
 import Breadcrumbs from "../components/breadcrumbs/breadcrumbs.jsx";
 import DateFormat from "../components/date/date.jsx";
@@ -24,6 +24,11 @@ const DefaultTemplate = ({ data: { mdx } }) => {
           />
         </div>
         <div className={styles.layout}>
+          <Breadcrumbs>
+            <a href="https://www1.wdr.de">WDR</a>
+            <a href="/">Data</a>
+            <a href="#">{mdx.frontmatter.title}</a>
+          </Breadcrumbs>
           <article className={styles.main}>
             <DateFormat date={new Date(mdx.frontmatter.pub_date)} />
             <MDXRenderer>{mdx.code.body}</MDXRenderer>
@@ -36,13 +41,13 @@ const DefaultTemplate = ({ data: { mdx } }) => {
         </div>
       </div>
       <Footer />
-  </>
-  )
-}
+    </>
+  );
+};
 
 export const pageQuery = graphql`
   query DefaultQuery($id: String) {
-    mdx(id: {eq: $id}) {
+    mdx(id: { eq: $id }) {
       id
       frontmatter {
         title
@@ -58,5 +63,5 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 export default DefaultTemplate;

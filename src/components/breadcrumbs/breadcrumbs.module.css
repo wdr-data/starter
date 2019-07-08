@@ -1,24 +1,30 @@
 .breadcrumbs {
-    padding: 1.5rem 1rem 2rem;
-    line-height: 1.8;
+  padding: 1rem;
+  line-height: 1.8;
 }
 
 .breadcrumbs > a {
-    color: var(--brand-font);
-    text-decoration: none;
+  color: var(--brand-font);
+  text-decoration: none;
 }
 
 .breadcrumbs > a:not(:last-child):after {
-    content: '';
-    background-image: url('./arrow.dataurl.svg');
-    background-size: cover;
+  content: "";
+  background-image: url("./arrow.dataurl.svg");
+  background-size: cover;
 
-    display: inline-block;
-    width: .8em;
-    height: .8em;
-    margin: 0 .5rem;
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin: 0 0.5rem;
 }
 
 .breadcrumbs > a:last-child {
-    font-weight: 600;
+  font-weight: 600;
+}
+
+@media (max-width: 800px) {
+  .breadcrumbs {
+    display: none;
+  }
 }
