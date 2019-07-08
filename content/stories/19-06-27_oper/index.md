@@ -7,7 +7,6 @@ slug: oper-in-nrw
 heroImage: ./netrebko106__v-gseapremiumxl.jpg
 heroAlt: "Dummy-Bild"
 heroCredit: "Dummy-Bild, keine Bildrechte WDR"
-
 ---
 
 import DataWrapper from '../../../src/components/datawrapper/datawrapper.jsx'
@@ -21,12 +20,15 @@ import Quote from '../../../src/components/quote/quote.jsx'
 Vorweg: Wir jammern auf hohem Niveau. Denn alles in allem steht es gut um die Oper in NRW. In der letzten Spielzeit gab es an 13 kommunalen Häusern über hundert Inszenierungen mit mehr als tausend Aufführungen.
 
 ## 3 Opern am Tag in NRW
+
 In anderen Worten: Opernfreunde hatten im Schnitt jeden Tag die Wahl zwischen rund drei Opernaufführungen.
 
 ## Im Schnitt 180 Jahre alt
+
 So vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot aber keinesfalls. Denn meistens begegnet das Publikum alten Bekannten.
 
 ### Ältere werden häufiger aufgeführt
+
 <p className="caption"> Zu sehen ist das Geburtsjahr im Verhältnis zur Zahl der Aufführungen. Gelbe Quadrate stehen für lebende KomponistInnen, blaue Punkte für verstorbene. Klicken Sie darauf, um Name, Geburtsjahr und Zahl der Aufführungen zu sehen.</p>
 
 <DataWrapper
@@ -38,12 +40,13 @@ So vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot aber
 Claudio Monteverdi war mit 425 Jahren der älteste gespielte Komponist 2018/19. Leonard Evers mit 34 der jüngste. Der Komponist Moritz Eggert wirft den deutschen Opernhäusern mangelnde Innovationskraft vor.
 
 <Quote author={
-        <a href="https://blogs.nmz.de/badblog/2018/04/10/die-ernuechternde-opernstatistik-der-spielzeit-2017-2018/" target="_blank" rel="noopener">Moritz Eggert</a>
-    }>Überlebenschance der Gattung Oper, wenn sich nicht grundlegend etwas ändert: 0%</Quote>
+<a href="https://blogs.nmz.de/badblog/2018/04/10/die-ernuechternde-opernstatistik-der-spielzeit-2017-2018/" target="_blank" rel="noopener">Moritz Eggert</a>
+}>Überlebenschance der Gattung Oper, wenn sich nicht grundlegend etwas ändert: 0%</Quote>
 
 Ist die Opernwelt im 19. Jahrhundert stehen geblieben? Immerhin jede dritte der gespielten KomponistInnen ist nach 1919 geboren. Betrachtet man aber die Gesamtzahl aller Aufführungen, so sinkt das Verhältnis deutlich.
 
 ### Jede dritte KomponistIn wurde vor 1919 geboren, aber nur 12 % der Aufführungen stammen von ihnen
+
 <p className="caption"> Bei Klick auf 'KomponistInnen' ist zu sehen, wie das Verhältnis von älteren zu jüngeren KomponistInnen ist.</p>
 
 <DataWrapper
@@ -55,6 +58,7 @@ Ist die Opernwelt im 19. Jahrhundert stehen geblieben? Immerhin jede dritte der 
 Bei den lebenden Komponisten sind es vor allem Premieren von Uraufführungen, die aber nach wenigen Aufführungen wieder vom Spielplan verschwinden. Ein Verhältnis sticht außerdem sehr ins Auge:
 
 ### Nuria Núñez Hierro ist die einzige Frau
+
 <p className="caption">Hierros Kinderoper “Kleines Stück Himmel” wurde in Wuppertal acht mal aufgeführt.</p>
 
 <DataWrapper
@@ -64,7 +68,9 @@ Bei den lebenden Komponisten sind es vor allem Premieren von Uraufführungen, di
 />
 
 Nuria Núñez Hierro wurde 1980 in Jerez (Spanien) geboren.
+
 ![Porträt Nuria Núñez Hierro](3f97a-Nunez-Hierro-Nuria-Portr--tfoto--Copy-.png)
+
 Komponistin Nunez Herero fordert daher eine Quote für Frauen auf den Spielplänen.
 
 <Quote author="Platzhalter Nura Nunez Hierro">Es gibt so viele gute Komponistinnen. Dass noch immer keine gespielt werden, ist ein Skandal!</Quote>
@@ -72,6 +78,7 @@ Komponistin Nunez Herero fordert daher eine Quote für Frauen auf den Spielplän
 Beim Blick auf die Herkunft der KomponistInnen liegt das Zentrum weiterhin klar in Europa.
 
 ### Europa im Zentrum
+
 <p className="caption">Die meisten KomponistInnen sind in Europa geboren, einige stammen jedoch aus der ganzen Welt.</p>
 
 <DataWrapper
@@ -95,6 +102,7 @@ Die Opern begründen ihre konservativen Spielpläne mit dem politischen Druck, d
 Und so bieten die Spielpläne ein gewohntes Bild. Zum Abschluss zeigen wir alle Opern der NRW-Spielzeit in einer Grafik, sortiert nach Anzahl der Aufführungen.
 
 ### Zauberflöte vor Hänsel und Gretel
+
 <p className="caption">Wurde das Stück auch 'für Kinder' angeboten, haben wir es hier mit zusammen gefasst. Klicken sie auf einen Punkt, um die Anzahl der Aufführungen einzublenden. Kennen Sie die Opern? Haben sie die Melodien im Ohr?</p>
 
 <DataWrapper
