@@ -1,22 +1,33 @@
 .header {
-    position: relative;
+  position: relative;
 }
 
 .has-hero .logo {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .hero {
-    display: block;
-    width: 100%;
-    height: auto;
+  display: block;
+  width: 100vw;
+  height: auto;
 }
 
 .credit {
-    padding: .2rem .5rem;
-    display: block;
-    text-align: right;
-    font-size: var(--font-detail);
+  padding: 0.2rem 0.5rem;
+  display: block;
+  text-align: right;
+  font-size: var(--font-detail);
+}
+
+@media (min-width: 800px) {
+  .has-hero .logo {
+    position: static;
+    margin: 1rem 0;
+  }
+
+  .hero {
+    width: 800px;
+  }
 }
