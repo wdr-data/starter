@@ -1,3 +1,26 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-image {
+    min-width: 70%;
+    max-width: 100%;
+    margin-top: 3rem;
+}
+
+.layout {
+    max-width: 800px;
+}
+
 .main {
     padding: var(--padding-content, 1rem);
+}
+
+hr {
+    margin: 2rem 0;
+    height: 2px;
+    background-color: var(--brand-secondary);
+    border: none;
 }

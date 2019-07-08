@@ -15,22 +15,28 @@ import DateFormat from "../components/date/date.jsx";
 const DefaultTemplate = ({ data: { mdx } }) => {
   return (
     <>
-      <Header
-        heroImage={mdx.frontmatter.heroImage.publicURL}
-        heroAlt={mdx.frontmatter.heroAlt}
-        heroCredit={mdx.frontmatter.heroCredit}
-      />
-      <article className={styles.main}>
-        <DateFormat date={new Date(mdx.frontmatter.pub_date)} />
-        <MDXRenderer>{mdx.code.body}</MDXRenderer>
-      </article>
-      <Breadcrumbs>
-        <a href="https://www1.wdr.de">WDR</a>
-        <a href="/">Data</a>
-        <a href="#">{mdx.frontmatter.title}</a>
-      </Breadcrumbs>
+      <div className={styles.wrapper}>
+        <div className={styles.heroImage}>
+          <Header
+            heroImage={mdx.frontmatter.heroImage.publicURL}
+            heroAlt={mdx.frontmatter.heroAlt}
+            heroCredit={mdx.frontmatter.heroCredit}
+          />
+        </div>
+        <div className={styles.layout}>
+          <article className={styles.main}>
+            <DateFormat date={new Date(mdx.frontmatter.pub_date)} />
+            <MDXRenderer>{mdx.code.body}</MDXRenderer>
+          </article>
+          <Breadcrumbs>
+            <a href="https://www1.wdr.de">WDR</a>
+            <a href="/">Data</a>
+            <a href="#">{mdx.frontmatter.title}</a>
+          </Breadcrumbs>
+        </div>
+      </div>
       <Footer />
-    </>
+  </>
   )
 }
 
