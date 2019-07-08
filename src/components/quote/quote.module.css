@@ -1,29 +1,46 @@
 .wrapper {
-    padding: 4rem 2rem;
-    background-color: var(--brand-primary);
-    color: white;
+  padding: 4rem 2rem;
+  margin: 0 -1rem;
+  background-color: var(--brand-primary);
+  color: white;
 }
 
 .quote {
-    font-family: 'Merriweather';
-    font-size: var(--font-large);
+  font-family: "Merriweather";
+  font-size: var(--font-large);
 }
 
-.quote::before, .quote::after {
-    content: '"';
+.quote::before,
+.quote::after {
+  content: '"';
 }
 
 .author {
-    font-family: 'Open Sans';
-    font-size: var(--font-detail);
-    font-style: normal;
-    margin: 1.5rem 0 0 0;
+  font-family: "Open Sans";
+  font-size: var(--font-default);
+  font-style: normal;
+  margin: 1.5rem 0 0 0;
 }
 
 .author a {
-    color: white;
+  color: white;
 }
 
 .author::before {
-    content: '- ';
+  content: "- ";
+}
+
+@media (min-width: 800px) {
+  .wrapper {
+    margin: 3rem 0;
+    padding: 0 3rem;
+    background-color: transparent;
+    color: var(--brand-primary);
+    border-left: 5px solid var(--brand-secondary);
+  }
+
+  .author,
+  .author a {
+    color: var(--brand-font);
+  }
 }
