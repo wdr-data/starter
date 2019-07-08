@@ -10,8 +10,8 @@ heroCredit: "Dummy-Bild, keine Bildrechte WDR"
 ---
 
 import DataWrapper from '../../../src/components/datawrapper/datawrapper.jsx'
-import Accordion from '../../../src/components/accordion/accordion.jsx'
 import Quote from '../../../src/components/quote/quote.jsx'
+import Accordion from '../../../src/components/accordion/accordion.jsx'
 
 # Opernspielpläne in NRW: tot und männlich
 
@@ -32,12 +32,12 @@ So vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot aber
 <p className="caption"> Zu sehen ist das Geburtsjahr im Verhältnis zur Zahl der Aufführungen. Gelbe Quadrate stehen für lebende KomponistInnen, blaue Punkte für verstorbene. Klicken Sie darauf, um Name, Geburtsjahr und Zahl der Aufführungen zu sehen.</p>
 
 <DataWrapper
-    aria-label="Während lebende KomponistInnen oft nur 1-2 mal aufgeführt werden, werden Komponisten, die über 150 Jahre alt sind besonders häufig aufgeführt. Spitzenreiter sind Guiseppe Verdi und Wolfgang Amadeus Mozart."
+    aria-label="Während lebende KomponistInnen oft nur 1-8 mal aufgeführt werden, werden Komponisten, die über 150 Jahre alt sind besonders häufig aufgeführt. Spitzenreiter sind Guiseppe Verdi und Wolfgang Amadeus Mozart."
     title="Ältere KomponistInnen werden häufiger aufgeführt"
     src="//datawrapper.dwcdn.net/48hJE/10/"
 />
 
-Claudio Monteverdi war mit 425 Jahren der älteste gespielte Komponist 2018/19. Leonard Evers mit 34 der jüngste. Der Komponist Moritz Eggert wirft den deutschen Opernhäusern mangelnde Innovationskraft vor.
+Claudio Monteverdi war mit 425 Jahren der älteste gespielte Komponist 2018/19. Leonard Evers mit 34 der jüngste. Von Giuseppe Verdi sind 2018/2019 gleich 13 Opern in NRW inszeniert worden. Bei Leonard Bernstein und Jacques Offenbach ist auch der Jubiläumsjahr-Faktor bemerkbar. Der Komponist Moritz Eggert wirft den deutschen Opernhäusern mangelnde Innovationskraft vor.
 
 <Quote author={
 <a href="https://blogs.nmz.de/badblog/2018/04/10/die-ernuechternde-opernstatistik-der-spielzeit-2017-2018/" target="_blank" rel="noopener">Moritz Eggert</a>
@@ -110,3 +110,21 @@ Und so bieten die Spielpläne ein gewohntes Bild. Zum Abschluss zeigen wir alle 
     title="Zauberflöte vor Hänsel und Gretel"
     src="//datawrapper.dwcdn.net/azwpu/4/"
 />
+
+<Accordion authors={
+    <ul>
+    <li><a href="https://twitter.com/TheOrganicer" target="_blank" rel="noopener">Niklas Rudolph</a></li>
+    <li><a href="https://twitter.com/pen1710" target="_blank" rel="noopener">Patricia Ennenbach</a></li>
+    </ul>
+        } sources={
+            <React.Fragment>
+                <h3>Extern</h3>
+                <p>Berechnung der Daten: <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a></p>
+                <p>Analyse: <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a></p>
+                <h3>Intern</h3>
+                <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a><br/>
+                <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a>
+            </React.Fragment>
+        } credits={
+            <p>Unsplash: @mak_ip <a href='https://unsplash.com/photos/BfEnygJ9WQA'>hier</a></p>
+        }/>
