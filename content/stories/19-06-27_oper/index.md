@@ -40,7 +40,7 @@ So vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot aber
 Claudio Monteverdi war mit 425 Jahren der älteste gespielte Komponist 2018/19. Leonard Evers mit 34 der jüngste. Von Giuseppe Verdi sind 2018/2019 gleich 13 Opern in NRW inszeniert worden. Bei Leonard Bernstein und Jacques Offenbach ist auch der Jubiläumsjahr-Faktor bemerkbar. Der Komponist Moritz Eggert wirft den deutschen Opernhäusern mangelnde Innovationskraft vor.
 
 <Quote author={
-<a href="https://blogs.nmz.de/badblog/2018/04/10/die-ernuechternde-opernstatistik-der-spielzeit-2017-2018/" target="_blank" rel="noopener">Moritz Eggert</a>
+<a href="https://blogs.nmz.de/badblog/2018/04/10/die-ernuechternde-opernstatistik-der-spielzeit-2017-2018/" target="_blank" rel="noopener noreferrer">Moritz Eggert</a>
 }>Überlebenschance der Gattung Oper, wenn sich nicht grundlegend etwas ändert: 0%</Quote>
 
 Ist die Opernwelt im 19. Jahrhundert stehen geblieben? Immerhin jede dritte der gespielten KomponistInnen ist nach 1919 geboren. Betrachtet man aber die Gesamtzahl aller Aufführungen, so sinkt das Verhältnis deutlich.
@@ -113,8 +113,8 @@ Und so bieten die Spielpläne ein gewohntes Bild. Zum Abschluss zeigen wir alle 
 
 <Accordion authors={
     <ul>
-    <li><a href="https://twitter.com/TheOrganicer" target="_blank" rel="noopener">Niklas Rudolph</a></li>
-    <li><a href="https://twitter.com/pen1710" target="_blank" rel="noopener">Patricia Ennenbach</a></li>
+    <li><a href="https://twitter.com/TheOrganicer" target="_blank" rel="noopener noreferrer">Niklas Rudolph</a></li>
+    <li><a href="https://twitter.com/pen1710" target="_blank" rel="noopener noreferrer">Patricia Ennenbach</a></li>
     </ul>
         } sources={
             <React.Fragment>
