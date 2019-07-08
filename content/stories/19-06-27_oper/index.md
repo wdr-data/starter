@@ -12,6 +12,7 @@ heroCredit: "Dummy-Bild, keine Bildrechte WDR"
 import DataWrapper from '../../../src/components/datawrapper/datawrapper.jsx'
 import Quote from '../../../src/components/quote/quote.jsx'
 import Accordion from '../../../src/components/accordion/accordion.jsx'
+import Webtrekk from '../../../src/components/webtrekk/webtrekk.jsx'
 
 # Opernspielpläne in NRW: tot und männlich
 
@@ -128,3 +129,5 @@ Und so bieten die Spielpläne ein gewohntes Bild. Zum Abschluss zeigen wir alle 
         } credits={
             <p>Unsplash: @mak_ip <a href='https://unsplash.com/photos/BfEnygJ9WQA'>hier</a></p>
         }/>
+
+<Webtrekk />
