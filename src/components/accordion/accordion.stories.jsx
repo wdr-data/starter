@@ -4,7 +4,7 @@ import Accordion from './accordion.jsx';
 
 storiesOf('Accordion', module)
     .add('default', () => (
-        <Accordion authors={[<a href="https://twitter.com/pen1710" target="_blank" rel="noopener">Patricia Ennenbach</a>]
+        <Accordion authors={[<a href="https://twitter.com/pen1710" target="_blank" rel="noopener noreferrer">Patricia Ennenbach</a>]
         } sources={
             <React.Fragment>
                 <h3>Extern</h3>
