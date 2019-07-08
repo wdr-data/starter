@@ -130,4 +130,4 @@ Und so bieten die Spielpläne ein gewohntes Bild. Zum Abschluss zeigen wir alle 
             <p>Unsplash: @mak_ip <a href='https://unsplash.com/photos/BfEnygJ9WQA'>hier</a></p>
         }/>
 
-<Webtrekk />
+<Webtrekk cg1="WDR" cg2="Kultur" cg3="Data" cg4="Oper in NRW" />
