@@ -76,7 +76,7 @@ Bei den lebenden Komponisten sind es vor allem Premieren von Uraufführungen, di
 
 Nuria Núñez Hierro wurde 1980 in Jerez (Spanien) geboren.
 
-![Porträt Nuria Núñez Hierro](3f97a-Nunez-Hierro-Nuria-Portr--tfoto--Copy-.png)
+<img className="inlineImage" src="./3f97a-Nunez-Hierro-Nuria-Portr--tfoto--Copy-.png" alt="Porträt Nuria Núñez Hierro"/>
 
 Komponistin Nunez Herero fordert daher eine Quote für Frauen auf den Spielplänen.
 
