@@ -1,10 +1,5 @@
 module.exports = {
   pathPrefix: `/oper-in-nrw`,
-  siteMetadata: {
-    title: `WDR Datenjournalismus`,
-    description: `Geschichten mit Daten erzählen im WDR`,
-    author: `WDR`,
-  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
