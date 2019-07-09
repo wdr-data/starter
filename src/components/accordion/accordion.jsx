@@ -31,7 +31,7 @@ const Accordion = ({ authors, sources, credits }) => {
   );
 };
 
-const nodePropType = PropTypes.oneOfType(PropTypes.node, PropTypes.arrayOf(PropTypes.node));
+const nodePropType = PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]);
 
 Accordion.propTypes = {
   authors: nodePropType,
