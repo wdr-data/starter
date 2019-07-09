@@ -53,12 +53,14 @@ const DefaultTemplate = (data) => {
         <meta property="og:type" content="article" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
-        <meta property="og:image" content={URL + frontmatter.heroImage} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:image" content={frontmatter.title} />
+        <meta property="og:image-width" content="704" />
+        <meta property="og:image-height" content="396" />
+        <meta name="twitter:card" content="summary" />
         <meta name="twitter:creator" content={"@WDR"} />
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
-        <meta name="twitter:image" content={frontmatter.heroImage} />
+        <meta name="twitter:image" content="netrebko106__v-gseapremiumxl_twitter.jpg" />
         <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png"/>
         <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png"/>
         <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png"/>
