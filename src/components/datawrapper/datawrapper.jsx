@@ -1,12 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import DWChart from 'react-datawrapper-chart';
+import DWChart from "react-datawrapper-chart";
 
-export default ({
-  title,
-  caption,
-  aria,
-  ...props
-}) => {
-  return <DWChart {...props} />
-}
+export default ({ ...props }) => {
+  return <DWChart {...props} />;
+};
