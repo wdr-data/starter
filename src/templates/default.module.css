@@ -9,7 +9,7 @@
 }
 
 .main {
-  padding: var(--padding-content, 1rem);
+  padding: var(--padding-content) 1rem;
 }
 
 article img {
