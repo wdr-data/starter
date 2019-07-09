@@ -13,11 +13,9 @@ import Breadcrumbs from "../components/breadcrumbs/breadcrumbs.jsx";
 import DateFormat from "../components/date/date.jsx";
 
 const DefaultTemplate = (data) => {
-  console.log(data);
   const URL = `https://data.wdr.de${Config.pathPrefix}/`
   const frontmatter = data.pageContext.frontmatter;
   const pub_date = new Date(Date.parse(frontmatter.pub_date+"T00:00:00.000Z"))
-  console.log(frontmatter.pub_date, pub_date)
 
   const schema = {
     "@context": "https://schema.org",
@@ -61,6 +59,13 @@ const DefaultTemplate = (data) => {
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
         <meta name="twitter:image" content={frontmatter.heroImage} />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/>
+        <link rel="manifest" href="/site.webmanifest"/>
+        <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#12365e"/>
+        <meta name="msapplication-TileColor" content="#ffffff"/>
+        <meta name="theme-color" content="#ffffff"></meta>
         <script type="application/ld+json">{JSON.stringify(schema, null, 2)}</script>
       </Helmet>
       <div className={styles.wrapper}>
