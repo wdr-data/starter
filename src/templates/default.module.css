@@ -11,3 +11,10 @@
 .main {
   padding: var(--padding-content, 1rem);
 }
+
+article img {
+  max-width: 90vw;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
