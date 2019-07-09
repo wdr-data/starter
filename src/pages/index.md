@@ -9,10 +9,10 @@ heroAlt: "Dummy-Bild"
 heroCredit: "Dummy-Bild, keine Bildrechte WDR"
 ---
 
-import DataWrapper from '../../../src/components/datawrapper/datawrapper.jsx'
-import Quote from '../../../src/components/quote/quote.jsx'
-import Accordion from '../../../src/components/accordion/accordion.jsx'
-import Webtrekk from '../../../src/components/webtrekk/webtrekk.jsx'
+import DataWrapper from '../components/datawrapper/datawrapper.jsx'
+import Quote from '../components/quote/quote.jsx'
+import Accordion from '../components/accordion/accordion.jsx'
+import Webtrekk from '../components/webtrekk/webtrekk.jsx'
 
 # Opernspielpläne in NRW: tot und männlich
 
