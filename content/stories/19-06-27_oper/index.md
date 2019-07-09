@@ -30,13 +30,15 @@ So vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot aber
 
 ### Ältere werden häufiger aufgeführt
 
-<p className="caption"> Zu sehen ist das Geburtsjahr im Verhältnis zur Zahl der Aufführungen. Gelbe Quadrate stehen für lebende KomponistInnen, blaue Punkte für verstorbene. Klicken Sie darauf, um Name, Geburtsjahr und Zahl der Aufführungen zu sehen.</p>
+<figure role="group">
+    <figcaption> Zu sehen ist das Geburtsjahr im Verhältnis zur Zahl der Aufführungen. Gelbe Quadrate stehen für lebende    KomponistInnen, blaue Punkte für verstorbene. Klicken Sie darauf, um Name, Geburtsjahr und Zahl der Aufführungen zu    sehen.</figcaption>
+    <DataWrapper
+        aria-label="Während lebende KomponistInnen oft nur 1-8 mal aufgeführt werden, werden Komponisten, die über 150 Jahre    alt sind besonders häufig aufgeführt. Spitzenreiter sind Guiseppe Verdi und Wolfgang Amadeus Mozart."
+        title="Ältere KomponistInnen werden häufiger aufgeführt"
+        src="//datawrapper.dwcdn.net/48hJE/10/"
+    />
 
-<DataWrapper
-    aria-label="Während lebende KomponistInnen oft nur 1-8 mal aufgeführt werden, werden Komponisten, die über 150 Jahre alt sind besonders häufig aufgeführt. Spitzenreiter sind Guiseppe Verdi und Wolfgang Amadeus Mozart."
-    title="Ältere KomponistInnen werden häufiger aufgeführt"
-    src="//datawrapper.dwcdn.net/48hJE/10/"
-/>
+</figure>
 
 Claudio Monteverdi war mit 425 Jahren der älteste gespielte Komponist 2018/19. Leonard Evers mit 34 der jüngste. Von Giuseppe Verdi sind 2018/2019 gleich 13 Opern in NRW inszeniert worden. Bei Leonard Bernstein und Jacques Offenbach ist auch der Jubiläumsjahr-Faktor bemerkbar. Der Komponist Moritz Eggert wirft den deutschen Opernhäusern mangelnde Innovationskraft vor.
 
@@ -48,25 +50,29 @@ Ist die Opernwelt im 19. Jahrhundert stehen geblieben? Immerhin jede dritte der 
 
 ### Jede dritte KomponistIn wurde vor 1919 geboren, aber nur 12 % der Aufführungen stammen von ihnen
 
-<p className="caption"> Bei Klick auf 'KomponistInnen' ist zu sehen, wie das Verhältnis von älteren zu jüngeren KomponistInnen ist.</p>
+<figure role="group">
+    <figcaption> Bei Klick auf 'KomponistInnen' ist zu sehen, wie das Verhältnis von älteren zu jüngeren KomponistInnen ist.</  figcaption>
+    <DataWrapper
+        aria-label="Jede 3. KomponistIn wurde vor 1919 geboren, aber nur 12 % der Aufführung stammen von ihnen."
+        title="Nur 12 % der Aufführungen stammen von KomponistInnen, die jünger als 100 Jahre alt sind"
+        src="//datawrapper.dwcdn.net/6D2bM/3/"
+    />
 
-<DataWrapper
-    aria-label="Jede 3. KomponistIn wurde vor 1919 geboren, aber nur 12 % der Aufführung stammen von ihnen."
-    title="Nur 12 % der Aufführungen stammen von KomponistInnen, die jünger als 100 Jahre alt sind"
-    src="//datawrapper.dwcdn.net/6D2bM/3/"
-/>
+</figure>
 
 Bei den lebenden Komponisten sind es vor allem Premieren von Uraufführungen, die aber nach wenigen Aufführungen wieder vom Spielplan verschwinden. Ein Verhältnis sticht außerdem sehr ins Auge:
 
 ### Nuria Núñez Hierro ist die einzige Frau
 
-<p className="caption">Hierros Kinderoper “Kleines Stück Himmel” wurde in Wuppertal acht mal aufgeführt.</p>
+<figure role="group">
+    <figcaption>Hierros Kinderoper “Kleines Stück Himmel” wurde in Wuppertal acht mal aufgeführt.</figcaption>
+    <DataWrapper
+        aria-label="In der Spielzeit 2018/2019 war unter 66 KomponistInnen nur eine Frau."
+        title="Nuria Nunez Hierro ist die einzige Frau"
+        src="//datawrapper.dwcdn.net/T56o1/2/"
+    />
 
-<DataWrapper
-    aria-label="In der Spielzeit 2018/2019 war unter 66 KomponistInnen nur eine Frau."
-    title="Nuria Nunez Hierro ist die einzige Frau"
-    src="//datawrapper.dwcdn.net/T56o1/2/"
-/>
+</figure>
 
 Nuria Núñez Hierro wurde 1980 in Jerez (Spanien) geboren.
 
@@ -80,19 +86,20 @@ Beim Blick auf die Herkunft der KomponistInnen liegt das Zentrum weiterhin klar 
 
 ### Europa im Zentrum
 
-<p className="caption">Die meisten KomponistInnen sind in Europa geboren, einige stammen jedoch aus der ganzen Welt.</p>
+<figure role="group">
+    <figcaption>Die meisten KomponistInnen sind in Europa geboren, einige stammen jedoch aus der ganzen Welt.</figcaption>
+    <DataWrapper
+        aria-label="Nur wenige KomponistInnen stammen nicht aus Europa."
+        title="Europa im Zentrum"
+        src="//datawrapper.dwcdn.net/OttGi/1/"
+    />
+    <DataWrapper
+        aria-label="Einzelne KomponistInnen kommen aus der ganzen Welt."
+        title="Nuria Nunez Hierro ist die einzige Frau"
+        src="//datawrapper.dwcdn.net/qWU0T/4/"
+    />
 
-<DataWrapper
-    aria-label="Nur wenige KomponistInnen stammen nicht aus Europa."
-    title="Europa im Zentrum"
-    src="//datawrapper.dwcdn.net/OttGi/1/"
-/>
-
-<DataWrapper
-    aria-label="Einzelne KomponistInnen kommen aus der ganzen Welt."
-    title="Nuria Nunez Hierro ist die einzige Frau"
-    src="//datawrapper.dwcdn.net/qWU0T/4/"
-/>
+</figure>
 
 Die Opern begründen ihre konservativen Spielpläne mit dem politischen Druck, die Auslastungszahlen hoch zu halten.
 
@@ -104,30 +111,34 @@ Und so bieten die Spielpläne ein gewohntes Bild. Zum Abschluss zeigen wir alle 
 
 ### Zauberflöte vor Hänsel und Gretel
 
-<p className="caption">Wurde das Stück auch 'für Kinder' angeboten, haben wir es hier mit zusammen gefasst. Klicken sie auf einen Punkt, um die Anzahl der Aufführungen einzublenden. Kennen Sie die Opern? Haben sie die Melodien im Ohr?</p>
+<figure role="group">
+    <figcaption>Wurde das Stück auch 'für Kinder' angeboten, haben wir es hier mit zusammen gefasst. Klicken sie auf einen  Punkt, um die Anzahl der Aufführungen einzublenden. Kennen Sie die Opern? Haben sie die Melodien im Ohr?</figcaption>
+    <DataWrapper
+        aria-label="76 mal wurde die Zauberflöte 2018/2019 in NRW aufgeführt, gefolgt von Hänsel und Gretel mit 34  Aufführungen."
+        title="Zauberflöte vor Hänsel und Gretel"
+        src="//datawrapper.dwcdn.net/azwpu/4/"
+    />
 
-<DataWrapper
-    aria-label="76 mal wurde die Zauberflöte 2018/2019 in NRW aufgeführt, gefolgt von Hänsel und Gretel mit 34 Aufführungen."
-    title="Zauberflöte vor Hänsel und Gretel"
-    src="//datawrapper.dwcdn.net/azwpu/4/"
-/>
+</figure>
 
 <Accordion authors={
-    <ul>
-    <li><a href="https://twitter.com/TheOrganicer" target="_blank" rel="noopener noreferrer">Niklas Rudolph</a></li>
-    <li><a href="https://twitter.com/pen1710" target="_blank" rel="noopener noreferrer">Patricia Ennenbach</a></li>
-    </ul>
-        } sources={
-            <React.Fragment>
-                <h3>Extern</h3>
-                <p>Berechnung der Daten: <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a></p>
-                <p>Analyse: <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a></p>
-                <h3>Intern</h3>
-                <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a><br/>
-                <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a>
-            </React.Fragment>
-        } credits={
-            <p>Unsplash: @mak_ip <a href='https://unsplash.com/photos/BfEnygJ9WQA'>hier</a></p>
-        }/>
+
+<ul>
+<li><a href="https://twitter.com/TheOrganicer" target="_blank" rel="noopener noreferrer">Niklas Rudolph</a></li>
+<li><a href="https://twitter.com/pen1710" target="_blank" rel="noopener noreferrer">Patricia Ennenbach</a></li>
+</ul>
+} sources={
+<React.Fragment>
+<h3>Extern</h3>
+<p>Berechnung der Daten: <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a></p>
+<p>Analyse: <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a></p>
+<h3>Intern</h3>
+<a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a><br/>
+<a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a>
+</React.Fragment>
+} credits={
+<p>Unsplash: @mak_ip <a href='https://unsplash.com/photos/BfEnygJ9WQA'>hier</a></p>
+}
+/>
 
 <Webtrekk publishedAt="2019-07-06" cg1="WDR" cg2="Kultur" cg3="Data" cg4="Oper in NRW" />
