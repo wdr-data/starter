@@ -10,23 +10,19 @@ import Footer from "../components/footer/footer.jsx";
 import Breadcrumbs from "../components/breadcrumbs/breadcrumbs.jsx";
 import DateFormat from "../components/date/date.jsx";
 
-const DefaultTemplate = (data) => {
+const DefaultTemplate = data => {
   const frontmatter = data.pageContext.frontmatter;
   return (
     <>
       <div className={styles.wrapper}>
         <div className={styles.heroImage}>
-          <Header
-            heroImage={frontmatter.heroImage}
-            heroAlt={frontmatter.heroAlt}
-            heroCredit={frontmatter.heroCredit}
-          />
+          <Header heroImage={frontmatter.heroImage} heroAlt={frontmatter.heroAlt} heroCredit={frontmatter.heroCredit} />
         </div>
         <div className={styles.layout}>
           <Breadcrumbs>
             <a href="https://www1.wdr.de">WDR</a>
             <a href="/">Data</a>
-            <a href="#">{frontmatter.title}</a>
+            <a href="#top">{frontmatter.title}</a>
           </Breadcrumbs>
           <article className={styles.main}>
             <DateFormat date={new Date(frontmatter.pub_date)} />
@@ -35,7 +31,7 @@ const DefaultTemplate = (data) => {
           <Breadcrumbs>
             <a href="https://www1.wdr.de">WDR</a>
             <a href="/">Data</a>
-            <a href="#">{frontmatter.title}</a>
+            <a href="#top">{frontmatter.title}</a>
           </Breadcrumbs>
         </div>
       </div>
