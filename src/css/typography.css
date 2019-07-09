@@ -1,68 +1,72 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    color: var(--brand-font);
-    --font-default: 17.5px;
-    --font-large: 26px;
-    --font-medium: 21px;
-    --font-detail: 15px;
+  font-family: "Open Sans", sans-serif;
+  color: var(--brand-font);
+  --font-default: 17.5px;
+  --font-large: 26px;
+  --font-medium: 21px;
+  --font-detail: 15px;
 }
 
 h1 {
-    font-family: 'Merriweather', serif;
-    font-size: var(--font-large);
-    line-height: 2.2rem;
-    letter-spacing: .05rem;
-    margin-top: .5rem;
+  font-family: "Merriweather", serif;
+  font-size: var(--font-large);
+  line-height: 2.2rem;
+  letter-spacing: 0.05rem;
+  margin-top: 0.5rem;
 }
 
 h2 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    line-height: 1.75rem;
-    font-size: var(--font-medium);
-    color: var(--brand-font-secondary);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  line-height: 1.75rem;
+  font-size: var(--font-medium);
+  color: var(--brand-font-secondary);
 }
 
 h3 {
-    font-family: 'Merriweather', serif;
-    font-size: var(--font-default);
-    line-height: 1.7rem;
-    letter-spacing: .05rem;
-    margin: 2rem 0 0 0;
+  font-family: "Merriweather", serif;
+  font-size: var(--font-default);
+  line-height: 1.7rem;
+  letter-spacing: 0.05rem;
+  margin: 2rem 0 0 0;
 }
 
-h4{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: var(--font-default);
-    color: var(--brand-font);
-    margin: 1rem 0;
-}
-
-.caption {
-    font-family: 'Open Sans', sans-serif;
-    font-size: var(--font-detail);
-    font-weight: 600;
-    color: var(--brand-font-secondary);
-    margin: 1rem 0;
+h4 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: var(--font-default);
+  color: var(--brand-font);
+  margin: 1rem 0;
 }
 
 p {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-    font-size: var(--font-default);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: var(--font-default);
 }
 
 a {
-    color: var(--brand-link);
-    text-decoration: underline;
+  color: var(--brand-link);
+  text-decoration: underline;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-family: "Open Sans", sans-serif;
+  font-size: var(--font-detail);
+  font-weight: 600;
+  color: var(--brand-font-secondary);
+  margin: 1rem 0;
 }
 
 blockquote {
-    font-family: 'Merriweather', serif;
-    font-size: var(--font-large);
-    margin: 0;
+  font-family: "Merriweather", serif;
+  font-size: var(--font-large);
+  margin: 0;
 }
