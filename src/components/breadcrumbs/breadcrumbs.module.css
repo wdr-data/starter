@@ -24,7 +24,7 @@
 }
 
 @media (max-width: 800px) {
-  .breadcrumbs {
+  .breadcrumbs:first-of-type {
     display: none;
   }
 }
