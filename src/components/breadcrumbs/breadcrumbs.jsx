@@ -11,7 +11,7 @@ const Breadcrumbs = ({ children }) => {
 };
 
 Breadcrumbs.propTypes = {
-    children: PropTypes.oneOfType(PropTypes.node, PropTypes.arrayOf(PropTypes.node)),
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)])
 };
 
 export default Breadcrumbs;
