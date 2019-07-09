@@ -30,7 +30,7 @@ Ziele:
 - Für den Zugang ist ein Github Account nötig 
 
 Schritte:
-- Für eine neue Story das starter Projekt clonen und als als neues, eigenes Projekt bei GitHub anlegen. (Oder jemanden aus dem Datenteam darum bitten)
+- Für eine neue Story das starter Projekt forken und als als neues, eigenes Projekt bei GitHub anlegen. (Oder jemanden aus dem Datenteam darum bitten)
 - Projekte können wahlweise von Anfang an 'öffentlich' sein oder erst später veröffentlicht werden 
 - Unter /static werden die Bilddateien für das Projekt abgelegt (HeroImage, weitere Bilder)
   - TODO: Specs für Bilder hinzufügen
