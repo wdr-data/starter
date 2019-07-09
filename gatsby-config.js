@@ -19,18 +19,14 @@ module.exports = {
         // icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "stories",
-        path: `${__dirname}/content/stories/`,
-      },
-    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
+        defaultLayouts: {
+          default: require.resolve("./src/templates/default.jsx"),
+        },
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
