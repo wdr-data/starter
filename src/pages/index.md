@@ -108,7 +108,7 @@ Die Opern begründen ihre konservativen Spielpläne mit dem politischen Druck, d
 
 <Quote author="Platzhalter Intendant Oper Wuppertal">Die Leute lieben eben Verdi. Mit zeitgenössischer Musik verschrecken Sie die Zuhörer!</Quote>
 
-[Häuser im Vergleich]
+[Häuser im Vergleich: Hier wäre es schön, eine Karte zu haben mit skalierten Punkten. Je mehr Komponisten nach 1900 geboren das Haus spielt, desto größer ist der Punkt.]
 
 Und so bieten die Spielpläne ein gewohntes Bild. Zum Abschluss zeigen wir alle Opern der NRW-Spielzeit in einer Grafik, sortiert nach Anzahl der Aufführungen.
 
@@ -117,7 +117,7 @@ Und so bieten die Spielpläne ein gewohntes Bild. Zum Abschluss zeigen wir alle 
 <figure role="group">
     <figcaption>Wurde das Stück auch 'für Kinder' angeboten, haben wir es hier mit zusammen gefasst. Klicken sie auf einen  Punkt, um die Anzahl der Aufführungen einzublenden. Kennen Sie die Opern? Haben sie die Melodien im Ohr?</figcaption>
     <DataWrapper
-        alt="76 mal wurde die Zauberflöte 2018/2019 in NRW aufgeführt, gefolgt von Hänsel und Gretel mit 34  Aufführungen."
+        alt="76 mal wurde die Zauberflöte 2018/2019 in NRW aufgeführt, gefolgt von Hänsel und Gretel mit 34 Aufführungen."
         title="Zauberflöte vor Hänsel und Gretel"
         src="//datawrapper.dwcdn.net/azwpu/4/"
     />
