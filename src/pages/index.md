@@ -137,7 +137,22 @@ Und so bieten die Spielpläne ein gewohntes Bild. Zum Abschluss zeigen wir alle 
             <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbad</a>
         </React.Fragment>
     } credits={
-    <p>Unsplash: @mak_ip <a href='https://unsplash.com/photos/BfEnygJ9WQA'>hier</a></p>
+        <React.Fragment>
+        <h3>Bildrechte:</h3>
+            <ul>
+                <li>HeroImage</li>
+                <li>Bild 2</li>
+            </ul>
+        <h3>Credits:</h3>
+        <ul>
+            <li><b>Redaktion</b>: Urs Zietan, Jutta Starke</li>
+            <li><b>Design</b>: Chrissi Holderbaum, Dilek Wache</li>
+            <li><b>Programmierung</b>: Christine Gotthardt, Marcus Weiner, Jakob Holderbaum, Patricia Ennenbach</li>
+            <li><b>Accessability, UX</b>: Dilek Wache, Stephanie Juranek</li>
+            <li><b>Datenrecherche</b>: Felix Buczek, Hannah Schmidt, Anne Glaser, Robert Haase, Greta Hey, Inge Akyaa, Katharina Riethmüller</li>
+            <li><b>Besondere Unterstützung</b> Dr. Olaf Roth, Musiktheater im Revier</li>
+        </ul>
+    </React.Fragment>
     }
 />
 <Webtrekk publishedAt="2019-07-06" cg1="WDR" cg2="Kultur" cg3="Data" cg4="Oper in NRW" />
