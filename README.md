@@ -37,7 +37,13 @@ Schritte:
 - unter /data werden Daten und Datenanalyse-Notebook abgelegt
 - Unter /pages die index.md mit eigenem Conten überschreiben:
 
-#### 
+#### Bilder 
+
+heroImage: 1920x1080 Sophora / Full HD
+Twitter: 2:1 - mindestens 300 x 157
+Facebook: 1200 x 630 
+
+
 
 ## Für DesignerInnen
 
