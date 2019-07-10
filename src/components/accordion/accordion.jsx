@@ -14,7 +14,7 @@ import styles from "./accordion.module.css";
 const Accordion = ({ authors, sources, credits }) => {
   return (
     <AccordionWrapper className={styles.wrapper} allowZeroExpanded>
-      {[["Autor*innen", authors], ["Quellen", sources], ["Credits", credits]].map(
+      {[["Autor*innen", authors], ["Quellen", sources], ["Bildrechte & Credits", credits]].map(
         ([title, content]) =>
           content && (
             <AccordionItem className={styles.item} key={title}>
