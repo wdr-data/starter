@@ -15,31 +15,35 @@ import Webtrekk from '../components/webtrekk/webtrekk.jsx'
 
 # Opernspielpläne in NRW: tot und männlich
 
-## Wir haben die Spielpläne der kommunalen Opern-Bühnen in NRW abgefragt und analysiert.
+## Wir haben die Spielpläne von 13 kommunalen Opern-Bühnen in NRW aus der Spielzeit 2018/19 abgefragt und analysiert. Das Ergebnis war kaum überraschend – zeigt aber, dass lebende Komponisten kaum eine Chance haben. Und Komponistinnen gar keine.
 
-Vorweg: Wir jammern auf hohem Niveau. Denn alles in allem steht es gut um die Oper in NRW. In der letzten Spielzeit gab es an 13 kommunalen Häusern über hundert Inszenierungen mit mehr als tausend Aufführungen.
-
-## 3 Opern am Tag in NRW
-
-In anderen Worten: Opernfreunde hatten im Schnitt jeden Tag die Wahl zwischen rund drei Opernaufführungen.
+Vorweg: Wir jammern auf hohem Niveau. Denn alles in allem steht es gut um die Oper in Nordrhein-Westfalen. In der letzten Spielzeit stemmten die 13 kommunalen Bühnen über hundert Inszenierungen – mit insgesamt mehr als tausend Aufführungen. In anderen Worten: Opernfreunde hatten im Schnitt jeden Tag die Wahl zwischen rund drei Opernaufführungen.
 
 ## Im Schnitt 180 Jahre alt
 
-So vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot aber keinesfalls. Denn meistens begegnet das Publikum alten Bekannten.
+Doch so vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot aber keinesfalls. Denn meistens begegnet das Publikum alten Bekannten:
 
 ### Ältere werden häufiger aufgeführt
 
 <figure role="group">
-    <figcaption> Zu sehen ist das Geburtsjahr im Verhältnis zur Zahl der Aufführungen. Gelbe Quadrate stehen für lebende    KomponistInnen, blaue Punkte für verstorbene. Klicken Sie darauf, um Name, Geburtsjahr und Zahl der Aufführungen zu    sehen.</figcaption>
+    <figcaption> Zu sehen ist das Geburtsjahr im Verhältnis zur Zahl der Aufführungen. Gelbe Quadrate stehen für lebende    KomponistInnen, blaue Punkte für verstorbene. Klicken Sie darauf, um Name, Geburtsjahr und Zahl der Aufführungen zu sehen.</figcaption>
     <DataWrapper
-        alt="Während lebende KomponistInnen oft nur 1-8 mal aufgeführt werden, werden Komponisten, die über 150 Jahre    alt sind besonders häufig aufgeführt. Spitzenreiter sind Guiseppe Verdi und Wolfgang Amadeus Mozart."
+        alt="Während lebende KomponistInnen oft nur 1-8 mal aufgeführt werden, werden Komponisten, die über 150 Jahre alt sind besonders häufig aufgeführt. Spitzenreiter sind Guiseppe Verdi und Wolfgang Amadeus Mozart."
         title="Ältere KomponistInnen werden häufiger aufgeführt"
         src="//datawrapper.dwcdn.net/48hJE/10/"
     />
 
 </figure>
 
-Claudio Monteverdi war mit 425 Jahren der älteste gespielte Komponist 2018/19. Leonard Evers mit 34 der jüngste. Von Giuseppe Verdi sind 2018/2019 gleich 13 Opern in NRW inszeniert worden. Bei Leonard Bernstein und Jacques Offenbach ist auch der Jubiläumsjahr-Faktor bemerkbar. Der Komponist Moritz Eggert wirft den deutschen Opernhäusern mangelnde Innovationskraft vor.
+Zum Beispiel: Claudio Monteverdi war mit 425 Jahren der älteste gespielte Komponist 2018/19. Leonard Evers mit 34 der jüngste. Bei Leonard Bernstein und Jacques Offenbach sieht man, dass die großen Jubiläumsjahre sehr erfolgreich darin waren, die Komponisten wieder auf die Spielpläne zu setzen.
+
+Giuseppe Verdi führt die Liste mit Abstand an – er ist in der letzten Spielzeit gleich 13 mal in NRW inszeniert worden. 
+
+## Im Schnitt 180 Jahre alt
+
+Nur 18 der 66 gespielten Komponisten leben noch, das sind knapp 20 Prozent. Schaut man allerdings auf die Gesamtanzahl aller gespielten Aufführungen, dann liegen die lebeden Komponisten bei nur noch 10 Prozent.
+
+Für den Komponisten Moritz Eggert ein Armutzeugnis. Er hatte den deutschen Opernhäusern schon im letzten Jahr mangelnde Innovationskraft vorgeworfen.
 
 <Quote author={
 <a href="https://blogs.nmz.de/badblog/2018/04/10/die-ernuechternde-opernstatistik-der-spielzeit-2017-2018/" target="_blank" rel="noopener noreferrer">Moritz Eggert</a>
@@ -47,7 +51,7 @@ Claudio Monteverdi war mit 425 Jahren der älteste gespielte Komponist 2018/19. 
 
 Ist die Opernwelt im 19. Jahrhundert stehen geblieben? Immerhin jede dritte der gespielten KomponistInnen ist nach 1919 geboren. Betrachtet man aber die Gesamtzahl aller Aufführungen, so sinkt das Verhältnis deutlich.
 
-### Jede dritte KomponistIn wurde vor 1919 geboren, aber nur 12 % der Aufführungen stammen von ihnen
+### Jede dritte KomponistIn wurde nach 1919 geboren, aber nur 12 % der Aufführungen stammen von ihnen
 
 <figure role="group">
     <figcaption> Bei Klick auf 'KomponistInnen' ist zu sehen, wie das Verhältnis von älteren zu jüngeren KomponistInnen ist.</  figcaption>
