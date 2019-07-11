@@ -44,8 +44,47 @@ Twitter: 2:1 - mindestens 300 x 157
 Facebook: 1200 x 630 
 
 
-
 ## Für DesignerInnen
+
+### Typografie
+
+Im Design greifen wir auf die u.g. Schriften zurück:
+
+- Google Font [Merriweather](https://fonts.google.com/specimen/Merriweather?selection.family=Merriweather) in Regular 400
+- Google Font [Open Sans](https://fonts.google.com/specimen/Open+Sans) in Light 300 und Semibold 600
+
+Eine Übersicht zur Typografie befindet sich hier: https://wdr-data.netlify.com/components/?path=/story/typography--default
+
+### Farben
+
+Die Farbkontraste für das gesamte Design sind im [Kontrast Checker](https://contrast-ratio.com/) überprüft worden. 
+
+- Schriftfarbe: #1D2124 (WDR Dunkelblau)
+- Flächenfarbe: #00345E (WDR Blau)
+- Highlightfarbe für Links: #007381 (WDR Petrol)
+- Akzentfarbe: #B37500 (WDR Honiggelb)
+
+### Logo & Header
+
+Im oberen Bereich einer jeden Dataseite befindet sich lediglich das WDR Logo, mithilfe dessen man aus der Datawelt zurück in die WDR Welt navigieren kann.
+
+- Falls ein Hero Image vorhanden ist: Weißes WDR Logo im Rechteck auf Blau
+- Falls kein Hero Image vorhanden ist: Blaues WDR Logo auf weiß
+
+### Iconography
+
+https://icomoon.io/#preview-free
+
+### Designprinzipien
+
+- Arbeite mit einfach erkennbaren visuellen Hierachien
+- Nutze ein klar strukturiertes Layout ohne Ablenkungen mit Fokus auf Inhalten
+- Erschaffe ein konsistentes Design mit modular einsetzbaren und wiederkehrenden Elementen
+- Gestalte ein leichtes, modernes und ansprechendes Design mit Mut zu Weißraum
+
+### Sketch files
+
+> ToDo: Sketch Datei hinterlegen
 
 ## Für EntwicklerInnen
 
