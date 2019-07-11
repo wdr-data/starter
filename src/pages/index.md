@@ -19,9 +19,9 @@ import Webtrekk from '../components/webtrekk/webtrekk.jsx'
 
 Vorweg: Wir jammern auf hohem Niveau. Denn alles in allem steht es gut um die Oper in Nordrhein-Westfalen. In der letzten Spielzeit stemmten die 13 kommunalen Bühnen über hundert Inszenierungen – mit insgesamt mehr als tausend Aufführungen. In anderen Worten: Opernfreunde hatten im Schnitt jeden Tag die Wahl zwischen rund drei Opernaufführungen.
 
-## Im Schnitt 180 Jahre alt
+## Drei Opern am Tag
 
-Doch so vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot aber keinesfalls. Denn meistens begegnet das Publikum alten Bekannten:
+Doch so vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot keinesfalls. Denn meistens begegnet das Publikum alten Bekannten:
 
 ### Ältere werden häufiger aufgeführt
 
@@ -37,31 +37,29 @@ Doch so vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot
 
 Zum Beispiel: Claudio Monteverdi war mit 425 Jahren der älteste gespielte Komponist 2018/19. Leonard Evers mit 34 der jüngste. Bei Leonard Bernstein und Jacques Offenbach sieht man, dass die großen Jubiläumsjahre sehr erfolgreich darin waren, die Komponisten wieder auf die Spielpläne zu setzen.
 
-Giuseppe Verdi führt die Liste mit Abstand an – er ist in der letzten Spielzeit gleich 13 mal in NRW inszeniert worden. 
+Giuseppe Verdi führt die Liste mit Abstand an – er ist in der letzten Spielzeit gleich 13 mal in NRW inszeniert worden.
 
 ## Im Schnitt 180 Jahre alt
 
-Nur 18 der 66 gespielten Komponisten leben noch, das sind knapp 20 Prozent. Schaut man allerdings auf die Gesamtanzahl aller gespielten Aufführungen, dann liegen die lebeden Komponisten bei nur noch 10 Prozent.
+Nur 17 der 66 gespielten Komponisten leben noch, das sind 27 Prozent. Schaut man allerdings auf die Gesamtanzahl aller gespielten Aufführungen, dann liegen die lebeden Komponisten bei nur noch 9 Prozent. Ist die Opernwelt im 19. Jahrhundert stehen geblieben?
 
-Für den Komponisten Moritz Eggert ein Armutzeugnis. Er hatte den deutschen Opernhäusern schon im letzten Jahr mangelnde Innovationskraft vorgeworfen.
+### Fast jede dritte KomponistIn lebt, aber nur 9 % der Aufführungen stammen von ihnen
+
+<figure role="group">
+    <figcaption> Bei Klick auf 'KomponistInnen' ist zu sehen, wie das Verhältnis von verstorbenen zu lebenden KomponistInnen ist.</ figcaption>
+    <DataWrapper
+        alt="Fast jede dritte KomponistIn lebt, aber nur 9 % der Aufführung stammen von ihnen."
+        title="Nur 9 % der Aufführungen stammen von lebenden KomponistInnen."
+        src="//datawrapper.dwcdn.net/6D2bM/4/"
+    />
+
+</figure>
+
+Für den Komponisten Moritz Eggert ein Armutzeugnis. Er hatte den deutschen Opernhäusern schon im vergangenen Jahr mangelnde Innovationskraft vorgeworfen.
 
 <Quote author={
 <a href="https://blogs.nmz.de/badblog/2018/04/10/die-ernuechternde-opernstatistik-der-spielzeit-2017-2018/" target="_blank" rel="noopener noreferrer">Moritz Eggert</a>
 }>Überlebenschance der Gattung Oper, wenn sich nicht grundlegend etwas ändert: 0%</Quote>
-
-Ist die Opernwelt im 19. Jahrhundert stehen geblieben? Immerhin jede dritte der gespielten KomponistInnen ist nach 1919 geboren. Betrachtet man aber die Gesamtzahl aller Aufführungen, so sinkt das Verhältnis deutlich.
-
-### Jede dritte KomponistIn wurde nach 1919 geboren, aber nur 12 % der Aufführungen stammen von ihnen
-
-<figure role="group">
-    <figcaption> Bei Klick auf 'KomponistInnen' ist zu sehen, wie das Verhältnis von älteren zu jüngeren KomponistInnen ist.</  figcaption>
-    <DataWrapper
-        alt="Jede 3. KomponistIn wurde vor 1919 geboren, aber nur 12 % der Aufführung stammen von ihnen."
-        title="Nur 12 % der Aufführungen stammen von KomponistInnen, die jünger als 100 Jahre alt sind"
-        src="//datawrapper.dwcdn.net/6D2bM/3/"
-    />
-
-</figure>
 
 Bei den lebenden Komponisten sind es vor allem Premieren von Uraufführungen, die aber nach wenigen Aufführungen wieder vom Spielplan verschwinden. Ein Verhältnis sticht außerdem sehr ins Auge:
 
@@ -136,7 +134,7 @@ Und so bieten die Spielpläne ein gewohntes Bild. Zum Abschluss zeigen wir alle 
                 </li>
                 <li>- Per <a href='https://query.wikidata.org/' target="_blank" rel="noopener noreferrer">Wikidata Query Service </a>abgerufene Lebensdaten - Daten zum Download: <a href='https://raw.githubusercontent.com/wdr-data/starter/main/data/komponisten_wikidata.csv' target="_blank" rel="noopener noreferrer">Komponistinnen_wikidata.csv</a>
                 </li>
-                <li>- Die Vorgehensweise bei der Datenanalyse können Sie hier nachlesen: <a href='https://github.com/wdr-data/starter/blob/main/data/01_Analyse.ipynb' target="_blank" rel="noopener noreferrer">Daten-Analyse</a>
+                <li>- Die Vorgehensweise bei der Datenanalyse können Sie hier nachlesen: <a href='https://github.com/wdr-data/starter/blob/main/data/Daten-Analyse Opern in NRW.ipynb' target="_blank" rel="noopener noreferrer">Daten-Analyse Opern in NRW</a>
                 </li>
             </ul>
         </React.Fragment>
