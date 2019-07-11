@@ -43,7 +43,7 @@ Giuseppe Verdi führt die Liste mit Abstand an – er ist in der letzten Spielze
 
 Nur 17 der 66 gespielten Komponisten leben noch, das sind 27 Prozent. Schaut man allerdings auf die Gesamtanzahl aller gespielten Aufführungen, dann liegen die lebeden Komponisten bei nur noch 9 Prozent. Ist die Opernwelt im 19. Jahrhundert stehen geblieben?
 
-### Fast jede dritte KomponistIn lebt, aber nur 9 % der Aufführungen stammen von ihnen
+### Fast jede dritte KomponistIn lebt, aber nur jede zehnte Aufführung stammt von ihnen
 
 <figure role="group">
     <figcaption> Bei Klick auf 'KomponistInnen' ist zu sehen, wie das Verhältnis von verstorbenen zu lebenden KomponistInnen ist.</ figcaption>
