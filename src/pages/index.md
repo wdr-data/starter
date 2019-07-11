@@ -145,14 +145,22 @@ Und so bieten die Spielpläne ein gewohntes Bild. Zum Abschluss zeigen wir alle 
             </ul>
         <h3>Credits:</h3>
         <ul>
-            <li><b>Redaktion</b>: Urs Zietan, Jutta Starke</li>
+            <li><b>Redaktion</b>: Niklas Rudolph, Urs Zietan, Jutta Starke</li>
             <li><b>Design</b>: Chrissi Holderbaum, Dilek Wache</li>
             <li><b>Programmierung</b>: Christine Gotthardt, Marcus Weiner, Jakob Holderbaum, Patricia Ennenbach</li>
             <li><b>Accessability, UX</b>: Dilek Wache, Stephanie Juranek</li>
             <li><b>Datenrecherche</b>: Felix Buczek, Hannah Schmidt, Anne Glaser, Robert Haase, Greta Hey, Inge Akyaa, Katharina Riethmüller</li>
-            <li><b>Besondere Unterstützung</b> Dr. Olaf Roth, Musiktheater im Revier</li>
+            <li><b>Besondere Unterstützung:</b> Dr. Olaf Roth, Musiktheater im Revier</li>
         </ul>
+    </React.Fragment>
+    } hints={
+    <React.Fragment>
+        <h3>Analytics</h3>
+            <p>Diese Seite verwendet Webtrekk, um Daten über das Interaktions- und Nutzungsverhalten zu sammeln. Diese Daten werden auf Seiten des WDR ausschliesslich in anonymisierter Form gespeichert und ausgewertet.</p>
+        <h3>Fehler melden</h3>
+            <p>Für Hinweise und die Meldung von Fehlern schreiben Sie uns an data@wdr.de.</p>
     </React.Fragment>
     }
 />
+
 <Webtrekk publishedAt="2019-07-06" cg1="WDR" cg2="Kultur" cg3="Data" cg4="Oper in NRW" />

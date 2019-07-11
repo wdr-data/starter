@@ -11,10 +11,10 @@ import {
 
 import styles from "./accordion.module.css";
 
-const Accordion = ({ authors, sources, credits }) => {
+const Accordion = ({ authors, sources, credits, hints }) => {
   return (
     <AccordionWrapper className={styles.wrapper} allowZeroExpanded>
-      {[["Autor*innen", authors], ["Quellen", sources], ["Bildrechte & Credits", credits]].map(
+      {[["Autor*innen", authors], ["Quellen", sources], ["Bildrechte & Credits", credits], ["Analytics & Fehler melden", hints]].map(
         ([title, content]) =>
           content && (
             <AccordionItem className={styles.item} key={title}>
@@ -36,7 +36,8 @@ const nodePropType = PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(Prop
 Accordion.propTypes = {
   authors: nodePropType,
   sources: nodePropType,
-  credits: nodePropType
+  credits: nodePropType,
+  hints: nodePropType,
 };
 
 export default Accordion;

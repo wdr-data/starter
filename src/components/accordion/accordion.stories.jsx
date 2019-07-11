@@ -16,5 +16,14 @@ storiesOf('Accordion', module)
             </React.Fragment>
         } credits={
             <p>Unsplash: @mak_ip <a href='https://unsplash.com/photos/BfEnygJ9WQA'>hier</a></p>
-        }/>
+        }
+        hints={
+            <React.Fragment>
+                <h3>Analytics</h3>
+                    <p>Diese Seite verwendet Webtrekk, um Daten über das Interaktions- und Nutzungsverhalten zu sammeln. Diese Daten werden auf Seiten des WDR ausschliesslich in anonymisierter Form gespeichert und ausgewertet.</p>
+                <h3>Fehler melden</h3>
+                    <p>Für Hinweise und die Meldung von Fehlern schreiben Sie uns an data@wdr.de.</p>
+            </React.Fragment>
+        }
+        />
         ));
