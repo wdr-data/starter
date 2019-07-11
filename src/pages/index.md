@@ -110,18 +110,19 @@ Die Opern begründen ihre konservativen Spielpläne mit dem politischen Druck, d
 
 [Häuser im Vergleich: Hier wäre es schön, eine Karte zu haben mit skalierten Punkten. Je mehr Komponisten nach 1900 geboren das Haus spielt, desto größer ist der Punkt.]
 
-Und so bieten die Spielpläne ein gewohntes Bild. Zum Abschluss zeigen wir alle Opern der NRW-Spielzeit in einer Grafik, sortiert nach Anzahl der Aufführungen.
+Und so bieten die Spielpläne ein gewohntes Bild. Zum Abschluss zeigen wir alle Opern der NRW-Spielzeit in einer Tabelle, sortiert nach Anzahl der Aufführungen.
 
 ### Zauberflöte vor Hänsel und Gretel
 
 <figure role="group">
-    <figcaption>Wurde das Stück auch 'für Kinder' angeboten, haben wir es hier mit zusammen gefasst. Klicken sie auf einen  Punkt, um die Anzahl der Aufführungen einzublenden. Kennen Sie die Opern? Haben sie die Melodien im Ohr?</figcaption>
+    <figcaption>Wurde das Stück auch 'für Kinder' angeboten, haben wir es hier mit zusammen gefasst. Kennen Sie die Opern? Haben sie die Melodien im Ohr?</figcaption>
     <DataWrapper
         alt="76 mal wurde die Zauberflöte 2018/2019 in NRW aufgeführt, gefolgt von Hänsel und Gretel mit 34 Aufführungen."
         title="Zauberflöte vor Hänsel und Gretel"
-        src="//datawrapper.dwcdn.net/azwpu/4/"
+        src="//datawrapper.dwcdn.net/azwpu/6/"
     />
 </figure>
+
 <Accordion authors={
         <ul>
         <li><a href="https://twitter.com/TheOrganicer" target="_blank" rel="noopener noreferrer">Niklas Rudolph</a></li>
@@ -129,12 +130,15 @@ Und so bieten die Spielpläne ein gewohntes Bild. Zum Abschluss zeigen wir alle 
         </ul>
     } sources={
         <React.Fragment>
-            <h3>Extern</h3>
-            <p>Berechnung der Daten: <a href='https://www1.wdr.de/nachrichten/          schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a></p>
-            <p>Analyse: <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a></p>
-            <h3>Intern</h3>
-            <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbäderförderung im Bund</a><br/>
-            <a href='https://www1.wdr.de/nachrichten/schwimmbaeder-foerdung-bund-100.html'>Schwimmbad</a>
+            <h3>Daten</h3>
+            <ul>
+                <li>- WDR Umfrage und eigene Recherchen - Daten zum Download: <a href='https://raw.githubusercontent.com/wdr-data/starter/main/data/opern_nrw_18_19.csv' target="_blank" rel="noopener noreferrer">opern_nrw_18_19.csv</a>
+                </li>
+                <li>- Per <a href='https://query.wikidata.org/' target="_blank" rel="noopener noreferrer">Wikidata Query Service </a>abgerufene Lebensdaten - Daten zum Download: <a href='https://raw.githubusercontent.com/wdr-data/starter/main/data/komponisten_wikidata.csv' target="_blank" rel="noopener noreferrer">Komponistinnen_wikidata.csv</a>
+                </li>
+                <li>- Die Vorgehensweise bei der Datenanalyse können Sie hier nachlesen: <a href='https://github.com/wdr-data/starter/blob/main/data/01_Analyse.ipynb' target="_blank" rel="noopener noreferrer">Daten-Analyse</a>
+                </li>
+            </ul>
         </React.Fragment>
     } credits={
         <React.Fragment>
