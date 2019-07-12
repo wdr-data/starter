@@ -65,7 +65,7 @@ Für den Komponisten Moritz Eggert ein Armutzeugnis. Er hatte den deutschen Oper
 
 Allein an der künstlerischen Qualität kann es allerdigngs nicht liegen, dass die Stücke, die dann direkt an den Häusern dem Publikum präsentiert werden, fast ausschließlich von Männern geschrieben werden:
 
-### Nuria Núñez Hierro ist die einzige Frau
+### Von 13 Komponisten nur eine einzige Frau auf der Bühne
 
 <figure role="group">
     <figcaption>Hierros Kinderoper “Kleines Stück Himmel” wurde in Wuppertal acht mal aufgeführt.</figcaption>
@@ -77,9 +77,17 @@ Allein an der künstlerischen Qualität kann es allerdigngs nicht liegen, dass d
 
 </figure>
 
-Beim Blick auf die Herkunft der KomponistInnen liegt das Zentrum weiterhin klar in Europa.
+Schaut man sich die Stücke an, die die Häuser auf ihren eigenen Bühnen aufführen, so sind die Komponisten allesamt Mänbner. Einzige Ausnahme ist die spanische Komponistin Nuria Núñez Hierro (Jahrgang 1980).
+
+"Es gibt gewachsene Strukturen, die von Männern dominiert sind", sagt der Intendant der Oper Wuppertal, Berthold Schneider. 
+
+<Quote author="Berthold Schneider, Intendant der Oper Wuppertal">Da kann man über eine Frauenquote nachdenken.</Quote>
+
+"Da kann man über eine Quote nachdenken." Gerade weil die Anzahl der Kompositionsaufträge, die die Häuser vergeben, recht überschaubar ist, müsse man darauf schauen, dass Frauen angemessen berücksichtigt werden. "Das könnte man mal festlegen", sagt Schneider.
 
 ### Europa im Zentrum
+
+Auch wenn man sich die Herkunft der Komponistinnen und Komponisten anschaut, so liegt der Fokus ganz klar auf Europa.
 
 <figure role="group">
     <figcaption>Die meisten KomponistInnen sind in Europa geboren, einige stammen jedoch aus der ganzen Welt.</figcaption>
@@ -90,7 +98,7 @@ Beim Blick auf die Herkunft der KomponistInnen liegt das Zentrum weiterhin klar 
     />
     <DataWrapper
         alt="Einzelne KomponistInnen kommen aus der ganzen Welt."
-        title="Nuria Nunez Hierro ist die einzige Frau"
+        title="Nuria Nunez Hierro ist die einzige Frau, deren Oper auf den Bühnen in NRW gespielt wird"
         src="//datawrapper.dwcdn.net/qWU0T/4/"
     />
 
@@ -98,7 +106,7 @@ Beim Blick auf die Herkunft der KomponistInnen liegt das Zentrum weiterhin klar 
 
 Die Opern begründen ihre konservativen Spielpläne mit dem politischen Druck, die Auslastungszahlen hoch zu halten.
 
-<Quote author="Platzhalter Intendant Oper Wuppertal">Die Leute lieben eben Verdi. Mit zeitgenössischer Musik verschrecken Sie die Zuhörer!</Quote>
+<Quote author="Platzhalter Intendant Oper Wuppertal">Die Oper ist stark genug dass sie sich immer wieder verändern wird.</Quote>
 
 [Häuser im Vergleich: Hier wäre es schön, eine Karte zu haben mit skalierten Punkten. Je mehr Komponisten nach 1900 geboren das Haus spielt, desto größer ist der Punkt.]
 
