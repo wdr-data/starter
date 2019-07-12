@@ -3,9 +3,9 @@ title: "Opernspielpläne in NRW: tot und männlich"
 description: WDR 3 Datenanalyse der Opern-Spielzeit 2018/2019
 author: Niklas Rudolph, Patricia Ennenbach
 pub_date: "2019-07-15"
-heroImage: ./netrebko106__v-gseapremiumxl.jpg
-heroAlt: "Dummy-Bild"
-heroCredit: "Dummy-Bild, keine Bildrechte WDR"
+heroImage: ./richard-wagner-und-freunde.jpg
+heroAlt: "Richard Wagner und Freunde."
+heroCredit: "Bildrechte: WDR"
 ---
 
 import DataWrapper from '../components/datawrapper/datawrapper.jsx'
