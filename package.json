@@ -39,6 +39,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-inlinesvg": "^0.8.4",
+    "react-social-sharing": "^3.0.1",
     "semiotic": "^1.19.11",
     "svg-inline-loader": "^0.8.0"
   },
