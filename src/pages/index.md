@@ -87,7 +87,7 @@ Schaut man sich die Stücke an, die die Häuser auf ihren eigenen Bühnen auffü
 
 ### Europa im Zentrum
 
-Auch wenn man sich die Herkunft der Komponistinnen und Komponisten anschaut, so liegt der Fokus ganz klar auf Europa.
+Auch die Herkunft der gespielten Komponisten beschränkt sich vor allem auf Deutschland und Mitteleuropa. 
 
 <figure role="group">
     <figcaption>Die meisten KomponistInnen sind in Europa geboren, einige stammen jedoch aus der ganzen Welt.</figcaption>
@@ -104,13 +104,11 @@ Auch wenn man sich die Herkunft der Komponistinnen und Komponisten anschaut, so 
 
 </figure>
 
-Die Opern begründen ihre konservativen Spielpläne mit dem politischen Druck, die Auslastungszahlen hoch zu halten.
+Die Opern begründen ihre Spielpläne mit dem allgemeinen Druck, die Auslastungszahlen hoch zu halten. "Ich glaube wir sind da in einer ganz tollen Situation im Moment", sagt Intendant Berthold Schneider, "weil auch der innere Leidensdruck ziemlich groß ist und das ist immer eine gute Voraussetzung." Auf der einen Seite wolle Schneider mit Oper kulturelles Erbe abbilden, auf der anderen Seite Innovationsdruck machen: "Wir brauchen unbedingt viel, viel mehr Dynamik."
 
-<Quote author="Platzhalter Intendant Oper Wuppertal">Die Oper ist stark genug dass sie sich immer wieder verändern wird.</Quote>
+<Quote author="Berthold Schneider, Intendant Oper Wuppertal">Die Oper ist stark genug dass sie sich immer wieder verändern wird.</Quote>
 
-[Häuser im Vergleich: Hier wäre es schön, eine Karte zu haben mit skalierten Punkten. Je mehr Komponisten nach 1900 geboren das Haus spielt, desto größer ist der Punkt.]
-
-Und so bieten die Spielpläne ein gewohntes Bild. Zum Abschluss zeigen wir alle Opern der NRW-Spielzeit in einer Tabelle, sortiert nach Anzahl der Aufführungen.
+Hier finden Sie alle Opern, die 2018/19 auf kommunalen Bühnen in NRW aufgeführt wurden - nach Anzahl der Aufführungen sortiert:
 
 ### Zauberflöte vor Hänsel und Gretel
 
