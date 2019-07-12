@@ -4,8 +4,8 @@ description: WDR 3 Datenanalyse der Opern-Spielzeit 2018/2019
 author: Niklas Rudolph, Patricia Ennenbach
 pub_date: "2019-07-15"
 heroImage: ./richard-wagner-und-freunde.jpg
-heroAlt: "Richard Wagner und Freunde."
-heroCredit: "Bildrechte: WDR"
+heroAlt: "Richard Wagner und seine Freunde"
+heroCredit: "Richard Wagner und seine Freunde, Foto von Joseph Albert (picture alliance / akg-images)"
 ---
 
 import DataWrapper from '../components/datawrapper/datawrapper.jsx'
@@ -15,7 +15,7 @@ import Webtrekk from '../components/webtrekk/webtrekk.jsx'
 
 # Opernspielpläne in NRW: tot und männlich
 
-## Wir haben die Spielpläne von 13 kommunalen Opern-Bühnen in NRW aus der Spielzeit 2018/19 abgefragt und analysiert. Das Ergebnis war kaum überraschend – zeigt aber, dass lebende Komponisten kaum eine Chance haben. Und Komponistinnen gar keine.
+## Wir haben die Opern-Spielpläne in NRW aus der letzten Spielzeit analysiert. Das Ergebnis war kaum überraschend – zeigt aber, dass lebende Komponisten kaum eine Chance haben. Und Komponistinnen gar keine.
 
 Vorweg: Wir jammern auf hohem Niveau. Denn alles in allem steht es gut um die Oper in Nordrhein-Westfalen. In der letzten Spielzeit stemmten die 13 kommunalen Bühnen über hundert Inszenierungen – mit insgesamt mehr als tausend Aufführungen. In anderen Worten: Opernfreunde hatten im Schnitt jeden Tag die Wahl zwischen rund drei Opernaufführungen.
 
@@ -23,7 +23,7 @@ Vorweg: Wir jammern auf hohem Niveau. Denn alles in allem steht es gut um die Op
 
 Doch so vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot keinesfalls. Denn meistens begegnet das Publikum alten Bekannten:
 
-### Ältere werden häufiger aufgeführt
+### Die Spitzenreiter: Verdi, Mozart, Wagner
 
 <figure role="group">
     <figcaption> Zu sehen ist das Geburtsjahr im Verhältnis zur Zahl der Aufführungen. Gelbe Quadrate stehen für lebende    KomponistInnen, blaue Punkte für verstorbene. Klicken Sie darauf, um Name, Geburtsjahr und Zahl der Aufführungen zu sehen.</figcaption>
@@ -35,13 +35,11 @@ Doch so vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot
 
 </figure>
 
-Zum Beispiel: Claudio Monteverdi war mit 425 Jahren der älteste gespielte Komponist 2018/19. Leonard Evers mit 34 der jüngste. Bei Leonard Bernstein und Jacques Offenbach sieht man, dass die großen Jubiläumsjahre sehr erfolgreich darin waren, die Komponisten wieder auf die Spielpläne zu setzen.
-
-Giuseppe Verdi führt die Liste mit Abstand an – er ist in der letzten Spielzeit gleich 13 mal in NRW inszeniert worden.
+Giuseppe Verdi führt die Liste mit Abstand an – er ist in der letzten Spielzeit gleich 13 mal inszeniert und insgesamt 143 mal aufgeführt worden. Bei Leonard Bernstein und Jacques Offenbach sieht man, dass die großen Jubiläumsjahre sehr erfolgreich darin waren, die Komponisten wieder auf die Spielpläne zu setzen. Trotzdem heißen die Komponisten eines Großteils der Verdi, Mozart, Wagner und Puccini machen damit etwa die Hälfte der Opernaufführungen aus. 
 
 ## Im Schnitt 180 Jahre alt
 
-Nur 17 der 66 gespielten Komponisten leben noch, das sind 27 Prozent. Schaut man allerdings auf die Gesamtanzahl aller gespielten Aufführungen, dann liegen die lebeden Komponisten bei nur noch 9 Prozent. Ist die Opernwelt im 19. Jahrhundert stehen geblieben?
+Nur 17 von 66 gespielten Komponisten leben noch, das ist etwa jeder Dritte. Schaut man allerdings auf die Gesamtanzahl aller gespielten Aufführungen, dann ist nur noch jeder zehnte Komponist am Leben. Ist die Opernwelt etwa im 19. Jahrhundert stehen geblieben?
 
 ### Fast jede dritte KomponistIn lebt, aber nur jede zehnte Aufführung stammt von ihnen
 
@@ -61,7 +59,11 @@ Für den Komponisten Moritz Eggert ein Armutzeugnis. Er hatte den deutschen Oper
 <a href="https://blogs.nmz.de/badblog/2018/04/10/die-ernuechternde-opernstatistik-der-spielzeit-2017-2018/" target="_blank" rel="noopener noreferrer">Moritz Eggert</a>
 }>Überlebenschance der Gattung Oper, wenn sich nicht grundlegend etwas ändert: 0%</Quote>
 
-Bei den lebenden Komponisten sind es vor allem Premieren von Uraufführungen, die aber nach wenigen Aufführungen wieder vom Spielplan verschwinden. Ein Verhältnis sticht außerdem sehr ins Auge:
+"Auftragswerke sind aufwändig und teuer", sagt Philipp Jüttner vom Musiktheater im Revier in Gelsenkirchen. "Wir schauen daher, wo wir Lücken im Repertoire schließen können." Einen Bedarf sieht Jüttner vor allem bei Werken für ein junges Publikum - also bei Kinderopern.  So tourte das Musiktheater im Revier mit "Don Quixote" von Komponistin Katharina Schmauder (Jahrgang 1994) durch die Grundschulen im Umland. 
+
+"Eine reiche Tradition zu pflegen bedeutet dabei auch, dass sich die zeitgenössischen Werke im ständig anwachsenden Repertoire gegen bekannte Opern beweisen müssen", sagt Philipp Jüttner. "Ein guter Test dafür, was künstlerisch standhält."
+
+Allein an der künstlerischen Qualität kann es allerdigngs nicht liegen, dass die Stücke, die dann direkt an den Häusern dem Publikum präsentiert werden, fast ausschließlich von Männern geschrieben werden:
 
 ### Nuria Núñez Hierro ist die einzige Frau
 
@@ -74,14 +76,6 @@ Bei den lebenden Komponisten sind es vor allem Premieren von Uraufführungen, di
     />
 
 </figure>
-
-Nuria Núñez Hierro wurde 1980 in Jerez (Spanien) geboren.
-
-<img className="inlineImage" src="./3f97a-Nunez-Hierro-Nuria-Portr--tfoto--Copy-.png" alt="Porträt Nuria Núñez Hierro"/>
-
-Komponistin Nunez Herero fordert daher eine Quote für Frauen auf den Spielplänen.
-
-<Quote author="Platzhalter Nura Nunez Hierro">Es gibt so viele gute Komponistinnen. Dass noch immer keine gespielt werden, ist ein Skandal!</Quote>
 
 Beim Blick auf die Herkunft der KomponistInnen liegt das Zentrum weiterhin klar in Europa.
 
