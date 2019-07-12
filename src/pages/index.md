@@ -12,6 +12,7 @@ import DataWrapper from '../components/datawrapper/datawrapper.jsx'
 import Quote from '../components/quote/quote.jsx'
 import Accordion from '../components/accordion/accordion.jsx'
 import Webtrekk from '../components/webtrekk/webtrekk.jsx'
+import Sharing from '../components/sharing/sharing.jsx'
 
 # Opernspielpläne in NRW: tot und männlich
 
@@ -120,6 +121,8 @@ Und so bieten die Spielpläne ein gewohntes Bild. Zum Abschluss zeigen wir alle 
         src="//datawrapper.dwcdn.net/azwpu/6/"
     />
 </figure>
+
+<Sharing twitter facebook mail whatsapp telegram reddit xing linkedin />
 
 <Accordion authors={
         <ul>
