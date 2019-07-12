@@ -17,7 +17,7 @@ import Webtrekk from '../components/webtrekk/webtrekk.jsx'
 
 ## Wir haben die Opern-Spielpläne in NRW aus der letzten Spielzeit analysiert. Das Ergebnis war kaum überraschend – zeigt aber, dass lebende Komponisten kaum eine Chance haben. Und Komponistinnen gar keine.
 
-Vorweg: Wir jammern auf hohem Niveau. Denn alles in allem steht es gut um die Oper in Nordrhein-Westfalen. In der letzten Spielzeit stemmten die 13 kommunalen Bühnen über hundert Inszenierungen – mit insgesamt mehr als tausend Aufführungen. In anderen Worten: Opernfreunde hatten im Schnitt jeden Tag die Wahl zwischen rund drei Opernaufführungen.
+Vorweg: NRW ist ein großartiges Bundesland für Oper. In der letzten Spielzeit stemmten die 13 kommunalen Bühnen über hundert Inszenierungen – mit insgesamt mehr als tausend Aufführungen. In anderen Worten: Opernfreunde hatten im Schnitt jeden Tag die Wahl zwischen drei Aufführungen.
 
 ## Drei Opern am Tag
 
