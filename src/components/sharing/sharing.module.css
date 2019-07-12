@@ -2,16 +2,16 @@
   margin: 2rem 0;
 }
 
-.button-row > * {
+.button-row > a {
   margin: 0 1rem 0 0;
 }
 
-.button-row > * > * {
-  background: var(--brand-primary);
+a > .sharing-button {
+  background-color: var(--brand-primary);
 }
 
 @media (max-width: 800px) {
-  .button-row > * {
+  .button-row > a {
     margin: 0.2rem 0.2rem 0 0;
   }
 }

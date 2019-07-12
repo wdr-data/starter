@@ -9,14 +9,78 @@ const Sharing = ({ linkURL, twitter, facebook, mail, whatsapp, telegram, reddit,
 
   return (
     <div className={styles.buttonRow}>
-      {twitter && <Twitter solid small link={linkURL || URL} label={serviceName => `Teilen via ${serviceName}`} />}
-      {facebook && <Facebook solid small link={linkURL || URL} label={serviceName => `Teilen via ${serviceName}`} />}
-      {mail && <Mail solid small link={linkURL || URL} label={serviceName => `Teilen via ${serviceName}`} />}
-      {whatsapp && <Whatsapp solid small link={linkURL || URL} label={serviceName => `Teilen via ${serviceName}`} />}
-      {telegram && <Telegram solid small link={linkURL || URL} label={serviceName => `Teilen via ${serviceName}`} />}
-      {reddit && <Reddit solid small link={linkURL || URL} label={serviceName => `Teilen via ${serviceName}`} />}
-      {xing && <Xing solid small link={linkURL || URL} label={serviceName => `Teilen via ${serviceName}`} />}
-      {linkedin && <Linkedin solid small link={linkURL || URL} label={serviceName => `Teilen via ${serviceName}`} />}
+      {twitter && (
+        <Twitter
+          solid
+          small
+          link={linkURL || URL}
+          label={serviceName => `Teilen via ${serviceName}`}
+          className={styles.sharingButton}
+        />
+      )}
+      {facebook && (
+        <Facebook
+          solid
+          small
+          link={linkURL || URL}
+          label={serviceName => `Teilen via ${serviceName}`}
+          className={styles.sharingButton}
+        />
+      )}
+      {mail && (
+        <Mail
+          solid
+          small
+          link={linkURL || URL}
+          label={serviceName => `Teilen via ${serviceName}`}
+          className={styles.sharingButton}
+        />
+      )}
+      {whatsapp && (
+        <Whatsapp
+          solid
+          small
+          link={linkURL || URL}
+          label={serviceName => `Teilen via ${serviceName}`}
+          className={styles.sharingButton}
+        />
+      )}
+      {telegram && (
+        <Telegram
+          solid
+          small
+          link={linkURL || URL}
+          label={serviceName => `Teilen via ${serviceName}`}
+          className={styles.sharingButton}
+        />
+      )}
+      {reddit && (
+        <Reddit
+          solid
+          small
+          link={linkURL || URL}
+          label={serviceName => `Teilen via ${serviceName}`}
+          className={styles.sharingButton}
+        />
+      )}
+      {xing && (
+        <Xing
+          solid
+          small
+          link={linkURL || URL}
+          label={serviceName => `Teilen via ${serviceName}`}
+          className={styles.sharingButton}
+        />
+      )}
+      {linkedin && (
+        <Linkedin
+          solid
+          small
+          link={linkURL || URL}
+          label={serviceName => `Teilen via ${serviceName}`}
+          className={styles.sharingButton}
+        />
+      )}
     </div>
   );
 };
