@@ -74,7 +74,7 @@ Für den Komponisten Moritz Eggert ist das ein Armutzeugnis. Er hatte den deutsc
 
 Philipp Jüttner vom Musiktheater im Revier in Gelsenkirchen wehrt sich gegen den Vorwurf. Schließlich vergäben Opern jedes Jahr Aufträge an lebende Komponisten. Doch: "Auftragswerke sind aufwändig und teuer", sagt Jüttner. "Wir schauen daher, wo wir Lücken im Repertoire schließen können." Einen Bedarf sieht Jüttner vor allem bei Werken für ein junges Publikum - also bei Kinderopern.  So tourte das Musiktheater im Revier mit "Don Quixote" von Komponistin Katharina Schmauder (Jahrgang 1994) durch die Grundschulen im Umland. 
 
-## "Zeitgenössische Werke müssen sich beweisen"
+<Quote author="Philipp Jüttner, Musiktheater im Revier Gelsenkirchen">"Zeitgenössische Werke müssen sich beweisen."</Quote>
 
 Neue Stoffe hätten es häufig schwer, sich gegen populäre Melodien durchzusetzen: "Ein guter Test dafür, was künstlerisch standhält." Deswegen wundere es Philipp Jüttner nicht, dass viele neu komponierte Opern nicht mehr Aufführungen als die Premiere erleben: "Zeitgenössische Werke müssen sich gegen bekannte Opern beweisen."
 
