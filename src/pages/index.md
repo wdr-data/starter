@@ -16,11 +16,22 @@ import Sharing from '../components/sharing/sharing.jsx'
 
 # Opern-Spielpläne in NRW: tot und männlich
 
-## Wir haben die Opern-Spielpläne in NRW unter die Lupe genommen. Das Ergebnis: Lebende Komponisten haben kaum eine Chance auf die großen Bühnen zu kommen. Und Komponistinnen gar keine.
+## Wir haben die Opern-Spielpläne in NRW unter die Lupe genommen. Das Ergebnis: NRW ist ein Opern-Paradies. Aber lebende Komponisten haben kaum eine Chance, auf die großen Bühnen zu kommen. Und Komponistinnen gar keine.
 
-Vorweg: NRW ist ein großartiges Bundesland für Oper. In der letzten Spielzeit stemmten die 13 kommunalen Bühnen über hundert Inszenierungen – mit insgesamt mehr als tausend Aufführungen. In anderen Worten: Opernfreunde hatten im Schnitt jeden Tag die Wahl zwischen drei Aufführungen.
+Waren Sie in der letzten Spielzeit in der Oper? Dann haben Sie höchstwahrscheinlich Papageno, die Knusperhexe oder Leporello auf der Bühne erlebt. Diese Opern und Operetten standen am häufigsten auf dem Spielplan:
 
-[Grob zusammengefasst.]
+### Zauberflöte vor Hänsel und Gretel
+
+<figure role="group">
+    <figcaption>Wurde das Stück im Haus auch 'für Kinder' gespielt, haben wir es hier mit zusammengefasst.</figcaption>
+    <DataWrapper
+        alt="76 mal wurde die Zauberflöte 2018/2019 in NRW aufgeführt, gefolgt von Hänsel und Gretel mit 34 Aufführungen."
+        title="Zauberflöte vor Hänsel und Gretel"
+        src="//datawrapper.dwcdn.net/azwpu/6/"
+    />
+</figure>
+
+In der letzten Spielzeit stemmten die 13 kommunalen Bühnen über hundert Inszenierungen – mit insgesamt mehr als tausend Aufführungen. Drei Opern pro Tag. NRW ist ein großartiges Bundesland für Oper.
 
 ## Viel Angebot, aber wenig Vielfalt
 
@@ -38,11 +49,11 @@ Doch so vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot
 
 </figure>
 
-Giuseppe Verdi führt die Liste mit Abstand an – seine Opern sind in der letzten Spielzeit gleich 13 mal inszeniert und insgesamt 143 mal aufgeführt worden. Bei Leonard Bernstein und Jacques Offenbach sieht man, dass die großen Jubiläumsjahre sehr erfolgreich darin waren, die Komponisten wieder auf die Spielpläne zu setzen. Trotzdem heißen die Komponisten bei einem Großteil der Opern Verdi, Mozart, Wagner und Puccini - und machen damit etwa die Hälfte der Opernaufführungen aus. 
+Bei Leonard Bernstein und Jacques Offenbach sieht man, dass die großen Jubiläumsjahre sehr erfolgreich darin waren, die Komponisten wieder auf die Spielpläne zu setzen. Trotzdem heißen die Komponisten meistens Verdi, Mozart, Wagner und Puccini - und machen damit etwa die Hälfte der Opernaufführungen aus. Giuseppe Verdi führt diese Liste mit Abstand an – seine Opern sind gleich 13 mal inszeniert und insgesamt 143 mal aufgeführt worden. 
 
 ## Im Schnitt sind die Komponisten 180 Jahre alt
 
-Nur 17 von 66 gespielten Komponisten leben noch, das ist etwa jeder Dritte. Schaut man allerdings auf die Gesamtanzahl aller gespielten Aufführungen, dann ist nur noch jeder zehnte Komponist am Leben. Ist die Opernwelt etwa im 19. Jahrhundert stehen geblieben?
+Dass die beliebten Melodien von Moazrt und Verdi kaum Konkurrenz zulassen ist kaum überraschend. Deswegen finden sich auch kaum Stücke von lebenden Komponisten auf den Spielplänen. Nur jeder dritte gespielte Komponist lebt noch, im Schnitt sind die Komponisten 180 Jahre alt. Ist die Opernwelt etwa im 19. Jahrhundert stehen geblieben?
 
 ### Fast jeder dritte Komponist lebt - trotzdem werden sie kaum aufgeführt
 
@@ -113,18 +124,7 @@ Die Opern begründen ihre Spielpläne mit dem allgemeinen Druck, die Auslastungs
 
 <Quote author="Berthold Schneider, Intendant Oper Wuppertal">Die Oper ist stark genug dass sie sich immer wieder verändern wird.</Quote>
 
-Hier finden Sie alle Opern, die 2018/19 auf kommunalen Bühnen in NRW aufgeführt wurden - nach Anzahl der Aufführungen sortiert:
 
-### Zauberflöte vor Hänsel und Gretel
-
-<figure role="group">
-    <figcaption>Wurde das Stück auch 'für Kinder' angeboten, haben wir es hier mit zusammen gefasst. Kennen Sie die Opern? Haben sie die Melodien im Ohr?</figcaption>
-    <DataWrapper
-        alt="76 mal wurde die Zauberflöte 2018/2019 in NRW aufgeführt, gefolgt von Hänsel und Gretel mit 34 Aufführungen."
-        title="Zauberflöte vor Hänsel und Gretel"
-        src="//datawrapper.dwcdn.net/azwpu/6/"
-    />
-</figure>
 
 <Sharing twitter facebook mail whatsapp telegram reddit xing linkedin />
 
