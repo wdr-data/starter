@@ -120,7 +120,7 @@ Auch die Herkunft der gespielten Komponisten beschränkt sich vor allem auf Deut
 
 </figure>
 
-<img src="./berthold-schneider-credit-jens-grossmann.jpg" alt="Der Wuppertaler Opernintendant Berthold Schneider, fotografiert von Jens Grossmann">
+<img src="../static/berthold-schneider-credit-jens-grossmann.jpg" alt="Der Wuppertaler Opernintendant Berthold Schneider, fotografiert von Jens Grossmann">
 
 Die Opern begründen ihre Spielpläne mit dem allgemeinen Druck, die Auslastungszahlen hoch zu halten. "Ich glaube wir sind da in einer ganz tollen Situation im Moment", sagt Intendant Berthold Schneider, "weil auch der innere Leidensdruck ziemlich groß ist und das ist immer eine gute Voraussetzung." Auf der einen Seite wolle Schneider mit Oper kulturelles Erbe abbilden, auf der anderen Seite Innovationsdruck machen: "Wir brauchen unbedingt viel, viel mehr Dynamik."
 
