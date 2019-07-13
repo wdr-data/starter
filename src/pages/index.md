@@ -53,7 +53,7 @@ Bei Leonard Bernstein und Jacques Offenbach sieht man, dass die großen Jubiläu
 
 ## Im Schnitt sind die Komponisten 180 Jahre alt
 
-Dass die beliebten Melodien von Moazrt und Verdi kaum Konkurrenz zulassen ist kaum überraschend. Deswegen finden sich auch kaum Stücke von lebenden Komponisten auf den Spielplänen. Nur jeder dritte gespielte Komponist lebt noch, im Schnitt sind die Komponisten 180 Jahre alt. Ist die Opernwelt etwa im 19. Jahrhundert stehen geblieben?
+Dass die beliebten Melodien von Mozart und Verdi kaum Konkurrenz zulassen ist kaum überraschend. Deswegen finden sich auch kaum Stücke von lebenden Komponisten auf den Spielplänen. Nur jeder dritte gespielte Komponist lebt noch, im Schnitt sind die Komponisten 180 Jahre alt. Ist die Opernwelt etwa im 19. Jahrhundert stehen geblieben?
 
 ### Fast jeder dritte Komponist lebt - trotzdem werden sie kaum aufgeführt
 
@@ -119,6 +119,8 @@ Auch die Herkunft der gespielten Komponisten beschränkt sich vor allem auf Deut
     />
 
 </figure>
+
+<img src="./berthold-schneider-credit-jens-grossmann.jpg" alt="Der Wuppertaler Opernintendant Berthold Schneider, fotografiert von Jens Grossmann">
 
 Die Opern begründen ihre Spielpläne mit dem allgemeinen Druck, die Auslastungszahlen hoch zu halten. "Ich glaube wir sind da in einer ganz tollen Situation im Moment", sagt Intendant Berthold Schneider, "weil auch der innere Leidensdruck ziemlich groß ist und das ist immer eine gute Voraussetzung." Auf der einen Seite wolle Schneider mit Oper kulturelles Erbe abbilden, auf der anderen Seite Innovationsdruck machen: "Wir brauchen unbedingt viel, viel mehr Dynamik."
 
