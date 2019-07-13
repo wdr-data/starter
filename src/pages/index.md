@@ -1,5 +1,5 @@
 ---
-title: "Opernspielpläne in NRW: tot und männlich"
+title: "Opern-Spielpläne in NRW: tot und männlich"
 description: WDR 3 Datenanalyse der Opern-Spielzeit 2018/2019
 author: Niklas Rudolph, Patricia Ennenbach
 pub_date: "2019-07-15"
@@ -13,17 +13,19 @@ import Quote from '../components/quote/quote.jsx'
 import Accordion from '../components/accordion/accordion.jsx'
 import Webtrekk from '../components/webtrekk/webtrekk.jsx'
 
-# Opernspielpläne in NRW: tot und männlich
+# Opern-Spielpläne in NRW: tot und männlich
 
-## Wir haben die Opern-Spielpläne in NRW aus der letzten Spielzeit analysiert. Das Ergebnis war kaum überraschend – zeigt aber, dass lebende Komponisten kaum eine Chance haben. Und Komponistinnen gar keine.
+## Wir haben die Opern-Spielpläne in NRW unter die Lupe genommen. Das Ergebnis: Lebende Komponisten haben kaum eine Chance auf die großen Bühnen zu kommen. Und Komponistinnen gar keine.
 
 Vorweg: NRW ist ein großartiges Bundesland für Oper. In der letzten Spielzeit stemmten die 13 kommunalen Bühnen über hundert Inszenierungen – mit insgesamt mehr als tausend Aufführungen. In anderen Worten: Opernfreunde hatten im Schnitt jeden Tag die Wahl zwischen drei Aufführungen.
 
-## Drei Opern am Tag
+[Grob zusammengefasst.]
+
+## Viel Angebot, aber wenig Vielfalt
 
 Doch so vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot keinesfalls. Denn meistens begegnet das Publikum alten Bekannten:
 
-### Die Spitzenreiter: Verdi, Mozart, Wagner
+### Verdi, Mozart, Wagner sind Spitzenreiter
 
 <figure role="group">
     <figcaption> Zu sehen ist das Geburtsjahr im Verhältnis zur Zahl der Aufführungen. Gelbe Quadrate stehen für lebende    KomponistInnen, blaue Punkte für verstorbene. Klicken Sie darauf, um Name, Geburtsjahr und Zahl der Aufführungen zu sehen.</figcaption>
@@ -35,13 +37,13 @@ Doch so vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot
 
 </figure>
 
-Giuseppe Verdi führt die Liste mit Abstand an – er ist in der letzten Spielzeit gleich 13 mal inszeniert und insgesamt 143 mal aufgeführt worden. Bei Leonard Bernstein und Jacques Offenbach sieht man, dass die großen Jubiläumsjahre sehr erfolgreich darin waren, die Komponisten wieder auf die Spielpläne zu setzen. Trotzdem heißen die Komponisten eines Großteils der Verdi, Mozart, Wagner und Puccini machen damit etwa die Hälfte der Opernaufführungen aus. 
+Giuseppe Verdi führt die Liste mit Abstand an – seine Opern sind in der letzten Spielzeit gleich 13 mal inszeniert und insgesamt 143 mal aufgeführt worden. Bei Leonard Bernstein und Jacques Offenbach sieht man, dass die großen Jubiläumsjahre sehr erfolgreich darin waren, die Komponisten wieder auf die Spielpläne zu setzen. Trotzdem heißen die Komponisten bei einem Großteil der Opern Verdi, Mozart, Wagner und Puccini - und machen damit etwa die Hälfte der Opernaufführungen aus. 
 
-## Im Schnitt 180 Jahre alt
+## Im Schnitt sind die Komponisten 180 Jahre alt
 
 Nur 17 von 66 gespielten Komponisten leben noch, das ist etwa jeder Dritte. Schaut man allerdings auf die Gesamtanzahl aller gespielten Aufführungen, dann ist nur noch jeder zehnte Komponist am Leben. Ist die Opernwelt etwa im 19. Jahrhundert stehen geblieben?
 
-### Fast jede dritte KomponistIn lebt, aber nur jede zehnte Aufführung stammt von ihnen
+### Fast jeder dritte Komponist lebt - trotzdem werden sie kaum aufgeführt
 
 <figure role="group">
     <figcaption> Bei Klick auf 'KomponistInnen' ist zu sehen, wie das Verhältnis von verstorbenen zu lebenden KomponistInnen ist.</ figcaption>
@@ -53,19 +55,21 @@ Nur 17 von 66 gespielten Komponisten leben noch, das ist etwa jeder Dritte. Scha
 
 </figure>
 
-Für den Komponisten Moritz Eggert ein Armutzeugnis. Er hatte den deutschen Opernhäusern schon im vergangenen Jahr mangelnde Innovationskraft vorgeworfen.
+Für den Komponisten Moritz Eggert ist das ein Armutzeugnis. Er hatte den deutschen Opernhäusern schon im vergangenen Jahr mangelnde Innovationskraft vorgeworfen:
 
 <Quote author={
 <a href="https://blogs.nmz.de/badblog/2018/04/10/die-ernuechternde-opernstatistik-der-spielzeit-2017-2018/" target="_blank" rel="noopener noreferrer">Moritz Eggert</a>
 }>Überlebenschance der Gattung Oper, wenn sich nicht grundlegend etwas ändert: 0%</Quote>
 
-"Auftragswerke sind aufwändig und teuer", sagt Philipp Jüttner vom Musiktheater im Revier in Gelsenkirchen. "Wir schauen daher, wo wir Lücken im Repertoire schließen können." Einen Bedarf sieht Jüttner vor allem bei Werken für ein junges Publikum - also bei Kinderopern.  So tourte das Musiktheater im Revier mit "Don Quixote" von Komponistin Katharina Schmauder (Jahrgang 1994) durch die Grundschulen im Umland. 
+Philipp Jüttner vom Musiktheater im Revier in Gelsenkirchen wehrt sich gegen den Vorwurf. Schließlich vergäben Opern jedes Jahr Aufträge an lebende Komponisten. Doch: "Auftragswerke sind aufwändig und teuer", sagt Jüttner. "Wir schauen daher, wo wir Lücken im Repertoire schließen können." Einen Bedarf sieht Jüttner vor allem bei Werken für ein junges Publikum - also bei Kinderopern.  So tourte das Musiktheater im Revier mit "Don Quixote" von Komponistin Katharina Schmauder (Jahrgang 1994) durch die Grundschulen im Umland. 
 
-"Eine reiche Tradition zu pflegen bedeutet dabei auch, dass sich die zeitgenössischen Werke im ständig anwachsenden Repertoire gegen bekannte Opern beweisen müssen", sagt Philipp Jüttner. "Ein guter Test dafür, was künstlerisch standhält."
+## "Zeitgenössische Werke müssen sich beweisen"
 
-Allein an der künstlerischen Qualität kann es allerdigngs nicht liegen, dass die Stücke, die dann direkt an den Häusern dem Publikum präsentiert werden, fast ausschließlich von Männern geschrieben werden:
+Neue Stoffe hätten es häufig schwer, sich gegen populäre Melodien durchzusetzen: "Ein guter Test dafür, was künstlerisch standhält." Deswegen wundere es Philipp Jüttner nicht, dass viele neu komponierte Opern nicht mehr Aufführungen als die Premiere erleben: "Zeitgenössische Werke müssen sich gegen bekannte Opern beweisen."
 
 ### Von 13 Komponisten nur eine einzige Frau auf der Bühne
+
+Allein an der künstlerischen Qualität kann es allerdings nicht liegen, dass die Stücke, die dann direkt an den Häusern dem Publikum präsentiert werden, fast ausschließlich von Männern geschrieben werden:
 
 <figure role="group">
     <figcaption>Hierros Kinderoper “Kleines Stück Himmel” wurde in Wuppertal acht mal aufgeführt.</figcaption>
