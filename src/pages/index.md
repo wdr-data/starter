@@ -49,11 +49,11 @@ Doch so vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot
 
 </figure>
 
-Bei Leonard Bernstein und Jacques Offenbach sieht man, dass die großen Jubiläumsjahre sehr erfolgreich darin waren, diese Komponisten wieder auf die Spielpläne zu setzen. Trotzdem sind die großen Namen meistens Verdi, Mozart, Wagner und Puccini - ihre Opern machen etwa die Hälfte der Opernaufführungen aus. Giuseppe Verdi führt diese Liste mit Abstand an – seine Opern sind gleich 13 mal inszeniert und insgesamt 143 mal aufgeführt worden.
+Bei Leonard Bernstein und Jacques Offenbach sieht man, dass die großen Jubiläumsjahre sehr erfolgreich darin waren, diese Komponisten wieder auf die Spielpläne zu setzen. Trotzdem sind die großen Namen meistens Verdi, Mozart, Wagner und Puccini - ihre Opern machen etwa die Hälfte der Aufführungen aus. Giuseppe Verdi führt diese Liste mit Abstand an – seine Opern sind gleich 13 mal inszeniert und insgesamt 143 mal aufgeführt worden.
 
 ## Im Schnitt sind die Komponisten 180 Jahre alt
 
-Die beliebten Melodien von Mozart und Verdi lassen anscheinend kaum Konkurrenz zu. Denn Stücke von lebenden Komponisten finden sich selten auf den Spielplänen. Nur jeder dritte gespielte Komponist lebt noch, im Schnitt sind die Komponisten 180 Jahre alt. Ist die Opernwelt etwa im 19. Jahrhundert stehen geblieben?
+Die beliebten Melodien von Mozart und Verdi lassen anscheinend kaum Konkurrenz zu. Denn Stücke von lebenden Komponisten finden sich selten auf den Spielplänen. Nur jeder dritte gespielte Komponist lebt noch, im Schnitt sind die Komponisten 180 Jahre alt. Ist die Opernwelt im 19. Jahrhundert stehen geblieben?
 
 ### Jeder dritte Komponist lebt - trotzdem werden sie kaum aufgeführt
 
@@ -91,7 +91,7 @@ Neue Stoffe hätten es häufig schwer, sich gegen populäre Melodien durchzusetz
 
 </figure>
 
-### Von 13 Komponisten nur eine einzige Frau auf der Bühne
+### Von 13 lebenden Komponisten nur eine einzige Frau auf der Bühne
 
 Schaut man sich die Stücke an, die die Häuser auf ihren eigenen Bühnen aufführen, so sind die Komponisten allesamt Männer. Einzige Ausnahme ist die spanische Komponistin Nuria Núñez Hierro (Jahrgang 1980).
 
@@ -104,6 +104,7 @@ Schaut man sich die Stücke an, die die Häuser auf ihren eigenen Bühnen auffü
     />
 
 </figure>
+Können Frauen einfach keine Opern schreiben? Nein, daran liegt es nicht.
 
 "Es gibt gewachsene Strukturen, die von Männern dominiert sind", erklärt der Intendant der Oper Wuppertal, Berthold Schneider, den hohen Männeranteil.
 
