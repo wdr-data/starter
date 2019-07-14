@@ -135,9 +135,9 @@ Die Opern begründen ihre konservativen Spielpläne mit dem allgemeinen Druck, d
 
 <img src="berthold-schneider-credit-jens-grossmann.jpg" alt="Der Wuppertaler Opernintendant Berthold Schneider, fotografiert von Jens Grossmann" />
 
-<Quote author="Berthold Schneider, Intendant Oper Wuppertal">Die Oper ist stark genug, dass sie sich immer wieder verändern wird.</Quote>
-
 Auf der einen Seite wolle Schneider mit Oper kulturelles Erbe abbilden, auf der anderen Seite Innovationsdruck machen: "Wir brauchen unbedingt viel, viel mehr Dynamik."
+
+<Quote author="Berthold Schneider, Intendant Oper Wuppertal">Die Oper ist stark genug, dass sie sich immer wieder verändern wird.</Quote>
 
 <Sharing twitter facebook mail whatsapp telegram reddit xing linkedin />
 
