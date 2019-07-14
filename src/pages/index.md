@@ -162,6 +162,11 @@ Auf der einen Seite wolle Schneider mit Oper kulturelles Erbe abbilden, auf der 
             <li>- Die Vorgehensweise bei der Datenanalyse können Sie hier nachlesen: <a href='https://github.com/wdr-data/starter/blob/main/data/Daten-Analyse_Opern_in_NRW.ipynb' target="_blank" rel="noopener noreferrer">Daten-Analyse Opern in NRW</a>
             </li>
         </ul>
+    <h3>Code</h3>
+        <ul>
+            <li>- 'Oper in NRW' ist das erste WDR Data Projekt, das mit unserem Data Starter umgesetzt wurde. Der Code steht OpenSource zur Verfügung: <a href='https://github.com/wdr-data/starter/' target="_blank" rel="noopener noreferrer">WDR Data Starter</a>
+            </li>
+        </ul>
 </React.Fragment>
 } credits={
 <React.Fragment>
