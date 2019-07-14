@@ -13,8 +13,8 @@
 }
 
 article img {
-  max-width: 90vw;
+  max-width: 800px;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
