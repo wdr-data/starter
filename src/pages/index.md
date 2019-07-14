@@ -12,6 +12,7 @@ import DataWrapper from '../components/datawrapper/datawrapper.jsx'
 import Quote from '../components/quote/quote.jsx'
 import Accordion from '../components/accordion/accordion.jsx'
 import Webtrekk from '../components/webtrekk/webtrekk.jsx'
+import Sharing from '../components/sharing/sharing.jsx'
 
 # Opern-Spielpläne in NRW: tot und männlich
 
@@ -126,6 +127,8 @@ Die Opern begründen ihre Spielpläne mit dem allgemeinen Druck, die Auslastungs
 <Quote author="Berthold Schneider, Intendant Oper Wuppertal">Die Oper ist stark genug dass sie sich immer wieder verändern wird.</Quote>
 
 
+
+<Sharing twitter facebook mail whatsapp telegram reddit xing linkedin />
 
 <Accordion authors={
 
