@@ -16,9 +16,9 @@ import Sharing from '../components/sharing/sharing.jsx'
 
 # Opern-Spielpläne in NRW: tot und männlich
 
-## Wir haben die Opern-Spielpläne in NRW unter die Lupe genommen. Das Ergebnis: NRW ist ein Opern-Paradies. Aber lebende Komponisten haben kaum eine Chance, auf die großen Bühnen zu kommen. Und Komponistinnen gar keine.
+## Wir haben die Opern-Spielpläne in NRW unter die Lupe genommen. Das Ergebnis: NRW ist ein Opern-Paradies. Aber lebende Komponisten haben kaum eine Chance, auf die Spielpläne zu kommen. Und Komponistinnen gar keine.
 
-Waren Sie in der letzten Spielzeit in der Oper? Dann haben Sie höchstwahrscheinlich Papageno, die Knusperhexe oder Leporello auf der Bühne erlebt. Diese Opern und Operetten standen am häufigsten auf dem Spielplan:
+Waren Sie in der letzten Spielzeit in der Oper? Dann haben Sie höchstwahrscheinlich Papageno, die Knusperhexe oder Leporello auf der Bühne erlebt. Denn diese Opern und Operetten standen am häufigsten auf dem Spielplan:
 
 ### Zauberflöte vor Hänsel und Gretel
 
@@ -49,13 +49,13 @@ Doch so vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot
 
 </figure>
 
-Bei Leonard Bernstein und Jacques Offenbach sieht man, dass die großen Jubiläumsjahre sehr erfolgreich darin waren, die Komponisten wieder auf die Spielpläne zu setzen. Trotzdem heißen die Komponisten meistens Verdi, Mozart, Wagner und Puccini - und machen damit etwa die Hälfte der Opernaufführungen aus. Giuseppe Verdi führt diese Liste mit Abstand an – seine Opern sind gleich 13 mal inszeniert und insgesamt 143 mal aufgeführt worden.
+Bei Leonard Bernstein und Jacques Offenbach sieht man, dass die großen Jubiläumsjahre sehr erfolgreich darin waren, diese Komponisten wieder auf die Spielpläne zu setzen. Trotzdem sind die großen Namen meistens Verdi, Mozart, Wagner und Puccini - ihre Opern machen etwa die Hälfte der Opernaufführungen aus. Giuseppe Verdi führt diese Liste mit Abstand an – seine Opern sind gleich 13 mal inszeniert und insgesamt 143 mal aufgeführt worden.
 
 ## Im Schnitt sind die Komponisten 180 Jahre alt
 
-Dass die beliebten Melodien von Mozart und Verdi kaum Konkurrenz zulassen ist kaum überraschend. Deswegen finden sich auch kaum Stücke von lebenden Komponisten auf den Spielplänen. Nur jeder dritte gespielte Komponist lebt noch, im Schnitt sind die Komponisten 180 Jahre alt. Ist die Opernwelt etwa im 19. Jahrhundert stehen geblieben?
+Die beliebten Melodien von Mozart und Verdi lassen anscheinend kaum Konkurrenz zu. Denn Stücke von lebenden Komponisten finden sich selten auf den Spielplänen. Nur jeder dritte gespielte Komponist lebt noch, im Schnitt sind die Komponisten 180 Jahre alt. Ist die Opernwelt etwa im 19. Jahrhundert stehen geblieben?
 
-### Fast jeder dritte Komponist lebt - trotzdem werden sie kaum aufgeführt
+### Jeder dritte Komponist lebt - trotzdem werden sie kaum aufgeführt
 
 <figure role="group">
     <figcaption> Bei Klick auf 'KomponistInnen' ist zu sehen, wie das Verhältnis von verstorbenen zu lebenden KomponistInnen ist.</ figcaption>
@@ -73,9 +73,9 @@ Für den Komponisten Moritz Eggert ist das ein Armutzeugnis. Er hatte den deutsc
 <a href="https://blogs.nmz.de/badblog/2018/04/10/die-ernuechternde-opernstatistik-der-spielzeit-2017-2018/" target="_blank" rel="noopener noreferrer">Moritz Eggert</a>
 }>Überlebenschance der Gattung Oper, wenn sich nicht grundlegend etwas ändert: 0%</Quote>
 
-Philipp Jüttner vom Musiktheater im Revier in Gelsenkirchen wehrt sich gegen den Vorwurf. Schließlich vergäben Opern jedes Jahr Aufträge an lebende Komponisten. Doch: "Auftragswerke sind aufwändig und teuer", sagt Jüttner. "Wir schauen daher, wo wir Lücken im Repertoire schließen können." Einen Bedarf sieht Jüttner vor allem bei Werken für ein junges Publikum - also bei Kinderopern.  So tourte das Musiktheater im Revier mit "Don Quixote" von Komponistin Katharina Schmauder (Jahrgang 1994) durch die Grundschulen im Umland.
+Philipp Jüttner vom Musiktheater im Revier in Gelsenkirchen wehrt sich gegen den Vorwurf: "Auftragswerke sind aufwändig und teuer". Jeder Jahr vergäben die Opern Aufträge an lebende Komponisten. Jüttner: "Wir schauen, wo wir Lücken im Repertoire schließen können." Einen Bedarf sieht er vor allem bei Werken für ein junges Publikum - also bei Kinderopern. So tourte das Musiktheater im Revier mit "Don Quixote" von Komponistin Katharina Schmauder (Jahrgang 1994) durch die Grundschulen im Umland.
 
-<Quote author="Philipp Jüttner, Musiktheater im Revier Gelsenkirchen">"Zeitgenössische Werke müssen sich beweisen."</Quote>
+<Quote author="Philipp Jüttner, Musiktheater im Revier Gelsenkirchen">Zeitgenössische Werke müssen sich beweisen.</Quote>
 
 Neue Stoffe hätten es häufig schwer, sich gegen populäre Melodien durchzusetzen: "Ein guter Test dafür, was künstlerisch standhält." Deswegen wundere es Philipp Jüttner nicht, dass viele neu komponierte Opern nicht mehr Aufführungen als die Premiere erleben: "Zeitgenössische Werke müssen sich gegen bekannte Opern beweisen."
 
@@ -158,11 +158,6 @@ Auf der einen Seite wolle Schneider mit Oper kulturelles Erbe abbilden, auf der 
             <li>- Die Vorgehensweise bei der Datenanalyse können Sie hier nachlesen: <a href='https://github.com/wdr-data/starter/blob/main/data/Daten-Analyse Opern in NRW.ipynb' target="_blank" rel="noopener noreferrer">Daten-Analyse Opern in NRW</a>
             </li>
         </ul>
-    <h3>Code</h3>
-            <ul>
-            <li>- 'Oper in NRW' ist das erste WDR Data Projekt, das mit unserem Data Starter umgesetzt wurde. Der Code steht OpenSource zur Verfügung: <a href='https://github.com/wdr-data/starter/' target="_blank" rel="noopener noreferrer">WDR Data Starter</a>
-            </li>
-            </ul>
 </React.Fragment>
 } credits={
 <React.Fragment>
