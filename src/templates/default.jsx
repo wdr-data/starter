@@ -53,21 +53,21 @@ const DefaultTemplate = (data) => {
         <meta property="og:type" content="article" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
-        <meta property="og:image" content="richard-wagner-und-freunde_facebook.jpg" />
+        <meta property="og:image" content={frontmatter.sharingImageFacebook} />
         <meta property="og:image-width" content="1200" />
         <meta property="og:image-height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content={"@WDR"} />
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
-        <meta name="twitter:image" content="richard-wagner-und-freunde_twitter.jpg" />
-        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png"/>
-        <link rel="manifest" href="site.webmanifest"/>
-        <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#12365e"/>
-        <meta name="msapplication-TileColor" content="#ffffff"/>
-        <meta name="theme-color" content="#ffffff"></meta>
+        <meta name="twitter:image" content={frontmatter.sharingImageTwitter} />
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+        <link rel="manifest" href="site.webmanifest" />
+        <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#12365e" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff" />
         <script type="application/ld+json">{JSON.stringify(schema, null, 2)}</script>
       </Helmet>
       <div className={styles.wrapper}>

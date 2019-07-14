@@ -6,6 +6,8 @@ pub_date: "2019-07-15"
 heroImage: ./richard-wagner-und-freunde.jpg
 heroAlt: "Richard Wagner und seine Freunde"
 heroCredit: "Richard Wagner und seine Freunde"
+sharingImageFacebook: "richard-wagner-und-freunde_facebook.jpg"
+sharingImageTwitter: "richard-wagner-und-freunde_twitter.jpg"
 ---
 
 import DataWrapper from '../components/datawrapper/datawrapper.jsx'
