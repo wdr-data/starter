@@ -31,7 +31,7 @@ Waren Sie in der letzten Spielzeit in der Oper? Dann haben Sie höchstwahrschein
     />
 </figure>
 
-In der letzten Spielzeit stemmten die 13 kommunalen Bühnen über hundert Inszenierungen – mit insgesamt mehr als tausend Aufführungen. Drei Opern pro Tag. NRW ist ein großartiges Bundesland für Oper.
+In der vergangenen Spielzeit stemmten die 13 kommunalen Bühnen über hundert Inszenierungen – mit insgesamt mehr als tausend Aufführungen. Drei Opern pro Tag. NRW ist ein großartiges Bundesland für Oper.
 
 ## Viel Angebot, aber wenig Vielfalt
 
@@ -79,9 +79,21 @@ Philipp Jüttner vom Musiktheater im Revier in Gelsenkirchen wehrt sich gegen de
 
 Neue Stoffe hätten es häufig schwer, sich gegen populäre Melodien durchzusetzen: "Ein guter Test dafür, was künstlerisch standhält." Deswegen wundere es Philipp Jüttner nicht, dass viele neu komponierte Opern nicht mehr Aufführungen als die Premiere erleben: "Zeitgenössische Werke müssen sich gegen bekannte Opern beweisen."
 
+### Dortmund, Wuppertal und Düsseldorf/Duisburg sind die lebendigsten Häuser
+
+<figure role="group">
+    <figcaption> Gezeigt wird der Anteil lebender bzw. verstorbender Komponist*innen in der Spielzeit 2018/2019.</ figcaption>
+    <DataWrapper
+        alt="Während in Dortmund, Wuppertal und Düsseldorf/Duisburg mehr als 20 % lebende KomponistInnen gespielt wurden, wurden in Aachen, Hagen, Herford und  Minden ausschließlich verstorbene Komponisten gespielt."
+        title="Dortmund, Wuppertal und Düsseldorf/Duisburg sind die lebendigsten Häuser"
+        src="//datawrapper.dwcdn.net/Nidhc/3/"
+    />
+
+</figure>
+
 ### Von 13 Komponisten nur eine einzige Frau auf der Bühne
 
-Allein an der künstlerischen Qualität kann es allerdings nicht liegen, dass die Stücke, die dann direkt an den Häusern dem Publikum präsentiert werden, fast ausschließlich von Männern geschrieben werden:
+Schaut man sich die Stücke an, die die Häuser auf ihren eigenen Bühnen aufführen, so sind die Komponisten allesamt Männer. Einzige Ausnahme ist die spanische Komponistin Nuria Núñez Hierro (Jahrgang 1980).
 
 <figure role="group">
     <figcaption>Hierros Kinderoper “Kleines Stück Himmel” wurde in Wuppertal acht mal aufgeführt.</figcaption>
@@ -93,13 +105,13 @@ Allein an der künstlerischen Qualität kann es allerdings nicht liegen, dass di
 
 </figure>
 
-Schaut man sich die Stücke an, die die Häuser auf ihren eigenen Bühnen aufführen, so sind die Komponisten allesamt Mänbner. Einzige Ausnahme ist die spanische Komponistin Nuria Núñez Hierro (Jahrgang 1980).
+Allein an der künstlerischen Qualität kann es allerdings nicht liegen, dass die Stücke, die in den Häusern präsentiert werden, fast ausschließlich von Männern geschrieben werden:
 
 "Es gibt gewachsene Strukturen, die von Männern dominiert sind", sagt der Intendant der Oper Wuppertal, Berthold Schneider.
 
 <Quote author="Berthold Schneider, Intendant der Oper Wuppertal">Da kann man über eine Frauenquote nachdenken.</Quote>
 
-"Da kann man über eine Quote nachdenken." Gerade weil die Anzahl der Kompositionsaufträge, die die Häuser vergeben, recht überschaubar ist, müsse man darauf schauen, dass Frauen angemessen berücksichtigt werden. "Das könnte man mal festlegen", sagt Schneider.
+Gerade weil die Anzahl der Kompositionsaufträge, die die Häuser vergeben, recht überschaubar ist, müsse man darauf schauen, dass Frauen angemessen berücksichtigt werden. "Das könnte man mal festlegen", sagt Schneider.
 
 ### Europa im Zentrum
 
