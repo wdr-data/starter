@@ -75,7 +75,7 @@ Für den Komponisten Moritz Eggert ist das ein Armutzeugnis. Er hatte den deutsc
 <a href="https://blogs.nmz.de/badblog/2018/04/10/die-ernuechternde-opernstatistik-der-spielzeit-2017-2018/" target="_blank" rel="noopener noreferrer">Moritz Eggert</a>
 }>Überlebenschance der Gattung Oper, wenn sich nicht grundlegend etwas ändert: 0%</Quote>
 
-Philipp Jüttner vom Musiktheater im Revier in Gelsenkirchen wehrt sich gegen den Vorwurf: "Auftragswerke sind aufwändig und teuer". Jedes Jahr vergäben die Opern Aufträge an lebende Komponisten. Jüttner: "Wir schauen, wo wir Lücken im Repertoire schließen können." Einen Bedarf sieht er vor allem bei Werken für ein junges Publikum - also bei Kinderopern. So tourte das Musiktheater im Revier mit "Don Quixote" von Komponistin Katharina Schmauder (Jahrgang 1994) durch die Grundschulen im Umland. Auf die große Bühne hat es das Stück allerdings nicht geschafft.
+Philipp Jüttner vom Musiktheater im Revier in Gelsenkirchen wehrt sich gegen den Vorwurf: "Auftragswerke sind aufwändig und teuer". Jedes Jahr vergäben die Opern Aufträge an lebende Komponisten. Jüttner: "Wir schauen, wo wir Lücken im Repertoire schließen können." Einen Bedarf sieht er vor allem bei Werken für ein junges Publikum - also bei Kinderopern. So tourte das Musiktheater im Revier mit "Don Quixote" von Komponistin Katharina Schmauder (Jahrgang 1994) durch die Grundschulen im Umland. Für die große Bühne war das Stück allerdings nicht gedacht.
 
 <Quote author="Philipp Jüttner, Musiktheater im Revier Gelsenkirchen">Zeitgenössische Werke müssen sich beweisen.</Quote>
 
