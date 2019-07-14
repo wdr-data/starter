@@ -84,7 +84,7 @@ Neue Stoffe hätten es häufig schwer, sich gegen populäre Melodien durchzusetz
 <figure role="group">
     <figcaption> Gezeigt wird der Anteil lebender bzw. verstorbender Komponist*innen in der Spielzeit 2018/2019.</ figcaption>
     <DataWrapper
-        alt="Während in Dortmund, Wuppertal und Düsseldorf/Duisburg mehr als 20 % lebende KomponistInnen gespielt wurden, wurden in Aachen, Hagen, Herford und  Minden ausschließlich verstorbene Komponisten gespielt."
+        alt="Während in Dortmund, Wuppertal und Düsseldorf/Duisburg mehr als 20 % lebende KomponistInnen gespielt wurden, wurden in Aachen, Hagen, Herford und Minden ausschließlich verstorbene Komponisten gespielt."
         title="Dortmund, Wuppertal und Düsseldorf/Duisburg sind die lebendigsten Häuser"
         src="//datawrapper.dwcdn.net/Nidhc/3/"
     />
@@ -105,9 +105,7 @@ Schaut man sich die Stücke an, die die Häuser auf ihren eigenen Bühnen auffü
 
 </figure>
 
-Allein an der künstlerischen Qualität kann es allerdings nicht liegen, dass die Stücke, die in den Häusern präsentiert werden, fast ausschließlich von Männern geschrieben werden:
-
-"Es gibt gewachsene Strukturen, die von Männern dominiert sind", sagt der Intendant der Oper Wuppertal, Berthold Schneider.
+"Es gibt gewachsene Strukturen, die von Männern dominiert sind", erklärt der Intendant der Oper Wuppertal, Berthold Schneider, den hohen Männeranteil.
 
 <Quote author="Berthold Schneider, Intendant der Oper Wuppertal">Da kann man über eine Frauenquote nachdenken.</Quote>
 
@@ -132,7 +130,7 @@ Auch die Herkunft der gespielten Komponisten beschränkt sich vor allem auf Deut
 
 </figure>
 
-Die Opern begründen ihre Spielpläne mit dem allgemeinen Druck, die Auslastungszahlen hoch zu halten. "Ich glaube wir sind da in einer ganz tollen Situation im Moment", sagt Intendant Berthold Schneider, "weil auch der innere Leidensdruck ziemlich groß ist und das ist immer eine gute Voraussetzung."
+Die Opern begründen ihre konservativen Spielpläne mit dem allgemeinen Druck, die Auslastungszahlen hoch zu halten. Für Intendant Berthold Schneider eine gute Situation: "Ich glaube wir sind da in einer ganz tollen Situation im Moment", sagt er, "weil auch der innere Leidensdruck ziemlich groß ist und das ist immer eine gute Voraussetzung."
 
 <img src="berthold-schneider-credit-jens-grossmann.jpg" alt="Der Wuppertaler Opernintendant Berthold Schneider, fotografiert von Jens Grossmann" />
 
