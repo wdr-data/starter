@@ -8,7 +8,8 @@
   "scripts": {
     "build": "run-p -n --aggregate-output build-gatsby build-storybook",
     "build-storybook": "build-storybook -c .storybook -o public/components --quiet",
-    "build-gatsby": "gatsby build --prefix-paths",
+    "build-gatsby": "gatsby build",
+    "build-prod": "GATSBY_WEBTREKK_ENV=production yarn build-gatsby",
     "storybook": "start-storybook",
     "start": "gatsby develop"
   },
