@@ -57,7 +57,7 @@ Bei Leonard Bernstein und Jacques Offenbach sieht man, dass die großen Jubiläu
 
 Die beliebten Melodien von Mozart und Verdi lassen anscheinend kaum Konkurrenz zu. Denn Stücke von lebenden Komponisten und Komponistinnen finden sich selten auf den Spielplänen. Nur jeder dritte gespielte Komponist lebt noch, im Schnitt sind die Komponisten 180 Jahre alt. Ist die Opernwelt im 19. Jahrhundert stehen geblieben?
 
-### Jeder dritte Komponist lebt - trotzdem werden sie kaum aufgeführt
+### Jeder dritte Komponist lebt - wird aber kaum aufgeführt
 
 <figure role="group">
     <figcaption> Bei Klick auf 'KomponistInnen' ist zu sehen, wie das Verhältnis von verstorbenen zu lebenden KomponistInnen ist.</ figcaption>
@@ -93,7 +93,7 @@ Neue Stoffe hätten es häufig schwer, sich gegen populäre Melodien durchzusetz
 
 </figure>
 
-### Von 13 lebenden Komponisten nur eine einzige Frau auf der Bühne
+### 13 lebende Komponisten auf der Bühne - darunter nur eine einzige Frau
 
 Schaut man sich die Stücke an, die die Häuser auf ihren eigenen Bühnen aufführen, so sind die Komponisten allesamt Männer. Einzige Ausnahme ist die spanische Komponistin Nuria Núñez Hierro (Jahrgang 1980).
 
