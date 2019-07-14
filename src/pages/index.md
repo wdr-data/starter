@@ -5,7 +5,7 @@ author: Niklas Rudolph, Patricia Ennenbach
 pub_date: "2019-07-15"
 heroImage: ./richard-wagner-und-freunde.jpg
 heroAlt: "Richard Wagner und seine Freunde"
-heroCredit: "Richard Wagner und seine Freunde, Foto von Joseph Albert (picture alliance / akg-images)"
+heroCredit: "Richard Wagner und seine Freunde"
 ---
 
 import DataWrapper from '../components/datawrapper/datawrapper.jsx'
