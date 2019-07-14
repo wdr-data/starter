@@ -13,8 +13,14 @@
 }
 
 article img {
-  max-width: 800px;
+  max-width: 780px;
   height: auto;
   display: block;
   margin: 1rem auto;
+}
+
+@media (max-width: 800px) {
+  article img {
+    max-width: 95vw;
+  }
 }
