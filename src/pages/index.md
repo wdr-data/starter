@@ -46,7 +46,7 @@ Doch so vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot
     <DataWrapper
         alt="Während lebende KomponistInnen oft nur 1-8 mal aufgeführt werden, werden Komponisten, die über 150 Jahre alt sind besonders häufig aufgeführt. Spitzenreiter sind Guiseppe Verdi und Wolfgang Amadeus Mozart."
         title="Ältere KomponistInnen werden häufiger aufgeführt"
-        src="//datawrapper.dwcdn.net/48hJE/10/"
+        src="//datawrapper.dwcdn.net/48hJE/12/"
     />
 
 </figure>
