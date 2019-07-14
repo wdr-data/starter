@@ -27,7 +27,7 @@ Waren Sie in der letzten Spielzeit in der Oper? Dann haben Sie höchstwahrschein
     <DataWrapper
         alt="76 mal wurde die Zauberflöte 2018/2019 in NRW aufgeführt, gefolgt von Hänsel und Gretel mit 34 Aufführungen."
         title="Zauberflöte vor Hänsel und Gretel"
-        src="//datawrapper.dwcdn.net/azwpu/6/"
+        src="//datawrapper.dwcdn.net/azwpu/7/"
     />
 </figure>
 
@@ -49,7 +49,7 @@ Doch so vielfältig, wie es sich auf den ersten Blick darstellt, ist das Angebot
 
 </figure>
 
-Bei Leonard Bernstein und Jacques Offenbach sieht man, dass die großen Jubiläumsjahre sehr erfolgreich darin waren, die Komponisten wieder auf die Spielpläne zu setzen. Trotzdem heißen die Komponisten meistens Verdi, Mozart, Wagner und Puccini - und machen damit etwa die Hälfte der Opernaufführungen aus. Giuseppe Verdi führt diese Liste mit Abstand an – seine Opern sind gleich 13 mal inszeniert und insgesamt 143 mal aufgeführt worden. 
+Bei Leonard Bernstein und Jacques Offenbach sieht man, dass die großen Jubiläumsjahre sehr erfolgreich darin waren, die Komponisten wieder auf die Spielpläne zu setzen. Trotzdem heißen die Komponisten meistens Verdi, Mozart, Wagner und Puccini - und machen damit etwa die Hälfte der Opernaufführungen aus. Giuseppe Verdi führt diese Liste mit Abstand an – seine Opern sind gleich 13 mal inszeniert und insgesamt 143 mal aufgeführt worden.
 
 ## Im Schnitt sind die Komponisten 180 Jahre alt
 
@@ -73,7 +73,7 @@ Für den Komponisten Moritz Eggert ist das ein Armutzeugnis. Er hatte den deutsc
 <a href="https://blogs.nmz.de/badblog/2018/04/10/die-ernuechternde-opernstatistik-der-spielzeit-2017-2018/" target="_blank" rel="noopener noreferrer">Moritz Eggert</a>
 }>Überlebenschance der Gattung Oper, wenn sich nicht grundlegend etwas ändert: 0%</Quote>
 
-Philipp Jüttner vom Musiktheater im Revier in Gelsenkirchen wehrt sich gegen den Vorwurf. Schließlich vergäben Opern jedes Jahr Aufträge an lebende Komponisten. Doch: "Auftragswerke sind aufwändig und teuer", sagt Jüttner. "Wir schauen daher, wo wir Lücken im Repertoire schließen können." Einen Bedarf sieht Jüttner vor allem bei Werken für ein junges Publikum - also bei Kinderopern.  So tourte das Musiktheater im Revier mit "Don Quixote" von Komponistin Katharina Schmauder (Jahrgang 1994) durch die Grundschulen im Umland. 
+Philipp Jüttner vom Musiktheater im Revier in Gelsenkirchen wehrt sich gegen den Vorwurf. Schließlich vergäben Opern jedes Jahr Aufträge an lebende Komponisten. Doch: "Auftragswerke sind aufwändig und teuer", sagt Jüttner. "Wir schauen daher, wo wir Lücken im Repertoire schließen können." Einen Bedarf sieht Jüttner vor allem bei Werken für ein junges Publikum - also bei Kinderopern.  So tourte das Musiktheater im Revier mit "Don Quixote" von Komponistin Katharina Schmauder (Jahrgang 1994) durch die Grundschulen im Umland.
 
 <Quote author="Philipp Jüttner, Musiktheater im Revier Gelsenkirchen">"Zeitgenössische Werke müssen sich beweisen."</Quote>
 
@@ -95,7 +95,7 @@ Allein an der künstlerischen Qualität kann es allerdings nicht liegen, dass di
 
 Schaut man sich die Stücke an, die die Häuser auf ihren eigenen Bühnen aufführen, so sind die Komponisten allesamt Mänbner. Einzige Ausnahme ist die spanische Komponistin Nuria Núñez Hierro (Jahrgang 1980).
 
-"Es gibt gewachsene Strukturen, die von Männern dominiert sind", sagt der Intendant der Oper Wuppertal, Berthold Schneider. 
+"Es gibt gewachsene Strukturen, die von Männern dominiert sind", sagt der Intendant der Oper Wuppertal, Berthold Schneider.
 
 <Quote author="Berthold Schneider, Intendant der Oper Wuppertal">Da kann man über eine Frauenquote nachdenken.</Quote>
 
@@ -103,7 +103,7 @@ Schaut man sich die Stücke an, die die Häuser auf ihren eigenen Bühnen auffü
 
 ### Europa im Zentrum
 
-Auch die Herkunft der gespielten Komponisten beschränkt sich vor allem auf Deutschland und Mitteleuropa. 
+Auch die Herkunft der gespielten Komponisten beschränkt sich vor allem auf Deutschland und Mitteleuropa.
 
 <figure role="group">
     <figcaption>Die meisten KomponistInnen sind in Europa geboren, einige stammen jedoch aus der ganzen Welt.</figcaption>
