@@ -108,7 +108,7 @@ Schaut man sich die Stücke an, die die Häuser auf ihren eigenen Bühnen auffü
 </figure>
 Können Frauen einfach keine Opern schreiben? Nein, daran liegt es nicht.
 
-"Es gibt gewachsene Strukturen, die von Männern dominiert sind", erklärt der Intendant der Oper Wuppertal, Berthold Schneider, den hohen Männeranteil.
+"Es gibt gewachsene Strukturen, die von Männern dominiert sind", [erklärt der Intendant der Oper Wuppertal, Berthold Schneider, den hohen Männeranteil.](https://www1.wdr.de/mediathek/audio/wdr3/wdr3-kultur-am-mittag/audio-was-wird-an-den-opern-in-nrw-gezeigt-100.html)
 
 <Quote author="Berthold Schneider, Intendant der Oper Wuppertal">Da kann man über eine Frauenquote nachdenken.</Quote>
 
