@@ -29,7 +29,7 @@ Ziele:
   - Änderungen werden im Slack gepostet
   - Automatische Veröffentlichung der Änderung bei Netlify
 
-### Wie lege ich ein neues Datenprojekt an?
+### Wie lege ich ein neues Datenprojekt an? (Alternativ Datenteam darum bitten)
 
 :globe_with_meridians: https://github.com/wdr-data/starter/
 
@@ -49,6 +49,22 @@ Schritte:
 4. Die Referenz zum starter Verzeichnis hinzufügen `git remote add upstream git@github.com:wdr-data/starter.git`
 5. Alle Inhalte aus dem Starter ins neue Verzeichnis ziehen: `git pull upstream main`
 6. Alle Inhalte zum neuen Verzeichnis pushen: `git push origin master`
+
+#### Mit Netlify verbinden
+:arrow_right: [Netlify.com](https://www.netlify.com/)
+Eigenen kostenlosen Account anlegen oder WDR Data fragen
+- New site from git
+- Github auswählen
+- Ggf. mit Github verbinden / authentifizieren (nur einmal nötig)
+- Repo auswählen
+- Branch to deploy: master
+- Build command: yarn build
+- Publish directory: public
+- Ggf. unter Site Details: Change site name
+
+#### Mit Slack verbinden (optional)
+- ggf. neuen Channel für das Projekt anlegen
+- `/github subscribe wdr-data/ddj-test`
 
 ### Meine Story bearbeiten
 
