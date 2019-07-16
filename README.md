@@ -38,6 +38,7 @@ Ziele:
 Schritte:
 
 - Für eine neue Story
+:globe_with_meridians: [How To Fork Your Own GitHub Repository](https://medium.com/@mikezrimsek/fork-your-own-github-repository-19ad4582b50a)
 
 1. Ein neues, leeres Repo unter data.wdr.de anlegen
 
