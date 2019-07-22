@@ -327,6 +327,29 @@ https://icomoon.io/#preview-free
 
 Repository: https://github.com/wdr-data/starter
 
+### Wie entwickle ich lokal?
+
+Voraussetzungen:
+- Git installieren
+- Code Editor (z.B. VS Code installieren)
+- Node installieren
+- Yarn installieren 
+
+Entwicklung: 
+- Zu Repo hinzufügen lassen
+- `Git clone Name-des-repos` kopiert das Projekt auf den eigenen Rechner
+- Änderungen machen in `src/pages/index.md` - Änderungen speichern 
+-  Um das Projekt zu lokal zu starten: `yarn start` (Solange das läuft, werden gespeicherte Änderungen automatisch erkannt und die Seite neu compiliert)  
+- Um die Änderungen zu dokumentieren und zu veröffentlichen: 
+``` 
+git status
+git add name-der-datei.md
+git commit -m ":bento: Grund für die Änderung"
+git status (Alles grün?)
+git push
+```
+:globe_with_meriadians: [Git cheat sheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
+
 ### Wie baue ich eine neue Komponente?
 
 Komponenten liegen im Git Repo unter `src/components`. Jede Komponente hat einen eigenen Unterordner mit folgenden Dateien:
