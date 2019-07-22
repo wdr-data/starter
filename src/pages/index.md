@@ -84,11 +84,11 @@ Neue Stoffe hätten es häufig schwer, sich gegen populäre Melodien durchzusetz
 ### Dortmund, Wuppertal und Düsseldorf/Duisburg sind die lebendigsten Häuser
 
 <figure role="group">
-    <figcaption> Gezeigt wird der Anteil lebender bzw. verstorbender KomponistInnen in der Spielzeit 2018/2019.</ figcaption>
+    <figcaption> Gezeigt wird der Anteil lebender bzw. verstorbener KomponistInnen in der Spielzeit 2018/2019.</ figcaption>
     <DataWrapper
         alt="Während in Dortmund, Wuppertal und Düsseldorf/Duisburg mehr als 20 % lebende KomponistInnen gespielt wurden, waren es in Aachen, Hagen, Herford und Minden ausschließlich verstorbene Komponisten."
         title="Dortmund, Wuppertal und Düsseldorf/Duisburg sind die lebendigsten Häuser"
-        src="//datawrapper.dwcdn.net/Nidhc/3/"
+        src="//datawrapper.dwcdn.net/Nidhc/4/"
     />
 
 </figure>
@@ -128,7 +128,7 @@ Auch die Herkunft der gespielten Komponisten beschränkt sich vor allem auf Deut
     <DataWrapper
         alt="Einzelne KomponistInnen kommen aus der ganzen Welt."
         title="Nuria Nunez Hierro ist die einzige Frau, deren Oper auf den Bühnen in NRW gespielt wird"
-        src="//datawrapper.dwcdn.net/qWU0T/4/"
+        src="//datawrapper.dwcdn.net/qWU0T/5/"
     />
 
 </figure>
