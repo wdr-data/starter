@@ -46,7 +46,7 @@ Schritte:
 
 2. `git clone <new repository>.git` des neuen Repos auf dem eigenen Rechner
 3. In das neue Verzeichnis wechseln: `cd <new repository>`
-4. Die Referenz zum starter Verzeichnis hinzufügen `git remote add upstream git@github.com:wdr-data/starter.git`
+4. Die Referenz zum starter Verzeichnis hinzufügen `git remote add upstream https://github.com/wdr-data/starter.git`
 5. Alle Inhalte aus dem Starter ins neue Verzeichnis ziehen: `git pull upstream main`
 6. Alle Inhalte zum neuen Verzeichnis pushen: `git push origin master`
 
