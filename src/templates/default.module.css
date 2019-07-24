@@ -12,6 +12,12 @@
   padding: var(--padding-content) 1rem;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 article img {
   max-width: 780px;
   height: auto;
