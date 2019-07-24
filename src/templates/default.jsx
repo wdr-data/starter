@@ -12,38 +12,38 @@ import Footer from "../components/footer/footer.jsx";
 import Breadcrumbs from "../components/breadcrumbs/breadcrumbs.jsx";
 import DateFormat from "../components/date/date.jsx";
 
-const DefaultTemplate = (data) => {
-  const URL = `https://data.wdr.de${Config.pathPrefix}/`
+const DefaultTemplate = data => {
+  const URL = `https://data.wdr.de${Config.pathPrefix}/`;
   const frontmatter = data.pageContext.frontmatter;
-  const pub_date = new Date(Date.parse(frontmatter.pub_date+"T00:00:00.000Z"))
+  const pub_date = new Date(Date.parse(frontmatter.pub_date + "T00:00:00.000Z"));
 
   const schema = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
-    "mainEntityOfPage": {
+    mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://google.com/article"
     },
-    "headline": frontmatter.title,
-    "image": `${URL}${frontmatter.heroImage}`,
-    "datePublished": pub_date.toISOString(),
-    "dateModified": pub_date.toISOString(),
-    "author": frontmatter.author.split(',').map((author) => {
-        return {
-          "@type": "Person",
-          "name": author
-        }
+    headline: frontmatter.title,
+    image: `${URL}${frontmatter.heroImage}`,
+    datePublished: pub_date.toISOString(),
+    dateModified: pub_date.toISOString(),
+    author: frontmatter.author.split(",").map(author => {
+      return {
+        "@type": "Person",
+        name: author
+      };
     }),
-    "publisher": {
+    publisher: {
       "@type": "Organization",
-      "name": "WDR",
-      "logo": {
+      name: "WDR",
+      logo: {
         "@type": "ImageObject",
-        "url": `${URL}wdr_logo.svg`
+        url: `${URL}wdr_logo.svg`
       }
     },
-    "description": frontmatter.description
-  }
+    description: frontmatter.description
+  };
   return (
     <>
       <Helmet title={frontmatter.title}>
@@ -86,7 +86,7 @@ const DefaultTemplate = (data) => {
           </article>
           <Breadcrumbs>
             <a href="https://www1.wdr.de">WDR</a>
-            <a href="/">Data</a>
+            <a href="https://www1.wdr.de/verbraucher/digital/data/index.html">Data</a>
             <a href="#top">{frontmatter.title}</a>
           </Breadcrumbs>
         </div>
