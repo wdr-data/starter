@@ -12,7 +12,6 @@ sharingImageTwitter: "richard-wagner-und-freunde_twitter.jpg"
 
 import DataWrapper from '../components/datawrapper/datawrapper.jsx'
 import Quote from '../components/quote/quote.jsx'
-import Accordion from '../components/accordion/accordion.jsx'
 import Webtrekk from '../components/webtrekk/webtrekk.jsx'
 import Sharing from '../components/sharing/sharing.jsx'
 
@@ -145,53 +144,5 @@ Auf der einen Seite wolle Schneider mit Oper kulturelles Erbe abbilden, auf der 
 <Quote author="Berthold Schneider, Intendant Oper Wuppertal">Die Oper ist stark genug, dass sie sich immer wieder verändern wird.</Quote>
 
 <Sharing twitter facebook mail whatsapp telegram reddit xing linkedin />
-
-<Accordion authors={
-    <ul>
-        <li><a href="https://twitter.com/TheOrganicer" target="_blank" rel="noopener noreferrer">Niklas Rudolph</a></li>
-        <li><a href="https://twitter.com/pen1710" target="_blank" rel="noopener noreferrer">Patricia Ennenbach</a></li>
-    </ul>
-} sources={
-<React.Fragment>
-    <h3>Daten</h3>
-        <ul>
-            <li>- WDR Umfrage und eigene Recherchen - Daten zum Download: <a href='https://raw.githubusercontent.com/wdr-data/starter/main/data/opern_nrw_18_19.csv' target="_blank" rel="noopener noreferrer">opern_nrw_18_19.csv</a>
-            </li>
-            <li>- Per <a href='https://query.wikidata.org/' target="_blank" rel="noopener noreferrer">Wikidata Query Service </a>abgerufene Lebensdaten - Daten zum Download: <a href='https://raw.githubusercontent.com/wdr-data/starter/main/data/komponisten_wikidata.csv' target="_blank" rel="noopener noreferrer">Komponistinnen_wikidata.csv</a>
-            </li>
-            <li>- Die Vorgehensweise bei der Datenanalyse können Sie hier nachlesen: <a href='https://github.com/wdr-data/starter/blob/main/data/Daten-Analyse_Opern_in_NRW.ipynb' target="_blank" rel="noopener noreferrer">Daten-Analyse Opern in NRW</a>
-            </li>
-        </ul>
-    <h3>Code</h3>
-        <ul>
-            <li>- 'Oper in NRW' ist das erste WDR Data Projekt, das mit unserem Data Starter umgesetzt wurde. Der Code steht OpenSource zur Verfügung: <a href='https://github.com/wdr-data/starter/' target="_blank" rel="noopener noreferrer">WDR Data Starter</a>
-            </li>
-        </ul>
-</React.Fragment>
-} credits={
-<React.Fragment>
-    <h3>Bildrechte:</h3>
-        <ul>
-        <li>Aufmacher-Bild: Richard Wagner und seine Freunde, Foto von Joseph Albert (picture alliance / akg-images)</li>
-        <li>Bild 2: Der Wuppertaler Opernintendant Berthold Schneider, fotografiert von Jens Grossmann</li>
-        </ul>
-    <h3>Credits:</h3>
-        <ul>
-            <li><b>Redaktion</b>: Niklas Rudolph, Urs Zietan, Jutta Starke</li>
-            <li><b>Design</b>: Chrissi Holderbaum, Dilek Wache</li>
-            <li><b>Programmierung</b>: Christine Gotthardt, Marcus Weiner, Jakob Holderbaum, Patricia Ennenbach</li>
-            <li><b>Accessability, UX</b>: Dilek Wache, Stephanie Juranek</li>
-            <li><b>Datenrecherche</b>: Felix Buczek, Hannah Schmidt, Anne Glaser, Robert Haase, Greta Hey, Inge Akyaa, Katharina Riethmüller</li>
-            <li><b>Besondere Unterstützung:</b> Dr. Olaf Roth, Musiktheater im Revier</li>
-        </ul>
-</React.Fragment>
-} hints={
-<React.Fragment>
-<h3>Analytics</h3>
-    <p>Diese Seite verwendet Webtrekk, um Daten über das Interaktions- und Nutzungsverhalten zu sammeln. Diese Daten werden auf Seiten des WDR ausschliesslich in anonymisierter Form gespeichert und ausgewertet.</p>
-<h3>Fehler melden</h3>
-    <p>Für Hinweise und die Meldung von Fehlern schreiben Sie uns an data@wdr.de.</p>
-</React.Fragment>}
-/>
 
 <Webtrekk publishedAt='2019-07-15' cg1='WDR' cg2="Data" cg3="WDR 3" cg4="Opern-Spielpläne in NRW: tot und männlich"/>
