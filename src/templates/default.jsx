@@ -78,7 +78,7 @@ const DefaultTemplate = data => {
         <div className={styles.layout}>
           <Breadcrumbs>
             <a href="https://www1.wdr.de">WDR</a>
-            <a href="/">Data</a>
+            <a href="https://data.wdr.de">Data</a>
             <a href="#top">{frontmatter.title}</a>
           </Breadcrumbs>
           <article className={styles.main}>
