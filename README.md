@@ -70,9 +70,11 @@ Eigenen kostenlosen Account anlegen oder WDR Data fragen
 
 Unter /pages die index.md mit eigenen Inhalten überschreiben:
 
-#### Metadatenfelder
+#### Metadatenfelder für SEO, Twitter-Cards, Facebook Open-Graph
 
-```title: "Opern-Spielpläne in NRW: tot und männlich"
+```
+---
+title: "Opern-Spielpläne in NRW: tot und männlich"
 description: WDR 3 Datenanalyse der Opern-Spielzeit 2018/2019
 author: Niklas Rudolph, Patricia Ennenbach
 pub_date: "2019-07-15"
@@ -81,6 +83,11 @@ heroAlt: "Richard Wagner und seine Freunde"
 heroCredit: "Richard Wagner und seine Freunde"
 sharingImageFacebook: "richard-wagner-und-freunde_facebook.jpg"
 sharingImageTwitter: "richard-wagner-und-freunde_twitter.jpg"
+cg1: "WDR"
+cg2: "Data"
+cg3: "WDR 3"
+cg4: "Opern-Spielpläne in NRW: tot und männlich"
+---
 ```
 
 - `title` - **Überschrift**
@@ -94,8 +101,26 @@ sharingImageTwitter: "richard-wagner-und-freunde_twitter.jpg"
 - `heroImage` - **Titelbild**
 - `heroAlt` - **Alt-Attribut für Titelbild**
 - `heroCredit` - **Credit für Titelbild**
-- sharingImageFacebook: - **Bild für Faceook open graph**
-- sharingImageTwitter: - **Bild für Twitter card**
+- `sharingImageFacebook:` - **Bild für Faceook open graph**
+- `sharingImageTwitter:` - **Bild für Twitter card**
+
+- Die Bilder für Facebook und Twitter werden in static/ abgelegt
+
+#### Webtrekk
+Im Kopf der src/pages/index.md: 
+  - ! `pub_date: "2019-07-15"` muss in diesem Datums-Format vorhanden sein
+  - Anhand dieses Schemas ausfüllen:
+    - cg1: "WDR"
+    - cg2: "Data"
+    - cg3: "WDR 3" - Partnerredaktion
+    - cg4: "Opern-Spielpläne in NRW: tot und männlich" - H1 (Hauptüberschrift) des Stücks
+ - Optional kann auch eine `cg5: ` vergeben werden 
+
+#### Sharing
+
+Die Inhalte der Komponente werden auch im Kopf der index.md festgelegt:
+
+
 
 ### Texte in Markdown
 
@@ -202,78 +227,13 @@ Mit Link:
 }>Überlebenschance der Gattung Oper, wenn sich nicht grundlegend etwas ändert: 0%</Quote>
 ```
 
-### Sharing
-
-Die Komponente ist gut so, wie sie ist. Einfach importiert und eingebunden lassen.
-
-`<Sharing twitter facebook mail whatsapp telegram reddit xing linkedin />`
-
 ### Accordion
-
-Inhalte austauschen.
-Das Accordion ist ev. etwas fummelig. Alle schließenden und öffnenden Tags müssen vorhanden sein. Ggf. vom Datenteam helfen lassen.
-
-```
-<Accordion authors={
-    <ul>
-        <li><a href="https://twitter.com/TheOrganicer" target="_blank" rel="noopener noreferrer">Niklas Rudolph</a></li>
-        <li><a href="https://twitter.com/pen1710" target="_blank" rel="noopener noreferrer">Patricia Ennenbach</a></li>
-    </ul>
-} sources={
-<React.Fragment>
-    <h3>Daten</h3>
-        <ul>
-            <li>- WDR Umfrage und eigene Recherchen - Daten zum Download: <a href='https://raw.githubusercontent.com/wdr-data/starter/main/data/opern_nrw_18_19.csv' target="_blank" rel="noopener noreferrer">opern_nrw_18_19.csv</a>
-            </li>
-            <li>- Per <a href='https://query.wikidata.org/' target="_blank" rel="noopener noreferrer">Wikidata Query Service </a>abgerufene Lebensdaten - Daten zum Download: <a href='https://raw.githubusercontent.com/wdr-data/starter/main/data/komponisten_wikidata.csv' target="_blank" rel="noopener noreferrer">Komponistinnen_wikidata.csv</a>
-            </li>
-            <li>- Die Vorgehensweise bei der Datenanalyse können Sie hier nachlesen: <a href='https://github.com/wdr-data/starter/blob/main/data/Daten-Analyse_Opern_in_NRW.ipynb' target="_blank" rel="noopener noreferrer">Daten-Analyse Opern in NRW</a>
-            </li>
-        </ul>
-    <h3>Code</h3>
-        <ul>
-            <li>- 'Oper in NRW' ist das erste WDR Data Projekt, das mit unserem Data Starter umgesetzt wurde. Der Code steht OpenSource zur Verfügung: <a href='https://github.com/wdr-data/starter/' target="_blank" rel="noopener noreferrer">WDR Data Starter</a>
-            </li>
-        </ul>
-</React.Fragment>
-} credits={
-<React.Fragment>
-    <h3>Bildrechte:</h3>
-        <ul>
-        <li>Aufmacher-Bild: Richard Wagner und seine Freunde, Foto von Joseph Albert (picture alliance / akg-images)</li>
-        <li>Bild 2: Der Wuppertaler Opernintendant Berthold Schneider, fotografiert von Jens Grossmann</li>
-        </ul>
-    <h3>Credits:</h3>
-        <ul>
-            <li><b>Redaktion</b>: Niklas Rudolph, Urs Zietan, Jutta Starke</li>
-            <li><b>Design</b>: Chrissi Holderbaum, Dilek Wache</li>
-            <li><b>Programmierung</b>: Christine Gotthardt, Marcus Weiner, Jakob Holderbaum, Patricia Ennenbach</li>
-            <li><b>Accessability, UX</b>: Dilek Wache, Stephanie Juranek</li>
-            <li><b>Datenrecherche</b>: Felix Buczek, Hannah Schmidt, Anne Glaser, Robert Haase, Greta Hey, Inge Akyaa, Katharina Riethmüller</li>
-            <li><b>Besondere Unterstützung:</b> Dr. Olaf Roth, Musiktheater im Revier</li>
-        </ul>
-</React.Fragment>
-} hints={
-<React.Fragment>
-<h3>Analytics</h3>
-    <p>Diese Seite verwendet Webtrekk, um Daten über das Interaktions- und Nutzungsverhalten zu sammeln. Diese Daten werden auf Seiten des WDR ausschliesslich in anonymisierter Form gespeichert und ausgewertet.</p>
-<h3>Fehler melden</h3>
-    <p>Für Hinweise und die Meldung von Fehlern schreiben Sie uns an data@wdr.de.</p>
-</React.Fragment>}
-/>
-
-```
-
-### Webtrekk
-
-- Veröffentlichungsdatum anpassen
-- Entsprechend der Absprache mit der Medienforschung die Content-Groups (CG1 bis CG4) anpassen:
-  CG1 = WDR
-  CG2 = Data
-  CG3 = Partnerredaktion
-  CG4 = H1 (Hauptüberschrift) des Stücks
-
-`<Webtrekk publishedAt='2019-07-15' cg1='WDR' cg2="Data" cg3="WDR 3" cg4="Opern-Spielpläne in NRW: tot und männlich"/>`
+  - Die Inhalte liegen als einzelne .md Dateien in /accordion
+  - Um Inhalte zu ändern, wird die entsprechende .md Datei geändert: 
+  [authors.md](https://github.com/wdr-data/starter/blob/master/accordion/authors.md)
+  [credits.md](https://github.com/wdr-data/starter/blob/master/accordion/credits.md)
+  [hints.md](https://github.com/wdr-data/starter/blob/master/accordion/hints.md)
+  [sources.md](https://github.com/wdr-data/starter/blob/master/accordion/sources.md)
 
 #### Data
 
