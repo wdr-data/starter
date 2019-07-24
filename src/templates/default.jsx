@@ -12,6 +12,7 @@ import Footer from "../components/footer/footer.jsx";
 import Breadcrumbs from "../components/breadcrumbs/breadcrumbs.jsx";
 import DateFormat from "../components/date/date.jsx";
 import Accordion from "../components/accordion/accordion.jsx";
+import Webtrekk from "../components/webtrekk/webtrekk.jsx";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { StaticQuery, graphql } from "gatsby";
 
@@ -150,6 +151,13 @@ const DefaultTemplate = data => {
                   )}
                 />
               }
+            />
+            <Webtrekk
+              publishedAt={frontmatter.pub_date}
+              cg1={frontmatter.cg1}
+              cg2={frontmatter.cg2}
+              cg3={frontmatter.cg3}
+              cg4={frontmatter.cg4}
             />
           </article>
           <Breadcrumbs>

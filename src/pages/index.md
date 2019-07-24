@@ -8,6 +8,10 @@ heroAlt: "Richard Wagner und seine Freunde"
 heroCredit: "Richard Wagner und seine Freunde"
 sharingImageFacebook: "richard-wagner-und-freunde_facebook.jpg"
 sharingImageTwitter: "richard-wagner-und-freunde_twitter.jpg"
+cg1: "WDR"
+cg2: "Data"
+cg3: "WDR 3"
+cg4: "Opern-Spielpläne in NRW: tot und männlich"
 ---
 
 import DataWrapper from '../components/datawrapper/datawrapper.jsx'
@@ -144,5 +148,3 @@ Auf der einen Seite wolle Schneider mit Oper kulturelles Erbe abbilden, auf der 
 <Quote author="Berthold Schneider, Intendant Oper Wuppertal">Die Oper ist stark genug, dass sie sich immer wieder verändern wird.</Quote>
 
 <Sharing twitter facebook mail whatsapp telegram reddit xing linkedin />
-
-<Webtrekk publishedAt='2019-07-15' cg1='WDR' cg2="Data" cg3="WDR 3" cg4="Opern-Spielpläne in NRW: tot und männlich"/>
