@@ -5236,6 +5236,13 @@ csstype@^2.5.2, csstype@^2.5.7:
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.5.tgz#1cd1dff742ebf4d7c991470ae71e12bb6751e034"
   integrity sha512-JsTaiksRsel5n7XwqPAfB0l3TFKdpjW/kgAELf9vrb5adGA7UCPLajKK5s3nFrcFm3Rkyp/Qkgl73ENc1UY3cA==
 
+csv-loader@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/csv-loader/-/csv-loader-3.0.2.tgz#2af224a0582c47b761b4eee70576bd0e15af34b3"
+  integrity sha512-NSgkStzsNscNssEGjj4upYIm6AfPrJOCAAYoujjnszkAAboLZE7ChNOHO8YTlBLEMsQ6lizC9raIhfONneaA6g==
+  dependencies:
+    loader-utils "^1.1.0"
+
 currently-unhandled@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/currently-unhandled/-/currently-unhandled-0.4.1.tgz#988df33feab191ef799a61369dd76c17adf957ea"
@@ -11355,6 +11362,11 @@ pako@^1.0.5, pako@~1.0.5:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.10.tgz#4328badb5086a426aa90f541977d4955da5c9732"
   integrity sha512-0DTvPVU3ed8+HNXOu5Bs+o//Mbdj9VNQMUOe9oKCwh8l0GNwpTDMKCWbRjgtD291AWnkAgkqA/LOnQS8AmS1tw==
+
+papaparse@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/papaparse/-/papaparse-5.0.1.tgz#5243710e5468e659e23c77db0e0b010912960c15"
+  integrity sha512-LoM77aP/xSfZP645H3x1X0Qrf7klhGqHUfJH2KHIPvmB4uzezB/1bfvJKI0vp6zD5AfQF46J3URB7uz4Iqe0lg==
 
 parallel-transform@^1.1.0:
   version "1.1.0"

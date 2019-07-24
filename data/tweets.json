@@ -1,0 +1,3 @@
+[{ "user": "Jason", "tweets": 100, "retweets": 5, "favorites": 15 },
+    { "user": "Susie", "tweets": 5, "retweets": 100, "favorites": 100 },
+    { "user": "Matt", "tweets": 20, "retweets": 25, "favorites": 50 }]
