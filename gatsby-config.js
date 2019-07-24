@@ -21,6 +21,13 @@ module.exports = {
           }
         ]
       }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "accordion",
+        path: `${__dirname}/accordion`
+      }
     }
   ]
 };

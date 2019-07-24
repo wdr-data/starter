@@ -12,11 +12,26 @@ import Footer from "../components/footer/footer.jsx";
 import Breadcrumbs from "../components/breadcrumbs/breadcrumbs.jsx";
 import DateFormat from "../components/date/date.jsx";
 import Accordion from "../components/accordion/accordion.jsx";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { StaticQuery, graphql } from "gatsby";
 
 const DefaultTemplate = data => {
   const URL = `https://data.wdr.de${Config.pathPrefix}/`;
   const frontmatter = data.pageContext.frontmatter;
   const pub_date = new Date(Date.parse(frontmatter.pub_date + "T00:00:00.000Z"));
+
+  const query = graphql`
+    query MyQuery {
+      allMdx {
+        nodes {
+          fileAbsolutePath
+          code {
+            body
+          }
+        }
+      }
+    }
+  `;
 
   const schema = {
     "@context": "https://schema.org",
@@ -70,6 +85,7 @@ const DefaultTemplate = data => {
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
         <script type="application/ld+json">{JSON.stringify(schema, null, 2)}</script>
+        <script>To Do: Make links target blank</script>
       </Helmet>
       <div className={styles.wrapper}>
         <div className={styles.heroImage}>
@@ -86,115 +102,53 @@ const DefaultTemplate = data => {
             {data.children}
             <Accordion
               authors={
-                <ul>
-                  <li>
-                    <a href="https://twitter.com/TheOrganicer" target="_blank" rel="noopener noreferrer">
-                      Niklas Rudolph
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://twitter.com/pen1710" target="_blank" rel="noopener noreferrer">
-                      Patricia Ennenbach
-                    </a>
-                  </li>
-                </ul>
+                <StaticQuery
+                  query={query}
+                  render={data => (
+                    <MDXRenderer>
+                      {
+                        data.allMdx.nodes.find(node => node.fileAbsolutePath.match(/\/accordion\/authors\.md$/)).code
+                          .body
+                      }
+                    </MDXRenderer>
+                  )}
+                />
               }
               sources={
-                <React.Fragment>
-                  <h3>Daten</h3>
-                  <ul>
-                    <li>
-                      - WDR Umfrage und eigene Recherchen - Daten zum Download:{" "}
-                      <a
-                        href="https://raw.githubusercontent.com/wdr-data/starter/main/data/opern_nrw_18_19.csv"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        opern_nrw_18_19.csv
-                      </a>
-                    </li>
-                    <li>
-                      - Per{" "}
-                      <a href="https://query.wikidata.org/" target="_blank" rel="noopener noreferrer">
-                        Wikidata Query Service{" "}
-                      </a>
-                      abgerufene Lebensdaten - Daten zum Download:{" "}
-                      <a
-                        href="https://raw.githubusercontent.com/wdr-data/starter/main/data/komponisten_wikidata.csv"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Komponistinnen_wikidata.csv
-                      </a>
-                    </li>
-                    <li>
-                      - Die Vorgehensweise bei der Datenanalyse können Sie hier nachlesen:{" "}
-                      <a
-                        href="https://github.com/wdr-data/starter/blob/main/data/Daten-Analyse_Opern_in_NRW.ipynb"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Daten-Analyse Opern in NRW
-                      </a>
-                    </li>
-                  </ul>
-                  <h3>Code</h3>
-                  <ul>
-                    <li>
-                      - 'Oper in NRW' ist das erste WDR Data Projekt, das mit unserem Data Starter umgesetzt wurde. Der
-                      Code steht OpenSource zur Verfügung:{" "}
-                      <a href="https://github.com/wdr-data/starter/" target="_blank" rel="noopener noreferrer">
-                        WDR Data Starter
-                      </a>
-                    </li>
-                  </ul>
-                </React.Fragment>
+                <StaticQuery
+                  query={query}
+                  render={data => (
+                    <MDXRenderer>
+                      {
+                        data.allMdx.nodes.find(node => node.fileAbsolutePath.match(/\/accordion\/sources\.md$/)).code
+                          .body
+                      }
+                    </MDXRenderer>
+                  )}
+                />
               }
               credits={
-                <React.Fragment>
-                  <h3>Bildrechte:</h3>
-                  <ul>
-                    <li>
-                      Aufmacher-Bild: Richard Wagner und seine Freunde, Foto von Joseph Albert (picture alliance /
-                      akg-images)
-                    </li>
-                    <li>Bild 2: Der Wuppertaler Opernintendant Berthold Schneider, fotografiert von Jens Grossmann</li>
-                  </ul>
-                  <h3>Credits:</h3>
-                  <ul>
-                    <li>
-                      <b>Redaktion</b>: Niklas Rudolph, Urs Zietan, Jutta Starke
-                    </li>
-                    <li>
-                      <b>Design</b>: Chrissi Holderbaum, Dilek Wache
-                    </li>
-                    <li>
-                      <b>Programmierung</b>: Christine Gotthardt, Marcus Weiner, Jakob Holderbaum, Patricia Ennenbach
-                    </li>
-                    <li>
-                      <b>Accessability, UX</b>: Dilek Wache, Stephanie Juranek
-                    </li>
-                    <li>
-                      <b>Datenrecherche</b>: Felix Buczek, Hannah Schmidt, Anne Glaser, Robert Haase, Greta Hey, Inge
-                      Akyaa, Katharina Riethmüller
-                    </li>
-                    <li>
-                      <b>Besondere Unterstützung:</b> Dr. Olaf Roth, Musiktheater im Revier
-                    </li>
-                  </ul>
-                </React.Fragment>
+                <StaticQuery
+                  query={query}
+                  render={data => (
+                    <MDXRenderer>
+                      {
+                        data.allMdx.nodes.find(node => node.fileAbsolutePath.match(/\/accordion\/credits\.md$/)).code
+                          .body
+                      }
+                    </MDXRenderer>
+                  )}
+                />
               }
               hints={
-                <React.Fragment>
-                  <h3>Analytics</h3>
-                  <p>
-                    Diese Seite verwendet Webtrekk, um Daten über das Interaktions- und Nutzungsverhalten zu sammeln.
-                    Diese Daten werden auf Seiten des WDR ausschliesslich in anonymisierter Form gespeichert und
-                    ausgewertet.
-                  </p>
-                  <h3>Fehler melden</h3>
-                  <p>Für Hinweise und die Meldung von Fehlern schreiben Sie uns an data@wdr.de.</p>
-                </React.Fragment>
+                <StaticQuery
+                  query={query}
+                  render={data => (
+                    <MDXRenderer>
+                      {data.allMdx.nodes.find(node => node.fileAbsolutePath.match(/\/accordion\/hints\.md$/)).code.body}
+                    </MDXRenderer>
+                  )}
+                />
               }
             />
           </article>
