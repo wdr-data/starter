@@ -1,7 +1,10 @@
-import React from 'react';
-import data from '../../../data/zauberfloete.csv';
+import React from "react";
+import data from "../../../data/zauberfloete.csv";
 
-import OrdinalFrame from "semiotic/lib/OrdinalFrame"
+let OrdinalFrame = null;
+if (typeof window !== `undefined`) {
+  OrdinalFrame = require("semiotic/lib/OrdinalFrame");
+}
 
 const frameProps = {
   data: data,
@@ -12,8 +15,11 @@ const frameProps = {
   style: { fill: "#ac58e5", stroke: "white" },
   title: "Tweets",
   oLabel: true
-}
+};
 
 export default () => {
-  return <OrdinalFrame {...frameProps} />
-}
+  if (OrdinalFrame === null) {
+    return null;
+  }
+  return <OrdinalFrame {...frameProps} />;
+};
