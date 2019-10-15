@@ -19,6 +19,7 @@ import Quote from '../components/quote/quote.jsx'
 import Webtrekk from '../components/webtrekk/webtrekk.jsx'
 import Sharing from '../components/sharing/sharing.jsx'
 import SemioticBarChart from '../components/semiotic_barChart/semiotic_barChart.jsx'
+import WdrPlayer from '../components/video/video.jsx'
 
 # Opern-Spielpläne in NRW: tot und männlich
 
@@ -27,6 +28,8 @@ import SemioticBarChart from '../components/semiotic_barChart/semiotic_barChart.
 Waren Sie in der letzten Spielzeit in der Oper? Dann haben Sie höchstwahrscheinlich Papageno, die Knusperhexe oder Leporello auf der Bühne erlebt. Denn diese Opern und Operetten standen am häufigsten auf dem Spielplan:
 
 <SemioticBarChart/>
+
+<WdrPlayer />
 
 mehr toller text
 
