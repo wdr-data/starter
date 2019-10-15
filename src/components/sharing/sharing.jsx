@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Config from "../../../gatsby-config";
+import Config from "../../../starter-config";
 import { Twitter, Facebook, Mail, Whatsapp, Telegram, Reddit, Xing, Linkedin } from "react-social-sharing";
 import styles from "./sharing.module.css";
 
 const Sharing = ({ linkURL, twitter, facebook, mail, whatsapp, telegram, reddit, xing, linkedin }) => {
-  const URL = `https://data.wdr.de${Config.pathPrefix}/`;
+  const URL = `${Config.origin}${Config.pathPrefix}/`;
 
   return (
     <div className={styles.buttonRow}>

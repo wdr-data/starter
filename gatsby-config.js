@@ -1,5 +1,7 @@
+const Config = require("./starter-config")
+
 module.exports = {
-  pathPrefix: `/oper-in-nrw`,
+  pathPrefix: Config.pathPrefix,
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
