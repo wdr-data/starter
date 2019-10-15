@@ -101,56 +101,54 @@ const DefaultTemplate = data => {
           <article className={styles.main}>
             <DateFormat date={pub_date} />
             {data.children}
-            <Accordion
-              authors={
-                <StaticQuery
-                  query={query}
-                  render={data => (
+            <StaticQuery
+              query={query}
+              render={data => (
+                <Accordion
+                  authors={
                     <MDXRenderer>
                       {
-                        data.allMdx.nodes.find(node => node.fileAbsolutePath.match(/\/accordion\/authors\.md$/)).code
-                          .body
+                        data.allMdx.nodes.find(node =>
+                          node.fileAbsolutePath.match(
+                            /\/accordion\/authors\.md$/
+                          )
+                        ).code.body
                       }
                     </MDXRenderer>
-                  )}
-                />
-              }
-              sources={
-                <StaticQuery
-                  query={query}
-                  render={data => (
+                  }
+                  sources={
                     <MDXRenderer>
                       {
-                        data.allMdx.nodes.find(node => node.fileAbsolutePath.match(/\/accordion\/sources\.md$/)).code
-                          .body
+                        data.allMdx.nodes.find(node =>
+                          node.fileAbsolutePath.match(
+                            /\/accordion\/sources\.md$/
+                          )
+                        ).code.body
                       }
                     </MDXRenderer>
-                  )}
-                />
-              }
-              credits={
-                <StaticQuery
-                  query={query}
-                  render={data => (
+                  }
+                  credits={
                     <MDXRenderer>
                       {
-                        data.allMdx.nodes.find(node => node.fileAbsolutePath.match(/\/accordion\/credits\.md$/)).code
-                          .body
+                        data.allMdx.nodes.find(node =>
+                          node.fileAbsolutePath.match(
+                            /\/accordion\/credits\.md$/
+                          )
+                        ).code.body
                       }
                     </MDXRenderer>
-                  )}
-                />
-              }
-              hints={
-                <StaticQuery
-                  query={query}
-                  render={data => (
+                  }
+                  hints={
                     <MDXRenderer>
-                      {data.allMdx.nodes.find(node => node.fileAbsolutePath.match(/\/accordion\/hints\.md$/)).code.body}
+                      {
+                        data.allMdx.nodes.find(node =>
+                          node.fileAbsolutePath.match(/\/accordion\/hints\.md$/)
+                        ).code.body
+                      }
                     </MDXRenderer>
-                  )}
+                  }
                 />
-              }
+              )}
             />
             <Webtrekk
               publishedAt={frontmatter.pub_date}
