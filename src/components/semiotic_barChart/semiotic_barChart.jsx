@@ -1,5 +1,6 @@
 import React from "react";
 import data from "../../../data/zauberfloete.csv";
+import styles from "./semiotic_barChart.module.css";
 
 let OrdinalFrame = null;
 if (typeof window !== `undefined`) {
@@ -25,5 +26,10 @@ export default () => {
   if (OrdinalFrame === null) {
     return null;
   }
-  return <OrdinalFrame {...frameProps} />;
+  return (
+    <div className={styles.wrapper}>
+      <OrdinalFrame {...frameProps} />
+    </div> 
+
+  );
 };
