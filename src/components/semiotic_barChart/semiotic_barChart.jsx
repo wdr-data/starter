@@ -6,13 +6,17 @@ if (typeof window !== `undefined`) {
   OrdinalFrame = require("semiotic/lib/OrdinalFrame");
 }
 
+const colorHash = {
+  primary: "var(--brand-primary)",
+}
+
 const frameProps = {
   data: data,
   size: [200, 200],
   type: "bar",
   oAccessor: "name",
   rAccessor: "tweets",
-  style: { fill: "#ac58e5", stroke: "white" },
+  style: { fill: colorHash.primary, stroke: "white" },
   title: "Tweets",
   oLabel: true
 };
