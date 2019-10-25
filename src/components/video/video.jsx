@@ -1,14 +1,25 @@
 import React from "react";
-import { Player } from "video-react";
+import PropTypes from "prop-types";
+import { Player, BigPlayButton } from "video-react";
+import "video-react/dist/video-react.css";
+import styles from "./video.module.css";
 
-const WdrPlayer = () => {
+const WdrPlayer = ({ videoSrc, videoPoster }) => {
   return (
     <Player
-        playsInline
-        poster="/assets/poster.png"
-        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-        />
+      playsInline
+      fluid
+      poster={videoPoster}
+      src={videoSrc}
+    >
+      <BigPlayButton className={styles.playButton}/>
+    </Player>  
   );
+};
+
+WdrPlayer.propTypes = {
+  videoSrc: PropTypes.string,
+  videoPoster: PropTypes.string,
 };
 
 export default WdrPlayer;

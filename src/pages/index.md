@@ -29,7 +29,7 @@ Waren Sie in der letzten Spielzeit in der Oper? Dann haben Sie höchstwahrschein
 
 <SemioticBarChart/>
 
-<WdrPlayer />
+<WdrPlayer videoSrc="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" videoPoster="https://www1.wdr.de/fernsehen/abenteuer-erde/kuestenotter-100~_v-gseapremiumxl.jpg" />
 
 mehr toller text
 
