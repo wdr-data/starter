@@ -20,12 +20,15 @@ import Webtrekk from '../components/webtrekk/webtrekk.jsx'
 import Sharing from '../components/sharing/sharing.jsx'
 import SemioticBarChart from '../components/semiotic_barChart/semiotic_barChart.jsx'
 import WdrPlayer from '../components/video/video.jsx'
+import YDIBar from '../components/ydi/ydiBar.jsx'
 
 # Opern-Spielpläne in NRW: tot und männlich
 
 ## Wir haben die Opern-Spielpläne in NRW unter die Lupe genommen. Das Ergebnis: NRW ist ein Opern-Paradies. Aber lebende Komponisten haben kaum eine Chance, auf die Spielpläne zu kommen. Und Komponistinnen gar keine.
 
 Waren Sie in der letzten Spielzeit in der Oper? Dann haben Sie höchstwahrscheinlich Papageno, die Knusperhexe oder Leporello auf der Bühne erlebt. Denn diese Opern und Operetten standen am häufigsten auf dem Spielplan:
+
+<YDIBar/>
 
 <SemioticBarChart/>
 

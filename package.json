@@ -23,6 +23,7 @@
     "@storybook/addon-storysource": "^5.1.9",
     "@storybook/addon-viewport": "^5.1.9",
     "@storybook/react": "^5.1.9",
+    "@vx/vx": "^0.0.195",
     "babel-loader": "^8.0.6",
     "babel-plugin-styled-components": "^1.10.6",
     "class-names": "^1.0.0",
