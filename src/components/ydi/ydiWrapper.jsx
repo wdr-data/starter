@@ -1,6 +1,13 @@
 import React from "react";
+import { useCallback } from "react";
+import { useState } from "react";
 
-export const YDIWrapper = ({ question, children }) => {
+export const YDIWrapper = ({ question, confirmAllowed, onConfirm, children }) => {
+    const [confirmed, setConfirmed] = useState(false);
+    const confirmHandler = useCallback(() => {
+        setConfirmed(true);
+        onConfirm();
+    })
     return (
         <div class="questions">
             <div class="question">
@@ -14,12 +21,12 @@ export const YDIWrapper = ({ question, children }) => {
                 </div>
                 <div class={`result ${question.key}`}>
                     <div class="actionContainer" aria-hidden="true">
-                        <button class="showAction" disabled>Wie ist es tatsächlich?</button>
+                        <button class="showAction" disabled={!confirmAllowed} onClick={confirmHandler}>Wie ist es tatsächlich?</button>
                         <div class="tooltipcontainer">
                             <span class="tooltiptext">Ziehen Sie den Balken! Der Klick verrät, ob ihre Schätzung stimmt.</span>
                         </div>
                     </div>
-                    <div class="text" hidden aria-hidden="false">{question.result}</div>
+                    <div class="text" hidden={!confirmed} aria-hidden="false">{question.result}</div>
                 </div>
             </div>
         </div>

@@ -8,11 +8,13 @@ import { GridRows } from '@vx/grid';
 import { PatternLines } from '@vx/pattern';
 import { Text } from '@vx/text';
 import { scaleBand, scaleLinear, scaleOrdinal } from '@vx/scale';
+import classNames from 'class-names';
 
 import YDIWrapper from "./ydiWrapper";
 
-// import styles from "./ydi-bar.module.css";
+import styles from "./ydiBar.module.css";
 import question from "../../../data/test.json";
+import { useCallback } from "react";
 
 const brandPrimary = "#00345f";
 const brandSecondary = "#A36A00";
@@ -23,7 +25,7 @@ const dragWidth = width / 2;
 const dragMarginLeft = width / 2;
 const margin = {
     top: 10,
-    left: 25,
+    left: 75,
     bottom: 50,
 }
 
@@ -63,6 +65,8 @@ const YDIBar = ({ }) => {
     const unknownData = question.unknownData;
 
     const [guess, setGuess] = useState(10.0);
+    const [hasGuessed, setHasGuessed] = useState(false);
+    const [confirmed, setConfirmed] = useState(false);
 
     const guessData = {
         ...unknownData,
@@ -94,8 +98,12 @@ const YDIBar = ({ }) => {
         domain: [0, question.maxY]
     });
 
+    const confirmCallback = useCallback(() => {
+        setConfirmed(true);
+    }, [])
+
     return (
-        <YDIWrapper question={question}>
+        <YDIWrapper question={question} confirmAllowed={!confirmed && hasGuessed} onConfirm={confirmCallback}>
             <svg width={width} height={height}>
                 <PatternLines
                     id='dLines'
@@ -106,6 +114,7 @@ const YDIBar = ({ }) => {
                     orientation={['diagonal']}
                 />
                 <GridRows
+                    left={margin.left}
                     top={margin.top}
                     lineStyle={{ pointerEvents: 'none' }}
                     scale={yScale}
@@ -149,7 +158,9 @@ const YDIBar = ({ }) => {
                     onDragMove={({ x, y, dx, dy }) => {
                         // add the new point to the current line
                         // console.log(y, dy)
-                        setGuess(yScale.invert(y + dy));
+                        const guess = Math.max(0, yScale.invert(y + dy - margin.top));
+                        !confirmed && setHasGuessed(true);
+                        !confirmed && setGuess(guess);
                     }}
                 >
                     {({
@@ -173,11 +184,21 @@ const YDIBar = ({ }) => {
                                     return barGroups.map(barGroup =>
                                         <Group key={`bar-group-${barGroup.index}-${barGroup.x0}`} left={barGroup.x0}>
                                             {barGroup.bars.map(bar => {
+                                                if (!confirmed && bar.key === 'value') {
+                                                    return;
+                                                }
                                                 const markerTextLines = [];
                                                 if (bar.key === 'guess') {
-                                                    markerTextLines.push('Geschätzt:');
+                                                    if (hasGuessed) {
+                                                        markerTextLines.push('Geschätzt:');
+                                                    } else {
+                                                        markerTextLines.push('Ziehen Sie');
+                                                        markerTextLines.push('den Balken!');
+                                                    }
                                                 }
-                                                markerTextLines.push(`${Math.round(bar.value * 10) / 10}${question.unit}`)
+                                                if (hasGuessed) {
+                                                    markerTextLines.push(`${Math.round(bar.value * 10) / 10}${question.unit}`)
+                                                }
                                                 return (
                                                     <>
                                                         <Marker
@@ -217,6 +238,7 @@ const YDIBar = ({ }) => {
                                 onTouchStart={dragStart}
                                 onTouchEnd={dragEnd}
                                 onTouchMove={dragMove}
+                                className={classNames(!confirmed && styles.guessCursor)}
                             />
                         </Group>
                     }
@@ -239,13 +261,14 @@ const YDIBar = ({ }) => {
                     scale={yScale}
                     stroke="black"
                     tickStroke="black"
-                    labelProps={(value, index) => ({
+                    tickLabelProps={(value, index) => ({
                         fill: "black",
-
-                        textAnchor: 'middle',
                         fontSize: 16,
-                        textAnchor: 'middle'
+                        textAnchor: 'end',
+                        dy: '6px',
+                        dx: '-4px',
                     })}
+                    tickFormat={(value) => `${value}${question.unit}`}
                 />
             </svg>
         </YDIWrapper>
