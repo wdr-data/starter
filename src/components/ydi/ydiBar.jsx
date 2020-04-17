@@ -13,8 +13,30 @@ import classNames from 'class-names';
 import YDIWrapper from "./ydiWrapper";
 
 import styles from "./ydiBar.module.css";
-import question from "../../../data/test.json";
+// import question from "../../../data/test.json";
 import { useCallback } from "react";
+
+const question = {
+    "key": "test",
+    "heading": "Was schätzen Sie: Wie viele Frauen zwischen 30 und 50 haben ein eigenes Nettoeinkommen von über 2.500 Euro?",
+    "result": "**Gut verdienende Frauen sind in Deutschland in der Minderheit. Unter den verheirateten Frauen verdienen sogar nur 3,4 % mehr als 2.500 Euro netto. Das liegt neben der Berufswahl vor allem daran, welche Rollenverteilung in Partnerschaften gelebt wird.**\n",
+    "knownData": [
+        {
+            "label": "Männer",
+            "value": 23.2
+        }
+    ],
+    "unknownData": {
+        "label": "Frauen",
+        "value": 5.1
+    },
+    "maxY": 40,
+    "accessibility": "Während 23,2 Prozent der Männern zwischen 30 und 50 Jahren ein Einkommen von mehr als 2.500 Euro haben, sind es nur 5,1 Prozent der Frauen.",
+    "unit": "%",
+    "precision": 1,
+    "source": "https://www.bmfsfj.de/blob/83858/928434dae7d841aadc5d2b0ef137573b/20160307-studie-mitten-im-leben-data.pdf"
+};
+
 
 const brandPrimary = "#00345f";
 const brandSecondary = "#A36A00";
@@ -185,7 +207,7 @@ const YDIBar = ({ }) => {
                                         <Group key={`bar-group-${barGroup.index}-${barGroup.x0}`} left={barGroup.x0}>
                                             {barGroup.bars.map(bar => {
                                                 if (!confirmed && bar.key === 'value') {
-                                                    return;
+                                                    return undefined;
                                                 }
                                                 const markerTextLines = [];
                                                 if (bar.key === 'guess') {

@@ -1,4 +1,4 @@
 module.exports = {
-    pathPrefix: "/oper-in-nrw",
+    pathPrefix: "/",
     origin: "https://data.wdr.de",
 }
