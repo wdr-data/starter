@@ -28,9 +28,15 @@ import YDIBar from '../components/ydi/ydiBar.jsx'
 
 Waren Sie in der letzten Spielzeit in der Oper? Dann haben Sie höchstwahrscheinlich Papageno, die Knusperhexe oder Leporello auf der Bühne erlebt. Denn diese Opern und Operetten standen am häufigsten auf dem Spielplan:
 
+## Beispiel WSS Bar Chart:
+
 <YDIBar/>
 
+## Beispiel regulärer Bar Chart:
+
 <SemioticBarChart/>
+
+## Beispiel Video-Player:
 
 <WdrPlayer videoSrc="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" videoPoster="https://www1.wdr.de/fernsehen/abenteuer-erde/kuestenotter-100~_v-gseapremiumxl.jpg" />
 
