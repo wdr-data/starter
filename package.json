@@ -11,7 +11,8 @@
     "build-gatsby": "gatsby build --prefix-paths",
     "build-prod": "GATSBY_WEBTREKK_ENV=production yarn build-gatsby",
     "storybook": "start-storybook",
-    "start": "gatsby develop"
+    "start": "gatsby develop",
+    "serve": "serve -s public"
   },
   "dependencies": {
     "@babel/core": "^7.4.5",
@@ -44,6 +45,7 @@
     "react": "^16.8.6",
     "react-accessible-accordion": "^3.0.0",
     "react-datawrapper-chart": "^1.0.2",
+    "react-device-detect": "^1.11.14",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-inlinesvg": "^0.8.4",

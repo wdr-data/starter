@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
+import { isMobile } from 'react-device-detect';
 import { AxisBottom, AxisLeft } from '@vx/axis';
 import { Bar, BarGroup } from '@vx/shape';
 import { Drag } from '@vx/drag';
@@ -10,6 +11,7 @@ import { scaleBand, scaleLinear, scaleOrdinal } from '@vx/scale';
 import classNames from 'class-names';
 
 import YDIWrapper from "./ydiWrapper";
+import useWindowSize from '../hooks/windowSize';
 
 import styles from "./ydiBar.module.css";
 // import question from "../../../data/test.json";
@@ -40,7 +42,7 @@ const brandSecondary = "#A36A00";
 
 const margin = {
     top: 10,
-    left: 75,
+    left: isMobile ? 50 : 75,
     bottom: 50,
 }
 
@@ -60,7 +62,7 @@ const Marker = ({ barX, barY, barWidth, textLines, color }) => {
                 width={width}
                 fill={color}
             />
-            <polygon points="-5,0 5,0 0,10" fill={color} />
+            <polygon points="-6,-1 6,-1 0,11" fill={color} />
             {
                 textLines.reverse().map((text, i) =>
                     <text
@@ -77,9 +79,22 @@ const Marker = ({ barX, barY, barWidth, textLines, color }) => {
     );
 }
 
-const YDIBar = ({ width = 768, height = 400 }) => {
+const YDIBar = () => {
+    if (typeof window === `undefined`) return <div></div>;
+
     const knownData = question.knownData;
     const unknownData = question.unknownData;
+
+    const { width: windowWidth } = useWindowSize();
+
+    const width = useMemo(
+        () => Math.min((windowWidth ? windowWidth : 768) - 35, 768),
+        [windowWidth]
+    );
+    const height = useMemo(
+        () => isMobile ? width * .9 : width * .75,
+        [width]
+    );
 
     const [guess, setGuess] = useState(10.0);
     const [hasGuessed, setHasGuessed] = useState(false);
@@ -97,11 +112,17 @@ const YDIBar = ({ width = 768, height = 400 }) => {
 
     const notAllData = useMemo(() => knownData.concat([unknownData]), [knownData, unknownData]);
 
-    // Bounds ounds
-    const xMax = width;
-    const yMax = height - margin.bottom;
+    // Bounds
+    const xMax = useMemo(
+        () => width - margin.left,
+        [width]
+    );
+    const yMax = useMemo(
+        () => height - margin.bottom,
+        [height]
+    );
 
-    const dragWidth = width / 2 - margin.left;
+    const dragWidth = width / 2;
     const dragMarginLeft = width / 2;
 
     /* ### Scales ### */
@@ -110,7 +131,7 @@ const YDIBar = ({ width = 768, height = 400 }) => {
         () => scaleBand({
             rangeRound: [0, xMax],
             domain: notAllData.map(x),
-            padding: 0.4
+            padding: 0.1,
         }),
         [xMax, notAllData]
     );
@@ -118,7 +139,7 @@ const YDIBar = ({ width = 768, height = 400 }) => {
     const guessXScale = useMemo(
         () => scaleBand({
             domain: guessKeys,
-            padding: 0.1,
+            padding: 0.2,
             rangeRound: [0, xScale.bandwidth()]
         }),
         [guessKeys, xScale]
@@ -211,8 +232,8 @@ const YDIBar = ({ width = 768, height = 400 }) => {
                                     if (hasGuessed) {
                                         markerTextLines.push('Geschätzt:');
                                     } else {
-                                        markerTextLines.push('Ziehen Sie');
-                                        markerTextLines.push('den Balken!');
+                                        markerTextLines.push(isMobile ? 'Tippen Sie' : 'Ziehen Sie');
+                                        markerTextLines.push(isMobile ? 'zum Schätzen!' : 'den Balken!');
                                     }
                                 }
                                 if (hasGuessed) {
@@ -236,7 +257,7 @@ const YDIBar = ({ width = 768, height = 400 }) => {
                                             height={bar.height}
                                             fill={bar.key === 'guess' ? 'url(#dLines)' : bar.color}
                                             stroke={bar.key === 'value' ? 'transparent' : bar.color}
-                                            strokeWidth={4}
+                                            strokeWidth={isMobile ? 2 : 4}
                                         />
                                     </React.Fragment>
                                 );
@@ -293,24 +314,22 @@ const YDIBar = ({ width = 768, height = 400 }) => {
                                 onMouseDown={dragStart}
                                 onMouseUp={dragEnd}
                                 onMouseMove={dragMove}
-                                onTouchStart={dragStart}
                                 onTouchEnd={dragEnd}
-                                onTouchMove={dragMove}
                                 className={classNames(!confirmed && styles.guessCursor)}
                             />
                         </>
                     }
                 </Drag>
                 <AxisBottom
-                    left={margin.left}
                     top={yMax + margin.top}
+                    left={margin.left}
                     scale={xScale}
                     stroke="black"
                     tickStroke="black"
                     tickLabelProps={(value, index) => ({
                         fill: "black",
                         fontSize: 16,
-                        textAnchor: 'middle'
+                        textAnchor: 'middle',
                     })}
                 />
                 <AxisLeft
