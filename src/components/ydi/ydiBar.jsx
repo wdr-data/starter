@@ -72,7 +72,6 @@ const Marker = ({ barX, barY, barWidth, textLines, color }) => {
                         fontWeight={'bold'}
                     >{text}</text>
                 )
-
             }
         </g>
     );
@@ -96,7 +95,6 @@ const YDIBar = ({ width = 768, height = 400 }) => {
 
     const guessKeys = useMemo(() => ['guess', 'value'], []);
 
-    const allData = useMemo(() => knownData.concat([guessData]), [knownData, guessData]);
     const notAllData = useMemo(() => knownData.concat([unknownData]), [knownData, unknownData]);
 
     // Bounds ounds
@@ -142,10 +140,17 @@ const YDIBar = ({ width = 768, height = 400 }) => {
         [guessKeys]
     );
 
+    // Callbacks
     const confirmCallback = useCallback(() => {
         setConfirmed(true);
     }, [setConfirmed])
 
+    const guessCallback = useCallback(({ x, y, dx, dy }) => {
+        if (y < 0) return;
+        const newGuess = Math.max(0, yScale.invert(y + dy - margin.top));
+        !confirmed && !hasGuessed && setHasGuessed(true);
+        !confirmed && setGuess(newGuess);
+    }, [confirmed, hasGuessed, setHasGuessed, setGuess, yScale]);
 
     // Group memos
     const groupKnown = useMemo(() =>
@@ -241,7 +246,7 @@ const YDIBar = ({ width = 768, height = 400 }) => {
                 }}
             </BarGroup>
         </Group>,
-        [xScale, yScale, guessData, guessKeys, yMax, guessXScale, colorScale, confirmed, hasGuessed]
+        [xScale, guessXScale, yScale, colorScale, yMax, guessData, guessKeys, confirmed, hasGuessed]
     )
 
     return (
@@ -269,13 +274,8 @@ const YDIBar = ({ width = 768, height = 400 }) => {
                     width={dragWidth}
                     height={height}
                     resetOnStart={true}
-                    onDragMove={({ x, y, dx, dy }) => {
-                        // add the new point to the current line
-                        // console.log(y, dy)
-                        const guess = Math.max(0, yScale.invert(y + dy - margin.top));
-                        !confirmed && setHasGuessed(true);
-                        !confirmed && setGuess(guess);
-                    }}
+                    onDragMove={guessCallback}
+                    onDragStart={guessCallback}
                 >
                     {({
                         dragStart,
