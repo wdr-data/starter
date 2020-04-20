@@ -2,7 +2,7 @@ import React from "react";
 import data from "../../../data/zauberfloete.csv";
 import styles from "./semiotic_barChart.module.css";
 
-let OrdinalFrame = null;
+let OrdinalFrame = () => <div />;
 if (typeof window !== `undefined`) {
   OrdinalFrame = require("semiotic/lib/OrdinalFrame");
 }
@@ -23,13 +23,10 @@ const frameProps = {
 };
 
 export default () => {
-  if (OrdinalFrame === null) {
-    return null;
-  }
   return (
     <div className={styles.wrapper}>
       <OrdinalFrame {...frameProps} />
-    </div> 
+    </div>
 
   );
 };
