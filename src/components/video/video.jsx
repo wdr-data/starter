@@ -13,7 +13,7 @@ const WdrPlayer = ({ videoSrc, videoPoster }) => {
       src={videoSrc}
     >
       <BigPlayButton className={styles.playButton}/>
-    </Player>  
+    </Player>
   );
 };
 
