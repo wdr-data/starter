@@ -7,7 +7,7 @@ export const YDIWrapper = ({ question, confirmAllowed, onConfirm, children }) =>
     const confirmHandler = useCallback(() => {
         setConfirmed(true);
         onConfirm();
-    })
+    }, [setConfirmed, onConfirm])
     return (
         <div className="questions">
             <div className="question">

@@ -91,7 +91,7 @@ const YDIBar = ({ width = 768, height = 400 }) => {
             ...unknownData,
             guess,
         }),
-        [guess]
+        [guess, unknownData]
     );
 
     const guessKeys = useMemo(() => ['guess', 'value'], []);
@@ -111,10 +111,10 @@ const YDIBar = ({ width = 768, height = 400 }) => {
     const xScale = useMemo(
         () => scaleBand({
             rangeRound: [0, xMax],
-            domain: allData.map(x),
+            domain: notAllData.map(x),
             padding: 0.4
         }),
-        [xMax, notAllData, x]
+        [xMax, notAllData]
     );
     // Secondary X scale for guess and actual result
     const guessXScale = useMemo(
@@ -123,7 +123,7 @@ const YDIBar = ({ width = 768, height = 400 }) => {
             padding: 0.1,
             rangeRound: [0, xScale.bandwidth()]
         }),
-        [guessKeys]
+        [guessKeys, xScale]
     );
 
     const yScale = useMemo(
@@ -178,7 +178,7 @@ const YDIBar = ({ width = 768, height = 400 }) => {
                 );
             })}
         </Group>,
-        [xScale, yScale, x, y]
+        [xScale, yScale, knownData, yMax]
     )
 
     const groupUnknown = useMemo(() =>
@@ -241,7 +241,7 @@ const YDIBar = ({ width = 768, height = 400 }) => {
                 }}
             </BarGroup>
         </Group>,
-        [xScale, yScale, x, y, guessData, guessKeys, yMax, guessXScale, colorScale, confirmed, hasGuessed]
+        [xScale, yScale, guessData, guessKeys, yMax, guessXScale, colorScale, confirmed, hasGuessed]
     )
 
     return (
