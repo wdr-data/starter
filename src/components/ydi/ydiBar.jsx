@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import PropTypes from "prop-types";
 import { AxisBottom, AxisLeft } from '@vx/axis';
 import { Bar, BarGroup } from '@vx/shape';
@@ -6,7 +6,6 @@ import { Drag } from '@vx/drag';
 import { Group } from '@vx/group';
 import { GridRows } from '@vx/grid';
 import { PatternLines } from '@vx/pattern';
-import { Text } from '@vx/text';
 import { scaleBand, scaleLinear, scaleOrdinal } from '@vx/scale';
 import classNames from 'class-names';
 
@@ -14,7 +13,6 @@ import YDIWrapper from "./ydiWrapper";
 
 import styles from "./ydiBar.module.css";
 // import question from "../../../data/test.json";
-import { useCallback } from "react";
 
 const question = {
     "key": "test",
@@ -37,29 +35,20 @@ const question = {
     "source": "https://www.bmfsfj.de/blob/83858/928434dae7d841aadc5d2b0ef137573b/20160307-studie-mitten-im-leben-data.pdf"
 };
 
-
 const brandPrimary = "#00345f";
 const brandSecondary = "#A36A00";
 
-const width = 768;
-const height = 400;
-const dragWidth = width / 2;
-const dragMarginLeft = width / 2;
 const margin = {
     top: 10,
     left: 75,
     bottom: 50,
 }
 
-// bounds
-const xMax = width;
-const yMax = height - margin.bottom;
-
-// accessors
+// Accessors
 const x = d => d.label;
-const y = d => +d.value;
+const y = d => d.value;
 
-const Marker = ({ barX, barY, barWidth, barHeight, textLines, color }) => {
+const Marker = ({ barX, barY, barWidth, textLines, color }) => {
     const height = textLines.length * 20 + 10;
     const width = Math.max(...textLines.map(text => String(text).length)) * 12;
     return (
@@ -74,7 +63,14 @@ const Marker = ({ barX, barY, barWidth, barHeight, textLines, color }) => {
             <polygon points="-5,0 5,0 0,10" fill={color} />
             {
                 textLines.reverse().map((text, i) =>
-                    <text x={0} y={-10 - i * 20} fill={'white'} textAnchor={'middle'} fontWeight={'bold'}>{text}</text>
+                    <text
+                        key={`marker-${i}`}
+                        x={0}
+                        y={-10 - i * 20}
+                        fill={'white'}
+                        textAnchor={'middle'}
+                        fontWeight={'bold'}
+                    >{text}</text>
                 )
 
             }
@@ -82,7 +78,7 @@ const Marker = ({ barX, barY, barWidth, barHeight, textLines, color }) => {
     );
 }
 
-const YDIBar = ({ }) => {
+const YDIBar = ({ width = 768, height = 400 }) => {
     const knownData = question.knownData;
     const unknownData = question.unknownData;
 
@@ -90,39 +86,163 @@ const YDIBar = ({ }) => {
     const [hasGuessed, setHasGuessed] = useState(false);
     const [confirmed, setConfirmed] = useState(false);
 
-    const guessData = {
-        ...unknownData,
-        guess,
-    }
+    const guessData = useMemo(
+        () => ({
+            ...unknownData,
+            guess,
+        }),
+        [guess]
+    );
 
-    const guessKeys = ['guess', 'value'];
+    const guessKeys = useMemo(() => ['guess', 'value'], []);
 
-    const allData = knownData.concat([guessData]);
+    const allData = useMemo(() => knownData.concat([guessData]), [knownData, guessData]);
+    const notAllData = useMemo(() => knownData.concat([unknownData]), [knownData, unknownData]);
 
-    // scales
-    const xScale = scaleBand({
-        rangeRound: [0, xMax],
-        domain: allData.map(x),
-        padding: 0.4
-    });
-    const guessXScale = scaleBand({
-        domain: guessKeys,
-        padding: 0.1
-    });
-    guessXScale.rangeRound([0, xScale.bandwidth()]);
-    const colorScale = scaleOrdinal({
-        domain: guessKeys,
-        range: [brandSecondary, brandSecondary]
-    });
+    // Bounds ounds
+    const xMax = width;
+    const yMax = height - margin.bottom;
 
-    const yScale = scaleLinear({
-        rangeRound: [yMax, 0],
-        domain: [0, question.maxY]
-    });
+    const dragWidth = width / 2 - margin.left;
+    const dragMarginLeft = width / 2;
+
+    /* ### Scales ### */
+    // Main X scale
+    const xScale = useMemo(
+        () => scaleBand({
+            rangeRound: [0, xMax],
+            domain: allData.map(x),
+            padding: 0.4
+        }),
+        [xMax, notAllData, x]
+    );
+    // Secondary X scale for guess and actual result
+    const guessXScale = useMemo(
+        () => scaleBand({
+            domain: guessKeys,
+            padding: 0.1,
+            rangeRound: [0, xScale.bandwidth()]
+        }),
+        [guessKeys]
+    );
+
+    const yScale = useMemo(
+        () => scaleLinear({
+            rangeRound: [yMax, 0],
+            domain: [0, question.maxY]
+        }),
+        [yMax]
+    );
+
+    const colorScale = useMemo(
+        () => scaleOrdinal({
+            domain: guessKeys,
+            range: [brandSecondary, brandSecondary]
+        }),
+        [guessKeys]
+    );
 
     const confirmCallback = useCallback(() => {
         setConfirmed(true);
-    }, [])
+    }, [setConfirmed])
+
+
+    // Group memos
+    const groupKnown = useMemo(() =>
+        <Group top={margin.top} left={margin.left}>
+            {knownData.map((d) => {
+                const label = x(d);
+                const barWidth = xScale.bandwidth();
+                const barHeight = yMax - yScale(y(d));
+                const barX = xScale(label);
+                const barY = yMax - barHeight;
+                return (
+                    <React.Fragment key={`fragment-unknown-${label}`}>
+                        <Marker
+                            key={`marker-known-${label}`}
+                            barX={barX + barWidth / 4}
+                            barY={barY}
+                            barWidth={barWidth / 2}
+                            textLines={[`${y(d)}${question.unit}`]}
+                            color={brandPrimary}
+                        />
+                        <Bar
+                            key={`bar-unknown-${label}`}
+                            x={barX + barWidth / 4}
+                            y={barY}
+                            width={barWidth / 2}
+                            height={barHeight}
+                            fill={brandPrimary}
+                        />
+                    </React.Fragment>
+                );
+            })}
+        </Group>,
+        [xScale, yScale, x, y]
+    )
+
+    const groupUnknown = useMemo(() =>
+        <Group top={margin.top} left={margin.left} key='group-unknown'>
+            <BarGroup
+                key='bargroup-unknown'
+                data={[guessData]}
+                keys={guessKeys}
+                height={yMax}
+                x0={x}
+                x0Scale={xScale}
+                x1Scale={guessXScale}
+                yScale={yScale}
+                color={colorScale}
+            >
+                {(barGroups) => {
+                    return barGroups.map(barGroup =>
+                        <Group key={`bar-group-${barGroup.index}`} left={barGroup.x0}>
+                            {barGroup.bars.map(bar => {
+                                if (!confirmed && bar.key === 'value') {
+                                    return undefined;
+                                }
+                                const markerTextLines = [];
+                                if (bar.key === 'guess') {
+                                    if (hasGuessed) {
+                                        markerTextLines.push('Geschätzt:');
+                                    } else {
+                                        markerTextLines.push('Ziehen Sie');
+                                        markerTextLines.push('den Balken!');
+                                    }
+                                }
+                                if (hasGuessed) {
+                                    markerTextLines.push(`${Math.round(bar.value * 10) / 10}${question.unit}`)
+                                }
+                                return (
+                                    <React.Fragment key={`fragment-unknown-${bar.key}`}>
+                                        <Marker
+                                            key={`marker-unknown-${bar.key}`}
+                                            barX={bar.x}
+                                            barY={bar.y}
+                                            barWidth={bar.width}
+                                            textLines={markerTextLines}
+                                            color={brandSecondary}
+                                        />
+                                        <Bar
+                                            key={`bar-unknown-${bar.key}`}
+                                            x={bar.x}
+                                            y={bar.y}
+                                            width={bar.width}
+                                            height={bar.height}
+                                            fill={bar.key === 'guess' ? 'url(#dLines)' : bar.color}
+                                            stroke={bar.key === 'value' ? 'transparent' : bar.color}
+                                            strokeWidth={4}
+                                        />
+                                    </React.Fragment>
+                                );
+                            })}
+                        </Group>
+                    )
+                }}
+            </BarGroup>
+        </Group>,
+        [xScale, yScale, x, y, guessData, guessKeys, yMax, guessXScale, colorScale, confirmed, hasGuessed]
+    )
 
     return (
         <YDIWrapper question={question} confirmAllowed={!confirmed && hasGuessed} onConfirm={confirmCallback}>
@@ -144,35 +264,7 @@ const YDIBar = ({ }) => {
                     strokeDasharray="2,2"
                     stroke="rgba(0,0,0,0.3)"
                 />
-                <Group top={margin.top} left={margin.left}>
-                    {knownData.map((d, i) => {
-                        const label = x(d);
-                        const barWidth = xScale.bandwidth();
-                        const barHeight = yMax - yScale(y(d));
-                        const barX = xScale(label);
-                        const barY = yMax - barHeight;
-                        return (
-                            <>
-                                <Marker
-                                    barX={barX + barWidth / 4}
-                                    barY={barY}
-                                    barWidth={barWidth / 2}
-                                    barHeight={barHeight}
-                                    textLines={[`${y(d)}${question.unit}`]}
-                                    color={brandPrimary}
-                                />
-                                <Bar
-                                    key={`bar-${label}`}
-                                    x={barX + barWidth / 4}
-                                    y={barY}
-                                    width={barWidth / 2}
-                                    height={barHeight}
-                                    fill={brandPrimary}
-                                />
-                            </>
-                        );
-                    })}
-                </Group>
+                {groupKnown}
                 <Drag
                     width={dragWidth}
                     height={height}
@@ -186,70 +278,14 @@ const YDIBar = ({ }) => {
                     }}
                 >
                     {({
-                        isDragging,
                         dragStart,
                         dragEnd,
                         dragMove,
                     }) =>
-                        <Group top={margin.top} left={margin.left}>
-                            <BarGroup
-                                data={[guessData]}
-                                keys={guessKeys}
-                                height={yMax}
-                                x0={x}
-                                x0Scale={xScale}
-                                x1Scale={guessXScale}
-                                yScale={yScale}
-                                color={colorScale}
-                            >
-                                {(barGroups) => {
-                                    return barGroups.map(barGroup =>
-                                        <Group key={`bar-group-${barGroup.index}-${barGroup.x0}`} left={barGroup.x0}>
-                                            {barGroup.bars.map(bar => {
-                                                if (!confirmed && bar.key === 'value') {
-                                                    return undefined;
-                                                }
-                                                const markerTextLines = [];
-                                                if (bar.key === 'guess') {
-                                                    if (hasGuessed) {
-                                                        markerTextLines.push('Geschätzt:');
-                                                    } else {
-                                                        markerTextLines.push('Ziehen Sie');
-                                                        markerTextLines.push('den Balken!');
-                                                    }
-                                                }
-                                                if (hasGuessed) {
-                                                    markerTextLines.push(`${Math.round(bar.value * 10) / 10}${question.unit}`)
-                                                }
-                                                return (
-                                                    <>
-                                                        <Marker
-                                                            barX={bar.x}
-                                                            barY={bar.y}
-                                                            barWidth={bar.width}
-                                                            barHeight={bar.height}
-                                                            textLines={markerTextLines}
-                                                            color={brandSecondary}
-                                                        />
-                                                        <Bar
-                                                            key={`bar-${bar.key}`}
-                                                            x={bar.x}
-                                                            y={bar.y}
-                                                            width={bar.width}
-                                                            height={bar.height}
-                                                            fill={bar.key === 'guess' ? 'url(#dLines)' : bar.color}
-                                                            stroke={bar.key === 'value' ? 'transparent' : bar.color}
-                                                            strokeWidth={4}
-                                                        />
-                                                    </>
-                                                );
-                                            })}
-
-                                        </Group>
-                                    )
-                                }}
-                            </BarGroup>
+                        <>
+                            {groupUnknown}
                             <rect
+                                key='drag-rect'
                                 fill="transparent"
                                 width={dragWidth}
                                 height={height}
@@ -262,7 +298,7 @@ const YDIBar = ({ }) => {
                                 onTouchMove={dragMove}
                                 className={classNames(!confirmed && styles.guessCursor)}
                             />
-                        </Group>
+                        </>
                     }
                 </Drag>
                 <AxisBottom
