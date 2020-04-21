@@ -11,7 +11,7 @@ import { scaleBand, scaleLinear, scaleOrdinal } from '@vx/scale';
 import classNames from 'class-names';
 
 import YDIWrapper from "./ydiWrapper";
-import useWindowSize from '../hooks/windowSize';
+import { useWindowWidth } from '@react-hook/window-size';
 
 import styles from "./ydiBar.module.css";
 // import question from "../../../data/test.json";
@@ -85,7 +85,7 @@ const YDIBar = () => {
     const knownData = question.knownData;
     const unknownData = question.unknownData;
 
-    const { width: windowWidth } = useWindowSize();
+    const windowWidth = useWindowWidth();
 
     const width = useMemo(
         () => Math.min((windowWidth ? windowWidth : 768) - 35, 768),

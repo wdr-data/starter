@@ -1301,6 +1301,14 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.3.tgz#dfa0c92efe44a1d1a7974fb49ffeb40ef2da5a27"
   integrity sha512-zVgvPwGK7c1aVdUVc9Qv7SqepOGRDrqCw7KZPSZziWGxSlbII3gmvGLPzLX4d0n0BMbamBacUrN22zOMyFFEkQ==
 
+"@essentials/request-timeout@^1.0.1":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@essentials/request-timeout/-/request-timeout-1.0.2.tgz#0fcb7d7ec186fcfc5f32685968407a2d51d6443d"
+  integrity sha512-P4pM8z1J9Ifj9SanjHyIuzV+AF/Ry6Coxm6foyza3aiDsweHME3t5sRrKv0ohpsmQLrmgt8XLlwFLPoAYLpq2Q==
+  dependencies:
+    performance-now "^2.1.0"
+    raf "^3.4.1"
+
 "@gatsbyjs/relay-compiler@2.0.0-printer-fix.2":
   version "2.0.0-printer-fix.2"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/relay-compiler/-/relay-compiler-2.0.0-printer-fix.2.tgz#214db0e6072d40ea78ad5fabdb49d56bc95f4e99"
@@ -1692,6 +1700,28 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
+
+"@react-hook/debounce@^1.0.6":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@react-hook/debounce/-/debounce-1.0.11.tgz#a8d1deec0d1757768a6ccc702c2edfb92447442f"
+  integrity sha512-FGLzLV2W7qnh2ehSGezao1wkdsMHhN00pYt8IuN/RLFhwd0YDwseEI6pM5ZGjf5lVsALvBaBMKriQ0Wm4UUA5A==
+  dependencies:
+    "@essentials/request-timeout" "^1.0.1"
+
+"@react-hook/throttle@^1.0.7":
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/@react-hook/throttle/-/throttle-1.0.12.tgz#4e78cf19de2a733d9a2dfcb342bf99de21fa3d64"
+  integrity sha512-hukkwzt3ok8vhDJGfBIJfQIfI+o2xaMwrZKUUY3yAHTGThJZ8SG5Uga/suuwa9vDNS3+PORPL4ib5cri/QHKnw==
+  dependencies:
+    "@essentials/request-timeout" "^1.0.1"
+
+"@react-hook/window-size@^1.0.13":
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/@react-hook/window-size/-/window-size-1.0.13.tgz#c9f1fcbff36a548c44468d2882858e185c48f154"
+  integrity sha512-9HlEV5vNKNnADaThaD0Qt12uNHzI+G5PC8DalxNbQNFbQROcx9kLeaVowx5Wqp3QKQUEEeeKpUgzW5+WgTOEfQ==
+  dependencies:
+    "@react-hook/debounce" "^1.0.6"
+    "@react-hook/throttle" "^1.0.7"
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
@@ -13107,7 +13137,7 @@ raf-schd@^4.0.0:
   resolved "https://registry.yarnpkg.com/raf-schd/-/raf-schd-4.0.1.tgz#e72f29a96de260dead719f34c29e56fdc1c1473e"
   integrity sha512-/QTXV4+Tf81CmJgTZac47N63ZzKmaVe+1cQX/grCFeLrs4Mcc6oq+KJfbF3tFjeS1NF91lmTvgmwYjk02UTo9A==
 
-raf@^3.4.0:
+raf@^3.4.0, raf@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.1.tgz#0742e99a4a6552f445d73e3ee0328af0ff1ede39"
   integrity sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==

@@ -19,6 +19,7 @@
     "@mdx-js/mdx": "^1.1.0",
     "@mdx-js/react": "^1.0.27",
     "@mdx-js/tag": "^0.20.3",
+    "@react-hook/window-size": "^1.0.13",
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-knobs": "^5.1.9",
     "@storybook/addon-storysource": "^5.1.9",
