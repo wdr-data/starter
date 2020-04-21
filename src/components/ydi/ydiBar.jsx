@@ -77,7 +77,7 @@ const YDIBar = ({ name }) => {
         [width]
     );
 
-    const [guess, setGuess] = useState(10.0);
+    const [guess, setGuess] = useState(question.initialGuess);
     const [hasGuessed, setHasGuessed] = useState(false);
     const [confirmed, setConfirmed] = useState(false);
 
@@ -218,7 +218,8 @@ const YDIBar = ({ name }) => {
                                     }
                                 }
                                 if (hasGuessed) {
-                                    markerTextLines.push(`${Math.round(bar.value * 10) / 10}${question.unit}`)
+                                    const precision = Math.pow(10, question.precision);
+                                    markerTextLines.push(`${Math.round(bar.value * precision) / precision}${question.unit}`)
                                 }
                                 return (
                                     <React.Fragment key={`fragment-unknown-${bar.key}`}>
