@@ -29,7 +29,7 @@ export const YDIWrapper = ({ question, confirmAllowed, onConfirm, children }) =>
                             <span className={styles.tooltipText}>Ziehen Sie den Balken! Der Klick verrät, ob ihre Schätzung stimmt.</span>
                         </div>
                     </div>
-                    <div className={styles.text} hidden={!confirmed} aria-hidden="false">{question.result}</div>
+                    <p className={styles.text} hidden={!confirmed} aria-hidden="false">{question.result}</p>
                 </div>
             </div>
         </div>
