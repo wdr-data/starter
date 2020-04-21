@@ -14,29 +14,6 @@ import YDIWrapper from "./ydiWrapper";
 import { useWindowWidth } from '@react-hook/window-size';
 
 import styles from "./ydiBar.module.css";
-// import question from "../../../data/test.json";
-
-const question = {
-    "key": "maenner-und-frauen-netto",
-    "heading": "Was schätzen Sie: Wie viele Frauen zwischen 30 und 50 haben ein eigenes Nettoeinkommen von über 2.500 Euro?",
-    "subheading": "So sieht ein Subheading aus",
-    "result": "Gut verdienende Frauen sind in Deutschland in der Minderheit. Unter den verheirateten Frauen verdienen sogar nur 3,4 % mehr als 2.500 Euro netto. Das liegt neben der Berufswahl vor allem daran, welche Rollenverteilung in Partnerschaften gelebt wird.",
-    "knownData": [
-        {
-            "label": "Männer",
-            "value": 23.2
-        }
-    ],
-    "unknownData": {
-        "label": "Frauen",
-        "value": 5.1
-    },
-    "maxY": 40,
-    "accessibility": "Während 23,2 Prozent der Männern zwischen 30 und 50 Jahren ein Einkommen von mehr als 2.500 Euro haben, sind es nur 5,1 Prozent der Frauen.",
-    "unit": "%",
-    "precision": 1,
-    "source": "https://www.bmfsfj.de/blob/83858/928434dae7d841aadc5d2b0ef137573b/20160307-studie-mitten-im-leben-data.pdf"
-};
 
 const brandPrimary = "#00345f";
 const brandSecondary = "#A36A00";
@@ -80,7 +57,10 @@ const Marker = ({ barX, barY, barWidth, textLines, color }) => {
     );
 }
 
-const YDIBar = () => {
+const YDIBar = ({ name }) => {
+    const question = useMemo(() => require(`../../../data/ydi/${name}.json`), [name])
+
+    // Gatsby breaks stuff for some reason, so don't generate static build for this component
     if (typeof window === `undefined`) return <div></div>;
 
     const knownData = question.knownData;
@@ -354,6 +334,7 @@ const YDIBar = () => {
 };
 
 YDIBar.propTypes = {
+    name: PropTypes.string,
 };
 
 export default YDIBar;
