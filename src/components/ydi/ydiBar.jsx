@@ -17,9 +17,10 @@ import styles from "./ydiBar.module.css";
 // import question from "../../../data/test.json";
 
 const question = {
-    "key": "test",
+    "key": "maenner-und-frauen-netto",
     "heading": "Was schätzen Sie: Wie viele Frauen zwischen 30 und 50 haben ein eigenes Nettoeinkommen von über 2.500 Euro?",
-    "result": "**Gut verdienende Frauen sind in Deutschland in der Minderheit. Unter den verheirateten Frauen verdienen sogar nur 3,4 % mehr als 2.500 Euro netto. Das liegt neben der Berufswahl vor allem daran, welche Rollenverteilung in Partnerschaften gelebt wird.**\n",
+    "subheading": "So sieht ein Subheading aus",
+    "result": "Gut verdienende Frauen sind in Deutschland in der Minderheit. Unter den verheirateten Frauen verdienen sogar nur 3,4 % mehr als 2.500 Euro netto. Das liegt neben der Berufswahl vor allem daran, welche Rollenverteilung in Partnerschaften gelebt wird.",
     "knownData": [
         {
             "label": "Männer",
@@ -257,7 +258,7 @@ const YDIBar = () => {
                                             height={bar.height}
                                             fill={bar.key === 'guess' ? 'url(#dLines)' : bar.color}
                                             stroke={bar.key === 'value' ? 'transparent' : bar.color}
-                                            strokeWidth={isMobile ? 2 : 4}
+                                            strokeWidth={isMobile ? 2.5 : 3.5}
                                         />
                                     </React.Fragment>
                                 );

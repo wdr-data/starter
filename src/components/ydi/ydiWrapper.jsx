@@ -1,6 +1,9 @@
 import React from "react";
 import { useCallback } from "react";
 import { useState } from "react";
+import classNames from 'class-names';
+
+import styles from "./ydiWrapper.module.css";
 
 export const YDIWrapper = ({ question, confirmAllowed, onConfirm, children }) => {
     const [confirmed, setConfirmed] = useState(false);
@@ -9,24 +12,24 @@ export const YDIWrapper = ({ question, confirmAllowed, onConfirm, children }) =>
         onConfirm();
     }, [setConfirmed, onConfirm])
     return (
-        <div className="questions">
-            <div className="question">
-                <h2>{question.heading}</h2>
-                <h3>{question.subheading}</h3>
-                <div className={`you-draw-it ${question.key}`} data-key={question.key} aria-labelledby={`hint-${question.key}`}>
+        <div className={styles.questions}>
+            <div className={styles.question}>
+                <h3>{question.heading}</h3>
+                <h4>{question.subheading}</h4>
+                <div className={classNames(styles.youDrawIt, question.key)} data-key={question.key} aria-labelledby={`hint-${question.key}`}>
                     {children}
                 </div>
-                <div id={`hint-${question.key}`} className="accessibility" hidden aria-hidden="false">
+                <div id={`hint-${question.key}`} className={styles.accessibility} hidden aria-hidden="false">
                     {question.accessibility}
                 </div>
-                <div className={`result ${question.key}`}>
-                    <div className="actionContainer" aria-hidden="true">
-                        <button className="showAction" disabled={!confirmAllowed} onClick={confirmHandler}>Wie ist es tatsächlich?</button>
-                        <div className="tooltipcontainer">
-                            <span className="tooltiptext">Ziehen Sie den Balken! Der Klick verrät, ob ihre Schätzung stimmt.</span>
+                <div className={classNames(styles.result, question.key, confirmAllowed && styles.finished, confirmed && styles.shown)}>
+                    <div className={styles.actionContainer} aria-hidden="true">
+                        <button className={styles.showAction} disabled={!confirmAllowed} onClick={confirmHandler}>Wie ist es tatsächlich?</button>
+                        <div className={styles.tooltipContainer}>
+                            <span className={styles.tooltipText}>Ziehen Sie den Balken! Der Klick verrät, ob ihre Schätzung stimmt.</span>
                         </div>
                     </div>
-                    <div className="text" hidden={!confirmed} aria-hidden="false">{question.result}</div>
+                    <div className={styles.text} hidden={!confirmed} aria-hidden="false">{question.result}</div>
                 </div>
             </div>
         </div>
