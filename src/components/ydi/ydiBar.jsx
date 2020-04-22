@@ -20,7 +20,7 @@ const brandSecondary = "#A36A00";
 
 const margin = {
     top: 10,
-    left: isMobile ? 50 : 75,
+    left: isMobile ? 65 : 75,
     bottom: 50,
 }
 
