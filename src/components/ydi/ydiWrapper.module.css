@@ -12,8 +12,9 @@
 .question .result {
     position: relative;
     overflow: hidden;
-    margin-top: 50px;
+    margin-top: 35px;
     margin-bottom: 70px;
+    padding: 15px 0;
 }
 
 .question .result .actionContainer {
