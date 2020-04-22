@@ -11,6 +11,7 @@
 
 .question .result {
     position: relative;
+    overflow: hidden;
     margin-top: 50px;
     margin-bottom: 70px;
 }
