@@ -32,6 +32,10 @@ Waren Sie in der letzten Spielzeit in der Oper? Dann haben Sie höchstwahrschein
 
 <YDIBar name="test"/>
 
+## Beispiel 2 WSS Bar Chart:
+
+<YDIBar name="test01"/>
+
 ## Beispiel regulärer Bar Chart:
 
 <SemioticBarChart/>

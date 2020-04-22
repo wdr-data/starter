@@ -1,0 +1,26 @@
+{
+  "key": "test-01",
+  "heading": "Dies ist ein weiteres Beispiel, um zu zeigen, was noch geht. Quisque varius, nisi quis facilisis venenatis, lacus.",
+  "subheading": "Mehr bekannte Werte, andere Skala und Präzision und eine andere Einheit können konfiguriert werden.",
+  "result": "Dies ist die Auflösung.",
+  "accessibility": "Dies ist der Text für Screenreader.",
+  "source": "http://example.com/",
+  "knownData": [
+    {
+      "label": "Datum 1",
+      "value": 0.11
+    },
+    {
+      "label": "Datum 2",
+      "value": 0.07
+    }
+  ],
+  "unknownData": {
+    "label": "Datum 3",
+    "value": 0.26
+  },
+  "maxY": 0.4,
+  "initialGuess": 0.2,
+  "unit": "‰",
+  "precision": 2
+}
