@@ -11,7 +11,7 @@
     "build-gatsby": "gatsby build --prefix-paths",
     "build-prod": "GATSBY_WEBTREKK_ENV=production yarn build-gatsby",
     "storybook": "start-storybook",
-    "start": "gatsby develop",
+    "start": "gatsby develop -H 0.0.0.0",
     "serve": "serve -s public"
   },
   "dependencies": {
