@@ -1,0 +1,17 @@
+{
+  "key": "test-02",
+  "heading": "Geht auch ein einzelner Wert zum Raten?",
+  "subheading": "",
+  "result": "Dies ist die Auflösung.",
+  "accessibility": "Dies ist der Text für Screenreader.",
+  "source": "http://example.com/",
+  "knownData": [],
+  "unknownData": {
+    "label": "Einzeln",
+    "value": 12
+  },
+  "maxY": 30,
+  "initialGuess": 15,
+  "unit": "%",
+  "precision": 0
+}

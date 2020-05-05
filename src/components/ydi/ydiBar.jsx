@@ -103,9 +103,6 @@ const YDIBar = ({ name }) => {
         [height]
     );
 
-    const dragWidth = width / 2;
-    const dragMarginLeft = width / 2;
-
     /* ### Scales ### */
     // Main X scale
     const xScale = useMemo(
@@ -274,7 +271,7 @@ const YDIBar = ({ name }) => {
                 />
                 {groupKnown}
                 <Drag
-                    width={dragWidth}
+                    width={xScale.step()}
                     height={height}
                     resetOnStart={true}
                     onDragMove={guessCallback}
@@ -290,9 +287,9 @@ const YDIBar = ({ name }) => {
                             <rect
                                 key='drag-rect'
                                 fill="transparent"
-                                width={dragWidth}
+                                width={xScale.step()}
                                 height={height}
-                                x={dragMarginLeft}
+                                x={xScale(x(unknownData)) + margin.left}
                                 onMouseDown={dragStart}
                                 onMouseUp={dragEnd}
                                 onMouseMove={dragMove}
