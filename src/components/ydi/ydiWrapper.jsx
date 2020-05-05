@@ -2,6 +2,7 @@ import React from "react";
 import { useCallback } from "react";
 import { useState } from "react";
 import classNames from 'class-names';
+import ReactMarkdown from 'react-markdown';
 
 import styles from "./ydiWrapper.module.css";
 
@@ -29,7 +30,7 @@ export const YDIWrapper = ({ question, confirmAllowed, onConfirm, children }) =>
                             <span className={styles.tooltipText}>Ziehen Sie den Balken! Der Klick verrät, ob ihre Schätzung stimmt.</span>
                         </div>
                     </div>
-                    <p className={styles.text} hidden={!confirmed} aria-hidden="false">{question.result}</p>
+                    <p className={styles.text} hidden={!confirmed} aria-hidden="false"><ReactMarkdown source={question.result} linkTarget="_blank" /></p>
                 </div>
             </div>
         </div>

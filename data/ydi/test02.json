@@ -2,7 +2,7 @@
   "key": "test-02",
   "heading": "Geht auch ein einzelner Wert zum Raten?",
   "subheading": "",
-  "result": "Dies ist die Auflösung.",
+  "result": "**Dies ist die _Auflösung_.**",
   "accessibility": "Dies ist der Text für Screenreader.",
   "source": "http://example.com/",
   "knownData": [],

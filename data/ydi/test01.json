@@ -2,7 +2,7 @@
   "key": "test-01",
   "heading": "Dies ist ein weiteres Beispiel, um zu zeigen, was noch geht. Quisque varius, nisi quis facilisis venenatis, lacus.",
   "subheading": "Mehr bekannte Werte, andere Skala und Präzision und eine andere Einheit können konfiguriert werden.",
-  "result": "Dies ist die Auflösung.",
+  "result": "**_Dies_ ist die Auflösung.**",
   "accessibility": "Dies ist der Text für Screenreader.",
   "source": "http://example.com/",
   "knownData": [
