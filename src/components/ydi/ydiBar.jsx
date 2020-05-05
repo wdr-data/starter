@@ -57,11 +57,8 @@ const Marker = ({ barX, barY, barWidth, textLines, color }) => {
     );
 }
 
-const YDIBar = ({ name }) => {
+const YDIBarInternal = ({ name }) => {
     const question = useMemo(() => require(`../../../data/ydi/${name}.json`), [name])
-
-    // Gatsby breaks stuff for some reason, so don't generate static build for this component
-    if (typeof window === `undefined`) return <div></div>;
 
     const knownData = question.knownData;
     const unknownData = question.unknownData;
@@ -128,7 +125,7 @@ const YDIBar = ({ name }) => {
             rangeRound: [yMax, 0],
             domain: [0, question.maxY]
         }),
-        [yMax]
+        [yMax, question.maxY]
     );
 
     const colorScale = useMemo(
@@ -182,7 +179,7 @@ const YDIBar = ({ name }) => {
                 );
             })}
         </Group>,
-        [xScale, yScale, knownData, yMax]
+        [xScale, yScale, knownData, yMax, question.unit]
     )
 
     const groupUnknown = useMemo(() =>
@@ -246,7 +243,7 @@ const YDIBar = ({ name }) => {
                 }}
             </BarGroup>
         </Group>,
-        [xScale, guessXScale, yScale, colorScale, yMax, guessData, guessKeys, confirmed, hasGuessed]
+        [xScale, guessXScale, yScale, colorScale, yMax, guessData, guessKeys, confirmed, hasGuessed, question.precision, question.unit]
     )
 
     return (
@@ -329,6 +326,16 @@ const YDIBar = ({ name }) => {
             </svg>
         </YDIWrapper>
     );
+};
+
+
+const YDIBar = ({ name }) => {
+    require(`../../../data/ydi/${name}.json`);
+
+    // Gatsby breaks stuff for some reason, so don't generate static build for this component
+    if (typeof window === `undefined`) return <div></div>;
+
+    return <YDIBarInternal name={name} />;
 };
 
 YDIBar.propTypes = {

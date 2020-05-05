@@ -26,9 +26,7 @@ const DefaultTemplate = data => {
       allMdx {
         nodes {
           fileAbsolutePath
-          code {
-            body
-          }
+          body
         }
       }
     }
@@ -112,7 +110,7 @@ const DefaultTemplate = data => {
                           node.fileAbsolutePath.match(
                             /\/accordion\/authors\.md$/
                           )
-                        ).code.body
+                        ).body
                       }
                     </MDXRenderer>
                   }
@@ -123,7 +121,7 @@ const DefaultTemplate = data => {
                           node.fileAbsolutePath.match(
                             /\/accordion\/sources\.md$/
                           )
-                        ).code.body
+                        ).body
                       }
                     </MDXRenderer>
                   }
@@ -134,7 +132,7 @@ const DefaultTemplate = data => {
                           node.fileAbsolutePath.match(
                             /\/accordion\/credits\.md$/
                           )
-                        ).code.body
+                        ).body
                       }
                     </MDXRenderer>
                   }
@@ -143,7 +141,7 @@ const DefaultTemplate = data => {
                       {
                         data.allMdx.nodes.find(node =>
                           node.fileAbsolutePath.match(/\/accordion\/hints\.md$/)
-                        ).code.body
+                        ).body
                       }
                     </MDXRenderer>
                   }
