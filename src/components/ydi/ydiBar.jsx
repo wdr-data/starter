@@ -30,7 +30,7 @@ const y = d => d.value;
 
 const Marker = ({ barX, barY, barWidth, textLines, color }) => {
     const height = textLines.length * 20 + 10;
-    const width = Math.max(...textLines.map(text => String(text).length)) * 12;
+    const width = Math.max(...textLines.map(text => String(text).length)) * 8 + 25;
     return (
         <g transform={`translate(${barX + barWidth / 2}, ${barY - 15})`}>
             <rect
