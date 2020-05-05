@@ -1,0 +1,31 @@
+{
+  "key": "test-line",
+  "heading": "Test für den linechart",
+  "subheading": "",
+  "result": "**Dies ist die _Auflösung_.**",
+  "accessibility": "Dies ist der Text für Screenreader.",
+  "source": "http://example.com/",
+  "knownData": [
+    {
+      "label": "Datum 1",
+      "value": 11
+    },
+    {
+      "label": "Datum 2",
+      "value": 7
+    }
+  ],
+  "unknownData": [
+    {
+      "label": "Datum 3",
+      "value": 12
+    },
+    {
+      "label": "Datum 4",
+      "value": 13
+    }
+  ],
+  "maxY": 30,
+  "unit": "%",
+  "precision": 1
+}
