@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { isMobile } from 'react-device-detect';
 import { range as d3range, bisect as d3bisect, zip } from 'd3-array';
 import { AxisBottom, AxisLeft } from '@vx/axis';
-import { Drag } from '@vx/drag';
 import { Group } from '@vx/group';
 import { GridRows } from '@vx/grid';
 import { LinePath, Line } from '@vx/shape';
@@ -92,6 +91,8 @@ const YDILineInternal = ({ name }) => {
     const [guessProgress, setGuessProgress] = useState(null);
     const [confirmed, setConfirmed] = useState(false);
 
+    const [isDragging, setIsDragging] = useState(false);
+
     const guessData = useMemo(
         () => zip(unknownData, guesses).map((pair) => ({
             ...pair[0],
@@ -131,30 +132,56 @@ const YDILineInternal = ({ name }) => {
         [yMax, question.maxY]
     );
 
+    const dragX = useMemo(() => xScale(x(lastKnown)) + margin.left, [xScale, lastKnown])
+
     // Callbacks
     const confirmCallback = useCallback(() => {
         setConfirmed(true);
     }, [setConfirmed])
 
-    const guessCallback = useCallback(({ x, y, dx, dy }) => {
-        if (y < 0 || confirmed) return;
+    const guessCallback = useCallback((e, force) => {
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+        const rectPos = e.currentTarget.getBoundingClientRect();
+        const x = clientX - rectPos.left + dragX;
+        const y = clientY - rectPos.top;
+
+        if ((!isDragging && !force) || confirmed || y < 0) return;
 
         const domain = xScale.domain();
         const range = xScale.range();
         const step = xScale.step();
         const rangePoints = d3range(range[0] + margin.left, range[1] + margin.left + step, step)
-        const label = domain[d3bisect(rangePoints, x + dx + step / 2) - 1];
+        const label = domain[d3bisect(rangePoints, x + step / 2) - 1];
         const effectiveLabel = unknownData.findIndex(
             (d) => d.label === label) !== -1 ? label : unknownData[0].label;
 
-        const newGuess = Math.max(0, yScale.invert(y + dy - margin.top));
+        const newGuess = Math.max(0, yScale.invert(y - margin.top));
 
         setHasGuessed(true);
         setGuessProgress(
             Math.max(guessProgress, unknownData.findIndex((d) => d.label === effectiveLabel)));
         setGuesses(
             guesses.map((guess, i) => unknownData[i].label === effectiveLabel ? newGuess : guess));
-    }, [confirmed, setHasGuessed, guesses, setGuesses, xScale, yScale, unknownData, guessProgress]);
+    }, [confirmed, setHasGuessed, guesses, setGuesses, xScale, yScale, unknownData, guessProgress, isDragging, dragX]);
+
+    const drag = useMemo(() => <div
+        role="application"
+        aria-hidden="true"
+        style={{
+            left: dragX,
+            width: xScale(x(lastUnknown)) - xScale(x(lastKnown)),
+            height,
+        }}
+        onMouseDown={(e) => { setIsDragging(true); guessCallback(e, true); }}
+        onMouseUp={() => setIsDragging(false)}
+        onMouseMove={guessCallback}
+        onTouchStart={(e) => { setIsDragging(true); guessCallback(e, true); }}
+        onTouchEnd={() => setIsDragging(false)}
+        onTouchMove={guessCallback}
+        className={classNames(styles.drag, !confirmed && styles.guessCursor)}
+    />, [dragX, confirmed, guessCallback, setIsDragging, xScale, height, lastKnown, lastUnknown]);
 
     // Group memos
     const groupKnown = useMemo(() =>
@@ -276,37 +303,10 @@ const YDILineInternal = ({ name }) => {
                     strokeDasharray="2,2"
                     stroke="rgba(0,0,0,0.3)"
                 />
-                <Drag
-                    width={xScale(x(lastUnknown)) - xScale(x(lastKnown))}
-                    height={height}
-                    resetOnStart={true}
-                    onDragMove={guessCallback}
-                    onDragStart={guessCallback}
-                >
-                    {({
-                        dragStart,
-                        dragEnd,
-                        dragMove,
-                    }) =>
-                        <>
-                            {groupUnknown}
-                            <rect
-                                key='drag-rect'
-                                fill="transparent"
-                                width={xScale(x(lastUnknown)) - xScale(x(lastKnown))}
-                                height={height}
-                                x={xScale(x(lastKnown)) + margin.left}
-                                onMouseDown={dragStart}
-                                onMouseUp={dragEnd}
-                                onMouseMove={dragMove}
-                                onTouchEnd={dragEnd}
-                                className={classNames(!confirmed && styles.guessCursor)}
-                            />
-                        </>
-                    }
-                </Drag>
+                {groupUnknown}
                 {groupKnown}
             </svg>
+            {drag}
         </YDIWrapper>
     );
 };
