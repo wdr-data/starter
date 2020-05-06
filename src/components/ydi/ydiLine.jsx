@@ -243,6 +243,7 @@ const YDILineInternal = ({ name }) => {
                     left={margin.left}
                     scale={xScale}
                     stroke="black"
+                    strokeWidth={1.5}
                     tickStroke="black"
                     tickLabelProps={(value, index) => ({
                         fill: "black",
@@ -252,9 +253,10 @@ const YDILineInternal = ({ name }) => {
                 />
                 <AxisLeft
                     top={margin.top}
-                    left={margin.left}
+                    left={margin.left + 1}
                     scale={yScale}
                     stroke="black"
+                    strokeWidth={1.5}
                     tickStroke="black"
                     tickLabelProps={(value, index) => ({
                         fill: "black",

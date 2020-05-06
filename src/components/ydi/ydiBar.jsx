@@ -257,6 +257,35 @@ const YDIBarInternal = ({ name }) => {
                     strokeWidth={3}
                     orientation={['diagonal']}
                 />
+                <AxisBottom
+                    top={yMax + margin.top}
+                    left={margin.left}
+                    scale={xScale}
+                    stroke="black"
+                    strokeWidth={1.5}
+                    tickStroke="black"
+                    tickLabelProps={(value, index) => ({
+                        fill: "black",
+                        fontSize: 16,
+                        textAnchor: 'middle',
+                    })}
+                />
+                <AxisLeft
+                    top={margin.top}
+                    left={margin.left + 1}
+                    scale={yScale}
+                    stroke="black"
+                    strokeWidth={1.5}
+                    tickStroke="black"
+                    tickLabelProps={(value, index) => ({
+                        fill: "black",
+                        fontSize: 16,
+                        textAnchor: 'end',
+                        dy: '6px',
+                        dx: '-4px',
+                    })}
+                    tickFormat={(value) => `${value}${question.unit}`}
+                />
                 <GridRows
                     left={margin.left}
                     top={margin.top}
@@ -296,33 +325,6 @@ const YDIBarInternal = ({ name }) => {
                         </>
                     }
                 </Drag>
-                <AxisBottom
-                    top={yMax + margin.top}
-                    left={margin.left}
-                    scale={xScale}
-                    stroke="black"
-                    tickStroke="black"
-                    tickLabelProps={(value, index) => ({
-                        fill: "black",
-                        fontSize: 16,
-                        textAnchor: 'middle',
-                    })}
-                />
-                <AxisLeft
-                    top={margin.top}
-                    left={margin.left}
-                    scale={yScale}
-                    stroke="black"
-                    tickStroke="black"
-                    tickLabelProps={(value, index) => ({
-                        fill: "black",
-                        fontSize: 16,
-                        textAnchor: 'end',
-                        dy: '6px',
-                        dx: '-4px',
-                    })}
-                    tickFormat={(value) => `${value}${question.unit}`}
-                />
             </svg>
         </YDIWrapper>
     );
