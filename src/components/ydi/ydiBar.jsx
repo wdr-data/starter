@@ -21,6 +21,7 @@ const margin = {
     top: 10,
     left: isMobile ? 65 : 75,
     bottom: 50,
+    right: 0,
 }
 
 // Accessors
@@ -93,11 +94,11 @@ const YDIBarInternal = ({ name }) => {
 
     // Bounds
     const xMax = useMemo(
-        () => width - margin.left,
+        () => width - margin.left - margin.right,
         [width]
     );
     const yMax = useMemo(
-        () => height - margin.bottom,
+        () => height - margin.top - margin.bottom,
         [height]
     );
 
@@ -165,7 +166,7 @@ const YDIBarInternal = ({ name }) => {
         style={{
             left: dragX,
             width: xScale.step(),
-            height,
+            height: height - margin.bottom + 10,
         }}
         onMouseDown={(e) => { setIsDragging(true); guessCallback(e, true); }}
         onMouseUp={() => setIsDragging(false)}

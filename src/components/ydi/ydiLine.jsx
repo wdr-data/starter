@@ -182,7 +182,7 @@ const YDILineInternal = ({ name }) => {
         style={{
             left: dragX,
             width: xScale(x(lastUnknown)) - xScale(x(lastKnown)),
-            height: height - margin.bottom,
+            height: height - margin.bottom + 10,
         }}
         onMouseDown={(e) => { setIsDragging(true); guessCallback(e, true); }}
         onMouseUp={() => setIsDragging(false)}
