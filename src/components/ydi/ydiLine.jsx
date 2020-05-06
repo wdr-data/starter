@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import { isMobile } from 'react-device-detect';
 import { range as d3range, bisect as d3bisect, zip } from 'd3-array';
 import { AxisBottom, AxisLeft } from '@vx/axis';
+import { LinearGradient } from '@vx/gradient';
 import { Group } from '@vx/group';
 import { GridRows } from '@vx/grid';
-import { LinePath, Line } from '@vx/shape';
+import { AreaClosed, LinePath, Line } from '@vx/shape';
 import { scaleLinear, scalePoint } from '@vx/scale';
 import classNames from 'class-names';
 
@@ -29,7 +30,7 @@ const x = d => d.label;
 const y = d => d.value;
 const yGuess = d => d.guess;
 
-const Marker = ({ x, y, textLines, color, drawPoint }) => {
+const Marker = ({ x, y, textLines, color }) => {
     const height = textLines.length * 20 + 10;
     const width = Math.max(...textLines.map(text => String(text).length)) * 8 + 25;
     const margin = {
@@ -57,7 +58,6 @@ const Marker = ({ x, y, textLines, color, drawPoint }) => {
                     >{text}</text>
                 )
             }
-            {drawPoint && <circle cx={0} cy={margin.bottom} r={4} fill={color} />}
         </g>
     );
 }
@@ -90,6 +90,7 @@ const YDILineInternal = ({ name }) => {
     const [hasGuessed, setHasGuessed] = useState(false);
     const [guessProgress, setGuessProgress] = useState(null);
     const [confirmed, setConfirmed] = useState(false);
+    const [confirmAnimationDone, setConfirmAnimationDone] = useState(false);
 
     const [isDragging, setIsDragging] = useState(false);
     const [previewTarget, setPreviewTarget] = useState(null);
@@ -138,6 +139,7 @@ const YDILineInternal = ({ name }) => {
     // Callbacks
     const confirmCallback = useCallback(() => {
         setConfirmed(true);
+        setTimeout(() => { setConfirmAnimationDone(true); }, 500);
     }, [setConfirmed])
 
     const guessCallback = useCallback((e, force) => {
@@ -194,48 +196,35 @@ const YDILineInternal = ({ name }) => {
         className={classNames(styles.drag)}
     />, [dragX, guessCallback, setIsDragging, xScale, height, lastKnown, lastUnknown]);
 
-    const groupKnown = useMemo(() =>
-        <Group top={margin.top} left={margin.left}>
-            <Marker
-                x={xScale(x(firstKnown))}
-                y={yScale(y(firstKnown))}
-                textLines={[`${y(firstKnown)}${question.unit}`]}
-                color={brandPrimary}
-                drawPoint
-            />
-            <Marker
-                x={xScale(x(lastKnown))}
-                y={yScale(y(lastKnown))}
-                textLines={[`${y(lastKnown)}${question.unit}`]}
-                color={brandPrimary}
-                drawPoint
+    const groupKnown = useMemo(() => {
+        const clipX = !confirmed ? `${xScale(x(lastKnown))}px` : `100%`;
+        const clipPath = `polygon(0 -10px, ${clipX} -10px, ${clipX} 100%, 0 100%)`;
+        return <Group top={margin.top} left={margin.left}>
+            <AreaClosed
+                className={styles.known}
+                data={notAllData}
+                x={d => xScale(x(d))}
+                y={d => yScale(y(d))}
+                yScale={yScale}
+                fill="url(#gradientPrimary)"
+                style={{ clipPath }}
             />
             <LinePath
-                data={knownData}
+                className={styles.known}
+                data={notAllData}
                 x={d => xScale(x(d))}
                 y={d => yScale(y(d))}
                 stroke={brandPrimary}
                 strokeWidth={3}
+                style={{ clipPath }}
             />
-        </Group>,
-        [xScale, yScale, knownData, firstKnown, lastKnown, question.unit]
+        </Group>
+    },
+        [xScale, yScale, notAllData, confirmed, lastKnown]
     )
 
     const groupUnknown = useMemo(() => {
-        const precision = Math.pow(10, question.precision);
-        const markerLabel = `${
-            Math.round(yGuess(guessData[guessData.length - 1]) * precision) / precision
-            }${question.unit}`;
         return <Group top={margin.top} left={margin.left}>
-            {confirmed &&
-                <LinePath
-                    data={[lastKnown].concat(unknownData)}
-                    x={d => xScale(x(d))}
-                    y={d => yScale(y(d))}
-                    stroke={brandPrimary}
-                    strokeWidth={3}
-                />
-            }
             <marker id="preview-arrow" orient="auto" markerWidth={4} markerHeight={6} refX={.1} refY={3}>
                 <path d="M0,0 V6 L3,3 Z" fill="grey" />
             </marker>
@@ -257,13 +246,49 @@ const YDILineInternal = ({ name }) => {
                 strokeWidth={3}
                 strokeDasharray="6,4"
             />
+        </Group>
+    },
+        [
+            xScale, yScale, guessData, guessProgress, lastKnown, previewTarget,
+        ]
+    )
+
+    const markers = useMemo(() => {
+        const precision = Math.pow(10, question.precision);
+        const markerLabel = `${
+            Math.round(yGuess(guessData[guessData.length - 1]) * precision) / precision
+            }${question.unit}`;
+        return <Group top={margin.top} left={margin.left}>
+            <circle cx={xScale(x(firstKnown))} cy={yScale(y(firstKnown))} r={4} fill={brandPrimary} />
+            <Marker
+                x={xScale(x(firstKnown))}
+                y={yScale(y(firstKnown))}
+                textLines={[`${y(firstKnown)}${question.unit}`]}
+                color={brandPrimary}
+            />
+
+            <circle cx={xScale(x(lastKnown))} cy={yScale(y(lastKnown))} r={4} fill={brandPrimary} />
+            <Marker
+                x={xScale(x(lastKnown))}
+                y={yScale(y(lastKnown))}
+                textLines={[`${y(lastKnown)}${question.unit}`]}
+                color={brandPrimary}
+            />
+
+            {confirmAnimationDone && <circle
+                cx={xScale(x(lastUnknown))}
+                cy={yScale(y(lastUnknown))}
+                r={4} fill={brandPrimary}
+            />}
+
             {guessProgress === unknownData.length - 1 && <Marker
                 x={xScale(x(guessData[guessData.length - 1]))}
                 y={yScale(yGuess(guessData[guessData.length - 1]))}
                 textLines={[markerLabel]}
                 color={brandSecondary}
             />}
-            {confirmed &&
+
+            {confirmAnimationDone &&
                 <Marker
                     x={xScale(x(lastUnknown))}
                     y={yScale(y(lastUnknown))}
@@ -273,12 +298,10 @@ const YDILineInternal = ({ name }) => {
                 />
             }
         </Group>
-    },
-        [
-            xScale, yScale, guessData, confirmed, guessProgress, lastKnown,
-            unknownData, question.precision, question.unit, lastUnknown, previewTarget,
-        ]
-    )
+    }, [
+        xScale, yScale, guessData, firstKnown, lastKnown, lastUnknown, confirmAnimationDone,
+        question, guessProgress, unknownData,
+    ]);
 
     return (
         <YDIWrapper
@@ -286,6 +309,7 @@ const YDILineInternal = ({ name }) => {
             confirmAllowed={!confirmed && hasGuessed}
             onConfirm={confirmCallback}>
             <svg width={width} height={height}>
+                <LinearGradient id="gradientPrimary" from={brandPrimary} fromOpacity={0.4} to={brandPrimary} toOpacity={0} vertical={true} />
                 <AxisBottom
                     top={yMax + margin.top}
                     left={margin.left}
@@ -324,8 +348,9 @@ const YDILineInternal = ({ name }) => {
                     strokeDasharray="2,2"
                     stroke="rgba(0,0,0,0.3)"
                 />
-                {groupUnknown}
                 {groupKnown}
+                {groupUnknown}
+                {markers}
             </svg>
             {!confirmed && drag}
         </YDIWrapper>
