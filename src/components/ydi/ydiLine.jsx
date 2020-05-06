@@ -221,7 +221,7 @@ const YDILineInternal = ({ name }) => {
     },
         [
             xScale, yScale, guessData, confirmed, guessProgress, lastKnown,
-            unknownData, question.precision, question.unit,
+            unknownData, question.precision, question.unit, lastUnknown
         ]
     )
 
@@ -267,7 +267,6 @@ const YDILineInternal = ({ name }) => {
                     strokeDasharray="2,2"
                     stroke="rgba(0,0,0,0.3)"
                 />
-                {groupKnown}
                 <Drag
                     width={xScale(x(lastUnknown)) - xScale(x(lastKnown))}
                     height={height}
@@ -297,6 +296,7 @@ const YDILineInternal = ({ name }) => {
                         </>
                     }
                 </Drag>
+                {groupKnown}
             </svg>
         </YDIWrapper>
     );
