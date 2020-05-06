@@ -30,11 +30,14 @@ const x = d => d.label;
 const y = d => d.value;
 const yGuess = d => d.guess;
 
-const Marker = ({ x, y, textLines, color }) => {
+const Marker = ({ x, y, textLines, color, drawPoint }) => {
     const height = textLines.length * 20 + 10;
     const width = Math.max(...textLines.map(text => String(text).length)) * 8 + 25;
+    const margin = {
+        bottom: 18,
+    }
     return (
-        <g transform={`translate(${x}, ${y - 15})`}>
+        <g transform={`translate(${x}, ${y - margin.bottom})`}>
             <rect
                 x={-width / 2}
                 y={-(height)}
@@ -48,13 +51,14 @@ const Marker = ({ x, y, textLines, color }) => {
                     <text
                         key={`marker-${i}`}
                         x={0}
-                        y={-10 - i * 20}
+                        y={-9 - i * 20}
                         fill={'white'}
                         textAnchor={'middle'}
                         fontWeight={'bold'}
                     >{text}</text>
                 )
             }
+            {drawPoint && <circle cx={0} cy={margin.bottom} r={4} fill={color} />}
         </g>
     );
 }
@@ -160,12 +164,14 @@ const YDILineInternal = ({ name }) => {
                 y={yScale(y(firstKnown))}
                 textLines={[`${y(firstKnown)}${question.unit}`]}
                 color={brandPrimary}
+                drawPoint
             />
             <Marker
                 x={xScale(x(lastKnown))}
                 y={yScale(y(lastKnown))}
                 textLines={[`${y(lastKnown)}${question.unit}`]}
                 color={brandPrimary}
+                drawPoint
             />
             <LinePath
                 data={knownData}
@@ -215,6 +221,7 @@ const YDILineInternal = ({ name }) => {
                     y={yScale(y(lastUnknown))}
                     textLines={[`${y(lastUnknown)}${question.unit}`]}
                     color={brandPrimary}
+                    drawPoint
                 />
             }
         </Group>
