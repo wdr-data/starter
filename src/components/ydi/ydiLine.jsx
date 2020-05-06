@@ -145,11 +145,11 @@ const YDILineInternal = ({ name }) => {
         const clientY = e.touches ? e.touches[0].clientY : e.clientY;
 
         const rectPos = e.currentTarget.getBoundingClientRect();
-        const xPos = clientX - rectPos.left + dragX;
-        const yPos = clientY - rectPos.top;
+        const xPos = clientX - rectPos.left + dragX - margin.left;
+        const yPos = clientY - rectPos.top - margin.top;
 
         if (!isDragging && !hasGuessed) {
-            setPreviewTarget({ x: xScale(x(firstUnknown)) - xScale.step() / 2, y: yPos - margin.top });
+            setPreviewTarget({ x: xScale(x(firstUnknown)) - xScale.step() / 2, y: yPos });
         }
 
         if ((!isDragging && !force) || confirmed || yPos < 0) return;
@@ -158,12 +158,12 @@ const YDILineInternal = ({ name }) => {
         const domain = xScale.domain();
         const range = xScale.range();
         const step = xScale.step();
-        const rangePoints = d3range(range[0] + margin.left, range[1] + margin.left + step, step)
+        const rangePoints = d3range(range[0], range[1] + step, step)
         const label = domain[d3bisect(rangePoints, xPos + step / 2) - 1];
         const effectiveLabel = unknownData.findIndex(
             (d) => d.label === label) !== -1 ? label : unknownData[0].label;
 
-        const newGuess = Math.max(0, yScale.invert(yPos - margin.top));
+        const newGuess = Math.max(0, yScale.invert(yPos));
 
         setHasGuessed(true);
         setGuessProgress(

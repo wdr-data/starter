@@ -148,11 +148,11 @@ const YDIBarInternal = ({ name }) => {
         const clientY = e.touches ? e.touches[0].clientY : e.clientY;
 
         const rectPos = e.currentTarget.getBoundingClientRect();
-        const y = clientY - rectPos.top;
+        const yPos = clientY - rectPos.top - margin.top;
 
-        if ((!isDragging && !force) || confirmed || y < 0) return;
+        if ((!isDragging && !force) || confirmed || yPos < 0) return;
 
-        const newGuess = Math.max(0, yScale.invert(y - margin.top));
+        const newGuess = Math.max(0, yScale.invert(yPos));
         setHasGuessed(true);
         setGuess(newGuess);
     }, [confirmed, setHasGuessed, setGuess, yScale, isDragging]);
