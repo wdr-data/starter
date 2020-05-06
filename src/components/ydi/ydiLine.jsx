@@ -92,6 +92,7 @@ const YDILineInternal = ({ name }) => {
     const [confirmed, setConfirmed] = useState(false);
 
     const [isDragging, setIsDragging] = useState(false);
+    const [previewTarget, setPreviewTarget] = useState(null);
 
     const guessData = useMemo(
         () => zip(unknownData, guesses).map((pair) => ({
@@ -144,27 +145,35 @@ const YDILineInternal = ({ name }) => {
         const clientY = e.touches ? e.touches[0].clientY : e.clientY;
 
         const rectPos = e.currentTarget.getBoundingClientRect();
-        const x = clientX - rectPos.left + dragX;
-        const y = clientY - rectPos.top;
+        const xPos = clientX - rectPos.left + dragX;
+        const yPos = clientY - rectPos.top;
 
-        if ((!isDragging && !force) || confirmed || y < 0) return;
+        if (!isDragging && !hasGuessed) {
+            setPreviewTarget({ x: xScale(x(firstUnknown)) - xScale.step() / 2, y: yPos - margin.top });
+        }
+
+        if ((!isDragging && !force) || confirmed || yPos < 0) return;
+        setPreviewTarget(null);
 
         const domain = xScale.domain();
         const range = xScale.range();
         const step = xScale.step();
         const rangePoints = d3range(range[0] + margin.left, range[1] + margin.left + step, step)
-        const label = domain[d3bisect(rangePoints, x + step / 2) - 1];
+        const label = domain[d3bisect(rangePoints, xPos + step / 2) - 1];
         const effectiveLabel = unknownData.findIndex(
             (d) => d.label === label) !== -1 ? label : unknownData[0].label;
 
-        const newGuess = Math.max(0, yScale.invert(y - margin.top));
+        const newGuess = Math.max(0, yScale.invert(yPos - margin.top));
 
         setHasGuessed(true);
         setGuessProgress(
             Math.max(guessProgress, unknownData.findIndex((d) => d.label === effectiveLabel)));
         setGuesses(
             guesses.map((guess, i) => unknownData[i].label === effectiveLabel ? newGuess : guess));
-    }, [confirmed, setHasGuessed, guesses, setGuesses, xScale, yScale, unknownData, guessProgress, isDragging, dragX]);
+    }, [
+        confirmed, hasGuessed, setHasGuessed, guesses, setGuesses, xScale, yScale, unknownData,
+        guessProgress, isDragging, dragX, firstUnknown,
+    ]);
 
     // Element memos
     const drag = useMemo(() => <div
@@ -173,11 +182,12 @@ const YDILineInternal = ({ name }) => {
         style={{
             left: dragX,
             width: xScale(x(lastUnknown)) - xScale(x(lastKnown)),
-            height,
+            height: height - margin.bottom,
         }}
         onMouseDown={(e) => { setIsDragging(true); guessCallback(e, true); }}
         onMouseUp={() => setIsDragging(false)}
         onMouseMove={guessCallback}
+        onMouseLeave={() => setPreviewTarget(null)}
         onTouchStart={(e) => { setIsDragging(true); guessCallback(e, true); }}
         onTouchEnd={() => setIsDragging(false)}
         onTouchMove={guessCallback}
@@ -232,6 +242,17 @@ const YDILineInternal = ({ name }) => {
                 textLines={[markerLabel]}
                 color={brandSecondary}
             />}
+            <marker id="preview-arrow" orient="auto" markerWidth={4} markerHeight={6} refX={.1} refY={3}>
+                <path d="M0,0 V6 L3,3 Z" fill="grey" />
+            </marker>
+            {previewTarget && <Line
+                from={{ x: xScale(x(lastKnown)), y: yScale(y(lastKnown)) }}
+                to={previewTarget}
+                stroke="grey"
+                strokeWidth={3}
+                strokeDasharray="6,4"
+                markerEnd="url(#preview-arrow)"
+            />}
             <LinePath
                 data={[
                     { ...lastKnown, guess: lastKnown.value }
@@ -255,7 +276,7 @@ const YDILineInternal = ({ name }) => {
     },
         [
             xScale, yScale, guessData, confirmed, guessProgress, lastKnown,
-            unknownData, question.precision, question.unit, lastUnknown
+            unknownData, question.precision, question.unit, lastUnknown, previewTarget,
         ]
     )
 
