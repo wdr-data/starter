@@ -236,12 +236,6 @@ const YDILineInternal = ({ name }) => {
                     strokeWidth={3}
                 />
             }
-            {guessProgress === unknownData.length - 1 && <Marker
-                x={xScale(x(guessData[guessData.length - 1]))}
-                y={yScale(yGuess(guessData[guessData.length - 1]))}
-                textLines={[markerLabel]}
-                color={brandSecondary}
-            />}
             <marker id="preview-arrow" orient="auto" markerWidth={4} markerHeight={6} refX={.1} refY={3}>
                 <path d="M0,0 V6 L3,3 Z" fill="grey" />
             </marker>
@@ -263,6 +257,12 @@ const YDILineInternal = ({ name }) => {
                 strokeWidth={3}
                 strokeDasharray="6,4"
             />
+            {guessProgress === unknownData.length - 1 && <Marker
+                x={xScale(x(guessData[guessData.length - 1]))}
+                y={yScale(yGuess(guessData[guessData.length - 1]))}
+                textLines={[markerLabel]}
+                color={brandSecondary}
+            />}
             {confirmed &&
                 <Marker
                     x={xScale(x(lastUnknown))}
