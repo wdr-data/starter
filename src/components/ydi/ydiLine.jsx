@@ -22,6 +22,7 @@ const margin = {
     top: 10,
     left: isMobile ? 65 : 75,
     bottom: 50,
+    right: 50,
 }
 
 // Accessors
@@ -99,11 +100,11 @@ const YDILineInternal = ({ name }) => {
 
     // Bounds
     const xMax = useMemo(
-        () => width - margin.left,
+        () => width - margin.left - margin.right,
         [width]
     );
     const yMax = useMemo(
-        () => height - margin.bottom,
+        () => height - margin.top - margin.bottom,
         [height]
     );
 
@@ -177,8 +178,27 @@ const YDILineInternal = ({ name }) => {
         [xScale, yScale, knownData, firstKnown, lastKnown, question.unit]
     )
 
-    const groupUnknown = useMemo(() =>
-        <Group top={margin.top} left={margin.left}>
+    const groupUnknown = useMemo(() => {
+        const precision = Math.pow(10, question.precision);
+        const markerLabel = `${
+            Math.round(yGuess(guessData[guessData.length - 1]) * precision) / precision
+            }${question.unit}`;
+        return <Group top={margin.top} left={margin.left}>
+            {confirmed &&
+                <LinePath
+                    data={[lastKnown].concat(unknownData)}
+                    x={d => xScale(x(d))}
+                    y={d => yScale(y(d))}
+                    stroke={brandPrimary}
+                    strokeWidth={3}
+                />
+            }
+            {guessProgress === unknownData.length - 1 && <Marker
+                x={xScale(x(guessData[guessData.length - 1]))}
+                y={yScale(yGuess(guessData[guessData.length - 1]))}
+                textLines={[markerLabel]}
+                color={brandSecondary}
+            />}
             <LinePath
                 data={[
                     { ...lastKnown, guess: lastKnown.value }
@@ -189,16 +209,18 @@ const YDILineInternal = ({ name }) => {
                 strokeWidth={3}
                 strokeDasharray="6,4"
             />
-            {confirmed && <LinePath
-                data={[lastKnown].concat(unknownData)}
-                x={d => xScale(x(d))}
-                y={d => yScale(y(d))}
-                stroke={brandPrimary}
-                strokeWidth={3}
-            />}
-        </Group>,
+            {confirmed &&
+                <Marker
+                    x={xScale(x(lastUnknown))}
+                    y={yScale(y(lastUnknown))}
+                    textLines={[`${y(lastUnknown)}${question.unit}`]}
+                    color={brandPrimary}
+                />
+            }
+        </Group>
+    },
         [
-            xScale, yScale, guessData, confirmed, hasGuessed, guessProgress, lastKnown,
+            xScale, yScale, guessData, confirmed, guessProgress, lastKnown,
             unknownData, question.precision, question.unit,
         ]
     )
