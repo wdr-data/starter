@@ -166,6 +166,7 @@ const YDILineInternal = ({ name }) => {
             guesses.map((guess, i) => unknownData[i].label === effectiveLabel ? newGuess : guess));
     }, [confirmed, setHasGuessed, guesses, setGuesses, xScale, yScale, unknownData, guessProgress, isDragging, dragX]);
 
+    // Element memos
     const drag = useMemo(() => <div
         role="application"
         aria-hidden="true"
@@ -180,10 +181,9 @@ const YDILineInternal = ({ name }) => {
         onTouchStart={(e) => { setIsDragging(true); guessCallback(e, true); }}
         onTouchEnd={() => setIsDragging(false)}
         onTouchMove={guessCallback}
-        className={classNames(styles.drag, !confirmed && styles.guessCursor)}
-    />, [dragX, confirmed, guessCallback, setIsDragging, xScale, height, lastKnown, lastUnknown]);
+        className={classNames(styles.drag)}
+    />, [dragX, guessCallback, setIsDragging, xScale, height, lastKnown, lastUnknown]);
 
-    // Group memos
     const groupKnown = useMemo(() =>
         <Group top={margin.top} left={margin.left}>
             <Marker
@@ -306,7 +306,7 @@ const YDILineInternal = ({ name }) => {
                 {groupUnknown}
                 {groupKnown}
             </svg>
-            {drag}
+            {!confirmed && drag}
         </YDIWrapper>
     );
 };
