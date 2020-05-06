@@ -2,3 +2,5 @@ node_modules/
 /public/
 /.cache/
 yarn-error.log
+
+/static/m3u/*.m3u8
