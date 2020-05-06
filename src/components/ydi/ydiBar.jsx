@@ -46,7 +46,7 @@ const Marker = ({ barX, barY, barWidth, textLines, color }) => {
                     <text
                         key={`marker-${i}`}
                         x={0}
-                        y={-10 - i * 20}
+                        y={-9 - i * 20}
                         fill={'white'}
                         textAnchor={'middle'}
                         fontWeight={'bold'}
