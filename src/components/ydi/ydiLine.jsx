@@ -198,7 +198,7 @@ const YDILineInternal = ({ name }) => {
 
     const groupKnown = useMemo(() => {
         const clipX = !confirmed ? `${xScale(x(lastKnown))}px` : `100%`;
-        const clipPath = `polygon(0 -10px, ${clipX} -10px, ${clipX} 100%, 0 100%)`;
+        const clipPath = `polygon(0 -10px, ${clipX} -10px, ${clipX} 110%, 0 110%)`;
         return <Group top={margin.top} left={margin.left}>
             <AreaClosed
                 className={styles.known}
