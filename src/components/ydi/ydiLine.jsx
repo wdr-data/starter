@@ -82,8 +82,9 @@ const YDILineInternal = ({ name }) => {
 
     const [guesses, setGuesses] = useState(
         question.unknownData.map(() => lastKnown.value
-    ));
+        ));
     const [hasGuessed, setHasGuessed] = useState(false);
+    const [guessProgress, setGuessProgress] = useState(null);
     const [confirmed, setConfirmed] = useState(false);
 
     const guessData = useMemo(
@@ -131,18 +132,24 @@ const YDILineInternal = ({ name }) => {
     }, [setConfirmed])
 
     const guessCallback = useCallback(({ x, y, dx, dy }) => {
-        if (y < 0) return;
+        if (y < 0 || confirmed) return;
 
         const domain = xScale.domain();
         const range = xScale.range();
-        const rangePoints = d3range(range[0], range[1] + xScale.step(), xScale.step())
-        const label = domain[d3bisect(rangePoints, x + dx + margin.left) - 1];
+        const step = xScale.step();
+        const rangePoints = d3range(range[0] + margin.left, range[1] + margin.left + step, step)
+        const label = domain[d3bisect(rangePoints, x + dx + step / 2) - 1];
+        const effectiveLabel = unknownData.findIndex(
+            (d) => d.label === label) !== -1 ? label : unknownData[0].label;
 
         const newGuess = Math.max(0, yScale.invert(y + dy - margin.top));
-        console.log({label, newGuess});
-        !confirmed && !hasGuessed && setHasGuessed(true);
-        !confirmed && setGuesses(guesses.map((guess, i) => unknownData[i].label === label ? newGuess : guess));
-    }, [confirmed, hasGuessed, setHasGuessed, guesses, setGuesses, xScale, yScale, unknownData]);
+
+        setHasGuessed(true);
+        setGuessProgress(
+            Math.max(guessProgress, unknownData.findIndex((d) => d.label === effectiveLabel)));
+        setGuesses(
+            guesses.map((guess, i) => unknownData[i].label === effectiveLabel ? newGuess : guess));
+    }, [confirmed, setHasGuessed, guesses, setGuesses, xScale, yScale, unknownData, guessProgress]);
 
     // Group memos
     const groupKnown = useMemo(() =>
@@ -173,7 +180,9 @@ const YDILineInternal = ({ name }) => {
     const groupUnknown = useMemo(() =>
         <Group top={margin.top} left={margin.left}>
             <LinePath
-                data={[{...lastKnown, guess: lastKnown.value}].concat(guessData)}
+                data={[
+                    { ...lastKnown, guess: lastKnown.value }
+                ].concat(guessData).slice(0, guessProgress !== null ? guessProgress + 2 : 0)}
                 x={d => xScale(x(d))}
                 y={d => yScale(yGuess(d))}
                 stroke={brandSecondary}
@@ -188,11 +197,17 @@ const YDILineInternal = ({ name }) => {
                 strokeWidth={3}
             />}
         </Group>,
-        [xScale, yScale, guessData, confirmed, hasGuessed, lastKnown, unknownData, question.precision, question.unit]
+        [
+            xScale, yScale, guessData, confirmed, hasGuessed, guessProgress, lastKnown,
+            unknownData, question.precision, question.unit,
+        ]
     )
 
     return (
-        <YDIWrapper question={question} confirmAllowed={!confirmed && hasGuessed} onConfirm={confirmCallback}>
+        <YDIWrapper
+            question={question}
+            confirmAllowed={!confirmed && hasGuessed}
+            onConfirm={confirmCallback}>
             <svg width={width} height={height}>
                 <AxisBottom
                     top={yMax + margin.top}
