@@ -15,8 +15,8 @@ export const YDIWrapper = ({ question, confirmAllowed, onConfirm, children }) =>
     return (
         <div className={styles.questions}>
             <div className={styles.question}>
-                <h3>{question.heading}</h3>
-                <h4>{question.subheading}</h4>
+                <h4>{question.heading}</h4>
+                <figcaption>{question.subheading}</figcaption>
                 <div className={classNames(styles.youDrawIt, question.key)} data-key={question.key} aria-labelledby={`hint-${question.key}`}>
                     {children}
                 </div>
