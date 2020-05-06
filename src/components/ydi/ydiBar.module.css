@@ -1,4 +1,6 @@
-
-.guessCursor {
+.drag {
+    touch-action: none;
+    position: absolute;
+    top: 0;
     cursor: row-resize;
 }

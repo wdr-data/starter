@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { isMobile } from 'react-device-detect';
 import { AxisBottom, AxisLeft } from '@vx/axis';
 import { Bar, BarGroup } from '@vx/shape';
-import { Drag } from '@vx/drag';
 import { Group } from '@vx/group';
 import { GridRows } from '@vx/grid';
 import { PatternLines } from '@vx/pattern';
@@ -78,6 +77,8 @@ const YDIBarInternal = ({ name }) => {
     const [hasGuessed, setHasGuessed] = useState(false);
     const [confirmed, setConfirmed] = useState(false);
 
+    const [isDragging, setIsDragging] = useState(false);
+
     const guessData = useMemo(
         () => ({
             ...unknownData,
@@ -136,19 +137,45 @@ const YDIBarInternal = ({ name }) => {
         [guessKeys]
     );
 
+    const dragX = useMemo(() => xScale(x(unknownData)) + margin.left, [xScale, unknownData])
+
     // Callbacks
     const confirmCallback = useCallback(() => {
         setConfirmed(true);
     }, [setConfirmed])
 
-    const guessCallback = useCallback(({ x, y, dx, dy }) => {
-        if (y < 0) return;
-        const newGuess = Math.max(0, yScale.invert(y + dy - margin.top));
-        !confirmed && !hasGuessed && setHasGuessed(true);
-        !confirmed && setGuess(newGuess);
-    }, [confirmed, hasGuessed, setHasGuessed, setGuess, yScale]);
+    const guessCallback = useCallback((e, force) => {
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
 
-    // Group memos
+        const rectPos = e.currentTarget.getBoundingClientRect();
+        const y = clientY - rectPos.top;
+
+        if ((!isDragging && !force) || confirmed || y < 0) return;
+
+        const newGuess = Math.max(0, yScale.invert(y - margin.top));
+        setHasGuessed(true);
+        setGuess(newGuess);
+    }, [confirmed, setHasGuessed, setGuess, yScale, isDragging]);
+
+    // Element memos
+
+    const drag = useMemo(() => <div
+        role="application"
+        aria-hidden="true"
+        style={{
+            left: dragX,
+            width: xScale.step(),
+            height,
+        }}
+        onMouseDown={(e) => { setIsDragging(true); guessCallback(e, true); }}
+        onMouseUp={() => setIsDragging(false)}
+        onMouseMove={guessCallback}
+        onTouchStart={(e) => { setIsDragging(true); guessCallback(e, true); }}
+        onTouchEnd={() => setIsDragging(false)}
+        onTouchMove={guessCallback}
+        className={classNames(styles.drag)}
+    />, [dragX, guessCallback, setIsDragging, xScale, height]);
+
     const groupKnown = useMemo(() =>
         <Group top={margin.top} left={margin.left}>
             {knownData.map((d) => {
@@ -296,36 +323,9 @@ const YDIBarInternal = ({ name }) => {
                     stroke="rgba(0,0,0,0.3)"
                 />
                 {groupKnown}
-                <Drag
-                    width={xScale.step()}
-                    height={height}
-                    resetOnStart={true}
-                    onDragMove={guessCallback}
-                    onDragStart={guessCallback}
-                >
-                    {({
-                        dragStart,
-                        dragEnd,
-                        dragMove,
-                    }) =>
-                        <>
-                            {groupUnknown}
-                            <rect
-                                key='drag-rect'
-                                fill="transparent"
-                                width={xScale.step()}
-                                height={height}
-                                x={xScale(x(unknownData)) + margin.left}
-                                onMouseDown={dragStart}
-                                onMouseUp={dragEnd}
-                                onMouseMove={dragMove}
-                                onTouchEnd={dragEnd}
-                                className={classNames(!confirmed && styles.guessCursor)}
-                            />
-                        </>
-                    }
-                </Drag>
+                {groupUnknown}
             </svg>
+            {!confirmed && drag}
         </YDIWrapper>
     );
 };
