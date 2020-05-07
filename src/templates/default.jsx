@@ -63,7 +63,7 @@ const DefaultTemplate = data => {
   };
   return (
     <>
-      <Helmet title={frontmatter.title}>
+      <Helmet title={frontmatter.title} htmlAttributes={{ lang: 'de' }}>
         <meta name="description" content={frontmatter.description} />
         <meta name="image" content={URL + frontmatter.heroImage} />
         <meta property="og:url" content={URL} />
