@@ -16,9 +16,6 @@ export default class HLSSource extends Component {
     if (Hls.isSupported()) {
       this.hls.loadSource(src);
       this.hls.attachMedia(video);
-      this.hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        video.play();
-      });
     }
   }
 
