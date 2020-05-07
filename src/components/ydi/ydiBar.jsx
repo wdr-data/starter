@@ -243,8 +243,7 @@ const YDIBarInternal = ({ name }) => {
                                     if (hasGuessed) {
                                         markerTextLines.push('Geschätzt:');
                                     } else {
-                                        markerTextLines.push(isMobile ? 'Tippen Sie' : 'Ziehen Sie');
-                                        markerTextLines.push(isMobile ? 'zum Schätzen!' : 'den Balken!');
+                                        markerTextLines.push('Ziehen Sie', 'den Balken!');
                                     }
                                 }
                                 if (hasGuessed) {
