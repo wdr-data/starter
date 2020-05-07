@@ -211,8 +211,8 @@ const YDILineInternal = ({ name }) => {
     />, [dragX, guessCallback, setIsDragging, xScale, height, lastKnown, lastUnknown, margin]);
 
     const groupKnown = useMemo(() => {
-        const clipX = !confirmed ? xScale(x(lastKnown)) / (width - margin.left - margin.right) : 1;
-        const clipPath = `polygon(0 -10px, ${clipX * 100}% -10px, ${clipX * 100}% 110%, 0 110%)`;
+        const clipX = !confirmed ? 1 - xScale(x(lastKnown)) / (width - margin.left - margin.right) : 0;
+        const clipPath = `inset(-10px ${clipX * 100}% 0 0)`;
         return <Group top={margin.top} left={margin.left}>
             <AreaClosed
                 className={styles.known}

@@ -190,7 +190,7 @@ const YDIBarInternal = ({ name }) => {
         onTouchEnd={() => setIsDragging(false)}
         onTouchMove={guessCallback}
         className={classNames(styles.drag)}
-    />, [dragX, guessCallback, setIsDragging, xScale, guessXScale, height, margin]);
+    />, [dragX, guessCallback, setIsDragging, guessXScale, height, margin]);
 
     const groupKnown = useMemo(() =>
         <Group top={margin.top} left={margin.left}>
@@ -244,11 +244,7 @@ const YDIBarInternal = ({ name }) => {
                             {barGroup.bars.map(bar => {
                                 const markerTextLines = [];
                                 const clipY = !confirmed ? 1 : 0;
-                                const clipPath = `polygon(0% ${
-                                    clipY * 100
-                                    }%, 100% ${
-                                    clipY * 100
-                                    }%, 100% 100%, 0% 100%)`;
+                                const clipPath = `inset(${clipY * 100}% 0 0 0)`;
                                 const isGuessBar = bar.key === 'guess';
                                 if (isGuessBar) {
                                     if (hasGuessed) {
