@@ -190,7 +190,7 @@ const YDIBarInternal = ({ name }) => {
         onTouchEnd={() => setIsDragging(false)}
         onTouchMove={guessCallback}
         className={classNames(styles.drag)}
-    />, [dragX, guessCallback, setIsDragging, xScale, height, margin]);
+    />, [dragX, guessCallback, setIsDragging, xScale, guessXScale, height, margin]);
 
     const groupKnown = useMemo(() =>
         <Group top={margin.top} left={margin.left}>
