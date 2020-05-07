@@ -200,8 +200,7 @@ const YDILineInternal = ({ name }) => {
         onMouseDown={(e) => { setIsDragging(true); guessCallback(e, true); }}
         onMouseUp={() => setIsDragging(false)}
         onMouseMove={guessCallback}
-        onMouseLeave={() => setPreviewTarget(null)}
-        onMouseLeave={() => setIsDragging(false)}
+        onMouseLeave={() => { setPreviewTarget(null); setIsDragging(false); }}
         onTouchStart={(e) => { setIsDragging(true); guessCallback(e, true); }}
         onTouchEnd={() => setIsDragging(false)}
         onTouchMove={guessCallback}
