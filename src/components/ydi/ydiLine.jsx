@@ -151,7 +151,7 @@ const YDILineInternal = ({ name }) => {
     const confirmCallback = useCallback(() => {
         setConfirmed(true);
         setTimeout(() => { setConfirmAnimationDone(true); }, 500);
-    }, [setConfirmed])
+    }, [setConfirmed]);
 
     const guessCallback = useCallback((e, force) => {
         const clientX = e.touches ? e.touches[0].clientX : e.clientX;
