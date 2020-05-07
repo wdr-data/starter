@@ -10,6 +10,7 @@ import { AreaClosed, LinePath, Line } from '@vx/shape';
 import { scaleLinear, scalePoint } from '@vx/scale';
 import classNames from 'class-names';
 
+import { useNumberFormatter } from "./hooks";
 import YDIWrapper from "./ydiWrapper";
 import { useWindowWidth } from '@react-hook/window-size';
 
@@ -70,6 +71,8 @@ const Marker = ({ x, y, textLines, color, edge }) => {
 
 const YDILineInternal = ({ name }) => {
     const question = useMemo(() => require(`../../../data/ydi/${name}.json`), [name])
+
+    const formatNumber = useNumberFormatter(question);
 
     const knownData = question.knownData;
     const unknownData = question.unknownData;
@@ -236,7 +239,13 @@ const YDILineInternal = ({ name }) => {
 
     const groupUnknown = useMemo(() => {
         return <Group top={margin.top} left={margin.left}>
-            <marker id="preview-arrow" orient="auto" markerWidth={4} markerHeight={6} refX={.1} refY={3}>
+            <marker
+                id="preview-arrow"
+                orient="auto"
+                markerWidth={4}
+                markerHeight={6}
+                refX={.1}
+                refY={3}>
                 <path d="M0,0 V6 L3,3 Z" fill="grey" />
             </marker>
             {previewTarget && <Line
@@ -263,25 +272,31 @@ const YDILineInternal = ({ name }) => {
     )
 
     const markers = useMemo(() => {
-        const precision = Math.pow(10, question.precision);
-        const markerLabel = `${
-            Math.round(yGuess(guessData[guessData.length - 1]) * precision) / precision
-            }${question.unit}`;
+        const lastGuess = guessData[guessData.length - 1];
+        const markerLabel = `${formatNumber(yGuess(lastGuess))}${question.unit}`;
         return <Group top={margin.top} left={margin.left}>
-            <circle cx={xScale(x(firstKnown))} cy={yScale(y(firstKnown))} r={4} fill={brandPrimary} />
+            <circle
+                cx={xScale(x(firstKnown))}
+                cy={yScale(y(firstKnown))}
+                r={4}
+                fill={brandPrimary} />
             <Marker
                 x={xScale(x(firstKnown))}
                 y={yScale(y(firstKnown))}
-                textLines={[`${y(firstKnown)}${question.unit}`]}
+                textLines={[`${formatNumber(y(firstKnown))}${question.unit}`]}
                 color={brandPrimary}
                 edge="left"
             />
 
-            <circle cx={xScale(x(lastKnown))} cy={yScale(y(lastKnown))} r={4} fill={brandPrimary} />
+            <circle
+                cx={xScale(x(lastKnown))}
+                cy={yScale(y(lastKnown))}
+                r={4}
+                fill={brandPrimary} />
             <Marker
                 x={xScale(x(lastKnown))}
                 y={yScale(y(lastKnown))}
-                textLines={[`${y(lastKnown)}${question.unit}`]}
+                textLines={[`${formatNumber(y(lastKnown))}${question.unit}`]}
                 color={brandPrimary}
             />
 
@@ -292,8 +307,8 @@ const YDILineInternal = ({ name }) => {
             />}
 
             {guessProgress === unknownData.length - 1 && <Marker
-                x={xScale(x(guessData[guessData.length - 1]))}
-                y={yScale(yGuess(guessData[guessData.length - 1]))}
+                x={xScale(x(lastGuess))}
+                y={yScale(yGuess(lastGuess))}
                 textLines={[markerLabel]}
                 color={brandSecondary}
                 edge="right"
@@ -303,7 +318,7 @@ const YDILineInternal = ({ name }) => {
                 <Marker
                     x={xScale(x(lastUnknown))}
                     y={yScale(y(lastUnknown))}
-                    textLines={[`${y(lastUnknown)}${question.unit}`]}
+                    textLines={[`${formatNumber(y(lastUnknown))}${question.unit}`]}
                     color={brandPrimary}
                     drawPoint
                     edge="right"
@@ -312,7 +327,7 @@ const YDILineInternal = ({ name }) => {
         </Group>
     }, [
         xScale, yScale, guessData, firstKnown, lastKnown, lastUnknown, confirmAnimationDone,
-        question, guessProgress, unknownData, margin,
+        question, guessProgress, unknownData, margin, formatNumber,
     ]);
 
     return (
@@ -354,7 +369,7 @@ const YDILineInternal = ({ name }) => {
                             dy: '6px',
                             dx: '-4px',
                         })}
-                        tickFormat={(value) => `${value}${question.unit}`}
+                        tickFormat={(value) => `${formatNumber(value)}${question.unit}`}
                     />
                     <GridRows
                         lineStyle={{ pointerEvents: 'none' }}

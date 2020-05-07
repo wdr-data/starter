@@ -9,6 +9,7 @@ import { PatternLines } from '@vx/pattern';
 import { scaleBand, scaleLinear, scaleOrdinal } from '@vx/scale';
 import classNames from 'class-names';
 
+import { useNumberFormatter } from './hooks';
 import YDIWrapper from "./ydiWrapper";
 import { useWindowWidth } from '@react-hook/window-size';
 
@@ -23,6 +24,7 @@ const defaultMargin = {
     bottom: 30,
     right: 0,
 }
+
 
 // Accessors
 const x = d => d.label;
@@ -59,6 +61,8 @@ const Marker = ({ barX, barY, barWidth, textLines, color }) => {
 
 const YDIBarInternal = ({ name }) => {
     const question = useMemo(() => require(`../../../data/ydi/${name}.json`), [name])
+
+    const formatNumber = useNumberFormatter(question);
 
     const knownData = question.knownData;
     const unknownData = question.unknownData;
@@ -203,7 +207,7 @@ const YDIBarInternal = ({ name }) => {
                             barX={barX + barWidth / 4}
                             barY={barY}
                             barWidth={barWidth / 2}
-                            textLines={[`${y(d)}${question.unit}`]}
+                            textLines={[`${formatNumber(y(d))}${question.unit}`]}
                             color={brandPrimary}
                         />
                         <Bar
@@ -218,7 +222,7 @@ const YDIBarInternal = ({ name }) => {
                 );
             })}
         </Group>,
-        [xScale, yScale, knownData, yMax, question.unit, margin]
+        [xScale, yScale, knownData, yMax, question.unit, margin, formatNumber]
     )
 
     const groupUnknown = useMemo(() =>
@@ -240,7 +244,11 @@ const YDIBarInternal = ({ name }) => {
                             {barGroup.bars.map(bar => {
                                 const markerTextLines = [];
                                 const clipY = !confirmed ? 1 : 0;
-                                const clipPath = `polygon(0% ${clipY * 100}%, 100% ${clipY * 100}%, 100% 100%, 0% 100%)`;
+                                const clipPath = `polygon(0% ${
+                                    clipY * 100
+                                    }%, 100% ${
+                                    clipY * 100
+                                    }%, 100% 100%, 0% 100%)`;
                                 const isGuessBar = bar.key === 'guess';
                                 if (isGuessBar) {
                                     if (hasGuessed) {
@@ -250,8 +258,8 @@ const YDIBarInternal = ({ name }) => {
                                     }
                                 }
                                 if (hasGuessed) {
-                                    const precision = Math.pow(10, question.precision);
-                                    markerTextLines.push(`${Math.round(bar.value * precision) / precision}${question.unit}`)
+                                    markerTextLines.push(
+                                        `${formatNumber(bar.value)}${question.unit}`);
                                 }
                                 return (
                                     <React.Fragment key={`fragment-unknown-${bar.key}`}>
@@ -265,7 +273,9 @@ const YDIBarInternal = ({ name }) => {
                                         />}
                                         <Bar
                                             key={`bar-unknown-${bar.key}`}
-                                            className={classNames(!isGuessBar && styles.animateClipPath)}
+                                            className={
+                                                classNames(!isGuessBar && styles.animateClipPath)
+                                            }
                                             style={isGuessBar ? {} : { clipPath }}
                                             x={bar.x}
                                             y={bar.y}
@@ -285,7 +295,7 @@ const YDIBarInternal = ({ name }) => {
         </Group>,
         [
             xScale, guessXScale, yScale, colorScale, yMax, guessData, guessKeys, confirmed,
-            hasGuessed, question.precision, question.unit, margin, confirmAnimationDone,
+            hasGuessed, question.unit, margin, confirmAnimationDone, formatNumber,
         ]
     )
 
@@ -337,7 +347,7 @@ const YDIBarInternal = ({ name }) => {
                         dy: '6px',
                         dx: '-4px',
                     })}
-                    tickFormat={(value) => `${value}${question.unit}`}
+                    tickFormat={(value) => `${formatNumber(value)}${question.unit}`}
                 />
                 <GridRows
                     left={margin.left}

@@ -11,13 +11,13 @@
   "knownData": [],
   "unknownData": {
     "label": "Einzeln",
-    "value": 12
+    "value": 120000
   },
-  "maxY": 30,
-  "initialGuess": 15,
-  "unit": "%",
+  "maxY": 300000,
+  "initialGuess": 150000,
+  "unit": "",
   "precision": 0,
   "customMargin": {
-    "left": 45
+    "left": 75
   }
 }
