@@ -149,7 +149,7 @@ const YDIBarInternal = ({ name }) => {
     );
 
     const dragX = useMemo(
-        () => xScale(x(unknownData)) + margin.left,
+        () => xScale(x(unknownData)) + margin.left + xScale.step() * xScale.padding() / 2,
         [xScale, unknownData, margin],
     );
 
@@ -179,7 +179,7 @@ const YDIBarInternal = ({ name }) => {
         aria-hidden="true"
         style={{
             left: dragX,
-            width: xScale.step(),
+            width: guessXScale.step(),
             height: height - margin.bottom + 10,
         }}
         onMouseDown={(e) => { setIsDragging(true); guessCallback(e, true); }}
