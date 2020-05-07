@@ -20,7 +20,7 @@ const brandSecondary = "#A36A00";
 const defaultMargin = {
     top: 10,
     left: 65,
-    bottom: 25,
+    bottom: 30,
     right: 0,
 }
 
