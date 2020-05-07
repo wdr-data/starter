@@ -21,7 +21,7 @@ const brandSecondary = "#A36A00";
 const defaultMargin = {
     top: 10,
     left: 65,
-    bottom: 50,
+    bottom: 25,
     right: 25,
 }
 
@@ -201,6 +201,7 @@ const YDILineInternal = ({ name }) => {
         onMouseUp={() => setIsDragging(false)}
         onMouseMove={guessCallback}
         onMouseLeave={() => setPreviewTarget(null)}
+        onMouseLeave={() => setIsDragging(false)}
         onTouchStart={(e) => { setIsDragging(true); guessCallback(e, true); }}
         onTouchEnd={() => setIsDragging(false)}
         onTouchMove={guessCallback}

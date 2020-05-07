@@ -24,6 +24,9 @@ export const YDIWrapper = ({ question, confirmAllowed, onConfirm, children, ctaM
                     {question.accessibility}
                 </div>
                 <div className={classNames(styles.result, question.key, confirmAllowed && styles.finished, confirmed && styles.shown)}>
+                    <div className={styles.source} hidden={!confirmed} aria-hidden="false">
+                        <span>Quelle: <a href={question.source.url} aria-label="Quelle">{question.source.title}</a></span>
+                    </div>
                     <div className={styles.actionContainer} aria-hidden="true">
                         <button className={styles.showAction} disabled={!confirmAllowed} onClick={confirmHandler}>Wie ist es tatsächlich?</button>
                         <div className={styles.tooltipContainer}>

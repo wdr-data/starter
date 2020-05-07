@@ -4,7 +4,10 @@
   "subheading": "",
   "result": "**Dies ist die _Auflösung_.**",
   "accessibility": "Dies ist der Text für Screenreader.",
-  "source": "http://example.com/",
+  "source": {
+    "url": "http://example.com/",
+    "title": "Eine Studie"
+  },
   "knownData": [],
   "unknownData": {
     "label": "Einzeln",
