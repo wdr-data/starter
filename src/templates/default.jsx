@@ -16,6 +16,8 @@ import Webtrekk from "../components/webtrekk/webtrekk.jsx";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { StaticQuery, graphql } from "gatsby";
 
+import FrontmatterContext from './frontmatterContext';
+
 const DefaultTemplate = data => {
   const URL = `https://data.wdr.de${Config.pathPrefix}/`;
   const frontmatter = data.pageContext.frontmatter;
@@ -98,7 +100,9 @@ const DefaultTemplate = data => {
           </Breadcrumbs>
           <article className={styles.main}>
             <DateFormat date={pub_date} />
-            {data.children}
+            <FrontmatterContext.Provider value={frontmatter}>
+              {data.children}
+            </FrontmatterContext.Provider>
             <StaticQuery
               query={query}
               render={data => (
