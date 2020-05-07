@@ -16,6 +16,8 @@ export default class HLSSource extends Component {
     if (Hls.isSupported()) {
       this.hls.loadSource(src);
       this.hls.attachMedia(video);
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = src;
     }
   }
 
