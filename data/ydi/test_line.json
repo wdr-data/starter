@@ -7,25 +7,29 @@
   "source": "http://example.com/",
   "knownData": [
     {
-      "label": "Datum 1",
+      "label": "1",
       "value": 11
     },
     {
-      "label": "Datum 2",
+      "label": "2",
       "value": 7
     }
   ],
   "unknownData": [
     {
-      "label": "Datum 3",
+      "label": "3",
       "value": 12
     },
     {
-      "label": "Datum 4",
+      "label": "4",
       "value": 13
     }
   ],
   "maxY": 30,
   "unit": "%",
-  "precision": 1
+  "precision": 1,
+  "customMargin": {
+    "left": 45,
+    "right": 10
+  }
 }

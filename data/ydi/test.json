@@ -18,5 +18,8 @@
   "maxY": 40,
   "initialGuess": 10,
   "unit": "%",
-  "precision": 1
+  "precision": 1,
+  "customMargin": {
+    "left": 45
+  }
 }

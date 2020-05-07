@@ -18,11 +18,11 @@ import styles from "./ydiLine.module.css";
 const brandPrimary = "#00345f";
 const brandSecondary = "#A36A00";
 
-const margin = {
+const defaultMargin = {
     top: 10,
-    left: isMobile ? 65 : 75,
+    left: 65,
     bottom: 50,
-    right: 50,
+    right: 25,
 }
 
 // Accessors
@@ -30,14 +30,20 @@ const x = d => d.label;
 const y = d => d.value;
 const yGuess = d => d.guess;
 
-const Marker = ({ x, y, textLines, color }) => {
+const Marker = ({ x, y, textLines, color, edge }) => {
     const height = textLines.length * 20 + 10;
     const width = Math.max(...textLines.map(text => String(text).length)) * 8 + 25;
     const margin = {
         bottom: 18,
+        right: 0,
+    }
+    if (edge === 'left') {
+        margin.right = -(width / 2 - 10);
+    } else if (edge === 'right') {
+        margin.right = width / 2 - 10;
     }
     return (
-        <g transform={`translate(${x}, ${y - margin.bottom})`}>
+        <g transform={`translate(${x - margin.right}, ${y - margin.bottom})`}>
             <rect
                 x={-width / 2}
                 y={-(height)}
@@ -45,7 +51,7 @@ const Marker = ({ x, y, textLines, color }) => {
                 width={width}
                 fill={color}
             />
-            <polygon points="-6,-1 6,-1 0,11" fill={color} />
+            <polygon points="-6,-1 6,-1 0,11" transform={`translate(${margin.right}, ${0})`} fill={color} />
             {
                 textLines.reverse().map((text, i) =>
                     <text
@@ -74,6 +80,11 @@ const YDILineInternal = ({ name }) => {
     const lastUnknown = question.unknownData[question.unknownData.length - 1];
 
     const windowWidth = useWindowWidth();
+
+    const margin = useMemo(
+        () => ({ ...defaultMargin, ...(question.customMargin || {}) }),
+        [question]
+    );
 
     const width = useMemo(
         () => Math.min((windowWidth ? windowWidth : 768) - 35, 768),
@@ -108,11 +119,11 @@ const YDILineInternal = ({ name }) => {
     // Bounds
     const xMax = useMemo(
         () => width - margin.left - margin.right,
-        [width]
+        [width, margin]
     );
     const yMax = useMemo(
         () => height - margin.top - margin.bottom,
-        [height]
+        [height, margin]
     );
 
     /* ### Scales ### */
@@ -134,7 +145,7 @@ const YDILineInternal = ({ name }) => {
         [yMax, question.maxY]
     );
 
-    const dragX = useMemo(() => xScale(x(lastKnown)) + margin.left, [xScale, lastKnown])
+    const dragX = useMemo(() => xScale(x(lastKnown)) + margin.left, [xScale, lastKnown, margin]);
 
     // Callbacks
     const confirmCallback = useCallback(() => {
@@ -174,7 +185,7 @@ const YDILineInternal = ({ name }) => {
             guesses.map((guess, i) => unknownData[i].label === effectiveLabel ? newGuess : guess));
     }, [
         confirmed, hasGuessed, setHasGuessed, guesses, setGuesses, xScale, yScale, unknownData,
-        guessProgress, isDragging, dragX, firstUnknown,
+        guessProgress, isDragging, dragX, firstUnknown, margin,
     ]);
 
     // Element memos
@@ -194,7 +205,7 @@ const YDILineInternal = ({ name }) => {
         onTouchEnd={() => setIsDragging(false)}
         onTouchMove={guessCallback}
         className={classNames(styles.drag)}
-    />, [dragX, guessCallback, setIsDragging, xScale, height, lastKnown, lastUnknown]);
+    />, [dragX, guessCallback, setIsDragging, xScale, height, lastKnown, lastUnknown, margin]);
 
     const groupKnown = useMemo(() => {
         const clipX = !confirmed ? `${xScale(x(lastKnown))}px` : `100%`;
@@ -220,7 +231,7 @@ const YDILineInternal = ({ name }) => {
             />
         </Group>
     },
-        [xScale, yScale, notAllData, confirmed, lastKnown]
+        [xScale, yScale, notAllData, confirmed, lastKnown, margin]
     )
 
     const groupUnknown = useMemo(() => {
@@ -248,9 +259,7 @@ const YDILineInternal = ({ name }) => {
             />
         </Group>
     },
-        [
-            xScale, yScale, guessData, guessProgress, lastKnown, previewTarget,
-        ]
+        [xScale, yScale, guessData, guessProgress, lastKnown, previewTarget, margin]
     )
 
     const markers = useMemo(() => {
@@ -265,6 +274,7 @@ const YDILineInternal = ({ name }) => {
                 y={yScale(y(firstKnown))}
                 textLines={[`${y(firstKnown)}${question.unit}`]}
                 color={brandPrimary}
+                edge="left"
             />
 
             <circle cx={xScale(x(lastKnown))} cy={yScale(y(lastKnown))} r={4} fill={brandPrimary} />
@@ -286,6 +296,7 @@ const YDILineInternal = ({ name }) => {
                 y={yScale(yGuess(guessData[guessData.length - 1]))}
                 textLines={[markerLabel]}
                 color={brandSecondary}
+                edge="right"
             />}
 
             {confirmAnimationDone &&
@@ -295,12 +306,13 @@ const YDILineInternal = ({ name }) => {
                     textLines={[`${y(lastUnknown)}${question.unit}`]}
                     color={brandPrimary}
                     drawPoint
+                    edge="right"
                 />
             }
         </Group>
     }, [
         xScale, yScale, guessData, firstKnown, lastKnown, lastUnknown, confirmAnimationDone,
-        question, guessProgress, unknownData,
+        question, guessProgress, unknownData, margin,
     ]);
 
     return (
@@ -325,8 +337,9 @@ const YDILineInternal = ({ name }) => {
                 />
                 <AxisLeft
                     top={margin.top}
-                    left={margin.left + 1}
+                    left={margin.left}
                     scale={yScale}
+                    numTicks={5}
                     stroke="black"
                     strokeWidth={1.5}
                     tickStroke="black"

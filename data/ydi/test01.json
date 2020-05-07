@@ -22,5 +22,8 @@
   "maxY": 0.4,
   "initialGuess": 0.2,
   "unit": "‰",
-  "precision": 2
+  "precision": 2,
+  "customMargin": {
+    "left": 55
+  }
 }

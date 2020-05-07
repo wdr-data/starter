@@ -17,9 +17,9 @@ import styles from "./ydiBar.module.css";
 const brandPrimary = "#00345f";
 const brandSecondary = "#A36A00";
 
-const margin = {
+const defaultMargin = {
     top: 10,
-    left: isMobile ? 65 : 75,
+    left: 65,
     bottom: 50,
     right: 0,
 }
@@ -65,6 +65,11 @@ const YDIBarInternal = ({ name }) => {
 
     const windowWidth = useWindowWidth();
 
+    const margin = useMemo(
+        () => ({ ...defaultMargin, ...(question.customMargin || {}) }),
+        [question]
+    );
+
     const width = useMemo(
         () => Math.min((windowWidth ? windowWidth : 768) - 35, 768),
         [windowWidth]
@@ -95,11 +100,11 @@ const YDIBarInternal = ({ name }) => {
     // Bounds
     const xMax = useMemo(
         () => width - margin.left - margin.right,
-        [width]
+        [width, margin]
     );
     const yMax = useMemo(
         () => height - margin.top - margin.bottom,
-        [height]
+        [height, margin]
     );
 
     /* ### Scales ### */
@@ -138,7 +143,10 @@ const YDIBarInternal = ({ name }) => {
         [guessKeys]
     );
 
-    const dragX = useMemo(() => xScale(x(unknownData)) + margin.left, [xScale, unknownData])
+    const dragX = useMemo(
+        () => xScale(x(unknownData)) + margin.left,
+        [xScale, unknownData, margin],
+    );
 
     // Callbacks
     const confirmCallback = useCallback(() => {
@@ -156,7 +164,7 @@ const YDIBarInternal = ({ name }) => {
         const newGuess = Math.max(0, yScale.invert(yPos));
         setHasGuessed(true);
         setGuess(newGuess);
-    }, [confirmed, setHasGuessed, setGuess, yScale, isDragging]);
+    }, [confirmed, setHasGuessed, setGuess, yScale, isDragging, margin]);
 
     // Element memos
 
@@ -175,7 +183,7 @@ const YDIBarInternal = ({ name }) => {
         onTouchEnd={() => setIsDragging(false)}
         onTouchMove={guessCallback}
         className={classNames(styles.drag)}
-    />, [dragX, guessCallback, setIsDragging, xScale, height]);
+    />, [dragX, guessCallback, setIsDragging, xScale, height, margin]);
 
     const groupKnown = useMemo(() =>
         <Group top={margin.top} left={margin.left}>
@@ -207,7 +215,7 @@ const YDIBarInternal = ({ name }) => {
                 );
             })}
         </Group>,
-        [xScale, yScale, knownData, yMax, question.unit]
+        [xScale, yScale, knownData, yMax, question.unit, margin]
     )
 
     const groupUnknown = useMemo(() =>
@@ -271,7 +279,10 @@ const YDIBarInternal = ({ name }) => {
                 }}
             </BarGroup>
         </Group>,
-        [xScale, guessXScale, yScale, colorScale, yMax, guessData, guessKeys, confirmed, hasGuessed, question.precision, question.unit]
+        [
+            xScale, guessXScale, yScale, colorScale, yMax, guessData, guessKeys, confirmed,
+            hasGuessed, question.precision, question.unit, margin,
+        ]
     )
 
     return (
@@ -300,8 +311,9 @@ const YDIBarInternal = ({ name }) => {
                 />
                 <AxisLeft
                     top={margin.top}
-                    left={margin.left + 1}
+                    left={margin.left}
                     scale={yScale}
+                    numTicks={5}
                     stroke="black"
                     strokeWidth={1.5}
                     tickStroke="black"
