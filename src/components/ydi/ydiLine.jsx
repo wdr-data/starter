@@ -130,7 +130,7 @@ const YDILineInternal = ({ name }) => {
     // Main X scale
     const xScale = useMemo(
         () => scalePoint({
-            rangeRound: [0, xMax],
+            range: [0, xMax],
             domain: notAllData.map(x),
             padding: 0,
         }),
@@ -139,7 +139,7 @@ const YDILineInternal = ({ name }) => {
 
     const yScale = useMemo(
         () => scaleLinear({
-            rangeRound: [yMax, 0],
+            range: [yMax, 0],
             domain: [0, question.maxY]
         }),
         [yMax, question.maxY]
@@ -208,8 +208,8 @@ const YDILineInternal = ({ name }) => {
     />, [dragX, guessCallback, setIsDragging, xScale, height, lastKnown, lastUnknown, margin]);
 
     const groupKnown = useMemo(() => {
-        const clipX = !confirmed ? `${xScale(x(lastKnown))}px` : `100%`;
-        const clipPath = `polygon(0 -10px, ${clipX} -10px, ${clipX} 110%, 0 110%)`;
+        const clipX = !confirmed ? xScale(x(lastKnown)) / (width - margin.left - margin.right) : 1;
+        const clipPath = `polygon(0 -10px, ${clipX * 100}% -10px, ${clipX * 100}% 110%, 0 110%)`;
         return <Group top={margin.top} left={margin.left}>
             <AreaClosed
                 className={styles.known}
@@ -231,7 +231,7 @@ const YDILineInternal = ({ name }) => {
             />
         </Group>
     },
-        [xScale, yScale, notAllData, confirmed, lastKnown, margin]
+        [xScale, yScale, notAllData, confirmed, lastKnown, margin, width]
     )
 
     const groupUnknown = useMemo(() => {
@@ -322,45 +322,43 @@ const YDILineInternal = ({ name }) => {
             onConfirm={confirmCallback}>
             <svg width={width} height={height}>
                 <LinearGradient id="gradientPrimary" from={brandPrimary} fromOpacity={0.4} to={brandPrimary} toOpacity={0} vertical={true} />
-                <AxisBottom
-                    top={yMax + margin.top}
-                    left={margin.left}
-                    scale={xScale}
-                    stroke="black"
-                    strokeWidth={1.5}
-                    tickStroke="black"
-                    tickLabelProps={(value, index) => ({
-                        fill: "black",
-                        fontSize: 16,
-                        textAnchor: 'middle',
-                    })}
-                />
-                <AxisLeft
-                    top={margin.top}
-                    left={margin.left}
-                    scale={yScale}
-                    numTicks={5}
-                    stroke="black"
-                    strokeWidth={1.5}
-                    tickStroke="black"
-                    tickLabelProps={(value, index) => ({
-                        fill: "black",
-                        fontSize: 16,
-                        textAnchor: 'end',
-                        dy: '6px',
-                        dx: '-4px',
-                    })}
-                    tickFormat={(value) => `${value}${question.unit}`}
-                />
-                <GridRows
-                    left={margin.left}
-                    top={margin.top}
-                    lineStyle={{ pointerEvents: 'none' }}
-                    scale={yScale}
-                    width={xMax}
-                    strokeDasharray="2,2"
-                    stroke="rgba(0,0,0,0.3)"
-                />
+                <Group top={margin.top} left={margin.left}>
+                    <AxisBottom
+                        scale={xScale}
+                        top={yMax}
+                        left={0}
+                        stroke="black"
+                        strokeWidth={1.5}
+                        tickStroke="black"
+                        tickLabelProps={(value, index) => ({
+                            fill: "black",
+                            fontSize: 16,
+                            textAnchor: 'middle',
+                        })}
+                    />
+                    <AxisLeft
+                        scale={yScale}
+                        numTicks={5}
+                        stroke="black"
+                        strokeWidth={1.5}
+                        tickStroke="black"
+                        tickLabelProps={(value, index) => ({
+                            fill: "black",
+                            fontSize: 16,
+                            textAnchor: 'end',
+                            dy: '6px',
+                            dx: '-4px',
+                        })}
+                        tickFormat={(value) => `${value}${question.unit}`}
+                    />
+                    <GridRows
+                        lineStyle={{ pointerEvents: 'none' }}
+                        scale={yScale}
+                        width={xMax}
+                        strokeDasharray="2,2"
+                        stroke="rgba(0,0,0,0.3)"
+                    />
+                </Group>
                 {groupKnown}
                 {groupUnknown}
                 {markers}
