@@ -8,7 +8,7 @@ import Webtrekk from '../webtrekk/webtrekk';
 import FrontmatterContext from '../../templates/frontmatterContext';
 import styles from "./ydiWrapper.module.css";
 
-export const YDIWrapper = ({ question, confirmAllowed, onConfirm, children, ctaMessage }) => {
+export const YDIWrapper = ({ question, confirmAllowed, onConfirm, children }) => {
     const [confirmed, setConfirmed] = useState(false);
     const confirmHandler = useCallback(() => {
         setConfirmed(true);
@@ -43,9 +43,6 @@ export const YDIWrapper = ({ question, confirmAllowed, onConfirm, children, ctaM
                             onClick={confirmHandler}>
                             Wie ist es tatsächlich?
                         </button>
-                        <div className={styles.tooltipContainer}>
-                            <div className={styles.tooltipText}>{ctaMessage}</div>
-                        </div>
                     </div>
                     <div
                         className={styles.text}

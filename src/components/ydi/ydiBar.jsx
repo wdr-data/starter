@@ -300,11 +300,6 @@ const YDIBarInternal = ({ name }) => {
             question={question}
             confirmAllowed={!confirmed && hasGuessed}
             onConfirm={confirmCallback}
-            ctaMessage={
-                <span>
-                    Ziehen Sie den Balken!<br />Der Klick verrät, ob ihre Schätzung stimmt.
-                </span>
-            }
         >
             <svg width={width} height={height}>
                 <PatternLines
