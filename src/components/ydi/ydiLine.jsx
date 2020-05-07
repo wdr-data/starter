@@ -212,7 +212,7 @@ const YDILineInternal = ({ name }) => {
 
     const groupKnown = useMemo(() => {
         const clipX = !confirmed ? 1 - xScale(x(lastKnown)) / (width - margin.left - margin.right) : 0;
-        const clipPath = `inset(-10px ${clipX * 100}% 0 0)`;
+        const clipPath = `inset(-10px ${clipX * 100}% -10px 0)`;
         return <Group top={margin.top} left={margin.left}>
             <AreaClosed
                 className={styles.known}
