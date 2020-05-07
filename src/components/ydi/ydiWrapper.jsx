@@ -17,23 +17,50 @@ export const YDIWrapper = ({ question, confirmAllowed, onConfirm, children, ctaM
             <div className={styles.question}>
                 <h4>{question.heading}</h4>
                 <figcaption>{question.subheading}</figcaption>
-                <div className={classNames(styles.youDrawIt, question.key)} data-key={question.key} aria-labelledby={`hint-${question.key}`}>
+                <div
+                    className={classNames(styles.youDrawIt)}
+                    aria-labelledby={`hint-${question.key}`}>
                     {children}
                 </div>
-                <div id={`hint-${question.key}`} className={styles.accessibility} hidden aria-hidden="false">
+                <div
+                    id={`hint-${question.key}`}
+                    className={styles.accessibility}
+                    hidden aria-hidden="false">
                     {question.accessibility}
                 </div>
-                <div className={classNames(styles.result, question.key, confirmAllowed && styles.finished, confirmed && styles.shown)}>
+                <div className={
+                    classNames(
+                        styles.result,
+                        confirmAllowed && styles.finished,
+                        confirmed && styles.shown
+                    )}>
                     <div className={styles.source} hidden={!confirmed} aria-hidden="false">
-                        <span>Quelle: <a href={question.source.url} aria-label="Quelle">{question.source.title}</a></span>
+                        <span id={`source-label-${question.key}`}>Quelle:</span>&nbsp;
+                        <a
+                            href={question.source.url}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            aria-labelledby={`source-label-${question.key}`}>
+                            {question.source.title}
+                        </a>
                     </div>
                     <div className={styles.actionContainer} aria-hidden="true">
-                        <button className={styles.showAction} disabled={!confirmAllowed} onClick={confirmHandler}>Wie ist es tatsächlich?</button>
+                        <button
+                            className={styles.showAction}
+                            disabled={!confirmAllowed}
+                            onClick={confirmHandler}>
+                            Wie ist es tatsächlich?
+                        </button>
                         <div className={styles.tooltipContainer}>
                             <div className={styles.tooltipText}>{ctaMessage}</div>
                         </div>
                     </div>
-                    <div className={styles.text} hidden={!confirmed} aria-hidden="false"><ReactMarkdown source={question.result} linkTarget="_blank" /></div>
+                    <div
+                        className={styles.text}
+                        hidden={!confirmed}
+                        aria-hidden="false">
+                        <ReactMarkdown source={question.result} linkTarget="_blank" />
+                    </div>
                 </div>
             </div>
         </div>
