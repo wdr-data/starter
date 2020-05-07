@@ -28,10 +28,10 @@ h2 {
 
 h3 {
   font-family: "Merriweather", serif;
-  font-size: var(--font-default);
+  font-size: var(--font-medium);
   line-height: 1.7rem;
   letter-spacing: 0.05rem;
-  margin: 2rem 0 0 0;
+  margin: 3.5rem 0 0 0;
 }
 
 h4 {
