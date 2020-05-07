@@ -246,12 +246,12 @@ const YDILineInternal = ({ name }) => {
                 markerHeight={6}
                 refX={.1}
                 refY={3}>
-                <path d="M0,0 V6 L3,3 Z" fill="grey" />
+                <path d="M0,0 V6 L3,3 Z" fill="#555" />
             </marker>
             {previewTarget && <Line
                 from={{ x: xScale(x(lastKnown)), y: yScale(y(lastKnown)) }}
                 to={previewTarget}
-                stroke="grey"
+                stroke="#555"
                 strokeWidth={3}
                 strokeDasharray="6,4"
                 markerEnd="url(#preview-arrow)"
@@ -383,6 +383,17 @@ const YDILineInternal = ({ name }) => {
                 {groupUnknown}
                 {markers}
             </svg>
+            {!hasGuessed && <div
+                aria-hidden="true"
+                className={classNames(styles.cta)}
+                style={{
+                    left: dragX,
+                    width: xScale(x(lastUnknown)) - xScale(x(lastKnown)),
+                    height: height - margin.bottom + 10,
+                }}
+            >
+                <div>Zeichnen Sie die Linie zu Ende</div>
+            </div>}
             {!confirmed && drag}
         </YDIWrapper>
     );

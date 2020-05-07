@@ -8,3 +8,21 @@
     top: 0;
     cursor: crosshair;
 }
+
+.cta {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta div {
+    margin: 10px;
+    padding: 3px 5px;
+    text-align: center;
+    border: #555 dashed 2px;
+    font-size: medium;
+    color: #555;
+    font-weight: bold;
+}
