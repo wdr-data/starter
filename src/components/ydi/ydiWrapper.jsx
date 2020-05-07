@@ -34,20 +34,10 @@ export const YDIWrapper = ({ question, confirmAllowed, onConfirm, children, ctaM
                         confirmAllowed && styles.finished,
                         confirmed && styles.shown
                     )}>
-                    <div className={styles.source} hidden={!confirmed} aria-hidden="false">
-                        <span id={`source-label-${question.key}`}>Quelle:</span>&nbsp;
-                        <a
-                            href={question.source.url}
-                            rel="noopener noreferrer"
-                            target="_blank"
-                            aria-labelledby={`source-label-${question.key}`}>
-                            {question.source.title}
-                        </a>
-                    </div>
                     <div className={styles.actionContainer} aria-hidden="true">
                         <button
                             className={styles.showAction}
-                            disabled={!confirmAllowed}
+                            disabled={!confirmAllowed || confirmed}
                             onClick={confirmHandler}>
                             Wie ist es tatsächlich?
                         </button>
@@ -60,6 +50,16 @@ export const YDIWrapper = ({ question, confirmAllowed, onConfirm, children, ctaM
                         hidden={!confirmed}
                         aria-hidden="false">
                         <ReactMarkdown source={question.result} linkTarget="_blank" />
+                    </div>
+                    <div className={styles.source} hidden={!confirmed} aria-hidden="false">
+                        <span id={`source-label-${question.key}`}>Quelle:</span>&nbsp;
+                        <a
+                            href={question.source.url}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            aria-labelledby={`source-label-${question.key}`}>
+                            {question.source.title}
+                        </a>
                     </div>
                 </div>
             </div>

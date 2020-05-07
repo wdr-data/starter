@@ -14,6 +14,13 @@
     top: 0;
     right: 0;
     text-align: right;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.question .source[hidden] {
+    display: block;
+    opacity: 0;
 }
 
 .question .result {
@@ -30,10 +37,14 @@
     margin-top: -15px;
     left: 0;
     right: 0;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .question .result.shown .actionContainer {
-    display: none;
+    opacity: 0;
+    z-index: -1;
 }
 
 .question .result .actionContainer button {
@@ -98,9 +109,15 @@
     margin-left: -15px;
 }
 
+.question .result .text {
+    display: block;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
 .question .result .text[hidden] {
     display: block;
-    visibility: hidden;
+    opacity: 0;
 }
 
 .question .result .text {
