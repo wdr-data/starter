@@ -4,3 +4,7 @@
     top: 0;
     cursor: row-resize;
 }
+
+.animateClipPath {
+    transition: clip-path 0.5s ease-in-out;
+}

@@ -82,6 +82,7 @@ const YDIBarInternal = ({ name }) => {
     const [guess, setGuess] = useState(question.initialGuess);
     const [hasGuessed, setHasGuessed] = useState(false);
     const [confirmed, setConfirmed] = useState(false);
+    const [confirmAnimationDone, setConfirmAnimationDone] = useState(false);
 
     const [isDragging, setIsDragging] = useState(false);
 
@@ -151,6 +152,7 @@ const YDIBarInternal = ({ name }) => {
     // Callbacks
     const confirmCallback = useCallback(() => {
         setConfirmed(true);
+        setTimeout(() => { setConfirmAnimationDone(true); }, 500);
     }, [setConfirmed])
 
     const guessCallback = useCallback((e, force) => {
@@ -236,11 +238,11 @@ const YDIBarInternal = ({ name }) => {
                     return barGroups.map(barGroup =>
                         <Group key={`bar-group-${barGroup.index}`} left={barGroup.x0}>
                             {barGroup.bars.map(bar => {
-                                if (!confirmed && bar.key === 'value') {
-                                    return undefined;
-                                }
                                 const markerTextLines = [];
-                                if (bar.key === 'guess') {
+                                const clipY = !confirmed ? 1 : 0;
+                                const clipPath = `polygon(0% ${clipY * 100}%, 100% ${clipY * 100}%, 100% 100%, 0% 100%)`;
+                                const isGuessBar = bar.key === 'guess';
+                                if (isGuessBar) {
                                     if (hasGuessed) {
                                         markerTextLines.push('Geschätzt:');
                                     } else {
@@ -253,22 +255,24 @@ const YDIBarInternal = ({ name }) => {
                                 }
                                 return (
                                     <React.Fragment key={`fragment-unknown-${bar.key}`}>
-                                        <Marker
+                                        {(isGuessBar || confirmAnimationDone) && <Marker
                                             key={`marker-unknown-${bar.key}`}
                                             barX={bar.x}
                                             barY={bar.y}
                                             barWidth={bar.width}
                                             textLines={markerTextLines}
                                             color={brandSecondary}
-                                        />
+                                        />}
                                         <Bar
                                             key={`bar-unknown-${bar.key}`}
+                                            className={classNames(!isGuessBar && styles.animateClipPath)}
+                                            style={isGuessBar ? {} : { clipPath }}
                                             x={bar.x}
                                             y={bar.y}
                                             width={bar.width}
                                             height={bar.height}
-                                            fill={bar.key === 'guess' ? 'url(#dLines)' : bar.color}
-                                            stroke={bar.key === 'value' ? 'transparent' : bar.color}
+                                            fill={isGuessBar ? 'url(#dLines)' : bar.color}
+                                            stroke={isGuessBar ? bar.color : 'transparent'}
                                             strokeWidth={isMobile ? 2.5 : 3.5}
                                         />
                                     </React.Fragment>
@@ -281,7 +285,7 @@ const YDIBarInternal = ({ name }) => {
         </Group>,
         [
             xScale, guessXScale, yScale, colorScale, yMax, guessData, guessKeys, confirmed,
-            hasGuessed, question.precision, question.unit, margin,
+            hasGuessed, question.precision, question.unit, margin, confirmAnimationDone,
         ]
     )
 
