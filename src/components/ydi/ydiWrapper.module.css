@@ -23,6 +23,11 @@
     opacity: 0;
 }
 
+.question .source:focus-within {
+    display: block;
+    opacity: 1;
+}
+
 .question .result {
     position: relative;
     overflow: visible;
