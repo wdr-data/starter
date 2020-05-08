@@ -2,3 +2,7 @@ body {
   margin: 0;
   --padding-content: 2rem;
 }
+
+:focus {
+  outline: 3px red dashed;
+}
