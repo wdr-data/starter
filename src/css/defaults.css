@@ -4,5 +4,6 @@ body {
 }
 
 :focus {
-  outline: 3px red dashed;
+  outline-color: red;
+  outline-width: 3px;
 }
