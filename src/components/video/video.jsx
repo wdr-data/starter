@@ -6,10 +6,10 @@ import styles from "./video.module.css";
 import HLSSource from "./HLSSource.jsx";
 
 const WdrPlayer = ({ videoId, videoPoster }) => {
-  const m3uSource = `/m3u/${videoId}.m3u8`;
+  const m3uSource = `m3u/${videoId}.m3u8`;
   return (
     <Player fluid poster={videoPoster} autoPlay={false} preload="metadata">
-      <HLSSource isVideoChild src={m3uSource} />
+      {typeof window !== `undefined` && <HLSSource isVideoChild src={m3uSource} />}
       <BigPlayButton className={styles.playButton} />
     </Player>
   );
