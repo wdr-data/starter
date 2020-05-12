@@ -23,6 +23,7 @@ import WdrPlayer from '../components/video/video.jsx'
 import YDIBar from '../components/ydi/ydiBar.jsx'
 import YDILine from '../components/ydi/ydiLine.jsx'
 import TabbedView from '../components/data-tabs/TabbedView.jsx'
+import { Link, LinkList } from '../components/link/link.jsx'
 
 # Opern-Spielpläne in NRW: tot und männlich
 
@@ -50,6 +51,19 @@ Waren Sie in der letzten Spielzeit in der Oper? Dann haben Sie höchstwahrschein
         title: "Tabelle",
         frameTitle: "Infektionen mit Corona: Aktuelle Zahlen aus NRW",
         ariaLabel: "Tabelle",
+    },
+]} />
+
+<Link title="Dies ist ein Beispiel für einen einzelnen Link" href="https://example.com/" />
+
+<LinkList links={[
+    {
+        title: "Dies ist ein Beispiel für eine Link-Liste",
+        href: "https://example.com/",
+    },
+    {
+        title: "Dies ist noch ein Beispiel für eine Link-Liste",
+        href: "https://example.com/",
     },
 ]} />
 

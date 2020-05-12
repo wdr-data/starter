@@ -1,0 +1,30 @@
+.link {
+  display: block;
+  padding: 6px;
+
+  text-decoration: none;
+}
+
+.linkSingle {
+  border-top: 1px solid #606365;
+  border-bottom: 1px solid #606365;
+  margin: 20px 0;
+}
+
+.link:hover, .link:focus {
+  background-color: #f0f0f0;
+  outline: none;
+  text-decoration: underline;
+}
+
+.linkList {
+  border-top: 1px solid #606365;
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.linkList li {
+  padding: 0;
+  border-bottom: 1px solid #606365;
+}
