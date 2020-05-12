@@ -22,12 +22,36 @@ import SemioticBarChart from '../components/semiotic_barChart/semiotic_barChart.
 import WdrPlayer from '../components/video/video.jsx'
 import YDIBar from '../components/ydi/ydiBar.jsx'
 import YDILine from '../components/ydi/ydiLine.jsx'
+import TabbedView from '../components/data-tabs/TabbedView.jsx'
 
 # Opern-Spielpläne in NRW: tot und männlich
 
 ## Wir haben die Opern-Spielpläne in NRW unter die Lupe genommen. Das Ergebnis: NRW ist ein Opern-Paradies. Aber lebende Komponisten haben kaum eine Chance, auf die Spielpläne zu kommen. Und Komponistinnen gar keine.
 
 Waren Sie in der letzten Spielzeit in der Oper? Dann haben Sie höchstwahrscheinlich Papageno, die Knusperhexe oder Leporello auf der Bühne erlebt. Denn diese Opern und Operetten standen am häufigsten auf dem Spielplan:
+
+## Tabs Beispiel:
+
+<TabbedView tabs={[
+    {
+        url: "//datawrapper.dwcdn.net/vX99N/57/",
+        title: "Infektionen",
+        frameTitle: "Bestätigte Infektionen mit Corona: Karte",
+        ariaLabel: "Karte",
+    },
+    {
+        url: "//datawrapper.dwcdn.net/x7wUg/73/",
+        title: "Je 100.000",
+        frameTitle: "Bestätigte Infektionen mit Corona je 100.000 Einwohner: Karte",
+        ariaLabel: "Karte",
+    },
+    {
+        url: "//datawrapper.dwcdn.net/j8Y35/2/",
+        title: "Tabelle",
+        frameTitle: "Infektionen mit Corona: Aktuelle Zahlen aus NRW",
+        ariaLabel: "Tabelle",
+    },
+]} />
 
 ## Beispiel WSS Line Chart:
 

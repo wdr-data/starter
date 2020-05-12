@@ -1,0 +1,81 @@
+.app, .tabs {
+  width: 100%;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
+
+.panel-container {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.panel {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  grid-area: 1 / 1 / 2 / 2;
+
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+@keyframes panelAnimOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 0;
+    height: 0;
+  }
+}
+
+@keyframes panelAnimIn {
+  from {
+    opacity: 0;
+    visibility: visible;
+    z-index: 2;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+  }
+}
+
+.panelSelected {
+  animation-name: panelAnimIn;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+.panelOut {
+  animation-name: panelAnimOut;
+  animation-duration: 0s;
+  animation-delay: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.frame {
+  display: block;
+  margin: 10px;
+  border: 0;
+  max-width: 100%;
+}
