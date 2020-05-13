@@ -230,7 +230,7 @@ const YDILineInternal = ({ name }) => {
                 y={d => yScale(y(d))}
                 stroke={brandPrimary}
                 strokeWidth={3}
-                style={{ clipPath }}
+                style={{ clipPath, WebkitClipPath: clipPath }}
             />
         </Group>
     },
