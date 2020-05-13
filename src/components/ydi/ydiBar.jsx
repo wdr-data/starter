@@ -272,7 +272,7 @@ const YDIBarInternal = ({ name }) => {
                                             className={
                                                 classNames(!isGuessBar && styles.animateClipPath)
                                             }
-                                            style={isGuessBar ? {} : { clipPath }}
+                                            style={isGuessBar ? {} : { clipPath, WebkitClipPath: clipPath }}
                                             x={bar.x}
                                             y={bar.y}
                                             width={bar.width}

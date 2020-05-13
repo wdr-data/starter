@@ -221,7 +221,7 @@ const YDILineInternal = ({ name }) => {
                 y={d => yScale(y(d))}
                 yScale={yScale}
                 fill="url(#gradientPrimary)"
-                style={{ clipPath }}
+                style={{ clipPath, WebkitClipPath: clipPath }}
             />
             <LinePath
                 className={styles.known}
