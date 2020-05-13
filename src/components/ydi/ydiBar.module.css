@@ -8,3 +8,12 @@
 .animateClipPath {
     transition: clip-path 0.5s ease-in-out;
 }
+
+.marker {
+    opacity: 1;
+    transition: opacity 0.25s ease-in;
+}
+
+.hidden {
+    opacity: 0;
+}

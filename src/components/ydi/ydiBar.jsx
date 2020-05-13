@@ -30,11 +30,13 @@ const defaultMargin = {
 const x = d => d.label;
 const y = d => d.value;
 
-const Marker = ({ barX, barY, barWidth, textLines, color }) => {
+const Marker = ({ barX, barY, barWidth, textLines, color, hidden }) => {
     const height = textLines.length * 20 + 10;
     const width = Math.max(...textLines.map(text => String(text).length)) * 8 + 25;
     return (
-        <g transform={`translate(${barX + barWidth / 2}, ${barY - 15})`}>
+        <g
+            transform={`translate(${barX + barWidth / 2}, ${barY - 15})`}
+            className={classNames(styles.marker, hidden && styles.hidden)}>
             <rect
                 x={-width / 2}
                 y={-(height)}
@@ -259,14 +261,15 @@ const YDIBarInternal = ({ name }) => {
                                 }
                                 return (
                                     <React.Fragment key={`fragment-unknown-${bar.key}`}>
-                                        {(isGuessBar || confirmAnimationDone) && <Marker
+                                        <Marker
                                             key={`marker-unknown-${bar.key}`}
                                             barX={bar.x}
                                             barY={bar.y}
                                             barWidth={bar.width}
                                             textLines={markerTextLines}
                                             color={brandSecondary}
-                                        />}
+                                            hidden={!(isGuessBar || confirmAnimationDone)}
+                                        />
                                         <Bar
                                             key={`bar-unknown-${bar.key}`}
                                             className={

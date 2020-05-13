@@ -27,3 +27,12 @@
     color: #555;
     font-weight: bold;
 }
+
+.marker {
+    opacity: 1;
+    transition: opacity 0.25s ease-in;
+}
+
+.hidden {
+    opacity: 0;
+}

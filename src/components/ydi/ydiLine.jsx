@@ -31,7 +31,7 @@ const x = d => d.label;
 const y = d => d.value;
 const yGuess = d => d.guess;
 
-const Marker = ({ x, y, textLines, color, edge }) => {
+const Marker = ({ x, y, textLines, color, edge, hidden }) => {
     const height = textLines.length * 20 + 10;
     const width = Math.max(...textLines.map(text => String(text).length)) * 8 + 25;
     const margin = {
@@ -44,7 +44,9 @@ const Marker = ({ x, y, textLines, color, edge }) => {
         margin.right = width / 2 - 10;
     }
     return (
-        <g transform={`translate(${x - margin.right}, ${y - margin.bottom})`}>
+        <g
+            transform={`translate(${x - margin.right}, ${y - margin.bottom})`}
+            className={classNames(styles.marker, hidden && styles.hidden)}>
             <rect
                 x={-width / 2}
                 y={-(height)}
@@ -300,30 +302,31 @@ const YDILineInternal = ({ name }) => {
                 color={brandPrimary}
             />
 
-            {confirmAnimationDone && <circle
+            <circle
                 cx={xScale(x(lastUnknown))}
                 cy={yScale(y(lastUnknown))}
                 r={4} fill={brandPrimary}
-            />}
+                className={classNames(styles.marker, !confirmAnimationDone && styles.hidden)}
+            />
 
-            {guessProgress === unknownData.length - 1 && <Marker
+            <Marker
                 x={xScale(x(lastGuess))}
                 y={yScale(yGuess(lastGuess))}
                 textLines={[markerLabel]}
                 color={brandSecondary}
                 edge="right"
-            />}
+                hidden={guessProgress !== unknownData.length - 1}
+            />
 
-            {confirmAnimationDone &&
-                <Marker
-                    x={xScale(x(lastUnknown))}
-                    y={yScale(y(lastUnknown))}
-                    textLines={[`${formatNumber(y(lastUnknown))}${question.unit}`]}
-                    color={brandPrimary}
-                    drawPoint
-                    edge="right"
-                />
-            }
+            <Marker
+                x={xScale(x(lastUnknown))}
+                y={yScale(y(lastUnknown))}
+                textLines={[`${formatNumber(y(lastUnknown))}${question.unit}`]}
+                color={brandPrimary}
+                drawPoint
+                edge="right"
+                hidden={!confirmAnimationDone}
+            />
         </Group>
     }, [
         xScale, yScale, guessData, firstKnown, lastKnown, lastUnknown, confirmAnimationDone,
