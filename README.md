@@ -46,7 +46,7 @@ Schritte:
 
 2. `git clone <new repository>.git` des neuen Repos auf dem eigenen Rechner
 3. In das neue Verzeichnis wechseln: `cd <new repository>`
-4. Die Referenz zum starter Verzeichnis hinzufügen `git remote add upstream https://github.com/wdr-data/starter.git`
+4. Die Referenz zum `starter` Repository hinzufügen: `git remote add upstream https://github.com/wdr-data/starter.git`
 5. Alle Inhalte aus dem Starter ins neue Verzeichnis ziehen: `git pull upstream main`
 6. Alle Inhalte zum neuen Verzeichnis pushen: `git push origin master`
 
@@ -107,14 +107,14 @@ cg4: "Opern-Spielpläne in NRW: tot und männlich"
 - Die Bilder für Facebook und Twitter werden in static/ abgelegt
 
 #### Webtrekk
-Im Kopf der src/pages/index.md: 
+Im Kopf der src/pages/index.md:
   - ! `pub_date: "2019-07-15"` muss in diesem Datums-Format vorhanden sein
   - Anhand dieses Schemas ausfüllen:
     - cg1: "WDR"
     - cg2: "Data"
     - cg3: "WDR 3" - Partnerredaktion
     - cg4: "Opern-Spielpläne in NRW: tot und männlich" - H1 (Hauptüberschrift) des Stücks
- - Optional kann auch eine `cg5: ` vergeben werden 
+ - Optional kann auch eine `cg5: ` vergeben werden
 
 #### Sharing
 
@@ -229,7 +229,7 @@ Mit Link:
 
 ### Accordion
   - Die Inhalte liegen als einzelne .md Dateien in /accordion
-  - Um Inhalte zu ändern, wird die entsprechende .md Datei geändert: 
+  - Um Inhalte zu ändern, wird die entsprechende .md Datei geändert:
   [authors.md](https://github.com/wdr-data/starter/blob/master/accordion/authors.md)
   [credits.md](https://github.com/wdr-data/starter/blob/master/accordion/credits.md)
   [hints.md](https://github.com/wdr-data/starter/blob/master/accordion/hints.md)
@@ -289,26 +289,28 @@ Repository: https://github.com/wdr-data/starter
 
 ### Wie entwickle ich lokal?
 
-Voraussetzungen:
+#### Voraussetzungen:
 - Git installieren
 - Code Editor (z.B. VS Code installieren)
 - Node installieren
-- Yarn installieren 
+- Yarn installieren
 
-Entwicklung: 
-- Zu Repo hinzufügen lassen
-- `Git clone Name-des-repos` kopiert das Projekt auf den eigenen Rechner
-- Änderungen machen in `src/pages/index.md` - Änderungen speichern 
--  Um das Projekt zu lokal zu starten: `yarn start` (Solange das läuft, werden gespeicherte Änderungen automatisch erkannt und die Seite neu compiliert)  
-- Um die Änderungen zu dokumentieren und zu veröffentlichen: 
-``` 
+#### Entwicklung:
+- Falls noch nicht geschehen:
+  - Lese- und Schreibrechte auf dem Repository erlangen
+  - `git clone <repo-clone-url>` kopiert das Projekt auf den eigenen Rechner
+- Änderungen machen in `src/pages/index.md`
+  - Änderungen speichern
+-  Um das Projekt zu lokal zu starten: `yarn start` (Solange das läuft, werden gespeicherte Änderungen automatisch erkannt und die Seite neu kompiliert)
+- Um die Änderungen zu dokumentieren und zu veröffentlichen:
+```
 git status
-git add name-der-datei.md
+git add src/pages/index.md
 git commit -m ":bento: Grund für die Änderung"
 git status (Alles grün?)
 git push
 ```
-:globe_with_meriadians: [Git cheat sheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
+:globe_with_meridians: [Git cheat sheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
 
 ### Wie baue ich eine neue Komponente?
 
