@@ -94,6 +94,11 @@ const YDILineInternal = ({ name }) => {
         () => (question.ticks || undefined),
         [question]
     );
+    const includeLast = useMemo(
+        () => (question.includeLast || true),
+        [question]
+    );
+
 
     const width = useMemo(
         () => Math.min((windowWidth ? windowWidth : 768) - 35, 768),
@@ -357,7 +362,12 @@ const YDILineInternal = ({ name }) => {
                             fontSize: 16,
                             textAnchor: 'middle',
                         })}
-                        tickValues={ticks === undefined ? xScale.domain() : xScale.domain().filter((d, i) => i % Math.ceil(xScale.domain().length / ticks) === 0)}
+                        tickValues={ticks === undefined ?
+                            xScale.domain() :
+                            xScale.domain().filter(
+                                (d, i) => (
+                                    i % Math.ceil(xScale.domain().length / ticks) === 0) ||
+                                    (includeLast && i === (xScale.domain().length - 1)))}
                     />
                     <AxisLeft
                         scale={yScale}
