@@ -70,3 +70,7 @@ blockquote {
   font-size: var(--font-large);
   margin: 0;
 }
+
+strong {
+  font-weight: bold;
+}

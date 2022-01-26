@@ -1,0 +1,148 @@
+/* Button styles */
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 15px;
+  border: none;
+  background: var(--brand-primary);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  transition-property: background, color, opacity;
+}
+button[disabled] {
+  background: #464646;
+  cursor: not-allowed;
+}
+
+button .icon {
+  display: inline-block;
+  width: 0;
+  overflow: visible;
+}
+
+button .icon svg {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  vertical-align: top;
+  margin-top: 1px;
+  transform: translateX(-25px);
+  animation: fade-in 0.25s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Quiz styles */
+.quiz {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  border: 3px solid var(--brand-primary);
+  margin-bottom: 20px;
+}
+
+.quiz .question {
+  width: 100%;
+}
+.quiz .question * {
+  margin: 0;
+}
+
+/* Answer styles */
+
+.answer {
+  width: 100%;
+}
+@media (min-width: 800px) {
+  .answer {
+    width: calc(50% - 5px);
+  }
+}
+
+.answer button {
+  width: 100%;
+}
+
+.answer.selected button {
+  background: var(--brand-secondary);
+}
+
+.answer.answered.selected button {
+  background: var(--brand-secondary);
+}
+
+.answer.answered.correct button {
+  background: var(--brand-primary);
+}
+
+.answer.answered.faded button {
+  opacity: 0.7;
+}
+
+/* Result stlyes */
+
+.quiz .result {
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  min-height: 100px;
+  width: 100%;
+}
+
+.quiz .result .actionContainer {
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.quiz .result.shown .actionContainer {
+  opacity: 0;
+  z-index: -1;
+}
+
+.quiz .result .text {
+  display: block;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+
+.quiz .result .text[hidden] {
+  display: block;
+  opacity: 0;
+}
+
+.quiz .result .text {
+  max-width: 498px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.quiz .result .text :last-child {
+  margin-bottom: 10px;
+}

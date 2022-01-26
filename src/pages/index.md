@@ -24,12 +24,27 @@ import YDIBar from '../components/ydi/ydiBar.jsx'
 import YDILine from '../components/ydi/ydiLine.jsx'
 import TabbedView from '../components/data-tabs/TabbedView.jsx'
 import { Link, LinkList } from '../components/link/link.jsx'
+import { Quiz, Question, Answer, Result } from '../components/quiz/quiz.jsx'
 
 # Opern-Spielpläne in NRW: tot und männlich
 
 ## Wir haben die Opern-Spielpläne in NRW unter die Lupe genommen. Das Ergebnis: NRW ist ein Opern-Paradies. Aber lebende Komponisten haben kaum eine Chance, auf die Spielpläne zu kommen. Und Komponistinnen gar keine.
 
 Waren Sie in der letzten Spielzeit in der Oper? Dann haben Sie höchstwahrscheinlich Papageno, die Knusperhexe oder Leporello auf der Bühne erlebt. Denn diese Opern und Operetten standen am häufigsten auf dem Spielplan:
+
+## Quiz Beispiel
+
+<Quiz>
+<Question>**Hier könnte ihre Frage stehen?**</Question>
+<Answer>Foobar</Answer>
+<Answer correct>42</Answer>
+<Answer>Richtige Antwort</Answer>
+<Answer>Hier klicken!</Answer>
+<Result>
+Natürlich ist **42** die richtige Antwort. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+</Result>
+</Quiz>
+
 
 ## Tabs Beispiel:
 
