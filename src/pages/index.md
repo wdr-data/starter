@@ -24,7 +24,7 @@ import YDIBar from '../components/ydi/ydiBar.jsx'
 import YDILine from '../components/ydi/ydiLine.jsx'
 import TabbedView from '../components/data-tabs/TabbedView.jsx'
 import { Link, LinkList } from '../components/link/link.jsx'
-import { Quiz, Question, Answer, Result } from '../components/quiz/quiz.jsx'
+import { Quiz, Image as QuizImage, Question, Answer, Result } from '../components/quiz/quiz.jsx'
 
 # Opern-Spielpläne in NRW: tot und männlich
 
@@ -35,6 +35,7 @@ Waren Sie in der letzten Spielzeit in der Oper? Dann haben Sie höchstwahrschein
 ## Quiz Beispiel
 
 <Quiz>
+<QuizImage src="berthold-schneider-credit-jens-grossmann.jpg" alt="Der Wuppertaler Opernintendant Berthold Schneider, fotografiert von Jens Grossmann" />
 <Question>**Hier könnte ihre Frage stehen?**</Question>
 <Answer>Foobar</Answer>
 <Answer correct>42</Answer>
