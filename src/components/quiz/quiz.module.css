@@ -12,6 +12,8 @@ button {
   transition-duration: 0.25s;
   transition-timing-function: ease-in-out;
   transition-property: background, color, opacity;
+
+  -webkit-tap-highlight-color: transparent;
 }
 button[disabled] {
   background: #464646;
