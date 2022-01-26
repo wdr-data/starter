@@ -61,6 +61,16 @@ button .icon svg {
   border-radius: 16px;
   border: 3px solid var(--brand-primary);
   margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.quiz .image {
+  display: block;
+  margin: -20px;
+  margin-bottom: 5px;
+  width: calc(100% + 40px);
+  max-width: calc(100% + 40px);
+  height: auto;
 }
 
 .quiz .question {

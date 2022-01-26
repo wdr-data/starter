@@ -27,6 +27,10 @@ export const Quiz = ({ children }) => {
   )
 }
 
+export const Image = (props) => {
+  return <img className={styles.image} alt="" {...props} />
+}
+
 export const Question = ({ children }) => {
   return (
     <div className={styles.question}>
