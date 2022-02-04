@@ -52,12 +52,13 @@
   margin-top: 0;
 }
 
-.panel > ul {
+.panel ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.panel > ul > li {
+.panel ul > li {
   padding: 0.5rem 0;
 }
 

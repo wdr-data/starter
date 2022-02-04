@@ -60,7 +60,7 @@ button .icon svg {
   padding: 20px;
   border-radius: 16px;
   border: 3px solid var(--brand-primary);
-  margin-bottom: 20px;
+  margin: 40px 0;
   overflow: hidden;
 }
 
@@ -105,7 +105,7 @@ button .icon svg {
 }
 
 .answer.answered.correct button {
-  background: var(--brand-primary);
+  background: #095d09;
 }
 
 .answer.answered.faded button {
