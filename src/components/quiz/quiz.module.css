@@ -159,3 +159,87 @@ button .icon svg {
 .quiz .result .text :last-child {
   margin-bottom: 10px;
 }
+
+/* Score styles */
+
+.score {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: center;
+  background: #fff;
+  border-radius: 16px;
+  border: 3px solid var(--brand-primary);
+  margin: 40px 0;
+  overflow: hidden;
+}
+
+.score .image {
+  display: block;
+  width: calc(100vw - 44px);
+  height: calc(100vw - 44px);
+  max-height: 450px;
+  border-radius: 11px 11px 0 0;
+  margin: 3px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition-property: background;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+.score .scoreBoard {
+  display: block;
+  margin-top: -1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.score p {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.score .scoreCorrect {
+  font-family: 'Merriweather', serif;
+  font-size: 10rem;
+}
+
+.score .scoreMax {
+  font-family: 'Merriweather', serif;
+  font-size: 4rem;
+  vertical-align: text-bottom;
+}
+
+.score .scorePost {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.score .scoreImagePrefetch {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  .score {
+    justify-content: flex-start;
+    height: 250px;
+    max-height: 250px;
+  }
+
+  .score .image {
+    height: 244px;
+    width: 244px;
+    border-radius: 11px 0 0 11px;
+  }
+
+  .score .scoreBoard {
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  .score .scoreBoard p {
+    margin-top: -15px;
+  }
+}

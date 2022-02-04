@@ -24,7 +24,7 @@ import YDIBar from '../components/ydi/ydiBar.jsx'
 import YDILine from '../components/ydi/ydiLine.jsx'
 import TabbedView from '../components/data-tabs/TabbedView.jsx'
 import { Link, LinkList } from '../components/link/link.jsx'
-import { Quiz, Image as QuizImage, Question, Answer, Result } from '../components/quiz/quiz.jsx'
+import { Quiz, Image as QuizImage, Question, Answer, Result, Score as QuizScore } from '../components/quiz/quiz.jsx'
 
 # Opern-Spielpläne in NRW: tot und männlich
 
@@ -46,6 +46,32 @@ Natürlich ist **42** die richtige Antwort. Lorem Ipsum is simply dummy text of 
 </Result>
 </Quiz>
 
+<Quiz>
+<Question>**Hier könnte ihre Frage stehen?**</Question>
+<Answer>Hier klicken!</Answer>
+<Answer>Foobar</Answer>
+<Answer>Richtige Antwort</Answer>
+<Answer correct>42</Answer>
+<Result>
+Natürlich ist **42** die richtige Antwort.
+</Result>
+</Quiz>
+
+<Quiz>
+<Question>**Hier könnte ihre Frage stehen?**</Question>
+<Answer>Richtige Antwort</Answer>
+<Answer>Hier klicken!</Answer>
+<Answer correct>42</Answer>
+<Answer>Foobar</Answer>
+<Result>
+Natürlich ist **42** die richtige Antwort.
+</Result>
+</Quiz>
+
+<QuizScore images={{
+    0: "berthold-schneider-credit-jens-grossmann.jpg",
+    2: "richard-wagner-und-freunde_twitter.jpg",
+}} />
 
 ## Tabs Beispiel:
 

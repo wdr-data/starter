@@ -17,11 +17,14 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { StaticQuery, graphql } from "gatsby";
 
 import FrontmatterContext from './frontmatterContext';
+import { GlobalQuizContext, useQuizContext } from './globalQuizContext';
 
 const DefaultTemplate = data => {
   const URL = `https://data.wdr.de${Config.pathPrefix}/`;
   const frontmatter = data.pageContext.frontmatter;
   const pub_date = new Date(Date.parse(frontmatter.pub_date + "T00:00:00.000Z"));
+
+  const quizContext = useQuizContext();
 
   const query = graphql`
     query MyQuery {
@@ -101,7 +104,9 @@ const DefaultTemplate = data => {
           <article className={styles.main}>
             <DateFormat date={pub_date} />
             <FrontmatterContext.Provider value={frontmatter}>
-              {data.children}
+              <GlobalQuizContext.Provider value={quizContext}>
+                {data.children}
+              </GlobalQuizContext.Provider>
             </FrontmatterContext.Provider>
             <StaticQuery
               query={query}
