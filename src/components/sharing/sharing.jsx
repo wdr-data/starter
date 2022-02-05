@@ -5,7 +5,7 @@ import { Twitter, Facebook, Mail, Whatsapp, Telegram, Reddit, Xing, Linkedin } f
 import styles from "./sharing.module.css";
 
 const Sharing = ({ linkURL, twitter, facebook, mail, whatsapp, telegram, reddit, xing, linkedin }) => {
-  const URL = `${Config.origin}${Config.pathPrefix}/`;
+  const URL = `${Config.origin}${Config.pathPrefix}`;
 
   return (
     <div className={styles.buttonRow}>
