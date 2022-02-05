@@ -86,7 +86,7 @@ button .icon svg {
 .answer {
   width: 100%;
 }
-@media (min-width: 800px) {
+@media (min-width: 600px) {
   .answer {
     width: calc(50% - 5px);
   }
@@ -191,14 +191,22 @@ button .icon svg {
 }
 
 .score .scoreBoard {
-  display: block;
-  margin-top: -1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
   margin-bottom: 1.5rem;
 }
 
 .score p {
   margin: 0 auto;
   text-align: center;
+}
+
+.score .scoreNumbers {
+  margin-top: -1.5rem;
+  margin-bottom: -1rem;
 }
 
 .score .scoreCorrect {
@@ -215,6 +223,8 @@ button .icon svg {
 .score .scorePost {
   display: block;
   font-size: 1.5rem;
+  text-align: center;
+  padding: 0 1rem;
 }
 
 .score .scoreImagePrefetch {
@@ -237,9 +247,11 @@ button .icon svg {
   .score .scoreBoard {
     flex-grow: 1;
     margin: 0;
+    max-width: 512px;
   }
 
-  .score .scoreBoard p {
-    margin-top: -15px;
+  .score .scoreNumbers {
+    margin-top: -2.5rem;
+    margin-bottom: -2rem;
   }
 }

@@ -68,10 +68,16 @@ Natürlich ist **42** die richtige Antwort.
 </Result>
 </Quiz>
 
-<QuizScore images={{
+<QuizScore
+images={{
     0: "berthold-schneider-credit-jens-grossmann.jpg",
     2: "richard-wagner-und-freunde_twitter.jpg",
-}} />
+}}
+texts={{
+    0: "Schade, das war wohl nix.",
+    2: "Gute Arbeit",
+}}
+/>
 
 ## Tabs Beispiel:
 

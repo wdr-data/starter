@@ -153,7 +153,7 @@ export const Result = ({ children }) => {
 }
 
 
-export const Score = ({images}) => {
+export const Score = ({images, texts}) => {
   const globalQuizContext = useContext(GlobalQuizContext);
 
   const score = useMemo(() => {
@@ -171,15 +171,27 @@ export const Score = ({images}) => {
     }, {url: null, requiredScore: null})
   , [images, score])
 
+  const currentText = useMemo(() =>
+    texts && Object.entries(texts).reduce((acc, [requiredScore, text]) => {
+      if (score >= requiredScore && (acc.text === null || requiredScore > (acc.requiredScore || 0))) {
+        return {text, requiredScore}
+      } else {
+        return acc
+      }
+    }, {text: null, requiredScore: null})
+  , [texts, score])
+
   return (
     <div className={styles.score}>
       <div className={styles.image} style={{backgroundImage: `url('${currentImage.url}')`}}>
       </div>
       <div className={styles.scoreBoard}>
-        <p>
+        <div className={styles.scoreNumbers}>
           <span className={styles.scoreCorrect}>{score}</span><span className={styles.scoreMax}> / {Object.keys(globalQuizContext.score).length}</span>
-          <span className={styles.scorePost}>Fragen richtig beantwortet</span>
-        </p>
+        </div>
+        <div>
+          <span className={styles.scorePost}>{currentText.text}</span>
+        </div>
       </div>
       <div className={styles.scoreImagePrefetch}>
         {Object.entries(images).map(([requiredScore, url]) => (
