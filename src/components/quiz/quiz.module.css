@@ -163,6 +163,7 @@ button .icon svg {
 /* Score styles */
 
 .score {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -173,6 +174,37 @@ button .icon svg {
   border: 3px solid var(--brand-primary);
   margin: 40px 0;
   overflow: hidden;
+}
+
+.score.hidden {
+  display: none;
+}
+
+.scoreShow {
+  display: block;
+  position: absolute;
+  z-index: 100;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  margin: 3px;
+  border-radius: 10px;
+  font-size: 2.5rem;
+  word-wrap: break-word;
+}
+
+.scoreShow.hidden {
+  visibility: inherit;
+  animation: hide 0.5s ease-in-out forwards;
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 .score .image {

@@ -181,11 +181,21 @@ export const Score = ({images, texts}) => {
     }, {text: null, requiredScore: null})
   , [texts, score])
 
+  // Hide score until button is clicked
+  const [hidden, setHidden] = useState(true)
+
   return (
     <div className={styles.score}>
-      <div className={styles.image} style={{backgroundImage: `url('${currentImage.url}')`}}>
+      <button
+        className={classNames(styles.scoreShow, !hidden && styles.hidden)}
+        onClick={() => setHidden(false)}
+        aria-hidden={!hidden ? 'true' : 'false'}
+      >
+        Ergebnis anzeigen
+      </button>
+      <div className={classNames(styles.image, styles.hidden)} style={{backgroundImage: `url('${currentImage.url}')`}}>
       </div>
-      <div className={styles.scoreBoard}>
+      <div className={classNames(styles.scoreBoard, styles.hidden)} aria-hidden={hidden ? 'true' : 'false'}>
         <div className={styles.scoreNumbers}>
           <span className={styles.scoreCorrect}>{score}</span><span className={styles.scoreMax}> / {Object.keys(globalQuizContext.score).length}</span>
         </div>
