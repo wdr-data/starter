@@ -185,7 +185,7 @@ export const Score = ({images, texts}) => {
   const [hidden, setHidden] = useState(true)
 
   return (
-    <div className={styles.score}>
+    <div className={classNames(styles.score, hidden && styles.hidden)}>
       <button
         className={classNames(styles.scoreShow, !hidden && styles.hidden)}
         onClick={() => setHidden(false)}

@@ -177,7 +177,15 @@ button .icon svg {
 }
 
 .score.hidden {
-  display: none;
+  max-height: calc(100vw - 40px);
+}
+
+.score.hidden .image {
+  visibility: hidden;
+}
+
+.score.hidden .text {
+  visibility: hidden;
 }
 
 .scoreShow {
@@ -268,6 +276,10 @@ button .icon svg {
     justify-content: flex-start;
     height: 250px;
     max-height: 250px;
+  }
+
+  .score.hidden {
+    max-height: unset;
   }
 
   .score .image {
