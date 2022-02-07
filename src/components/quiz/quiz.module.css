@@ -184,7 +184,7 @@ button .icon svg {
   visibility: hidden;
 }
 
-.score.hidden .text {
+.score.hidden .scoreBoard {
   visibility: hidden;
 }
 
