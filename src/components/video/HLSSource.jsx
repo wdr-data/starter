@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import Hls from 'hls.js';
+import React, { Component } from "react";
+import Hls from "hls.js";
 
 export default class HLSSource extends Component {
-  constructor(props, context) {
+  constructor (props, context) {
     super(props, context);
     this.hls = new Hls();
   }
 
-  componentDidMount() {
+  componentDidMount () {
     // `src` is the property get from this component
     // `video` is the property insert from `Video` component
     // `video` is the html5 video element
@@ -16,23 +16,23 @@ export default class HLSSource extends Component {
     if (Hls.isSupported()) {
       this.hls.loadSource(src);
       this.hls.attachMedia(video);
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
       video.src = src;
     }
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     // destroy hls video source
     if (this.hls) {
       this.hls.destroy();
     }
   }
 
-  render() {
+  render () {
     return (
       <source
         src={this.props.src}
-        type={this.props.type || 'application/x-mpegURL'}
+        type={this.props.type || "application/x-mpegURL"}
       />
     );
   }

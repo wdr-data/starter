@@ -1,8 +1,8 @@
-body{
-    --brand-primary: #00345f;
-    --brand-secondary: #b37500;
-    --brand-font: #1D2124;
-    --brand-font-secondary: #626A6F;
-    --brand-link: #007381;
-    --storybook-background: #e3e3e3;
+body {
+  --brand-primary: #00345f;
+  --brand-secondary: #b37500;
+  --brand-font: #1d2124;
+  --brand-font-secondary: #626a6f;
+  --brand-link: #007381;
+  --storybook-background: #e3e3e3;
 }

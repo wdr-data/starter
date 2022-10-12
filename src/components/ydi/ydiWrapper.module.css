@@ -1,87 +1,87 @@
 .you-draw-it {
-    margin: 30px 0 0 0;
-    position: relative;
-    overflow: hidden;
+  margin: 30px 0 0 0;
+  position: relative;
+  overflow: hidden;
 
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .question .source {
-    position: absolute;
-    top: 0;
-    right: 0;
-    text-align: right;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .question .source[hidden] {
-    display: block;
-    opacity: 0;
+  display: block;
+  opacity: 0;
 }
 
 .question .source:focus-within {
-    display: block;
-    opacity: 1;
+  display: block;
+  opacity: 1;
 }
 
 .question .result {
-    position: relative;
-    overflow: visible;
-    display: flex;
-    align-items: center;
-    min-height: 100px;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  min-height: 100px;
 }
 
 .question .result .actionContainer {
-    position: absolute;
-    top: 50%;
-    margin-top: -15px;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .question .result.shown .actionContainer {
-    opacity: 0;
-    z-index: -1;
+  opacity: 0;
+  z-index: -1;
 }
 
 .question .result .actionContainer button {
-    display: block;
-    margin: 0 auto;
-    padding: 10px 15px;
-    border: none;
-    background: var(--brand-primary);
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
-    outline: 0;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 15px;
+  border: none;
+  background: var(--brand-primary);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  outline: 0;
 }
 
 .question .result .actionContainer button[disabled] {
-    background: #464646;
-    cursor: not-allowed;
+  background: #464646;
+  cursor: not-allowed;
 }
 
 .question .result .text {
-    display: block;
-    transition: opacity 0.5s ease-in-out;
-    opacity: 1;
+  display: block;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
 }
 
 .question .result .text[hidden] {
-    display: block;
-    opacity: 0;
+  display: block;
+  opacity: 0;
 }
 
 .question .result .text {
-    max-width: 498px;
-    margin: 20px auto;
-    text-align: center;
+  max-width: 498px;
+  margin: 20px auto;
+  text-align: center;
 }

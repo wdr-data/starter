@@ -14,7 +14,7 @@ const Quote = ({ children, author }) => {
 
 Quote.propTypes = {
   children: PropTypes.string,
-  author: PropTypes.node
+  author: PropTypes.node,
 };
 
 export default Quote;

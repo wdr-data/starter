@@ -1,19 +1,19 @@
 .drag {
-    touch-action: none;
-    position: absolute;
-    top: 0;
-    cursor: row-resize;
+  touch-action: none;
+  position: absolute;
+  top: 0;
+  cursor: row-resize;
 }
 
 .animateClipPath {
-    transition: clip-path 0.5s ease-in-out;
+  transition: clip-path 0.5s ease-in-out;
 }
 
 .marker {
-    opacity: 1;
-    transition: opacity 0.25s ease-in;
+  opacity: 1;
+  transition: opacity 0.25s ease-in;
 }
 
 .hidden {
-    opacity: 0;
+  opacity: 0;
 }

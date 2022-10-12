@@ -250,12 +250,12 @@ button .icon svg {
 }
 
 .score .scoreCorrect {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-size: 10rem;
 }
 
 .score .scoreMax {
-  font-family: 'Merriweather', serif;
+  font-family: "Merriweather", serif;
   font-size: 4rem;
   vertical-align: text-bottom;
 }

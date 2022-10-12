@@ -1,6 +1,9 @@
 import React from "react";
 
-const id = process.env.GATSBY_WEBTREKK_ENV === "production" ? "968797372740766" : "882049745744921";
+const id =
+  process.env.GATSBY_WEBTREKK_ENV === "production"
+    ? "968797372740766"
+    : "882049745744921";
 
 const Webtrekk = ({ cg1, cg2, cg3, cg4, cg5, cg6, publishedAt }) => {
   const searchParams = new URLSearchParams();
@@ -32,7 +35,10 @@ const Webtrekk = ({ cg1, cg2, cg3, cg4, cg5, cg6, publishedAt }) => {
     title = title.concat(cg6);
   }
   searchParams.append("cp4", publishedAt);
-  searchParams.append("p", `441,${title.join("_")},1,1920x1200,24,1,1562577868831,0,975x1023,0`);
+  searchParams.append(
+    "p",
+    `441,${title.join("_")},1,1920x1200,24,1,1562577868831,0,975x1023,0`,
+  );
 
   const URL = `https://wdr01.wt-eu02.net/${id}/wt?${searchParams.toString()}`;
 

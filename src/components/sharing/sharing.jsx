@@ -1,10 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Config from "../../../starter-config";
-import { Twitter, Facebook, Mail, Whatsapp, Telegram, Reddit, Xing, Linkedin } from "react-social-sharing";
+import {
+  Twitter,
+  Facebook,
+  Mail,
+  Whatsapp,
+  Telegram,
+  Reddit,
+  Xing,
+  Linkedin,
+} from "react-social-sharing";
 import styles from "./sharing.module.css";
 
-const Sharing = ({ linkURL, twitter, facebook, mail, whatsapp, telegram, reddit, xing, linkedin }) => {
+const Sharing = ({
+  linkURL,
+  twitter,
+  facebook,
+  mail,
+  whatsapp,
+  telegram,
+  reddit,
+  xing,
+  linkedin,
+}) => {
   const URL = `${Config.origin}${Config.pathPrefix}`;
 
   return (
@@ -14,7 +33,7 @@ const Sharing = ({ linkURL, twitter, facebook, mail, whatsapp, telegram, reddit,
           solid
           small
           link={linkURL || URL}
-          label={serviceName => `Teilen via ${serviceName}`}
+          label={(serviceName) => `Teilen via ${serviceName}`}
           className={styles.sharingButton}
         />
       )}
@@ -23,7 +42,7 @@ const Sharing = ({ linkURL, twitter, facebook, mail, whatsapp, telegram, reddit,
           solid
           small
           link={linkURL || URL}
-          label={serviceName => `Teilen via ${serviceName}`}
+          label={(serviceName) => `Teilen via ${serviceName}`}
           className={styles.sharingButton}
         />
       )}
@@ -32,7 +51,7 @@ const Sharing = ({ linkURL, twitter, facebook, mail, whatsapp, telegram, reddit,
           solid
           small
           link={linkURL || URL}
-          label={serviceName => `Teilen via ${serviceName}`}
+          label={(serviceName) => `Teilen via ${serviceName}`}
           className={styles.sharingButton}
         />
       )}
@@ -41,7 +60,7 @@ const Sharing = ({ linkURL, twitter, facebook, mail, whatsapp, telegram, reddit,
           solid
           small
           link={linkURL || URL}
-          label={serviceName => `Teilen via ${serviceName}`}
+          label={(serviceName) => `Teilen via ${serviceName}`}
           className={styles.sharingButton}
         />
       )}
@@ -50,7 +69,7 @@ const Sharing = ({ linkURL, twitter, facebook, mail, whatsapp, telegram, reddit,
           solid
           small
           link={linkURL || URL}
-          label={serviceName => `Teilen via ${serviceName}`}
+          label={(serviceName) => `Teilen via ${serviceName}`}
           className={styles.sharingButton}
         />
       )}
@@ -59,7 +78,7 @@ const Sharing = ({ linkURL, twitter, facebook, mail, whatsapp, telegram, reddit,
           solid
           small
           link={linkURL || URL}
-          label={serviceName => `Teilen via ${serviceName}`}
+          label={(serviceName) => `Teilen via ${serviceName}`}
           className={styles.sharingButton}
         />
       )}
@@ -68,7 +87,7 @@ const Sharing = ({ linkURL, twitter, facebook, mail, whatsapp, telegram, reddit,
           solid
           small
           link={linkURL || URL}
-          label={serviceName => `Teilen via ${serviceName}`}
+          label={(serviceName) => `Teilen via ${serviceName}`}
           className={styles.sharingButton}
         />
       )}
@@ -77,7 +96,7 @@ const Sharing = ({ linkURL, twitter, facebook, mail, whatsapp, telegram, reddit,
           solid
           small
           link={linkURL || URL}
-          label={serviceName => `Teilen via ${serviceName}`}
+          label={(serviceName) => `Teilen via ${serviceName}`}
           className={styles.sharingButton}
         />
       )}
@@ -94,7 +113,7 @@ Sharing.propTypes = {
   telegram: PropTypes.bool,
   reddit: PropTypes.bool,
   xing: PropTypes.bool,
-  linkedin: PropTypes.bool
+  linkedin: PropTypes.bool,
 };
 
 export default Sharing;

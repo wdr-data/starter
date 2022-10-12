@@ -1,4 +1,4 @@
-const Config = require("./starter-config")
+const Config = require("./starter-config");
 
 module.exports = {
   pathPrefix: Config.pathPrefix,
@@ -11,25 +11,25 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
-          default: require.resolve("./src/templates/default.jsx")
+          default: require.resolve("./src/templates/default.jsx"),
         },
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1035,
-              sizeByPixelDensity: true
-            }
-          }
-        ]
-      }
+              sizeByPixelDensity: true,
+            },
+          },
+        ],
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "accordion",
-        path: `${__dirname}/accordion`
-      }
-    }
-  ]
+        path: `${__dirname}/accordion`,
+      },
+    },
+  ],
 };

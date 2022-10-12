@@ -15,7 +15,10 @@ const Logo = ({ className, href, title, ariaLabel, ...props }) => {
       rel="noopener noreferrer"
       {...props}
     >
-      <span className={classNames(styles.logo, className)} dangerouslySetInnerHTML={{ __html: wdrLogo }} />
+      <span
+        className={classNames(styles.logo, className)}
+        dangerouslySetInnerHTML={{ __html: wdrLogo }}
+      />
     </a>
   );
 };
@@ -24,7 +27,7 @@ Logo.propTypes = {
   className: PropTypes.string,
   href: PropTypes.string,
   title: PropTypes.string,
-  ariaLabel: PropTypes.string
+  ariaLabel: PropTypes.string,
 };
 
 export default Logo;

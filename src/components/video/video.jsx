@@ -9,7 +9,9 @@ const WdrPlayer = ({ videoId, videoPoster }) => {
   const m3uSource = `m3u/${videoId}.m3u8`;
   return (
     <Player fluid poster={videoPoster} autoPlay={false} preload="metadata">
-      {typeof window !== `undefined` && <HLSSource isVideoChild src={m3uSource} />}
+      {typeof window !== `undefined` && (
+        <HLSSource isVideoChild src={m3uSource} />
+      )}
       <BigPlayButton className={styles.playButton} />
     </Player>
   );
@@ -17,7 +19,7 @@ const WdrPlayer = ({ videoId, videoPoster }) => {
 
 WdrPlayer.propTypes = {
   videoId: PropTypes.string,
-  videoPoster: PropTypes.string
+  videoPoster: PropTypes.string,
 };
 
 export default WdrPlayer;

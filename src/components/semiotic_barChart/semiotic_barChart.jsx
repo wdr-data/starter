@@ -9,7 +9,7 @@ if (typeof window !== `undefined`) {
 
 const colorHash = {
   primary: "var(--brand-primary)",
-}
+};
 
 const frameProps = {
   data: data,
@@ -19,7 +19,7 @@ const frameProps = {
   rAccessor: "tweets",
   style: { fill: colorHash.primary, stroke: "white" },
   title: "Tweets",
-  oLabel: true
+  oLabel: true,
 };
 
 export default () => {
@@ -27,6 +27,5 @@ export default () => {
     <div className={styles.wrapper}>
       <OrdinalFrame {...frameProps} />
     </div>
-
   );
 };

@@ -1,30 +1,29 @@
-import React, { useMemo, useEffect } from 'react'
-import { useCallback, useState, useContext } from 'react'
-import classNames from 'class-names'
-import ReactMarkdown from 'react-markdown'
-import { v4 as uuid } from 'uuid'
+import React, { useMemo, useEffect } from "react";
+import { useCallback, useState, useContext } from "react";
+import classNames from "class-names";
+import ReactMarkdown from "react-markdown";
+import { v4 as uuid } from "uuid";
 
-import { GlobalQuizContext } from '../../templates/globalQuizContext'
+import { GlobalQuizContext } from "../../templates/globalQuizContext";
 
-import styles from './quiz.module.css'
+import styles from "./quiz.module.css";
 
-const QuizContext = React.createContext({})
+const QuizContext = React.createContext({});
 
 export const Quiz = ({ children }) => {
-  const [selectedAnswer, setSelectedAnswer] = useState(null)
-  const [selectedAnswerCorrect, setSelectedAnswerCorrect] = useState(null)
-  const [answered, setAnswered] = useState(false)
-  const [id] = useState(uuid())
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [selectedAnswerCorrect, setSelectedAnswerCorrect] = useState(null);
+  const [answered, setAnswered] = useState(false);
+  const [id] = useState(uuid());
   const globalQuizContext = useContext(GlobalQuizContext);
 
   // Register the quiz in the global page context
   useEffect(() => {
     // Prevent multiple registration
     if (globalQuizContext.score[id] === undefined) {
-      globalQuizContext.setScore((score) => ({...score, [id]: null}))
+      globalQuizContext.setScore((score) => ({ ...score, [id]: null }));
     }
-  }, [id, globalQuizContext])
-
+  }, [id, globalQuizContext]);
 
   const quizContext = useMemo(
     () => ({
@@ -45,26 +44,26 @@ export const Quiz = ({ children }) => {
       selectedAnswerCorrect,
       setSelectedAnswerCorrect,
     ],
-  )
+  );
 
   return (
     <QuizContext.Provider value={quizContext}>
       <div className={styles.quiz}>{children}</div>
     </QuizContext.Provider>
-  )
-}
+  );
+};
 
 export const Image = (props) => {
-  return <img className={styles.image} alt="" {...props} />
-}
+  return <img className={styles.image} alt="" {...props} />;
+};
 
 export const Question = ({ children }) => {
   return (
     <div className={styles.question}>
       <ReactMarkdown source={children} />
     </div>
-  )
-}
+  );
+};
 
 const Checkmark = () => (
   <div className={styles.icon}>
@@ -72,7 +71,7 @@ const Checkmark = () => (
       <path d="M27 4l-15 15-7-7-5 5 12 12 20-20z"></path>
     </svg>
   </div>
-)
+);
 
 const Cross = () => (
   <div className={styles.icon}>
@@ -80,20 +79,20 @@ const Cross = () => (
       <path d="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z"></path>
     </svg>
   </div>
-)
+);
 
 export const Answer = ({ correct, children }) => {
-  const [id] = useState(uuid())
-  const quizContext = useContext(QuizContext)
+  const [id] = useState(uuid());
+  const quizContext = useContext(QuizContext);
 
-  const selected = quizContext.selectedAnswer === id
+  const selected = quizContext.selectedAnswer === id;
 
   const selectCallback = useCallback(() => {
-    quizContext.setSelectedAnswer(id)
-    quizContext.setSelectedAnswerCorrect(correct)
-  }, [id, quizContext, correct])
+    quizContext.setSelectedAnswer(id);
+    quizContext.setSelectedAnswerCorrect(correct);
+  }, [id, quizContext, correct]);
 
-  const icon = useMemo(() => (correct ? <Checkmark /> : <Cross />), [correct])
+  const icon = useMemo(() => (correct ? <Checkmark /> : <Cross />), [correct]);
 
   return (
     <div
@@ -110,19 +109,22 @@ export const Answer = ({ correct, children }) => {
         {children}
       </button>
     </div>
-  )
-}
+  );
+};
 
 export const Result = ({ children }) => {
-  const quizContext = useContext(QuizContext)
+  const quizContext = useContext(QuizContext);
   const globalQuizContext = useContext(GlobalQuizContext);
 
-  const confirmAllowed = quizContext.selectedAnswer !== null
-  const confirmed = quizContext.answered
+  const confirmAllowed = quizContext.selectedAnswer !== null;
+  const confirmed = quizContext.answered;
   const confirmHandler = useCallback(() => {
-    globalQuizContext.setScore((score) => ({...score, [quizContext.id]: quizContext.selectedAnswerCorrect}))
-    quizContext.setAnswered(true)
-  }, [quizContext, globalQuizContext])
+    globalQuizContext.setScore((score) => ({
+      ...score,
+      [quizContext.id]: quizContext.selectedAnswerCorrect,
+    }));
+    quizContext.setAnswered(true);
+  }, [quizContext, globalQuizContext]);
 
   return (
     <div
@@ -144,60 +146,86 @@ export const Result = ({ children }) => {
       <div
         className={styles.text}
         hidden={!confirmed}
-        aria-hidden={confirmed ? 'false' : 'true'}
+        aria-hidden={confirmed ? "false" : "true"}
       >
         <ReactMarkdown source={children} linkTarget="_blank" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-
-export const Score = ({images, texts}) => {
+export const Score = ({ images, texts }) => {
   const globalQuizContext = useContext(GlobalQuizContext);
 
   const score = useMemo(() => {
-    const score = Object.values(globalQuizContext.score).filter(_ => _).length
-    return score
-  }, [globalQuizContext.score])
+    const score = Object.values(globalQuizContext.score).filter((_) => _)
+      .length;
+    return score;
+  }, [globalQuizContext.score]);
 
-  const currentImage = useMemo(() =>
-    Object.entries(images).reduce((acc, [requiredScore, url]) => {
-      if (score >= requiredScore && (acc.url === null || requiredScore > (acc.requiredScore || 0))) {
-        return {url, requiredScore: requiredScore}
-      } else {
-        return acc
-      }
-    }, {url: null, requiredScore: null})
-  , [images, score])
+  const currentImage = useMemo(
+    () =>
+      Object.entries(images).reduce(
+        (acc, [requiredScore, url]) => {
+          if (
+            score >= requiredScore &&
+            (acc.url === null || requiredScore > (acc.requiredScore || 0))
+          ) {
+            return { url, requiredScore: requiredScore };
+          } else {
+            return acc;
+          }
+        },
+        { url: null, requiredScore: null },
+      ),
+    [images, score],
+  );
 
-  const currentText = useMemo(() =>
-    texts && Object.entries(texts).reduce((acc, [requiredScore, text]) => {
-      if (score >= requiredScore && (acc.text === null || requiredScore > (acc.requiredScore || 0))) {
-        return {text, requiredScore}
-      } else {
-        return acc
-      }
-    }, {text: null, requiredScore: null})
-  , [texts, score])
+  const currentText = useMemo(
+    () =>
+      texts &&
+      Object.entries(texts).reduce(
+        (acc, [requiredScore, text]) => {
+          if (
+            score >= requiredScore &&
+            (acc.text === null || requiredScore > (acc.requiredScore || 0))
+          ) {
+            return { text, requiredScore };
+          } else {
+            return acc;
+          }
+        },
+        { text: null, requiredScore: null },
+      ),
+    [texts, score],
+  );
 
   // Hide score until button is clicked
-  const [hidden, setHidden] = useState(true)
+  const [hidden, setHidden] = useState(true);
 
   return (
     <div className={classNames(styles.score, hidden && styles.hidden)}>
       <button
         className={classNames(styles.scoreShow, !hidden && styles.hidden)}
         onClick={() => setHidden(false)}
-        aria-hidden={!hidden ? 'true' : 'false'}
+        aria-hidden={!hidden ? "true" : "false"}
       >
         Ergebnis anzeigen
       </button>
-      <div className={classNames(styles.image, styles.hidden)} style={{backgroundImage: `url('${currentImage.url}')`}}>
-      </div>
-      <div className={classNames(styles.scoreBoard, styles.hidden)} aria-hidden={hidden ? 'true' : 'false'}>
+      <div
+        className={classNames(styles.image, styles.hidden)}
+        style={{ backgroundImage: `url('${currentImage.url}')` }}
+      ></div>
+      <div
+        className={classNames(styles.scoreBoard, styles.hidden)}
+        aria-hidden={hidden ? "true" : "false"}
+      >
         <div className={styles.scoreNumbers}>
-          <span className={styles.scoreCorrect}>{score}</span><span className={styles.scoreMax}> / {Object.keys(globalQuizContext.score).length}</span>
+          <span className={styles.scoreCorrect}>{score}</span>
+          <span className={styles.scoreMax}>
+            {" "}
+            / {Object.keys(globalQuizContext.score).length}
+          </span>
         </div>
         <div>
           <span className={styles.scorePost}>{currentText.text}</span>
@@ -209,5 +237,5 @@ export const Score = ({images, texts}) => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
