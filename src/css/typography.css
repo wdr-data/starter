@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
 
 body {
@@ -36,7 +36,7 @@ h3 {
 
 h4 {
   font-family: "Open Sans", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--font-default);
   color: var(--brand-font);
   margin: 1rem 0;
@@ -44,7 +44,7 @@ h4 {
 
 p {
   font-family: "Open Sans", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: var(--font-default);
 }
 
@@ -72,5 +72,10 @@ blockquote {
 }
 
 strong {
-  font-weight: bold;
+  font-weight: 600;
+}
+
+button {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
 }
