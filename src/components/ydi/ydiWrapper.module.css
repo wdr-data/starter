@@ -21,6 +21,7 @@
 .question .source[hidden] {
   display: block;
   opacity: 0;
+  visibility: hidden;
 }
 
 .question .source:focus-within {
@@ -78,6 +79,7 @@
 .question .result .text[hidden] {
   display: block;
   opacity: 0;
+  visibility: hidden;
 }
 
 .question .result .text {
