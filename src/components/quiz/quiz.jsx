@@ -158,8 +158,9 @@ export const Score = ({ images, texts }) => {
   const globalQuizContext = useContext(GlobalQuizContext);
 
   const score = useMemo(() => {
-    const score = Object.values(globalQuizContext.score).filter((_) => _)
-      .length;
+    const score = Object.values(globalQuizContext.score).filter(
+      (_) => _,
+    ).length;
     return score;
   }, [globalQuizContext.score]);
 
@@ -167,6 +168,8 @@ export const Score = ({ images, texts }) => {
     () =>
       Object.entries(images).reduce(
         (acc, [requiredScore, url]) => {
+          requiredScore = parseInt(requiredScore);
+
           if (
             score >= requiredScore &&
             (acc.url === null || requiredScore > (acc.requiredScore || 0))
@@ -186,6 +189,8 @@ export const Score = ({ images, texts }) => {
       texts &&
       Object.entries(texts).reduce(
         (acc, [requiredScore, text]) => {
+          requiredScore = parseInt(requiredScore);
+
           if (
             score >= requiredScore &&
             (acc.text === null || requiredScore > (acc.requiredScore || 0))
