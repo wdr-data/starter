@@ -6,7 +6,7 @@ const isProduction =
 
 const configTesting = {
   site: 621455,
-  collectDomain: "http://logs1414.xiti.com",
+  collectDomain: "https://logs1414.xiti.com",
 };
 const configProduction = {
   site: 624843,
