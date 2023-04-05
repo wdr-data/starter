@@ -1,6 +1,6 @@
 ### Analytics
 
-Diese Seite verwendet Webtrekk, um Daten über das Interaktions- und Nutzungsverhalten zu sammeln. Diese Daten werden auf Seiten des WDR ausschliesslich in anonymisierter Form gespeichert und ausgewertet.
+Diese Seite verwendet Webtrekk und ATI, um Daten über das Interaktions- und Nutzungsverhalten zu sammeln. Diese Daten werden auf Seiten des WDR ausschliesslich in anonymisierter Form gespeichert und ausgewertet.
 
 ### Fehler melden
 

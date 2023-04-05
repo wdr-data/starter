@@ -19,6 +19,7 @@ import { StaticQuery, graphql } from "gatsby";
 
 import FrontmatterContext from "./frontmatterContext";
 import { GlobalQuizContext, useQuizContext } from "./globalQuizContext";
+import { PianoAnalyticsEventPageDisplay } from "../components/piano-analytics/piano-analytics";
 
 const DefaultTemplate = (data) => {
   const URL = `${starterConfig.origin}${Config.pathPrefix}`;
@@ -192,6 +193,9 @@ const DefaultTemplate = (data) => {
                 />
               )}
             />
+            <FrontmatterContext.Provider value={frontmatter}>
+              <PianoAnalyticsEventPageDisplay />
+            </FrontmatterContext.Provider>
             <Webtrekk
               publishedAt={frontmatter.pub_date}
               cg1={frontmatter.cg1}

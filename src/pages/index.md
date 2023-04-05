@@ -12,6 +12,9 @@ cg1: "WDR"
 cg2: "Data"
 cg3: "WDR 3"
 cg4: "Opern-Spielpläne in NRW: tot und männlich"
+
+pageType: "Quiz"
+editorialDepartment: "Newsroom"
 ---
 
 import DataWrapper from '../components/datawrapper/datawrapper.jsx'

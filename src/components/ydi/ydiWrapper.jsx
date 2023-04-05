@@ -7,6 +7,7 @@ import ReactMarkdown from "react-markdown";
 import Webtrekk from "../webtrekk/webtrekk";
 import FrontmatterContext from "../../templates/frontmatterContext";
 import styles from "./ydiWrapper.module.css";
+import { PianoAnalyticsEventClick } from "../piano-analytics/piano-analytics";
 
 export const YDIWrapper = ({
   question,
@@ -84,11 +85,17 @@ export const YDIWrapper = ({
                 [`cg${cgParams.length + 1}`]: question.key,
               };
               return (
-                <Webtrekk
-                  {...frontmatter}
-                  publishedAt={frontmatter.pub_date}
-                  {...additionalCgParams}
-                />
+                <>
+                  <PianoAnalyticsEventClick
+                    clickText="Wie ist es tatsächlich?"
+                    clickTarget={question.heading}
+                  />
+                  <Webtrekk
+                    {...frontmatter}
+                    publishedAt={frontmatter.pub_date}
+                    {...additionalCgParams}
+                  />
+                </>
               );
             }}
           </FrontmatterContext.Consumer>

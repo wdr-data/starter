@@ -50,6 +50,7 @@
     "hls.js": "^0.13.2",
     "json-loader": "^0.5.7",
     "papaparse": "^5.0.1",
+    "piano-analytics-js": "^6.8.3",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-accessible-accordion": "^3.0.0",
