@@ -1,7 +1,8 @@
 /* Button styles */
 button {
-  display: block;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 15px;
   border: none;
   background: var(--brand-primary);
@@ -21,19 +22,18 @@ button[disabled] {
 }
 
 button .icon {
-  display: inline-block;
+  display: block;
   width: 0;
   overflow: visible;
 }
 
 button .icon svg {
-  display: inline-block;
+  display: block;
   width: 20px;
   height: 20px;
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
-  vertical-align: top;
   margin-top: 1px;
   transform: translateX(-25px);
   animation: fade-in 0.25s ease-in-out;
