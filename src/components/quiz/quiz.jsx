@@ -106,7 +106,7 @@ export const Answer = ({ correct, children }) => {
     >
       <button onClick={selectCallback} disabled={quizContext.answered}>
         {quizContext.answered && (selected || correct) && icon}
-        {children}
+        <span>{children}</span>
       </button>
     </div>
   );

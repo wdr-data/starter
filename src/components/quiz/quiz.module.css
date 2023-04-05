@@ -21,6 +21,11 @@ button[disabled] {
   cursor: not-allowed;
 }
 
+button span {
+  display: block;
+  flex-basis: calc(100% - 50px);
+}
+
 button .icon {
   display: block;
   width: 0;
@@ -56,6 +61,7 @@ button .icon svg {
   flex-wrap: wrap;
   flex-direction: row;
   align-content: flex-start;
+  align-items: center;
   background: #fff;
   padding: 20px;
   border-radius: 16px;
