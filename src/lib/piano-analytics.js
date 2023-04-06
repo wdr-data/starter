@@ -1,4 +1,8 @@
+import React from "react";
+
 import { pianoAnalytics } from "piano-analytics-js";
+
+import FrontmatterContext from "../templates/frontmatterContext";
 
 const isProduction =
   process.env.GATSBY_ATI_ENV === "production" ||
@@ -25,6 +29,11 @@ export const pageConfigFromFrontmatter = (frontmatter) => {
     datePublication: frontmatter.pub_date,
     ...frontmatter,
   };
+};
+
+export const usePageConfig = () => {
+  const frontmatterContext = React.useContext(FrontmatterContext);
+  return pageConfigFromFrontmatter(frontmatterContext);
 };
 
 export const sendEventPageDisplay = (pageConfig) => {
