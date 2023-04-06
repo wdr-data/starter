@@ -26,7 +26,6 @@ export const PianoAnalyticsEventPageDisplay = () => {
   const frontmatterContext = React.useContext(FrontmatterContext);
 
   React.useEffect(() => {
-    console.table(frontmatterContext);
     if (frontmatterContext && frontmatterContext !== "foo") {
       sendEventPageDisplay(pageConfigFromFrontmatter(frontmatterContext));
     }
