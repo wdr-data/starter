@@ -1,13 +1,15 @@
 import React from "react";
-import { useCallback } from "react";
-import { useState } from "react";
+import { useCallback, useState, useContext } from "react";
 import classNames from "class-names";
 import ReactMarkdown from "react-markdown";
 
 import Webtrekk from "../webtrekk/webtrekk";
 import FrontmatterContext from "../../templates/frontmatterContext";
 import styles from "./ydiWrapper.module.css";
-import { PianoAnalyticsEventClick } from "../piano-analytics/piano-analytics";
+import {
+  sendEventClickAction,
+  pageConfigFromFrontmatter,
+} from "../../lib/piano-analytics";
 
 export const YDIWrapper = ({
   question,
@@ -15,11 +17,26 @@ export const YDIWrapper = ({
   onConfirm,
   children,
 }) => {
+  const frontmatterContext = useContext(FrontmatterContext);
+
   const [confirmed, setConfirmed] = useState(false);
   const confirmHandler = useCallback(() => {
     setConfirmed(true);
     onConfirm();
-  }, [setConfirmed, onConfirm]);
+
+    sendEventClickAction(pageConfigFromFrontmatter(frontmatterContext), {
+      clickText: "Wie ist es tatsächlich?",
+      clickTarget: question.heading,
+    });
+  }, [setConfirmed, onConfirm, question, frontmatterContext]);
+
+  const cgParams = Object.keys(frontmatterContext).filter((param) =>
+    param.startsWith("cg"),
+  );
+  const additionalCgParams = {
+    [`cg${cgParams.length + 1}`]: question.key,
+  };
+
   return (
     <div className={styles.questions}>
       <div className={styles.question}>
@@ -76,29 +93,11 @@ export const YDIWrapper = ({
         </div>
 
         {confirmed && (
-          <FrontmatterContext.Consumer>
-            {(frontmatter) => {
-              const cgParams = Object.keys(frontmatter).filter((param) =>
-                param.startsWith("cg"),
-              );
-              const additionalCgParams = {
-                [`cg${cgParams.length + 1}`]: question.key,
-              };
-              return (
-                <>
-                  <PianoAnalyticsEventClick
-                    clickText="Wie ist es tatsächlich?"
-                    clickTarget={question.heading}
-                  />
-                  <Webtrekk
-                    {...frontmatter}
-                    publishedAt={frontmatter.pub_date}
-                    {...additionalCgParams}
-                  />
-                </>
-              );
-            }}
-          </FrontmatterContext.Consumer>
+          <Webtrekk
+            {...frontmatterContext}
+            publishedAt={frontmatterContext.pub_date}
+            {...additionalCgParams}
+          />
         )}
       </div>
     </div>
