@@ -3,14 +3,22 @@ import { useCallback, useState, useContext } from "react";
 import classNames from "class-names";
 import ReactMarkdown from "react-markdown";
 import { v4 as uuid } from "uuid";
+import removeMarkdown from "remove-markdown";
+
+import {
+  sendEventClickAction,
+  pageConfigFromFrontmatter,
+} from "../../lib/piano-analytics";
 
 import { GlobalQuizContext } from "../../templates/globalQuizContext";
+import FrontmatterContext from "../../templates/frontmatterContext";
 
 import styles from "./quiz.module.css";
 
 const QuizContext = React.createContext({});
 
 export const Quiz = ({ children }) => {
+  const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [selectedAnswerCorrect, setSelectedAnswerCorrect] = useState(null);
   const [answered, setAnswered] = useState(false);
@@ -27,6 +35,8 @@ export const Quiz = ({ children }) => {
 
   const quizContext = useMemo(
     () => ({
+      question,
+      setQuestion,
       selectedAnswer,
       setSelectedAnswer,
       answered,
@@ -36,6 +46,8 @@ export const Quiz = ({ children }) => {
       setSelectedAnswerCorrect,
     }),
     [
+      question,
+      setQuestion,
       selectedAnswer,
       setSelectedAnswer,
       answered,
@@ -58,6 +70,15 @@ export const Image = (props) => {
 };
 
 export const Question = ({ children }) => {
+  const quizContext = useContext(QuizContext);
+
+  useEffect(() => {
+    const question = removeMarkdown(children);
+    if (quizContext.question !== question) {
+      quizContext.setQuestion(question);
+    }
+  }, [children, quizContext]);
+
   return (
     <div className={styles.question}>
       <ReactMarkdown source={children} />
@@ -84,13 +105,18 @@ const Cross = () => (
 export const Answer = ({ correct, children }) => {
   const [id] = useState(uuid());
   const quizContext = useContext(QuizContext);
+  const frontmatterContext = useContext(FrontmatterContext);
 
   const selected = quizContext.selectedAnswer === id;
 
   const selectCallback = useCallback(() => {
     quizContext.setSelectedAnswer(id);
     quizContext.setSelectedAnswerCorrect(correct);
-  }, [id, quizContext, correct]);
+    sendEventClickAction(pageConfigFromFrontmatter(frontmatterContext), {
+      clickText: children,
+      clickTarget: quizContext.question,
+    });
+  }, [id, quizContext, correct, frontmatterContext, children]);
 
   const icon = useMemo(() => (correct ? <Checkmark /> : <Cross />), [correct]);
 
@@ -115,6 +141,7 @@ export const Answer = ({ correct, children }) => {
 export const Result = ({ children }) => {
   const quizContext = useContext(QuizContext);
   const globalQuizContext = useContext(GlobalQuizContext);
+  const frontmatterContext = useContext(FrontmatterContext);
 
   const confirmAllowed = quizContext.selectedAnswer !== null;
   const confirmed = quizContext.answered;
@@ -124,7 +151,11 @@ export const Result = ({ children }) => {
       [quizContext.id]: quizContext.selectedAnswerCorrect,
     }));
     quizContext.setAnswered(true);
-  }, [quizContext, globalQuizContext]);
+    sendEventClickAction(pageConfigFromFrontmatter(frontmatterContext), {
+      clickText: "Antworten",
+      clickTarget: quizContext.question,
+    });
+  }, [quizContext, globalQuizContext, frontmatterContext]);
 
   return (
     <div
@@ -208,11 +239,21 @@ export const Score = ({ images, texts }) => {
   // Hide score until button is clicked
   const [hidden, setHidden] = useState(true);
 
+  const frontmatterContext = useContext(FrontmatterContext);
+  const onRevealClick = useCallback(() => {
+    setHidden(false);
+
+    sendEventClickAction(pageConfigFromFrontmatter(frontmatterContext), {
+      clickText: "Ergebnis anzeigen",
+      clickTarget: `${score}`,
+    });
+  }, [setHidden, frontmatterContext, score]);
+
   return (
     <div className={classNames(styles.score, hidden && styles.hidden)}>
       <button
         className={classNames(styles.scoreShow, !hidden && styles.hidden)}
-        onClick={() => setHidden(false)}
+        onClick={onRevealClick}
         aria-hidden={!hidden ? "true" : "false"}
       >
         Ergebnis anzeigen
