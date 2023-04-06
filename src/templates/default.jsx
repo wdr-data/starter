@@ -31,8 +31,9 @@ const DefaultTemplate = (data) => {
     Date.parse(frontmatter.pub_date + "T00:00:00.000Z"),
   );
 
+  const frontmatterRef = React.useRef(frontmatter);
   React.useEffect(() => {
-    sendEventPageDisplay(pageConfigFromFrontmatter(frontmatter));
+    sendEventPageDisplay(pageConfigFromFrontmatter(frontmatterRef.current));
   }, []);
 
   const quizContext = useQuizContext();
