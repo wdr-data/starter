@@ -16,10 +16,13 @@ import Accordion from "../components/accordion/accordion.jsx";
 import Webtrekk from "../components/webtrekk/webtrekk.jsx";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { StaticQuery, graphql } from "gatsby";
+import {
+  sendEventPageDisplay,
+  pageConfigFromFrontmatter,
+} from "../lib/piano-analytics";
 
 import FrontmatterContext from "./frontmatterContext";
 import { GlobalQuizContext, useQuizContext } from "./globalQuizContext";
-import { PianoAnalyticsEventPageDisplay } from "../components/piano-analytics/piano-analytics";
 
 const DefaultTemplate = (data) => {
   const URL = `${starterConfig.origin}${Config.pathPrefix}`;
@@ -27,6 +30,10 @@ const DefaultTemplate = (data) => {
   const pub_date = new Date(
     Date.parse(frontmatter.pub_date + "T00:00:00.000Z"),
   );
+
+  React.useEffect(() => {
+    sendEventPageDisplay(pageConfigFromFrontmatter(frontmatter));
+  }, []);
 
   const quizContext = useQuizContext();
 
@@ -193,9 +200,6 @@ const DefaultTemplate = (data) => {
                 />
               )}
             />
-            <FrontmatterContext.Provider value={frontmatter}>
-              <PianoAnalyticsEventPageDisplay />
-            </FrontmatterContext.Provider>
             <Webtrekk
               publishedAt={frontmatter.pub_date}
               cg1={frontmatter.cg1}
