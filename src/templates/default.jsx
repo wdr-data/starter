@@ -127,7 +127,7 @@ const DefaultTemplate = (data) => {
         <script type="application/ld+json">
           {JSON.stringify(schema, null, 2)}
         </script>
-        <script>To Do: Make links target blank</script>
+        {/* <script>To Do: Make links target blank</script> */}
       </Helmet>
       <div className={styles.wrapper}>
         <div className={styles.heroImage}>
