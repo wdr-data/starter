@@ -16,7 +16,6 @@ const QuizContext = React.createContext({});
 export const Quiz = ({ children }) => {
   const [question, setQuestion] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [selectedAnswerCorrect, setSelectedAnswerCorrect] = useState(null);
   const [answered, setAnswered] = useState(false);
   const [id] = useState(uuid());
   const globalQuizContext = useContext(GlobalQuizContext);
@@ -38,8 +37,6 @@ export const Quiz = ({ children }) => {
       answered,
       setAnswered,
       id,
-      selectedAnswerCorrect,
-      setSelectedAnswerCorrect,
     }),
     [
       question,
@@ -49,8 +46,6 @@ export const Quiz = ({ children }) => {
       answered,
       setAnswered,
       id,
-      selectedAnswerCorrect,
-      setSelectedAnswerCorrect,
     ],
   );
 
@@ -63,6 +58,12 @@ export const Quiz = ({ children }) => {
 
 export const Image = (props) => {
   return <img className={styles.image} alt="" {...props} />;
+};
+export const Video = (props) => {
+  return <video className={styles.video} {...props} />;
+};
+export const Audio = (props) => {
+  return <audio className={styles.audio} {...props} />;
 };
 
 export const Question = ({ children }) => {
@@ -101,18 +102,24 @@ const Cross = () => (
 export const Answer = ({ correct, children }) => {
   const [id] = useState(uuid());
   const quizContext = useContext(QuizContext);
+  const globalQuizContext = useContext(GlobalQuizContext);
   const pianoPageConfig = usePageConfig();
 
   const selected = quizContext.selectedAnswer === id;
 
   const selectCallback = useCallback(() => {
+    quizContext.setAnswered(true);
     quizContext.setSelectedAnswer(id);
-    quizContext.setSelectedAnswerCorrect(correct);
+    globalQuizContext.setScore((score) => ({
+      ...score,
+      [quizContext.id]: correct,
+    }));
+
     sendEventClickAction(pianoPageConfig, {
       clickText: children,
       clickTarget: quizContext.question,
     });
-  }, [id, quizContext, correct, pianoPageConfig, children]);
+  }, [id, quizContext, globalQuizContext, correct, pianoPageConfig, children]);
 
   const icon = useMemo(() => (correct ? <Checkmark /> : <Cross />), [correct]);
 
@@ -136,43 +143,17 @@ export const Answer = ({ correct, children }) => {
 
 export const Result = ({ children }) => {
   const quizContext = useContext(QuizContext);
-  const globalQuizContext = useContext(GlobalQuizContext);
-  const pianoPageConfig = usePageConfig();
-
-  const confirmAllowed = quizContext.selectedAnswer !== null;
   const confirmed = quizContext.answered;
-  const confirmHandler = useCallback(() => {
-    globalQuizContext.setScore((score) => ({
-      ...score,
-      [quizContext.id]: quizContext.selectedAnswerCorrect,
-    }));
-    quizContext.setAnswered(true);
-    sendEventClickAction(pianoPageConfig, {
-      clickText: "Antworten",
-      clickTarget: quizContext.question,
-    });
-  }, [quizContext, globalQuizContext, pianoPageConfig]);
 
   return (
     <div
       className={classNames(
         styles.result,
-        confirmAllowed && styles.finished,
         confirmed && styles.shown,
       )}
     >
-      <div className={styles.actionContainer}>
-        <button
-          className={styles.showAction}
-          disabled={!confirmAllowed || confirmed}
-          onClick={confirmHandler}
-        >
-          Antworten
-        </button>
-      </div>
       <div
         className={styles.text}
-        hidden={!confirmed}
         aria-hidden={confirmed ? "false" : "true"}
       >
         <ReactMarkdown source={children} linkTarget="_blank" />
