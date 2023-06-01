@@ -80,6 +80,21 @@ button .icon svg {
   border-radius: 11px 11px 0 0;
   height: auto;
 }
+.quiz .video {
+  display: block;
+  margin: -17px;
+  margin-bottom: 5px;
+  width: calc(100% + 34px);
+  max-width: calc(100% + 34px);
+  border-radius: 11px 11px 0 0;
+  height: auto;
+}
+.quiz .audio {
+  display: block;
+  margin-bottom: 5px;
+  width: calc(100% + 34px);
+  max-width: calc(100% + 34px);
+}
 
 .quiz .question {
   width: 100%;

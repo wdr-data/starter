@@ -27,7 +27,7 @@ import YDIBar from '../components/ydi/ydiBar.jsx'
 import YDILine from '../components/ydi/ydiLine.jsx'
 import TabbedView from '../components/data-tabs/TabbedView.jsx'
 import { Link, LinkList } from '../components/link/link.jsx'
-import { Quiz, Image as QuizImage, Question, Answer, Result, Score as QuizScore } from '../components/quiz/quiz.jsx'
+import { Quiz, Image as QuizImage, Video as QuizVideo, Audio as QuizAudio, Question, Answer, Result, Score as QuizScore } from '../components/quiz/quiz.jsx'
 
 # Opern-Spielpläne in NRW: tot und männlich
 

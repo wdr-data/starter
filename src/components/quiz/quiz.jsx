@@ -60,10 +60,10 @@ export const Image = (props) => {
   return <img className={styles.image} alt="" {...props} />;
 };
 export const Video = (props) => {
-  return <video className={styles.video} {...props} />;
+  return <video controls className={styles.video} {...props} />;
 };
 export const Audio = (props) => {
-  return <audio className={styles.audio} {...props} />;
+  return <audio controls className={styles.audio} {...props} />;
 };
 
 export const Question = ({ children }) => {
