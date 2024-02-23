@@ -253,7 +253,9 @@ export const Score = ({ images, texts }) => {
           </span>
         </div>
         <div>
-          <span className={styles.scorePost}>{currentText.text}</span>
+          <ReactMarkdown className={styles.scorePost}>
+            {currentText.text}
+          </ReactMarkdown>
         </div>
       </div>
       <div className={styles.scoreImagePrefetch}>
