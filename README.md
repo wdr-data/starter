@@ -106,16 +106,6 @@ cg4: "Opern-Spielpläne in NRW: tot und männlich"
 
 - Die Bilder für Facebook und Twitter werden in static/ abgelegt
 
-#### Webtrekk
-Im Kopf der src/pages/index.md:
-  - ! `pub_date: "2019-07-15"` muss in diesem Datums-Format vorhanden sein
-  - Anhand dieses Schemas ausfüllen:
-    - cg1: "WDR"
-    - cg2: "Data"
-    - cg3: "WDR 3" - Partnerredaktion
-    - cg4: "Opern-Spielpläne in NRW: tot und männlich" - H1 (Hauptüberschrift) des Stücks
- - Optional kann auch eine `cg5: ` vergeben werden
-
 #### Sharing
 
 Die Inhalte der Komponente werden auch im Kopf der index.md festgelegt:
@@ -159,7 +149,6 @@ Um Komponeneten nutzen zu können, müssen sie in der index.md importiert werden
 import DataWrapper from '../components/datawrapper/datawrapper.jsx'
 import Quote from '../components/quote/quote.jsx'
 import Accordion from '../components/accordion/accordion.jsx'
-import Webtrekk from '../components/webtrekk/webtrekk.jsx'
 import Sharing from '../components/sharing/sharing.jsx'
 ```
 

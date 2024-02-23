@@ -48,9 +48,9 @@ storiesOf("Accordion", module).add("default", () => (
       <React.Fragment>
         <h3>Analytics</h3>
         <p>
-          Diese Seite verwendet Webtrekk und ATI, um Daten über das
-          Interaktions- und Nutzungsverhalten zu sammeln. Diese Daten werden auf
-          Seiten des WDR ausschliesslich in anonymisierter Form gespeichert und
+          Diese Seite verwendet Piano Analytics, um Daten über das Interaktions-
+          und Nutzungsverhalten zu sammeln. Diese Daten werden auf Seiten des
+          WDR ausschliesslich in anonymisierter Form gespeichert und
           ausgewertet.
         </p>
         <h3>Fehler melden</h3>

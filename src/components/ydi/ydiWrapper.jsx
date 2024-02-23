@@ -3,7 +3,6 @@ import { useCallback, useState, useContext } from "react";
 import classNames from "class-names";
 import ReactMarkdown from "react-markdown";
 
-import Webtrekk from "../webtrekk/webtrekk";
 import FrontmatterContext from "../../templates/frontmatterContext";
 import styles from "./ydiWrapper.module.css";
 import {
@@ -91,14 +90,6 @@ export const YDIWrapper = ({
             </a>
           </div>
         </div>
-
-        {confirmed && (
-          <Webtrekk
-            {...frontmatterContext}
-            publishedAt={frontmatterContext.pub_date}
-            {...additionalCgParams}
-          />
-        )}
       </div>
     </div>
   );

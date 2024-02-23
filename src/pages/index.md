@@ -19,7 +19,6 @@ editorialDepartment: "Newsroom"
 
 import DataWrapper from '../components/datawrapper/datawrapper.jsx'
 import Quote from '../components/quote/quote.jsx'
-import Webtrekk from '../components/webtrekk/webtrekk.jsx'
 import Sharing from '../components/sharing/sharing.jsx'
 import SemioticBarChart from '../components/semiotic_barChart/semiotic_barChart.jsx'
 import WdrPlayer from '../components/video/video.jsx'
@@ -51,10 +50,10 @@ Natürlich ist **42** die richtige Antwort. Lorem Ipsum is simply dummy text of 
 
 <Quiz>
 <Question>**Hier könnte ihre Frage stehen?**</Question>
-<Answer>Hier klicken!</Answer>
-<Answer>Foobar</Answer>
+<Answer>Hier klicken! Hier klicken! Hier klicken! </Answer>
+<Answer>Foobar Hier klicken! Hier klicken! </Answer>
 <Answer>Richtige Antwort</Answer>
-<Answer correct>42</Answer>
+<Answer correct>42 Hier klicken! Hier klicken! Hier klicken!  </Answer>
 <Result>
 Natürlich ist **42** die richtige Antwort.
 </Result>
@@ -81,8 +80,6 @@ texts={{
     2: "Gute Arbeit",
 }}
 />
-
-## Tabs Beispiel:
 
 <TabbedView tabs={[
     {
@@ -134,6 +131,9 @@ texts={{
 
 <YDIBar name="test02"/>
 
+
+<!--
+## Tabs Beispiel:
 ## Beispiel regulärer Bar Chart:
 
 <SemioticBarChart/>
@@ -263,6 +263,7 @@ Die Opern begründen ihre konservativen Spielpläne mit dem allgemeinen Druck, d
 </figure>
 
 Auf der einen Seite wolle Schneider mit Oper kulturelles Erbe abbilden, auf der anderen Seite Innovationsdruck machen: "Wir brauchen unbedingt viel, viel mehr Dynamik."
+-->
 
 <Quote author="Berthold Schneider, Intendant Oper Wuppertal">Die Oper ist stark genug, dass sie sich immer wieder verändern wird.</Quote>
 

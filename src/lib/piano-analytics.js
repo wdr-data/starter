@@ -5,8 +5,7 @@ import { pianoAnalytics } from "piano-analytics-js";
 import FrontmatterContext from "../templates/frontmatterContext";
 
 const isProduction =
-  process.env.GATSBY_ATI_ENV === "production" ||
-  process.env.GATSBY_WEBTREKK_ENV === "production";
+  process.env.GATSBY_ATI_ENV === "production";
 
 const configTesting = {
   site: 621455,
