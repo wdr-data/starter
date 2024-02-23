@@ -258,11 +258,6 @@ export const Score = ({ images, texts }) => {
           </ReactMarkdown>
         </div>
       </div>
-      <div className={styles.scoreImagePrefetch}>
-        {Object.entries(images).map(([requiredScore, url]) => (
-          <img key={url} src={url} alt="" />
-        ))}
-      </div>
     </div>
   );
 };

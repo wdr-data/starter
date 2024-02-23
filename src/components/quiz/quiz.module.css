@@ -278,10 +278,6 @@ button .icon svg {
   padding: 0 1rem;
 }
 
-.score .scoreImagePrefetch {
-  display: none;
-}
-
 @media (min-width: 800px) {
   .score {
     justify-content: flex-start;
