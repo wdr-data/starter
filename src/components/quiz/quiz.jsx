@@ -146,17 +146,19 @@ export const Result = ({ children }) => {
   const confirmed = quizContext.answered;
 
   return (
-    <div
-      className={classNames(
-        styles.result,
-        confirmed && styles.shown,
-      )}
-    >
-      <div
-        className={styles.text}
-        aria-hidden={confirmed ? "false" : "true"}
-      >
-        <ReactMarkdown source={children} linkTarget="_blank" />
+    <div className={classNames(styles.result, confirmed && styles.shown)}>
+      <div className={styles.text} aria-hidden={confirmed ? "false" : "true"}>
+        {Array.isArray(children) ? (
+          children.map((child, index) =>
+            typeof child === "string" ? (
+              <ReactMarkdown key={index} source={child} linkTarget="_blank" />
+            ) : (
+              <React.Fragment key={index}>{child}</React.Fragment>
+            ),
+          )
+        ) : (
+          <ReactMarkdown source={children} linkTarget="_blank" />
+        )}
       </div>
     </div>
   );
