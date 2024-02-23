@@ -26,7 +26,7 @@ export const LinkList = ({ links, ...rest }) => {
   return (
     <ul className={styles.linkList}>
       {links.map(({ title, href }) => (
-        <li>
+        <li key={href}>
           <a
             className={styles.link}
             href={href}
