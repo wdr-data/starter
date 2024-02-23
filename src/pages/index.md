@@ -107,11 +107,11 @@ texts={{
 <LinkList links={[
     {
         title: "Dies ist ein Beispiel für eine Link-Liste",
-        href: "https://example.com/",
+        href: "https://example.com/#a",
     },
     {
         title: "Dies ist noch ein Beispiel für eine Link-Liste",
-        href: "https://example.com/",
+        href: "https://example.com/#b",
     },
 ]} />
 
