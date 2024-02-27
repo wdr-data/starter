@@ -102,12 +102,13 @@ texts={{
     },
 ]} />
 
-<Link title="Dies ist ein Beispiel für einen einzelnen Link" href="https://example.com/" />
+<Link title="Dies ist ein Beispiel für einen einzelnen Link" href="https://example.com/" cta="klick" />
 
 <LinkList links={[
     {
         title: "Dies ist ein Beispiel für eine Link-Liste",
         href: "https://example.com/#a",
+        cta: "klick",
     },
     {
         title: "Dies ist noch ein Beispiel für eine Link-Liste",

@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 import styles from "./link.module.css";
 
-export const Link = ({ title, href, ...rest }) => {
+export const Link = ({ title, href, cta = "mehr", ...rest }) => {
   return (
     <a
       className={classNames(styles.link, styles.linkSingle)}
@@ -12,7 +12,7 @@ export const Link = ({ title, href, ...rest }) => {
       rel="noopener noreferrer"
       target="_blank"
     >
-      <span>{title}</span> <span>|</span> <strong>mehr</strong>
+      <span>{title}</span> <span>|</span> <strong>{cta}</strong>
     </a>
   );
 };
@@ -24,8 +24,8 @@ Link.propTypes = {
 
 export const LinkList = ({ links, ...rest }) => {
   return (
-    <ul className={styles.linkList}>
-      {links.map(({ title, href }) => (
+    <ul className={styles.linkList} {...rest}>
+      {links.map(({ title, href, cta = "mehr"}) => (
         <li key={href}>
           <a
             className={styles.link}
@@ -33,7 +33,7 @@ export const LinkList = ({ links, ...rest }) => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <span>{title}</span> <span>|</span> <strong>mehr</strong>
+            <span>{title}</span> <span>|</span> <strong>{cta}</strong>
           </a>
         </li>
       ))}
