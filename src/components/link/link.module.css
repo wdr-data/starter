@@ -3,6 +3,7 @@
   padding: 6px;
 
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 .linkSingle {
