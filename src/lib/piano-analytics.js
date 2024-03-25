@@ -13,7 +13,7 @@ const configTesting = {
 };
 const configProduction = {
   site: 624843,
-  collectDomain: "https://ama.wdr.de",
+  collectDomain: "https://lwqvhgk.pa-cd.com",
 };
 
 if (isProduction) {
