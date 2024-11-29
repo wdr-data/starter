@@ -141,7 +141,7 @@ texts={{
 
 ## Beispiel Video-Player:
 
-<WdrPlayer videoId="2159001" videoPoster="https://i.imgur.com/hZIGM2L.jpg" />
+<WdrPlayer videoId="..." videoPoster="https://i.imgur.com/hZIGM2L.jpg" />
 
 mehr toller text
 
